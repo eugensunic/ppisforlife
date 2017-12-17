@@ -1,0 +1,153 @@
+.ppi_only{
+  font-size: 15px;
+  color:#337ab7
+}
+.about_section{
+  border: 1px solid #e1dddd;
+  border-radius: 3px;
+  padding-left: 5px;
+  background-color: #ebebf4;
+}
+.lowfont{
+   font-size: 12px;
+}
+.inline{
+  display: inline;
+  margin-left: 5px;
+}
+
+.input_basic{
+  color:blue;
+  font-weight: 570;
+  font-size: 14px;
+  margin-left: 2px;
+}
+.number{
+  width: 40px;
+  margin-right: 5px;
+}
+.widing{
+  width:200px;
+
+}
+.toptize{
+  margin-top: 50px;
+}
+.mg_top{
+  margin-top: 30px;
+}
+.maxpercent{
+  width:100%;
+}
+.error_red{
+  background-color: pink;
+  width: 40px;
+  margin-left:2px;
+
+}
+.error_red_string{
+  background-color: pink;
+  width: 172px;
+  margin-left:2px;
+
+}
+.paranthesis{
+  font-size:10px;
+}
+.redness_input{
+  border: 1px solid #f80000;
+  border-radius:4px;
+
+}
+.redness_radio{
+  background-color: pink;
+  border-radius: 3px;
+  display: inline-block;
+}
+.bordering{
+  margin-top:10px;
+  margin-bottom:10px;
+  position:relative;
+}
+.lang{
+  float:right;
+}
+
+/*-------------------------------------------------------------------------------------------------------------*/
+/* The Modal (background) */
+.modal_main {
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+
+}
+.modal_cover {
+
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal_sub_pop {
+  background-color: white;
+  margin: auto;
+  padding: 20px;
+  border: 3px solid #888;
+  width: 80%;
+}
+
+/* The Close Button */
+.close_pop {
+  color: black;
+  float: right;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.close_pop:hover, .close_pop:focus {
+  color: #f74848;
+  text-decoration: none;
+  cursor: pointer;
+
+}
+.disease_blank{
+  color:#976c1e;
+}
+.bootstrap_col_modification{
+  margin-bottom: 10px;
+}
+.btn_modal_success{
+  margin-right: 4px;
+}
+.extra_question{
+  color: #617bb7;
+  font-weight: 700;
+  font-size: 14px;
+  margin-top: 5px;
+}
+.move_extra_div_up{
+  position:relative;
+  bottom:7px;
+}
+.redness_below992{
+  width: 152px;
+}
+.redness_below768{
+  width: 200px;
+}
+.disable_upper_container{
+  pointer-events:none;
+  opacity:0.7;
+}
+.sub_question{
+  margin-left: 15px;
+  color: #5a5f9a;
+  font-weight: bold;
+}
