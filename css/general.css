@@ -25,6 +25,7 @@ input,select,button{
 input{
   margin-left: 2px;
 }
+
 select{
   border: none; /* <-- This thing here */
   border:solid 1px #ccc;
@@ -40,6 +41,12 @@ td,th{
   padding:4px;
 }
 /*----------------------------------------------------------------------------*/
+.margin-left-3{
+  margin-left:3px;
+}
+.margin-right-3{
+  margin-right:3px;
+}
 .center_div{
   width: 50%;
   margin: 0 auto;

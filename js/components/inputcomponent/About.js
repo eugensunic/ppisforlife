@@ -34,7 +34,7 @@ export default class About extends React.Component {
     <div>
       <div>
         <input className="inline" type="checkbox"  checked={this.state.first_check} onChange={()=> this.setState({first_check:!this.state.first_check})} />
-        <span>{this.state.first_check?"hide":"show About"}</span>
+        <span className="margin-left-3">{this.state.first_check?"hide":"show About"}</span>
       </div>
       {this.state.first_check? this.returnAbout():""}
 

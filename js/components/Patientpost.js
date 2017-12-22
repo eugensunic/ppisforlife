@@ -167,7 +167,7 @@ export default class Patientpost extends React.Component {
         <div className="">
           <div className="checkbox_holder_about" id="target_div">
             <input className="inline" type="checkbox"  checked={this.state.first_check} onChange={()=> this.setState({first_check:!this.state.first_check})} />
-            <span>{this.state.first_check?"hide About":"show About"}</span>
+            <span className="margin-left-3">{this.state.first_check?"hide About":"show aaaaaaut"}</span>
           </div>
           {this.state.first_check?this.aboutWritting():(<Headerbarpatient></Headerbarpatient>)}
           {
@@ -209,7 +209,7 @@ export default class Patientpost extends React.Component {
                 <div className="">
                   <div className="checkbox_holder_about" id="target_div">
                     <input className="inline" type="checkbox"  checked={this.state.first_check} onChange={()=> this.setState({first_check:!this.state.first_check})} />
-                    <span>{this.state.first_check?"hide About":"show About"}</span>
+                    <span className="margin-left-3">{this.state.first_check?"hide About":"show About"}</span>
                   </div>
                   {this.state.first_check?this.aboutWritting():(<Headerbarpatient></Headerbarpatient>)}
                   {
