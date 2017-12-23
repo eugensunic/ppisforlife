@@ -19,13 +19,17 @@ module.exports = {
         test: /\.css$/,
         loader: "style!css"
       }
-
-
+      
     ]
   },
   output: {
     path: __dirname + "/js",
-    filename: "scripts.min.js"
+    filename: "scripts.min.js",
+  },
+  devServer: {
+    historyApiFallback: true,
+    contentBase: './',
+    hot: true
   },
   plugins: debug ? [] : [
     new webpack.optimize.DedupePlugin(),
