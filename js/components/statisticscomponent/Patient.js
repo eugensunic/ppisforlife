@@ -300,7 +300,7 @@ console.log("in other"+this.props.everything.first_other);
             <span className={this.state.radio3?"radio_clicked":"radio_normal"} style={{marginRight:3}} onClick={()=>this.setState({radio3:true,radio4:false})}>Bar chart</span>
             <span className={this.state.radio4?"radio_clicked":"radio_normal"} onClick={()=>this.setState({radio3:false,radio4:true})}>Pie chart</span>
           </div>
-          <div className="">
+          <div style={{marginTop:3}} className="">
             <span className={this.state.radio5?"radio_clicked":"radio_normal"} style={{marginRight:3}} onClick={()=>this.setState({radio5:true,radio6:false})}>Value</span>
             <span className={this.state.radio6?"radio_clicked":"radio_normal"} onClick={()=>this.setState({radio5:false,radio6:true})}>Percentage</span>
           </div>
