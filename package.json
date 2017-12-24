@@ -4,7 +4,7 @@
   "description": "",
   "main": "webpack.config.js",
   "scripts": {
-    "dev": "./node_modules/.bin/webpack-dev-server --inline --hot",
+    "dev": "webpack-dev-server --inline --hot",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -22,6 +22,7 @@
     "react-input-autosize": "^1.1.4",
     "react-popup": "^0.6.0",
     "react-redux": "^5.0.3",
+    "react-router-dom": "^4.2.2",
     "react-select": "^1.0.0-rc.3",
     "redux": "^3.6.0",
     "redux-logger": "^2.8.1",

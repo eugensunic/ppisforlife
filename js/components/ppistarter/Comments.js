@@ -47,7 +47,7 @@ export default class Comments extends React.Component {
           <li>There are a lot of commentators scaring PPIs users. they aren't just telling them that PPIs are bad, instead they are scaring them by telling
           them to get off the drug immediately</li>
           <li>People are more and more worried because of the increasing media reports that PPIs cause life threatning diseases (CKD, dementia, osteoporosis,
-          heart problems etc.)</li>
+          heart problems, premature death, cancer etc.)</li>
           <li>A lot of people think that people who are on this meds are those who don't take care of there lifestyle and this is the reason why
           they have upper abdominal problems</li>
           <li>Quite a few people with stomach and GERD problems haven't been drinking or smoking before getting the upper ambdominal issues</li>

@@ -94,8 +94,7 @@ export default class Listbox extends React.Component {
   render(){
     return(
       <div>
-        <h4>{this.props.name}</h4>
-        <img src="" className="inline"/>
+        <h4 style={{marginBottom:20}}>{this.props.name}</h4>
         <div className="list-group">
           <span className={"list-group-item"+(this.props.order[0]?"":" zero-item")}>
             <span className="number_in">{this.props.order[0]}</span>
