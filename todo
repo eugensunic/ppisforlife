@@ -1,16 +1,37 @@
-TODO
 
-1. localStorage remember which page you are on when clicking on patient pharma doc
+TODO
+----
 2. http get with params, and introduce params on backend php
-3. maybe adjust css to be nicer for post-okvir
-4. integrate html page to app
 5. research just put params for the time being
-6. put images which are not there now
-7. create quick database for upcoming data, abandom big database
+7. create quick database for upcoming data, abandon big database
 8. introduce change background localstorage
-9. css again the post doctor and pharmacy text
-10. include fonts
+10. include fonts, include this int theme only, don't default it
 11. include blog tag in header row
 12. Make relative links once in production
-13. remove inline styles, make simillar to Manfrends classes
-https://uigradients.com/#Clouds
+
+
+
+DONE
+----
+ - maybe adjust css to be nicer for post-div
+ - integrate html page to app
+ - put images which are not there now
+ - css again the post doctor and pharmacy text
+ - Add routing
+
+
+
+REFACTORING
+-----------
+- remove inline styles make simillar to CS-Manfrend classes
+- '' instead of ""
+- ES6 everything what you can, functions, this's, use lexical scope, get rid of returns, spaces between curly brackets, spaces, don't use 
+beautify from abramov and fiddle js react...,
+- something else instead of axios
+- beautify css files
+
+
+
+ADDITIONAL LINKS
+----------------
+COLORS: https://uigradients.com/#Clouds
