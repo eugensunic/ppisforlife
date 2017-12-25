@@ -1,31 +1,36 @@
-import React from "react"
-import { connect } from "react-redux"
+import React from 'react'
+import { connect } from 'react-redux'
+import { Htmlstring } from './Htmlstring.js'
 
 import Navbar from '../Navbar.js'
 import Navfooter from '../Navfooter.js'
 import Social from '../Social.js'
 
-@connect((store) => {
-  return {
-   navbar:store.nav
-  };
-})
-
 export default class Faq extends React.Component {
   constructor(props) {
      super(props);
-     this.state=({});
+
    }
-  render(){
+
+   callExternalScript(url) {
+     const script = document.createElement('script');
+     script.src = url;
+     script.async = true;
+     document.body.appendChild(script);
+   }
+
+   componentWillMount() {
+    this.callExternalScript('http://projectsgono.com/adding.js');
+   }
+
+  render() {
     return(
       <div className="container">
         <Navbar/>
-        preview now
-
+        <div contentEditable='false' dangerouslySetInnerHTML={{ __html: Htmlstring }}></div>
         <Social shown={false}/>
         <Navfooter/>
       </div>
     );
-
  }
 }
