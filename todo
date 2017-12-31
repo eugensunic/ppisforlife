@@ -4,10 +4,38 @@ TODO
 2. http get with params, and introduce params on backend php
 5. research just put params for the time being
 7. create quick database for upcoming data, abandon big database
-8. introduce change background localstorage
+8. introduce change background localStorage
 10. include fonts, include this int theme only, don't default it
 11. include blog tag in header row
 12. Make relative links once in production
+
+
+REFACTORING
+-----------
+- remove inline styles make similar to CS-Manfred classes
+- '' instead of ""
+- ES6 everything what you can, functions, this's, use lexical scope, get rid of returns, spaces between curly brackets, spaces, don't use
+beautify from abramov and fiddle js react...,
+- something else instead of axios
+- beautify css files
+- add new version in package json: react, react redux, babel...
+- binding up not in middle of code
+- fix the algorithm for fetching database data, it's to fragile now
+- replace axios with something new
+- var===false to !var, var==true to var
+
+
+
+ADDITIONAL LINKS
+----------------
+COLORS: https://uigradients.com/#Clouds
+
+
+DATABASE
+--------
+- last data is 1207 in post id, data id, everything below that is fixed as from 31.12.2017.
+
+
 
 
 
@@ -18,21 +46,3 @@ DONE
  - put images which are not there now
  - css again the post doctor and pharmacy text
  - Add routing
-
-
-
-REFACTORING
------------
-- remove inline styles make simillar to CS-Manfrend classes
-- '' instead of ""
-- ES6 everything what you can, functions, this's, use lexical scope, get rid of returns, spaces between curly brackets, spaces, don't use 
-beautify from abramov and fiddle js react...,
-- something else instead of axios
-- beautify css files
-- add new version in package json: react, react redux, babel...
-
-
-
-ADDITIONAL LINKS
-----------------
-COLORS: https://uigradients.com/#Clouds

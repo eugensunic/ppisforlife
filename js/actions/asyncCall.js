@@ -1,21 +1,23 @@
 import axios from "axios";
 
-export function asyncAll(url,name,post_value){
+export function asyncAll(url, name, args){
   return function(dispatch){
-  var output;
-  axios.get(url, {
-    params: {
-      pvalue: post_value
+    let output;
+    let element = {};
+    for (let i in args) {
+       element['param_'+i]=args[i];
     }
-  })
-    .then((response)=>{
-      dispatch({type:name,payload:response.data})
-      output=true;
-  })
-     .catch((err)=>{
-      dispatch({type:"FAIL",payload:err});
-      output=false;
-  })
+    axios.get(url, {
+      params: element
+    })
+      .then((response)=>{
+        dispatch({type:name,payload:response.data})
+        output=true;
+    })
+       .catch((err)=>{
+        dispatch({type:"FAIL",payload:err});
+        output=false;
+    })
 }
 }
 export function getIntervalArray(array,start,end){
