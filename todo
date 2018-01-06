@@ -37,8 +37,6 @@ DATABASE
 
 
 
-
-
 DONE
 ----
  - maybe adjust css to be nicer for post-div
@@ -46,3 +44,7 @@ DONE
  - put images which are not there now
  - css again the post doctor and pharmacy text
  - Add routing
+ 
+ NOTES
+ -----
+ - always delete branch when you finished with it (when merged to master)
