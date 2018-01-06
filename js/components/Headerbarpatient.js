@@ -105,24 +105,24 @@ export default class Headerbarpatient extends React.Component {
       <p className="post_elementheaderbar">duration</p>
 
       <span className="header_border_tag" onClick={() => {
-        this.callFilterPost('http://projectsgono.com/medsforlife/appcall/drug_duration_post.php', 5);
-        this.callFilterData('http://projectsgono.com/medsforlife/appcall/drug_duration_data.php', 5);
-        this.callFilterRest('http://projectsgono.com/medsforlife/appcall/drug_duration_rest.php', 5);
+        this.callFilterPost('http://projectsgono.com/medsforlife/appcall/drug_duration_post.php', 0, 5);
+        this.callFilterData('http://projectsgono.com/medsforlife/appcall/drug_duration_data.php', 0, 5);
+        this.callFilterRest('http://projectsgono.com/medsforlife/appcall/drug_duration_rest.php', 0, 5);
       }}>5</span>
       <span className="header_border_tag" onClick={() => {
-        this.callFilterPost('http://projectsgono.com/medsforlife/appcall/drug_duration_post.php', 10);
-        this.callFilterData('http://projectsgono.com/medsforlife/appcall/drug_duration_data.php', 10);
-        this.callFilterRest('http://projectsgono.com/medsforlife/appcall/drug_duration_rest.php', 10);
+        this.callFilterPost('http://projectsgono.com/medsforlife/appcall/drug_duration_post.php', 6, 10);
+        this.callFilterData('http://projectsgono.com/medsforlife/appcall/drug_duration_data.php', 6, 10);
+        this.callFilterRest('http://projectsgono.com/medsforlife/appcall/drug_duration_rest.php', 6, 10);
       }}>10</span>
       <span className="header_border_tag" onClick={() => {
-        this.callFilterPost('http://projectsgono.com/medsforlife/appcall/drug_duration_post.php', 15);
-        this.callFilterData('http://projectsgono.com/medsforlife/appcall/drug_duration_data.php', 15);
-        this.callFilterRest('http://projectsgono.com/medsforlife/appcall/drug_duration_rest.php', 15);
+        this.callFilterPost('http://projectsgono.com/medsforlife/appcall/drug_duration_post.php', 11, 15);
+        this.callFilterData('http://projectsgono.com/medsforlife/appcall/drug_duration_data.php', 11, 15);
+        this.callFilterRest('http://projectsgono.com/medsforlife/appcall/drug_duration_rest.php', 11, 15);
       }}>15</span>
       <span className="header_border_tag" onClick={() => {
-        this.callFilterPost('http://projectsgono.com/medsforlife/appcall/drug_duration_post.php', 20);
-        this.callFilterData('http://projectsgono.com/medsforlife/appcall/drug_duration_data.php', 20);
-        this.callFilterRest('http://projectsgono.com/medsforlife/appcall/drug_duration_rest.php', 20);
+        this.callFilterPost('http://projectsgono.com/medsforlife/appcall/drug_duration_post.php', 16, 20);
+        this.callFilterData('http://projectsgono.com/medsforlife/appcall/drug_duration_data.php', 16, 20);
+        this.callFilterRest('http://projectsgono.com/medsforlife/appcall/drug_duration_rest.php', 16, 20);
       }}>20+</span>
       <br/>
       <p></p>
