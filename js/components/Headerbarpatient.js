@@ -72,19 +72,19 @@ export default class Headerbarpatient extends React.Component {
       <p className="post_elementheaderbar">dosage</p>
 
       <span className="header_border_tag" onClick={()=>{
-        this.callFilterPost('http://projectsgono.com/medsforlife/appcall/drug_dosage_post.php', 'low');
-        this.callFilterData('http://projectsgono.com/medsforlife/appcall/drug_dosage_data.php', 'low');
-        this.callFilterRest('http://projectsgono.com/medsforlife/appcall/drug_dosage_rest.php', 'low');
+        this.callFilterPost('http://projectsgono.com/medsforlife/appcall/drug_dosage_post.php', 1, 20); // 20 included
+        this.callFilterData('http://projectsgono.com/medsforlife/appcall/drug_dosage_data.php', 1, 20);
+        this.callFilterRest('http://projectsgono.com/medsforlife/appcall/drug_dosage_rest.php', 1, 20);
       }}>low</span>
       <span className="header_border_tag" onClick={()=>{
-        this.callFilterPost('http://projectsgono.com/medsforlife/appcall/drug_dosage_post.php', 'maitenance');
-        this.callFilterData('http://projectsgono.com/medsforlife/appcall/drug_dosage_data.php', 'maitenance');
-        this.callFilterRest('http://projectsgono.com/medsforlife/appcall/drug_dosage_rest.php', 'maitenance');
+        this.callFilterPost('http://projectsgono.com/medsforlife/appcall/drug_dosage_post.php', 30, 40); // 30 - 40 included
+        this.callFilterData('http://projectsgono.com/medsforlife/appcall/drug_dosage_data.php', 30, 40);
+        this.callFilterRest('http://projectsgono.com/medsforlife/appcall/drug_dosage_rest.php', 30, 40); // 45+
       }}>maitenance</span>
       <span className="header_border_tag" onClick={()=>{
-        this.callFilterPost('http://projectsgono.com/medsforlife/appcall/drug_dosage_post.php', 'high');
-        this.callFilterData('http://projectsgono.com/medsforlife/appcall/drug_dosage_data.php', 'high');
-        this.callFilterRest('http://projectsgono.com/medsforlife/appcall/drug_dosage_rest.php', 'high');
+        this.callFilterPost('http://projectsgono.com/medsforlife/appcall/drug_dosage_post.php', 45, 300);
+        this.callFilterData('http://projectsgono.com/medsforlife/appcall/drug_dosage_data.php', 45, 300);
+        this.callFilterRest('http://projectsgono.com/medsforlife/appcall/drug_dosage_rest.php', 45, 300);
       }}>high</span>
 
       {/*---------------------------------------------------------------------------------------------------------*/}
@@ -100,6 +100,11 @@ export default class Headerbarpatient extends React.Component {
         this.callFilterData('http://projectsgono.com/medsforlife/appcall/drug_daily_data.php', 'no');
         this.callFilterRest('http://projectsgono.com/medsforlife/appcall/drug_daily_rest.php', 'no');
       }}>no</span>
+      <span className="header_border_tag" onClick={() => {
+        this.callFilterPost('http://projectsgono.com/medsforlife/appcall/drug_daily_post.php', 'fewaweek');
+        this.callFilterData('http://projectsgono.com/medsforlife/appcall/drug_daily_data.php', 'fewaweek');
+        this.callFilterRest('http://projectsgono.com/medsforlife/appcall/drug_daily_rest.php', 'fewaweek');
+      }}>few a week</span>
 
       {/*---------------------------------------------------------------------------------------------------------*/}
       <p className="post_elementheaderbar">duration</p>
@@ -120,10 +125,10 @@ export default class Headerbarpatient extends React.Component {
         this.callFilterRest('http://projectsgono.com/medsforlife/appcall/drug_duration_rest.php', 11, 15);
       }}>15</span>
       <span className="header_border_tag" onClick={() => {
-        this.callFilterPost('http://projectsgono.com/medsforlife/appcall/drug_duration_post.php', 16, 20);
-        this.callFilterData('http://projectsgono.com/medsforlife/appcall/drug_duration_data.php', 16, 20);
-        this.callFilterRest('http://projectsgono.com/medsforlife/appcall/drug_duration_rest.php', 16, 20);
-      }}>20+</span>
+        this.callFilterPost('http://projectsgono.com/medsforlife/appcall/drug_duration_post.php', 16, 40);
+        this.callFilterData('http://projectsgono.com/medsforlife/appcall/drug_duration_data.php', 16, 40);
+        this.callFilterRest('http://projectsgono.com/medsforlife/appcall/drug_duration_rest.php', 16, 40);
+      }}>15+</span>
       <br/>
       <p></p>
 
@@ -140,8 +145,11 @@ export default class Headerbarpatient extends React.Component {
         <option value="gerd">GERD</option>
         <option value="be">Barrett's</option>
         <option value="ulcer">Ulcer</option>
-        <option value="gastritis">Gastritis</option>
         <option value="esophagitis">Esophagitis</option>
+        <option value="gastritis">Gastritis</option>
+        <option value="duodenitis">Duodenitis</option>
+        <option value="zollinger">Zollinger-Elisson</option>
+
       </select>
 
       {/*---------------------------------------------------------------------------------------------------------*/}
@@ -154,31 +162,33 @@ export default class Headerbarpatient extends React.Component {
         this.callFilterRest('http://projectsgono.com/medsforlife/appcall/drug_ppicondition_rest.php', param);
       }} defaultValue="">
         <option value="" style={{display:'none'}} defaultValue="selected" label="choose ppicondition"></option>
-        <option value="kidney">Kidney problem</option>
+        <option value="kidney">Kidney</option>
+        <option value="ckd">CKD</option>
+        <option value="osteoporosis">Osteoporosis</option>
+        <option value="osteopenia">Osteopenia</option>
         <option value="anxiety">Anxiety</option>
-        <option value="dementia">Cognitive problems</option>
-        <option value="heart">Heart problem</option>
-        <option value="infection">Infection</option>
+        <option value="clostridium">Clostridium difficile</option>
+        <option value="dementia">Dementia</option>
       </select>
 
       {/*---------------------------------------------------------------------------------------------------------*/}
-      <p className="post_elementheaderbar">nutrient def</p>
+      <p className="post_elementheaderbar">nutrient deficiency</p>
 
       <span className="header_border_tag" onClick={() => {
         this.callFilterPost('http://projectsgono.com/medsforlife/appcall/drug_nutrient_post.php', 'Ca');
         this.callFilterData('http://projectsgono.com/medsforlife/appcall/drug_nutrient_data.php', 'Ca');
         this.callFilterRest('http://projectsgono.com/medsforlife/appcall/drug_nutrient_rest.php', 'Ca');
-      }}>Ca</span>
+      }}>Calcium</span>
       <span className="header_border_tag" onClick={() => {
-        this.callFilterPost('http://projectsgono.com/medsforlife/appcall/drug_nutrient_post.php', 'Mg');
-        this.callFilterData('http://projectsgono.com/medsforlife/appcall/drug_nutrient_data.php', 'Mg');
-        this.callFilterRest('http://projectsgono.com/medsforlife/appcall/drug_nutrient_rest.php', 'Mg');
-      }}>Mg</span>
+        this.callFilterPost('http://projectsgono.com/medsforlife/appcall/drug_nutrient_post.php', 'Mag');
+        this.callFilterData('http://projectsgono.com/medsforlife/appcall/drug_nutrient_data.php', 'Mag');
+        this.callFilterRest('http://projectsgono.com/medsforlife/appcall/drug_nutrient_rest.php', 'Mag');
+      }}>Magnesium</span>
       <span className="header_border_tag" onClick={() => {
-        this.callFilterPost('http://projectsgono.com/medsforlife/appcall/drug_nutrient_post.php', 'Fe');
-        this.callFilterData('http://projectsgono.com/medsforlife/appcall/drug_nutrient_data.php', 'Fe');
-        this.callFilterRest('http://projectsgono.com/medsforlife/appcall/drug_nutrient_rest.php', 'Fe');
-      }}>Fe</span>
+        this.callFilterPost('http://projectsgono.com/medsforlife/appcall/drug_nutrient_post.php', 'Iron');
+        this.callFilterData('http://projectsgono.com/medsforlife/appcall/drug_nutrient_data.php', 'Iron');
+        this.callFilterRest('http://projectsgono.com/medsforlife/appcall/drug_nutrient_rest.php', 'Iron');
+      }}>Iron</span>
       <span className="header_border_tag" onClick={() => {
         this.callFilterPost('http://projectsgono.com/medsforlife/appcall/drug_nutrient_post.php', 'B12');
         this.callFilterData('http://projectsgono.com/medsforlife/appcall/drug_nutrient_data.php', 'B12');
