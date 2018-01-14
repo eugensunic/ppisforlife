@@ -181,12 +181,19 @@ export default class Patientpost extends React.Component {
                         <Postheadersecond age={array_data[this.findIndexOf(array_data,item1.newid,"id2")].age} gender={array_data[this.findIndexOf(array_data,item1.newid,"id2")].sex}></Postheadersecond>
                         <Postmain bg_color={this.props.bg_color_post} content_cite={item1.content_cite} number={item1.newid}></Postmain>
                         <Postfooter
-                          generic={array_data[this.findIndexOf(array_data,item1.newid,"id2")].generic} brand={array_data[this.findIndexOf(array_data,item1.newid,"id2")].brand}
-                          duration={array_data[this.findIndexOf(array_data,item1.newid,"id2")].duration} time={this.displayTime(array_data[this.findIndexOf(array_data,item1.newid,"id2")].globaltime_duration)} dosage={array_data[this.findIndexOf(array_data,item1.newid,"id2")].dosage+"mg"} daily={array_data[this.findIndexOf(array_data,item1.newid,"id2")].dailyuse}
-                            condition={this.removeDuplicate(this.getMultipleValue(array_rest,item1.newid,"condition","id2"))} hpylori={array_data[this.findIndexOf(array_data,item1.newid,"id2")].hpylori} side={this.removeDuplicate(this.getMultipleValue(array_rest,item1.newid,"side","id2"))}
-                            ppi_condition={this.removeDuplicate(this.getMultipleValue(array_rest,item1.newid,"ppi_condition","id2"))}
-                            other={this.removeDuplicate(this.getMultipleValue(array_data,item1.newid,"other_drug_name","id2"))} used={this.removeDuplicate(this.getMultipleValue(array_data,item1.newid,"used","id2"))}
-                            nutrient={this.removeDuplicate(this.getMultipleValue(array_rest,item1.newid,"nutrient","id2"))} >
+                          generic={array_data[this.findIndexOf(array_data,item1.newid,"id2")].generic}
+                          brand={array_data[this.findIndexOf(array_data,item1.newid,"id2")].brand}
+                          duration={array_data[this.findIndexOf(array_data,item1.newid,"id2")].duration}
+                          time={this.displayTime(array_data[this.findIndexOf(array_data,item1.newid,"id2")].globaltime_duration)} 
+                          dosage={array_data[this.findIndexOf(array_data,item1.newid,"id2")].dosage+"mg"}
+                          daily={array_data[this.findIndexOf(array_data,item1.newid,"id2")].dailyuse}
+                          condition={this.removeDuplicate(this.getMultipleValue(array_rest,item1.newid,"condition","id2"))}
+                          hpylori={array_data[this.findIndexOf(array_data,item1.newid,"id2")].hpylori}
+                          side={this.removeDuplicate(this.getMultipleValue(array_rest,item1.newid,"side","id2"))}
+                          ppi_condition={this.removeDuplicate(this.getMultipleValue(array_rest,item1.newid,"ppi_condition","id2"))}
+                          other={this.removeDuplicate(this.getMultipleValue(array_data,item1.newid,"other_drug_name","id2"))}
+                          used={this.removeDuplicate(this.getMultipleValue(array_data,item1.newid,"used","id2"))}
+                          nutrient={this.removeDuplicate(this.getMultipleValue(array_rest,item1.newid,"nutrient","id2"))} >
                           </Postfooter>
                           </div>);
                       })
