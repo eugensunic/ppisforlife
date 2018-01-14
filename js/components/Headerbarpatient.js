@@ -238,37 +238,42 @@ export default class Headerbarpatient extends React.Component {
       {/*---------------------------------------------------------------------------------------------------------*/}
       <p className="post_elementheaderbar">url-source</p>
 
-      <select name="url_drop" className={""} onChange={() => {
+      <select name="url_drop" className={""} onChange={(e) => {
         let param=e.nativeEvent.target[e.nativeEvent.target.selectedIndex].text.trim();
         this.callFilterPost('http://projectsgono.com/medsforlife/appcall/drug_sourceurl_post.php', param);
         this.callFilterData('http://projectsgono.com/medsforlife/appcall/drug_sourceurl_data.php', param);
         this.callFilterRest('http://projectsgono.com/medsforlife/appcall/drug_sourceurl_rest.php', param);
       }} defaultValue="">
         <option value="" style={{display:'none'}} defaultValue="selected" label="choose url"></option>
-        <option value="kidney">Patient info</option>
-        <option value="anxiety">PeoplesPharmacy</option>
-        <option value="dementia">DailyMail</option>
-        <option value="heart">BarrettsCampaign</option>
+        <option value="patientinf">patient.info</option>
+        <option value="peoplepharma">peoplespharmacy</option>
+        <option value="dailymail">dailymail</option>
+        <option value="reddit">reddit</option>
+        <option value="barrettscampaign">barrettscampaign</option>
+        <option value="crhiskresser">chriskresser.com</option>
+        <option value="nytimes">nytimes</option>
+        <option value="healingwell">healingwell</option>
+
       </select>
 
       {/*---------------------------------------------------------------------------------------------------------*/}
       <p className="post_elementheaderbar">year-posted</p>
 
       <span className="header_border_tag" onClick={() => {
-        this.callFilterPost('http://projectsgono.com/medsforlife/appcall/drug_date_post.php', '2000');
-        this.callFilterData('http://projectsgono.com/medsforlife/appcall/drug_date_data.php', '2000');
-        this.callFilterRest('http://projectsgono.com/medsforlife/appcall/drug_date_rest.php', '2000');
-      }}>&#8592;2000</span>
+        this.callFilterPost('http://projectsgono.com/medsforlife/appcall/drug_date_post.php', 2005, 2010);
+        this.callFilterData('http://projectsgono.com/medsforlife/appcall/drug_date_data.php', 2005, 2010);
+        this.callFilterRest('http://projectsgono.com/medsforlife/appcall/drug_date_rest.php', 2005, 2010);
+      }}>2005 - 2010</span>
       <span className="header_border_tag" onClick={() => {
-        this.callFilterPost('http://projectsgono.com/medsforlife/appcall/drug_date_post.php', '2010');
-        this.callFilterData('http://projectsgono.com/medsforlife/appcall/drug_date_data.php', '2010');
-        this.callFilterRest('http://projectsgono.com/medsforlife/appcall/drug_date_rest.php', '2010');
-      }}>2000-2010</span>
+        this.callFilterPost('http://projectsgono.com/medsforlife/appcall/drug_date_post.php', 2011, 2015);
+        this.callFilterData('http://projectsgono.com/medsforlife/appcall/drug_date_data.php', 2011, 2015);
+        this.callFilterRest('http://projectsgono.com/medsforlife/appcall/drug_date_rest.php', 2011, 2015);
+      }}>2011 - 2015</span>
       <span className="header_border_tag" onClick={() => {
-        this.callFilterPost('http://projectsgono.com/medsforlife/appcall/drug_date_post.php', '2010>');
-        this.callFilterData('http://projectsgono.com/medsforlife/appcall/drug_date_data.php', '2010>');
-        this.callFilterRest('http://projectsgono.com/medsforlife/appcall/drug_date_rest.php', '2010>');
-      }}>2010&#8594;</span>
+        this.callFilterPost('http://projectsgono.com/medsforlife/appcall/drug_date_post.php', 2016, 2020);
+        this.callFilterData('http://projectsgono.com/medsforlife/appcall/drug_date_data.php', 2016, 2020);
+        this.callFilterRest('http://projectsgono.com/medsforlife/appcall/drug_date_rest.php', 2016, 2020);
+      }}>2015&#8594;</span>
 
       {/*---------------------------------------------------------------------------------------------------------*/}
       <p className="post_elementheaderbar">opinion-post</p>

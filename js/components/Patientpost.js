@@ -61,6 +61,7 @@ export default class Patientpost extends React.Component {
   }
   adjustRowId(obj){
    //OVO JE SUPER DOBRO! sve sta ne valja je u bazi zapravo.
+   // again, this seems to be done really really good, despite being On2
     var cnt=0;
     var obj_arr=obj;
     var i=0;
@@ -71,7 +72,6 @@ export default class Patientpost extends React.Component {
         cnt++;
         obj_arr[i]["id2"]=cnt;
         flag=false;
-
         while(obj[i].id==obj[i+1].id){
           ++i;
           obj_arr[i]["id2"]=cnt;
@@ -157,8 +157,8 @@ export default class Patientpost extends React.Component {
     var array_universal=[];
     var array_data=[];
     var array_rest=[];
-
-    if (this.props.filtercall.filter1 && this.props.filtercall.filter2 && this.props.filtercall.filter3){
+   // this is the call for dinamic data (dropdown and span elements)
+    if (this.props.filtercall.filter1 && this.props.filtercall.filter2 && this.props.filtercall.filter3) {
 
       array_universal=user.getIntervalArray(this.addColumnId(this.props.filtercall.post_array), this.props.bar_change.begin_patient, this.props.bar_change.end_patient); //uvijek 1 manje
       array_data=  this.adjustRowId(this.props.filtercall.data_array);
@@ -167,7 +167,7 @@ export default class Patientpost extends React.Component {
         <div className="">
           <div className="checkbox_holder_about" id="target_div">
             <input className="inline" type="checkbox"  checked={this.state.first_check} onChange={()=> this.setState({first_check:!this.state.first_check})} />
-            <span className="margin-left-3">{this.state.first_check?"hide About":"show aaaaaaut"}</span>
+            <span className="margin-left-3">{this.state.first_check?"hide About":"show about"}</span>
           </div>
           {this.state.first_check?this.aboutWritting():(<Headerbarpatient></Headerbarpatient>)}
           {
@@ -184,7 +184,7 @@ export default class Patientpost extends React.Component {
                           generic={array_data[this.findIndexOf(array_data,item1.newid,"id2")].generic}
                           brand={array_data[this.findIndexOf(array_data,item1.newid,"id2")].brand}
                           duration={array_data[this.findIndexOf(array_data,item1.newid,"id2")].duration}
-                          time={this.displayTime(array_data[this.findIndexOf(array_data,item1.newid,"id2")].globaltime_duration)} 
+                          time={this.displayTime(array_data[this.findIndexOf(array_data,item1.newid,"id2")].globaltime_duration)}
                           dosage={array_data[this.findIndexOf(array_data,item1.newid,"id2")].dosage+"mg"}
                           daily={array_data[this.findIndexOf(array_data,item1.newid,"id2")].dailyuse}
                           condition={this.removeDuplicate(this.getMultipleValue(array_rest,item1.newid,"condition","id2"))}
@@ -194,19 +194,21 @@ export default class Patientpost extends React.Component {
                           other={this.removeDuplicate(this.getMultipleValue(array_data,item1.newid,"other_drug_name","id2"))}
                           used={this.removeDuplicate(this.getMultipleValue(array_data,item1.newid,"used","id2"))}
                           nutrient={this.removeDuplicate(this.getMultipleValue(array_rest,item1.newid,"nutrient","id2"))} >
-                          </Postfooter>
-                          </div>);
-                      })
-                  }
-                  </div>
-                )
-              })
-            }
-              <Barpatient></Barpatient>
-            </div>
+                        </Postfooter>
+                      </div>);
+                  })
+                }
+              </div>
+              )
+            })
+          }
+          <Barpatient></Barpatient>
+        </div>
               );
             }
-            else if (this.props.header.first && this.props.tag1.second && this.props.tag2.third){
+             // this is the initial call, static data (dropdown and span elements)
+             // you should make a copy of these and empty after each call to render the data all at one time
+            else if (this.props.header.first && this.props.tag1.second && this.props.tag2.third) {
               //MORAS ROKNUT begin_patient jer si stavio tak u reduceru
               arrayheader=user.getIntervalArray(this.props.header.name, this.props.bar_change.begin_patient, this.props.bar_change.end_patient); //uvijek 1 manje
               arraytag1= this.props.tag1.name
@@ -232,23 +234,30 @@ export default class Patientpost extends React.Component {
                                 <Postheadersecond age={arraytag2[this.findIndexOf(arraytag2,item1.id,"id")].age} gender={arraytag2[this.findIndexOf(arraytag2,item1.id,"id")].sex}></Postheadersecond>
                                 <Postmain bg_color={this.props.bg_color_post} content_cite={item1.content_cite} number={item1.id}></Postmain>
                                 <Postfooter
-                                  generic={arraytag2[this.findIndexOf(arraytag2,item1.id,"id")].generic} brand={arraytag2[this.findIndexOf(arraytag2,item1.id,"id")].brand}
-                                  duration={arraytag2[this.findIndexOf(arraytag2,item1.id,"id")].duration} time={this.displayTime(arraytag2[this.findIndexOf(arraytag2,item1.id,"id")].globaltime_duration)} dosage={arraytag2[this.findIndexOf(arraytag2,item1.id,"id")].dosage+"mg"} daily={arraytag2[this.findIndexOf(arraytag2,item1.id,"id")].daily}
-                                    condition={this.removeDuplicate(this.getMultipleValue(arraytag1,item1.id,"condition","id"))} hpylori={arraytag2[this.findIndexOf(arraytag2,item1.id,"id")].hpylori} side={this.removeDuplicate(this.getMultipleValue(arraytag1,item1.id,"side","id"))}
-                                    ppi_condition={this.removeDuplicate(this.getMultipleValue(arraytag1,item1.id,"ppi_condition","id"))}
-                                    other={this.removeDuplicate(this.getMultipleValue(arraytag2,item1.id,"other_drug_name","id"))} used={this.removeDuplicate(this.getMultipleValue(arraytag2,item1.id,"used","id"))}
-                                    nutrient={this.removeDuplicate(this.getMultipleValue(arraytag1,item1.id,"nutrient","id"))} >
-                                  </Postfooter>
-                                  </div>);
+                                  generic={arraytag2[this.findIndexOf(arraytag2,item1.id,"id")].generic}
+                                  brand={arraytag2[this.findIndexOf(arraytag2,item1.id,"id")].brand}
+                                  duration={arraytag2[this.findIndexOf(arraytag2,item1.id,"id")].duration}
+                                  time={this.displayTime(arraytag2[this.findIndexOf(arraytag2,item1.id,"id")].globaltime_duration)}
+                                  dosage={arraytag2[this.findIndexOf(arraytag2,item1.id,"id")].dosage+"mg"}
+                                  daily={arraytag2[this.findIndexOf(arraytag2,item1.id,"id")].daily}
+                                  condition={this.removeDuplicate(this.getMultipleValue(arraytag1,item1.id,"condition","id"))}
+                                  hpylori={arraytag2[this.findIndexOf(arraytag2,item1.id,"id")].hpylori}
+                                  side={this.removeDuplicate(this.getMultipleValue(arraytag1,item1.id,"side","id"))}
+                                  ppi_condition={this.removeDuplicate(this.getMultipleValue(arraytag1,item1.id,"ppi_condition","id"))}
+                                  other={this.removeDuplicate(this.getMultipleValue(arraytag2,item1.id,"other_drug_name","id"))}
+                                  used={this.removeDuplicate(this.getMultipleValue(arraytag2,item1.id,"used","id"))}
+                                  nutrient={this.removeDuplicate(this.getMultipleValue(arraytag1,item1.id,"nutrient","id"))} >
+                                </Postfooter>
+                              </div>);
 
-                              })
-                          }
-                          </div>
-                        )
-                      })
-                    }
-                      <Barpatient></Barpatient>
-                    </div>
+                          })
+                        }
+                      </div>
+                      )
+                    })
+                  }
+                  <Barpatient></Barpatient>
+                </div>
                       );
                     }
                     return(
