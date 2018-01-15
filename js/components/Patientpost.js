@@ -57,7 +57,9 @@ export default class Patientpost extends React.Component {
   for (let i = 0; i < obj.length; i++) {
     obj_arr[i]["newid"] = i + 1;
   }
-      
+  return obj_arr;
+}
+
   adjustRowId(obj) {
     //OVO JE SUPER DOBRO! sve sta ne valja je u bazi zapravo.
     var cnt = 0;
