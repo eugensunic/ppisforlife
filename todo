@@ -1,22 +1,26 @@
 
   TODO
   ----
-  1. http get with params and introduce params on backend php
+  1. Fill info with doctors from medscape articles on PPIs
   2. research just put params for the time being
   3. create quick database for upcoming data, abandon big database
-  4. introduce change background localStorage, introduce themes make them on index.html so they are global
-  5. include fonts, include this int theme only, don't default it
-  6. include blog tag in header row (ma internal page for posts writing)
-  7. Make relative links once in production
+  10. Try to route numbers when click on a number so that back button works, route patient, doctor, pharma also, window.pushState maybe
+
+
+  WHAT YOU''LL DO IN 1 DAY ON SATURDAY 20.01.2018.
+  -----------------------------------------------
+  3. Adjust GERD header when criteria selected (style it)
+  4. introduce change themes (fonts, background, font color) localStorage, introduce themes make them on index.html so they are global
   8. Reactive select on input-page does not go away when clicking outside the dropdown,
   9. Fix inputs, allow no char other than numbers
-  10. Try to route numbers when click on a number so that back button works
   11. Add percentage sign to stats next to percentage
   12. Remove acid reflux just keep GERD
-
+  13. ORIGINAL refreshes, call the initial call instead on all 3 tags
+  14. FAQ css, tips calculation, statistics write info below other stats, cover all
 
   REFACTORING
   -----------
+  - make relative links once in production
   - remove inline styles make similar to CS-Manfred classes
   - add css to one file only
   - '' instead of ""
@@ -50,6 +54,7 @@
    - put images which are not there now
    - css again the post doctor and pharmacy text
    - Add routing
+   - http get with params and introduce params on backend php
 
   NOTES
   -----
