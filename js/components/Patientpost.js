@@ -52,104 +52,109 @@ export default class Patientpost extends React.Component {
 
     </div>);
   }
-  addColumnId(obj){
-    var obj_arr=obj;
-    for (let i = 0; i <obj.length; i++) {
-       obj_arr[i]["newid"]=i+1;
-    }
-    return obj_arr;
+  addColumnId(obj) {
+  var obj_arr = obj;
+  for (let i = 0; i < obj.length; i++) {
+    obj_arr[i]["newid"] = i + 1;
   }
-  adjustRowId(obj){
-   //OVO JE SUPER DOBRO! sve sta ne valja je u bazi zapravo.
-   // again, this seems to be done really really good, despite being On2
-    var cnt=0;
-    var obj_arr=obj;
-    var i=0;
-    var flag=false;
-    var templen=obj.length-1;
-    var total_break=false;
-  while(i < obj.length-1){
-        cnt++;
-        obj_arr[i]["id2"]=cnt;
-        flag=false;
-        while(obj[i].id==obj[i+1].id){
-          ++i;
-          obj_arr[i]["id2"]=cnt;
-          flag=true;
-          //console.log(obj[i].id+"index"+i+"total length"+(templen)+"flag"+flag);
-          if (i!=templen){
-            if (obj[i].id!=obj[i+1].id){
+      
+  adjustRowId(obj) {
+    //OVO JE SUPER DOBRO! sve sta ne valja je u bazi zapravo.
+    var cnt = 0;
+    var obj_arr = obj;
+    var i = 0;
+    var flag = false;
+    var templen = obj.length - 1;
+    var total_break = false;
+    while (i < obj.length - 1) {
+      cnt++;
+      obj_arr[i]["id2"] = cnt;
+      flag = false;
+
+      while (obj[i].id == obj[i + 1].id) {
+        ++i;
+        obj_arr[i]["id2"] = cnt;
+        flag = true;
+        //console.log(obj[i].id+"index"+i+"total length"+(templen)+"flag"+flag);
+        if (i != templen) {
+          if (obj[i].id != obj[i + 1].id) {
             i++;
             break;
           }
-       }
-          else{total_break=true;break;}
+        } else {
+          total_break = true;
+          break;
+        }
+
+      }
+      if (total_break) {
+        break;
+      }
+      if (flag == false) {
+        ++i;
+      }
+      if (i == obj.length - 1) {
+        cnt++;
+        obj_arr[i]["id2"] = cnt;
+      }
 
     }
-        if (total_break){break;}
-        if (flag==false){
-           ++i;
-        }
-        if (i==obj.length-1){
-           cnt++;
-           obj_arr[i]["id2"]=cnt;
-        }
 
-}
-
-    console.log("COUNTER VALUE: "+cnt);
-  return obj_arr;
-}
-  removeDuplicate(arr){
+    console.log("COUNTER VALUE: " + cnt);
+    return obj_arr;
+  }
+  removeDuplicate(arr) {
     var obj = {};
     var newarr = [];
     for (var i = 0; i < arr.length; i++) {
-          obj[arr[i]] = true;
-      }
+      obj[arr[i]] = true;
+    }
     for (var key in obj) {
-          newarr.push(key);
-      }
+      newarr.push(key);
+    }
     return newarr;
   }
-  getMultipleValue(arr,id,name,id_name){
+  getMultipleValue(arr, id, name, id_name) {
 
-    var newarr=[];
+    var newarr = [];
     var temp;
-    for (var i = id-1; i < arr.length; i++) {
-    //if (temp!=arr[i][id_name] && temp!=undefined){break;}
-    if (arr[i][id_name]==id){
-      //console.log("mutliple value:"+ arr[i][id_name]);
-        temp=arr[i][id_name];
-        newarr.push(arr[i][name]+" ");
+    for (var i = id - 1; i < arr.length; i++) {
+      //if (temp!=arr[i][id_name] && temp!=undefined){break;}
+      if (arr[i][id_name] == id) {
+        //console.log("mutliple value:"+ arr[i][id_name]);
+        temp = arr[i][id_name];
+        newarr.push(arr[i][name] + " ");
+      }
     }
-  }
     return newarr;
   }
-  displayTime(i){
-    switch(parseInt(i)){
+  displayTime(i) {
+    switch (parseInt(i)) {
       case 1:
-      return " unknown";
+        return " unknown";
       case 2:
-      return " day";
+        return " day";
       case 3:
-      return " week";
+        return " week";
       case 4:
-      return " month";
+        return " month";
       case 5:
-      return " year";
+        return " year";
 
     }
   }
-  findIndexOf(arr,id,name){
-    var index=0;
-  for (var i = id-1; i < arr.length; i++) {
-       if (id==arr[i][name]){
-         index=i;
-         break;
-       }
+  findIndexOf(arr, id, name) {
+    var index = 0;
+    for (var i = id - 1; i < arr.length; i++) {
+      if (id == arr[i][name]) {
+        index = i;
+        break;
+      }
+    }
+    return index;
   }
-     return index;
-}
+
+
   render() {
     var arrayheader=[]; //post table
     var arraytag2=[];   //data table

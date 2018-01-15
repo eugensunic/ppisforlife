@@ -39,6 +39,7 @@ COLORS: https://uigradients.com/#Clouds
 
 DATABASE
 --------
+
 - last data is 1207 in post id, data id, everything below that is fixed as from 31.12.2017.
 
 
@@ -56,3 +57,5 @@ DONE
  - always delete branch when you finished with it (when merged to master)
  - in post php data (not the main one, all the other ones) put order by asc and put distinct id, because sometimes you get doubles and
  things get messed up when associating on frontend.
+
+brand-nexium data, post, rest all id's match perfectly
