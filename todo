@@ -18,6 +18,10 @@
   13. ORIGINAL refreshes, call the initial call instead on all 3 tags
   14. FAQ css, tips calculation, statistics write info below other stats, cover all
 
+  WHAT YOU''LL DO IN 1 DAY ON SUNDAY 21.01.2018.
+  ------------------------------------------------
+  1. rewrite PHP calls for stats page to prepared statement
+
   REFACTORING
   -----------
   - make relative links once in production
