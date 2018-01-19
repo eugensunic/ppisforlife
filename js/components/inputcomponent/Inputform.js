@@ -206,6 +206,7 @@ sendDataToDatabase(){
   //display data from first section
   //basic
    console.log("BASIC")
+   console.log("--------------------------");
   console.log("age value: "+this.props.basic.age)
   console.log("weight value: "+this.props.basic.weight)
   console.log("weight si value: "+this.props.basic.weight_select)
@@ -215,11 +216,17 @@ sendDataToDatabase(){
   console.log("race value: "+this.props.basic.race)
   //condition
    console.log("CONDITION")
+   console.log("--------------------------");
   console.log("gastro value: "+this.props.condition.gastro)
+  for(var key in this.props.condition.gastro) {
+    console.log(this.props.condition.gastro[key]);
+  }
   console.log("other value: "+this.props.condition.other)
   console.log("ppi si value: "+this.props.condition.ppi)
+
   //drugs
     console.log("DRUGS")
+    console.log("--------------------------");
    console.log("generic value: "+this.props.drug.generic1)
    console.log("brand value: "+this.props.drug.brand1)
    console.log("dosage si value: "+this.props.drug.dosage1)
@@ -229,6 +236,7 @@ sendDataToDatabase(){
    //display data from second section
    //sides
    console.log("SIDES")
+   console.log("--------------------------");
   console.log("radio value: "+this.props.sides.radio_side)
   console.log("side1 value: "+this.props.sides.effect1)
   console.log("side2 si value: "+this.props.sides.effect2)
@@ -237,15 +245,18 @@ sendDataToDatabase(){
   console.log("general value: "+this.props.sides.side_effect_general)
   //other
    console.log("OTHER DRUG")
+   console.log("--------------------------");
 
   console.log("radio value: "+this.props.other.radio_other)
   console.log("other drug value: "+this.props.other.otherdrug)
   //nutrient
    console.log("NUTRIENT")
+   console.log("--------------------------");
   console.log("radio value: "+this.props.nutrient.radio_nutrient)
   console.log("nutrient: "+this.props.nutrient.nutrient)
   //natural
    console.log("NATURAL")
+   console.log("--------------------------");
   console.log("helped: "+this.props.natural.naturalhelped)
   console.log("not helped: "+this.props.natural.naturalnothelped)
   //extra
