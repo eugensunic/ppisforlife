@@ -17,7 +17,9 @@ import Success from './Buttonsuccess.js'
 import Navbar from '../Navbar.js'
 import Navfooter from '../Navfooter.js'
 
+import * as databaseCall from "../../actions/asyncCAll.js"
 import * as user from "./Functions.js"
+  import axios from "axios";
 
 @connect((store) => {
   return {
@@ -29,8 +31,8 @@ import * as user from "./Functions.js"
     nutrient:store.nutrient,
     natural:store.natural,
     extra:store.extra,
-    other:store.other
-
+    other:store.other,
+    getId:store.getId
 
   };
 })
@@ -41,6 +43,13 @@ export default class Inputform extends React.Component {
      this.state = ({add_drug_one:false,add_drug_two:false,add_drug_three:false,add_drug_four:false,success:false,
        clicked:false,new_success:false,clicked2:false,final_success:false,warning_clicked:false, proceed_main_clicked:false, mgcondition:{marginTop:0}
      });
+     console.log("issuing")
+    this.props.dispatch(databaseCall.asyncAll('http://www.projectsgono.com/medsforlife/ppi_input/get_last_id.php',
+    'get-max-id',
+     null,
+     databaseCall.postRequest('http://projectsgono.com/medsforlife/ppi_input/basic.php',25,2,3,'nes',0,'as','assdf','asdfas')
+   ))
+
    }
    updateDimensions(){
      if (window.innerWidth<992){
@@ -56,11 +65,24 @@ export default class Inputform extends React.Component {
    }
    componentDidMount(){
      window.addEventListener("resize", this.updateDimensions);
+     // if (this.props.getId.getFlag) {
+      console.log((parseInt(this.props.getId.getLastId[0].id)) + 1);
+       // console.log("I HAVE THE ID!!!");
+       //  console.log("should update here: " + this.props.getId.getLastId[0].id);
+       //databaseCall.postRequest('http://projectsgono.com/medsforlife/ppi_input/basic.php',(parseInt(this.props.getId.getLastId[0].id)) + 1,2,3,'nes',0,'as','assdf','asdfas');
+     //}
    }
    componentWillUnmount(){
      window.removeEventListener('resize', this.updateDimensions);
    }
    componentDidUpdate(){
+     // if (this.props.getId.getFlag) {
+       // this.props.getId.getFlag=false;
+       // console.log("I HAVE THE ID!!! " + this.props.getId.getFlag);
+       //  console.log("should update here: " + this.props.getId.getLastId[0].id);
+       // databaseCall.postRequest('http://projectsgono.com/medsforlife/ppi_input/basic.php',(parseInt(this.props.getId.getLastId[0].id)) + 1,2,3,'nes',0,'as','assdf','asdfas');
+       //
+     // }
    }
 
   successConfirm(){
@@ -214,6 +236,16 @@ sendDataToDatabase(){
   console.log("height si value: "+this.props.basic.height_select)
   console.log("gender value: "+this.props.basic.gender)
   console.log("race value: "+this.props.basic.race)
+
+  databaseCall.postRequest('http://projectsgono.com/medsforlife/ppi_input/basic.php',
+   1,
+   this.props.basic.age,
+   this.props.basic.weight,
+   this.props.basic.weight_select,
+   this.props.basic.height,
+   this.props.basic.height_select,
+   this.props.basic.gender,
+   this.props.basic.race)
   //condition
    console.log("CONDITION")
    console.log("--------------------------");
@@ -274,6 +306,11 @@ sendDataToDatabase(){
   console.log("overall: "+this.props.extra.overall)
   console.log("good: "+this.props.extra.good)
   console.log("pylori: "+this.props.extra.pylori)
+
+  //-----------------------------------------------------------
+  // POST SEND PARAMS
+  //-----------------------------------------------------------
+
 
 
 

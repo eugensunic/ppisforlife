@@ -5,6 +5,7 @@ import tag2 from "./asynctag2"
 import header from "./asyncheader"
 
 import filtercall from "./filtersql"
+import getId from "./getmax"
 import bar_change from "./barchange"
 
 import data_input from "./datainputpage/datainput"
@@ -39,6 +40,7 @@ export default combineReducers({
   header,
   bar_change,
   filtercall,
+  getId,
   data_input,
   basic,
   condition,
