@@ -47,13 +47,14 @@ export default class Inputform extends React.Component {
 
      this.props.dispatch(user.getRequest('http://www.projectsgono.com/medsforlife/ppi_input/get_last_id.php', 'get-max-id')).then(()=>{
        user.postRequest('http://projectsgono.com/medsforlife/ppi_input/basic.php', this.props.getId.getLastId, 2, 3,'nes', 0,'as','assdf','asdfas').then(()=>{
-       // user.postRequest('http://projectsgono.com/medsforlife/ppi_input/basic.php', 
+       // user.postRequest('http://projectsgono.com/medsforlife/ppi_input/basic.php',
        // this.props.getId.getLastId, 2, 3,'nes', 0,'as','assdf','asdfas');
        });
      });
 
 
    }
+
    updateDimensions(){
      if (window.innerWidth<992){
        console.log("INSIDE");
