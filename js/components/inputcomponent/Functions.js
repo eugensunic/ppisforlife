@@ -1,6 +1,31 @@
   import store from "../../store.js"
+  import axios from "axios";
 
+  export function getRequest(url_id, dispatch_name) {
+    return function(dispatch) {
+      return axios.get(url_id)
+        .then((response)=>{
+          dispatch({type:dispatch_name, payload:parseInt(response.data[0]['id'])});
+      })
+        .catch((err)=>{
+         console.log("this is an error"+ err);
+      })
+  }
+}
 
+   export function postRequest(url, ...args) {
+    let params = new URLSearchParams();
+    for (let i in args) {
+      params.append('param_' + i, args[i]);
+    }
+    return axios.post(url, params)
+      .then(response => {
+        alert("data succesfully posted to database");
+    })
+      .catch((err)=>{
+       console.log("post request error: "+ err);
+    })
+  }
   export function isValidString(val){
     console.log("value of input box is:"+val)
     if (val!=undefined){

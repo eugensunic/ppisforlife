@@ -15,9 +15,10 @@
         .then((response)=>{
           dispatch({type:name,payload:response.data})
           output=true;
-          if (callback) {
-             callback();
-          }
+
+            console.log("went to callback")
+             callback;
+
       })
          .catch((err)=>{
           dispatch({type:"FAIL",payload:err});
