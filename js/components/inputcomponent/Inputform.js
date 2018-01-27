@@ -45,14 +45,53 @@ export default class Inputform extends React.Component {
        clicked:false,new_success:false,clicked2:false,final_success:false,warning_clicked:false, proceed_main_clicked:false, mgcondition:{marginTop:0}
      });
 
-     this.props.dispatch(user.getRequest('http://www.projectsgono.com/medsforlife/ppi_input/get_last_id.php', 'get-max-id')).then(()=>{
-       user.postRequest('http://projectsgono.com/medsforlife/ppi_input/basic.php', this.props.getId.getLastId, 2, 3,'nes', 0,'as','assdf','asdfas').then(()=>{
-       // user.postRequest('http://projectsgono.com/medsforlife/ppi_input/basic.php',
-       // this.props.getId.getLastId, 2, 3,'nes', 0,'as','assdf','asdfas');
+     this.props.dispatch(user.getRequest('http://www.projectsgono.com/medsforlife/ppi_input/get_last_id.php', 'get-max-id')).then(()=> {
+       let FK_id = this.props.getId.getLastId;
+       user.postRequest('http://projectsgono.com/medsforlife/ppi_input/basic.php', FK_id, 2, 3,'nes', 0,'as','assdf','asdfas').then(()=> {
+        user.postRequest('http://projectsgono.com/medsforlife/ppi_input/all_other.php',
+        ['acid reflux', 'GERD', 'achalasia'],
+        ['acid reflux', 'GERD'],
+        ['acid reflux'],
+        FK_id,
+
+        ['esomeprazole'],
+        ['nexium'],
+        [20],
+        [3],
+        ['year'],
+        ['yes'],
+
+        ['arm pain','feet pain', 'other pain'],
+
+        ['domperidone','ranitidine', 'sucralfate'],
+
+        ['calcium','magnesium', 'iron'],
+
+        ['rosemarie','ginger', 'ACV'],
+        ['calcium'],
+
+        'hpylori',
+        'exeric',
+        'smoke',
+        'alcocohol',
+        'obese',
+        'healthy eat',
+        'stres',
+        'familly',
+        'anx',
+        'gl',
+        'lac',
+        'substitute',
+        'off drug',
+        'acid rebound',
+        'overall experience'
+
+
+        ).then(()=> {
+            user.postRequest('http://projectsgono.com/medsforlife/ppi_input/side_effect_ppi_drug.php',
+        });
        });
      });
-
-
    }
 
    updateDimensions(){
@@ -261,6 +300,9 @@ sendDataToDatabase(){
   console.log("ppi si value: "+this.props.condition.ppi)
 
   //drugs
+  // you will have to put this into an array, don't send evetything
+  // to the backend just stuff that you need to send. send array anyways no matter if just
+  // one element is inside
     console.log("DRUGS")
     console.log("--------------------------");
    console.log("generic value: "+this.props.drug.generic1)

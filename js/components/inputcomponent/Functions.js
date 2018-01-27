@@ -5,7 +5,7 @@
     return function(dispatch) {
       return axios.get(url_id)
         .then((response)=>{
-          dispatch({type:dispatch_name, payload:parseInt(response.data[0]['id'])});
+          dispatch({type:dispatch_name, payload:response.data[0]['id'] });
       })
         .catch((err)=>{
          console.log("this is an error"+ err);
@@ -20,7 +20,8 @@
     }
     return axios.post(url, params)
       .then(response => {
-        alert("data succesfully posted to database");
+        alert("data succesfully posted to database: "+ response);
+        console.log(response);
     })
       .catch((err)=>{
        console.log("post request error: "+ err);

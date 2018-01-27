@@ -34,7 +34,7 @@
     }
     axios.post(url, params)
       .then(response => {
-        alert("Data succesfully posted to database");
+        alert("Data succesfully posted to database: "+ response);
     })
       .catch((err)=>{
         ("Error, data wasn't posted to database");
