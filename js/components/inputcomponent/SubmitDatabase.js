@@ -61,201 +61,201 @@
 
   export extraExercise(one, two, three, four, five) {
      if (one) {
-      return '';
+      return 'daily';
      }
      if (two) {
-      return '';
+      return 'few times per week';
      }
      if (three) {
-      return '';
+      return 'few times per month';
      }
      if (four) {
-      return '';
+      return 'few times a year';
      }
      if (five) {
-      return '';
+      return 'never';
      }
     return 'unknown';
   }
 
   export extraSmoke(one, two, three, four, five) {
      if (one) {
-      return '';
+      return 'daily';
      }
      if (two) {
-      return '';
+      return 'few times per week';
      }
      if (three) {
-      return '';
+      return 'few times per month';
      }
      if (four) {
-      return '';
+      return 'few times a year';
      }
      if (five) {
-      return '';
+      return 'never';
      }
     return 'unknown';
   }
 
   export extraAlcohol(one, two, three, four, five) {
      if (one) {
-      return '';
+      return 'daily';
      }
      if (two) {
-      return '';
+      return 'few times per week';
      }
      if (three) {
-      return '';
+      return 'few times per month';
      }
      if (four) {
-      return '';
+      return 'few times a year';
      }
      if (five) {
-      return '';
+      return 'never';
      }
     return 'unknown';
   }
 
   export extraObese(one, two, three, four) {
      if (one) {
-      return '';
+      return 'yes';
      }
      if (two) {
-      return '';
+      return 'no';
      }
      if (three) {
-      return '';
+      return 'little';
      }
      if (four) {
-      return '';
+      return 'not sure';
      }
     return 'unknown';
   }
 
   export extraEat(one, two, three, four, five) {
      if (one) {
-      return '';
+      return 'daily';
      }
      if (two) {
-      return '';
+      return 'few times per week';
      }
      if (three) {
-      return '';
+      return 'few times per month';
      }
      if (four) {
-      return '';
+      return 'few times a year';
      }
      if (five) {
-      return '';
+      return 'rarely eat healthy';
      }
     return 'unknown';
   }
 
   export extraStress(one, two, three, four, five) {
      if (one) {
-      return '';
+      return 'yes';
      }
      if (two) {
-      return '';
+      return 'no';
      }
      if (three) {
-      return '';
+      return 'sometimes';
      }
      if (four) {
-      return '';
+      return 'rarely get stressed';
      }
      if (five) {
-      return '';
+      return 'not sure';
      }
     return 'unknown';
   }
 
   export extraAnxiety(one, two, three, four) {
      if (one) {
-      return '';
+      return 'yes';
      }
      if (two) {
-      return '';
+      return 'no';
      }
      if (three) {
-      return '';
+      return 'maybe';
      }
      if (four) {
-      return '';
+      return 'dont know';
      }
     return 'unknown';
   }
 
   export extraFamily(one, two, three) {
      if (one) {
-      return '';
+      return 'yes';
      }
      if (two) {
-      return '';
+      return 'no';
      }
      if (three) {
-      return '';
+      return 'dont know';
      }
     return 'unknown';
   }
 
   export extraGluten(one, two, three) {
      if (one) {
-      return '';
+      return 'yes';
      }
      if (two) {
-      return '';
+      return 'no';
      }
      if (three) {
-      return '';
+      return 'dont know';
      }
     return 'unknown';
   }
 
   export extraLactose(one, two, three) {
      if (one) {
-      return '';
+      return 'yes';
      }
      if (two) {
-      return '';
+      return 'no';
      }
      if (three) {
-      return '';
+      return 'dont know';
      }
     return 'unknown';
   }
 
   export extraAcid(one, two, three, four) {
      if (one) {
-      return '';
+      return 'yes';
      }
      if (two) {
-      return '';
+      return 'no';
      }
      if (three) {
-      return '';
+      return 'sometimes';
      }
      if (four) {
-      return '';
+      return 'dont know';
      }
     return 'unknown';
   }
 
   export extraOverall(one, two, three, four, five) {
      if (one) {
-      return '';
+      return 'very satisfied';
      }
      if (two) {
-      return '';
+      return 'satisfied';
      }
      if (three) {
-      return '';
+      return 'good';
      }
      if (four) {
-      return '';
+      return 'poor';
      }
      if (five) {
-      return '';
+      return 'horrible';
      }
     return 'unknown';
   }
@@ -278,13 +278,13 @@
 
   export extraPylori(one, two, three) {
      if (one) {
-      return '';
+      return 'yes';
      }
      if (two) {
-      return '';
+      return 'no';
      }
      if (three) {
-      return '';
+      return 'dont know';
     }
     return 'unknown';
   }
