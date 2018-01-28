@@ -17,7 +17,6 @@ import Success from './Buttonsuccess.js'
 import Navbar from '../Navbar.js'
 import Navfooter from '../Navfooter.js'
 
-import * as databaseCall from "../../actions/asyncCAll.js"
 import * as user from "./Functions.js"
 import axios from "axios";
 
@@ -88,8 +87,13 @@ export default class Inputform extends React.Component {
         'overall experience'
 
         ).then(()=> {
+          // 3 is the array amount which you will calculate on the frontend side...
+          // all arrays have to have same lenght when you send to database!
             user.postRequest('http://projectsgono.com/medsforlife/ppi_input/side_effect_ppi_drug.php',
-            ['first side','second side', 'third side'])
+            3,
+            ['first side','first side2', 'first side3'],
+            ['first side','first side2', 'first side3'],
+            ['first side','first side2', 'first side3'])
             .then(()=> {alert("Form completed, thank you!")
           }).catch((err)=>{
               alert("Error occured, please try again");
@@ -119,24 +123,11 @@ export default class Inputform extends React.Component {
    }
    componentDidMount(){
      window.addEventListener("resize", this.updateDimensions);
-     // if (this.props.getId.getFlag) {
-
-       // console.log("I HAVE THE ID!!!");
-       //  console.log("should update here: " + this.props.getId.getLastId[0].id);
-       //databaseCall.postRequest('http://projectsgono.com/medsforlife/ppi_input/basic.php',(parseInt(this.props.getId.getLastId[0].id)) + 1,2,3,'nes',0,'as','assdf','asdfas');
-     //}
    }
    componentWillUnmount(){
      window.removeEventListener('resize', this.updateDimensions);
    }
    componentDidUpdate(){
-     // if (this.props.getId.getFlag) {
-       // this.props.getId.getFlag=false;
-       // console.log("I HAVE THE ID!!! " + this.props.getId.getFlag);
-       //  console.log("should update here: " + this.props.getId.getLastId[0].id);
-       // databaseCall.postRequest('http://projectsgono.com/medsforlife/ppi_input/basic.php',(parseInt(this.props.getId.getLastId[0].id)) + 1,2,3,'nes',0,'as','assdf','asdfas');
-       //
-     // }
    }
 
   successConfirm(){
@@ -291,15 +282,6 @@ sendDataToDatabase(){
   console.log("gender value: "+this.props.basic.gender)
   console.log("race value: "+this.props.basic.race)
 
-  databaseCall.postRequest('http://projectsgono.com/medsforlife/ppi_input/basic.php',
-   1,
-   this.props.basic.age,
-   this.props.basic.weight,
-   this.props.basic.weight_select,
-   this.props.basic.height,
-   this.props.basic.height_select,
-   this.props.basic.gender,
-   this.props.basic.race)
   //condition
    console.log("CONDITION")
    console.log("--------------------------");
