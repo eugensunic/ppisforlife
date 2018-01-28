@@ -48,18 +48,19 @@ export default class Inputform extends React.Component {
      this.props.dispatch(user.getRequest('http://www.projectsgono.com/medsforlife/ppi_input/get_last_id.php', 'get-max-id')).then(()=> {
        let FK_id = this.props.getId.getLastId;
        user.postRequest('http://projectsgono.com/medsforlife/ppi_input/basic.php', FK_id, 2, 3,'nes', 0,'as','assdf','asdfas').then(()=> {
+
         user.postRequest('http://projectsgono.com/medsforlife/ppi_input/all_other.php',
         ['acid reflux', 'GERD', 'achalasia'],
         ['acid reflux', 'GERD'],
         ['acid reflux'],
         FK_id,
 
-        ['esomeprazole'],
-        ['nexium'],
-        [20],
-        [3],
-        ['year'],
-        ['yes'],
+        ['esomeprazole', 'pantoprazole','eastdam'],
+        ['nexium', 'protonix',''],
+        [20, 40, 40],
+        [3, 2, 30],
+        ['year', 'week', ''],
+        ['yes', 'no', ''],
 
         ['arm pain','feet pain', 'other pain'],
 
@@ -86,12 +87,22 @@ export default class Inputform extends React.Component {
         'acid rebound',
         'overall experience'
 
-
         ).then(()=> {
             user.postRequest('http://projectsgono.com/medsforlife/ppi_input/side_effect_ppi_drug.php',
+            ['first side','second side', 'third side'])
+            .then(()=> {alert("Form completed, thank you!")
+          }).catch((err)=>{
+              alert("Error occured, please try again");
+             });
+        }).catch((err)=>{
+            alert("Error occured, please try again");
+           });
+       }).catch((err)=>{
+           alert("Error occured, please try again");
+          });
+     }).catch((err)=>{
+         alert("Error occured, please try again");
         });
-       });
-     });
    }
 
    updateDimensions(){
