@@ -1,4 +1,4 @@
-  export genderValue(one, two, three) {
+  export function genderValue(one, two, three) {
      if (one) {
       return 'male';
      }
@@ -11,7 +11,7 @@
     return 'unknown';
   }
 
-  export raceValue(one, two, three, four, five) {
+  export function raceValue(one, two, three, four, five) {
      if (one) {
       return 'white';
      }
@@ -30,7 +30,7 @@
     return 'unknown';
   }
 
-  export globalTime(one, two, three, four) {
+  export function globalTime(one, two, three, four) {
      if (one) {
       return 'day';
      }
@@ -46,7 +46,7 @@
     return 'unknown';
   }
 
-  export dailyUse(one, two, three) {
+  export function dailyUse(one, two, three) {
      if (one) {
       return 'yes';
      }
@@ -59,7 +59,7 @@
     return 'unknown';
   }
 
-  export extraExercise(one, two, three, four, five) {
+  export function extraExercise(one, two, three, four, five) {
      if (one) {
       return 'daily';
      }
@@ -78,7 +78,7 @@
     return 'unknown';
   }
 
-  export extraSmoke(one, two, three, four, five) {
+  export function extraSmoke(one, two, three, four, five) {
      if (one) {
       return 'daily';
      }
@@ -97,7 +97,7 @@
     return 'unknown';
   }
 
-  export extraAlcohol(one, two, three, four, five) {
+  export function extraAlcohol(one, two, three, four, five) {
      if (one) {
       return 'daily';
      }
@@ -116,7 +116,7 @@
     return 'unknown';
   }
 
-  export extraObese(one, two, three, four) {
+  export function extraObese(one, two, three, four) {
      if (one) {
       return 'yes';
      }
@@ -132,7 +132,7 @@
     return 'unknown';
   }
 
-  export extraEat(one, two, three, four, five) {
+  export function extraEat(one, two, three, four, five) {
      if (one) {
       return 'daily';
      }
@@ -151,7 +151,7 @@
     return 'unknown';
   }
 
-  export extraStress(one, two, three, four, five) {
+  export function extraStress(one, two, three, four, five) {
      if (one) {
       return 'yes';
      }
@@ -170,7 +170,7 @@
     return 'unknown';
   }
 
-  export extraAnxiety(one, two, three, four) {
+  export function extraAnxiety(one, two, three, four) {
      if (one) {
       return 'yes';
      }
@@ -186,7 +186,7 @@
     return 'unknown';
   }
 
-  export extraFamily(one, two, three) {
+  export function extraFamily(one, two, three) {
      if (one) {
       return 'yes';
      }
@@ -199,7 +199,7 @@
     return 'unknown';
   }
 
-  export extraGluten(one, two, three) {
+  export function extraGluten(one, two, three) {
      if (one) {
       return 'yes';
      }
@@ -212,7 +212,7 @@
     return 'unknown';
   }
 
-  export extraLactose(one, two, three) {
+  export function extraLactose(one, two, three) {
      if (one) {
       return 'yes';
      }
@@ -225,7 +225,7 @@
     return 'unknown';
   }
 
-  export extraAcid(one, two, three, four) {
+  export function extraAcid(one, two, three, four) {
      if (one) {
       return 'yes';
      }
@@ -241,7 +241,7 @@
     return 'unknown';
   }
 
-  export extraOverall(one, two, three, four, five) {
+  export function extraOverall(one, two, three, four, five) {
      if (one) {
       return 'very satisfied';
      }
@@ -260,7 +260,7 @@
     return 'unknown';
   }
 
-  export extraGood(one, two, three, four) {
+  export function extraGood(one, two, three, four) {
      if (one) {
       return '';
      }
@@ -276,7 +276,7 @@
     return 'unknown';
   }
 
-  export extraPylori(one, two, three) {
+  export function extraPylori(one, two, three) {
      if (one) {
       return 'yes';
      }

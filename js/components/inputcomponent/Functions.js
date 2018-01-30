@@ -108,3 +108,11 @@ else{
     }
     return new_arr_obj.array0;
   }
+
+  export function toNativeArray(obj_arr) {[];
+    let array = [];
+    for(let key in obj_arr) {
+      array.push(obj_arr[key].value);
+    }
+    return array;
+  }

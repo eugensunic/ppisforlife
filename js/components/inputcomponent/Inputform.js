@@ -17,7 +17,9 @@ import Success from './Buttonsuccess.js'
 import Navbar from '../Navbar.js'
 import Navfooter from '../Navfooter.js'
 
+import * as conversion from './SubmitDatabase.js'
 import * as user from "./Functions.js"
+
 import axios from "axios";
 
 
@@ -44,69 +46,6 @@ export default class Inputform extends React.Component {
        clicked:false,new_success:false,clicked2:false,final_success:false,warning_clicked:false, proceed_main_clicked:false, mgcondition:{marginTop:0}
      });
 
-     this.props.dispatch(user.getRequest('http://www.projectsgono.com/medsforlife/ppi_input/get_last_id.php', 'get-max-id')).then(()=> {
-       let FK_id = this.props.getId.getLastId;
-       user.postRequest('http://projectsgono.com/medsforlife/ppi_input/basic.php', FK_id, 2, 3,'nes', 0,'as','assdf','asdfas').then(()=> {
-
-        user.postRequest('http://projectsgono.com/medsforlife/ppi_input/all_other.php',
-        ['acid reflux', 'GERD', 'achalasia'],
-        ['acid reflux', 'GERD'],
-        ['acid reflux'],
-        FK_id,
-
-        ['esomeprazole', 'pantoprazole','eastdam'],
-        ['nexium', 'protonix',''],
-        [20, 40, 40],
-        [3, 2, 30],
-        ['year', 'week', ''],
-        ['yes', 'no', ''],
-
-        ['arm pain','feet pain', 'other pain'],
-
-        ['domperidone','ranitidine', 'sucralfate'],
-
-        ['calcium','magnesium', 'iron'],
-
-        ['rosemarie','ginger', 'ACV'],
-        ['calcium'],
-
-        'hpylori',
-        'exeric',
-        'smoke',
-        'alcocohol',
-        'obese',
-        'healthy eat',
-        'stres',
-        'familly',
-        'anx',
-        'gl',
-        'lac',
-        'substitute',
-        'off drug',
-        'acid rebound',
-        'overall experience'
-
-        ).then(()=> {
-          // 3 is the array amount which you will calculate on the frontend side...
-            user.postRequest('http://projectsgono.com/medsforlife/ppi_input/side_effect_ppi_drug.php',
-            3,
-            ['first side','first side2', 'first side3'],
-            ['first side','first side2'],
-            ['first side'])
-            .then(()=> {alert("Form completed, thank you!")
-
-          }).catch((err)=>{
-              alert("Error occured, please try again");
-             });
-        }).catch((err)=>{
-            alert("Error occured, please try again");
-           });
-       }).catch((err)=>{
-           alert("Error occured, please try again");
-          });
-     }).catch((err)=>{
-         alert("Error occured, please try again");
-        });
    }
 
    updateDimensions(){
@@ -270,6 +209,80 @@ export default class Inputform extends React.Component {
  //daj ove checkboxe resetaj obavezno na onclick nemoj da mi se tam vrijednsoti pojavljuju
 sendDataToDatabase(){
   console.log("sending the data to database");
+
+user.toNativeArray()
+this.props.dispatch(user.getRequest('http://www.projectsgono.com/medsforlife/ppi_input/get_last_id.php', 'get-max-id')).then(()=> {
+  let FK_id = this.props.getId.getLastId;
+  user.postRequest('http://projectsgono.com/medsforlife/ppi_input/basic.php', FK_id,
+  this.props.basic.age,
+  this.props.basic.weight,
+  this.props.basic.weight_select,
+  this.props.basic.height,
+  this.props.basic.height_select,
+  conversion.genderValue(this.props.basic.gender),
+  conversion.raceValue(this.props.basic.race)).then(()=> {
+
+   user.postRequest('http://projectsgono.com/medsforlife/ppi_input/all_other.php',
+   user.toNativeArray(this.props.condition.gastro),
+   user.toNativeArray(this.props.condition.other),
+   user.toNativeArray(this.props.condition.ppi),
+   FK_id,
+  
+   ['esomeprazole', 'pantoprazole','eastdam'],
+   ['nexium', 'protonix',''],
+   [20, 40, 40],
+   [3, 2, 30],
+   ['year', 'week', ''],
+   ['yes', 'no', ''],
+
+   ['arm pain','feet pain', 'other pain'],
+
+   ['domperidone','ranitidine', 'sucralfate'],
+
+   ['calcium','magnesium', 'iron'],
+
+   ['rosemarie','ginger', 'ACV'],
+   ['calcium'],
+
+   'hpylori',
+   'exeric',
+   'smoke',
+   'alcocohol',
+   'obese',
+   'healthy eat',
+   'stres',
+   'familly',
+   'anx',
+   'gl',
+   'lac',
+   'substitute',
+   'off drug',
+   'acid rebound',
+   'overall experience'
+
+   ).then(()=> {
+     // 3 is the array amount which you will calculate on the frontend side...
+       user.postRequest('http://projectsgono.com/medsforlife/ppi_input/side_effect_ppi_drug.php',
+       3,
+       ['first side','first side2', 'first side3'],
+       ['first side','first side2'],
+       ['first side'])
+       .then(()=> {alert("Form completed, thank you!")
+
+     }).catch((err)=>{
+         alert("Error occured, please try again");
+        });
+   }).catch((err)=>{
+       alert("Error occured, please try again");
+      });
+  }).catch((err)=>{
+      alert("Error occured, please try again");
+     });
+}).catch((err)=>{
+    alert("Error occured, please try again");
+   });
+
+
   //display data from first section
   //basic
    console.log("BASIC")
@@ -287,6 +300,7 @@ sendDataToDatabase(){
    console.log("--------------------------");
   console.log("gastro value: "+this.props.condition.gastro)
   for(var key in this.props.condition.gastro) {
+    alert("key is: "+key);
     console.log(this.props.condition.gastro[key]);
   }
   console.log("other value: "+this.props.condition.other)
