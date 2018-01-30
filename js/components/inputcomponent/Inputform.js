@@ -88,14 +88,13 @@ export default class Inputform extends React.Component {
 
         ).then(()=> {
           // 3 is the array amount which you will calculate on the frontend side...
-          // all arrays have to have same lenght when you send to database!
             user.postRequest('http://projectsgono.com/medsforlife/ppi_input/side_effect_ppi_drug.php',
             3,
             ['first side','first side2', 'first side3'],
             ['first side','first side2'],
             ['first side'])
             .then(()=> {alert("Form completed, thank you!")
-            
+
           }).catch((err)=>{
               alert("Error occured, please try again");
              });
