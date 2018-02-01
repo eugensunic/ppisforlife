@@ -1,4 +1,4 @@
-export default function reducer(state={}, action){
+export default function reducer(state={naturalhelped:null, naturalnothelped:null}, action){
   if(action.type==="natural_helped"){
     state={...state, naturalhelped:action.payload}
   }

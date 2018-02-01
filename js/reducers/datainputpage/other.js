@@ -1,4 +1,4 @@
-export default function reducer(state={}, action){
+export default function reducer(state={otherdrug:null, radio_other:null}, action){
   if(action.type==="other"){
     state={...state, otherdrug:action.payload}
   }

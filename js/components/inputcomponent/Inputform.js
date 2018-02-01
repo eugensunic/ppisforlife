@@ -209,80 +209,88 @@ export default class Inputform extends React.Component {
  //daj ove checkboxe resetaj obavezno na onclick nemoj da mi se tam vrijednsoti pojavljuju
 sendDataToDatabase(){
   console.log("sending the data to database");
+  console.log("Testing disease gastro:  "+  user.toNativeArray(this.props.condition.gastro));
+  console.log("Testing disease other:  "+  user.toNativeArray(this.props.condition.other));
+  console.log("Testing disease  ppi:  "+  user.toNativeArray(this.props.condition.ppi));
+  for ( let property in this.props.drug.generic1  ) {
+  console.log( "check this out: "+ property  ); // Outputs: foo, fiz or fiz, foo
+}
+  console.log(user.toNativeArray(this.props.sides.side_effect_general));
+  console.log("testing drugs: "+  user.createDrugSectionArray(this.props.drug.generic1.value, this.props.drug.generic2.value, this.props.drug.generic3.value, this.props.drug.generic4.value));
 
-this.props.dispatch(user.getRequest('http://www.projectsgono.com/medsforlife/ppi_input/get_last_id.php', 'get-max-id')).then(()=> {
-  let FK_id = this.props.getId.getLastId;
-  user.postRequest('http://projectsgono.com/medsforlife/ppi_input/basic.php', FK_id,
-  this.props.basic.age,
-  this.props.basic.weight,
-  this.props.basic.weight_select,
-  this.props.basic.height,
-  this.props.basic.height_select,
-  conversion.genderValue(this.props.basic.gender),
-  conversion.raceValue(this.props.basic.race)).then(()=> {
-
-   user.postRequest('http://projectsgono.com/medsforlife/ppi_input/all_other.php',
-   user.toNativeArray(this.props.condition.gastro),
-   user.toNativeArray(this.props.condition.other),
-   user.toNativeArray(this.props.condition.ppi),
-   FK_id,
-
-   user.createDrugSectionArray(this.props.drug.generic1, this.props.drug.generic2, this.props.drug.generic3, this.props.drug.generic4),
-   user.createDrugSectionArray(this.props.drug.brand1, this.props.drug.brand2, this.props.drug.brand3, this.props.drug.brand4),
-   user.createDrugSectionArray(this.props.drug.dosage1, this.props.drug.dosage2, this.props.drug.dosage3, this.props.drug.dosage4),
-   user.createDrugSectionArray(this.props.drug.duration1, this.props.drug.duration2, this.props.drug.duration3, this.props.drug.duration4),
-   user.createDrugSectionArray(conversion.globalTime(this.props.drug.globaltime1), conversion.globalTime(this.props.drug.globaltime2), conversion.globalTime(this.props.drug.globaltime3), conversion.globalTime(this.props.drug.globaltime4)),
-   user.createDrugSectionArray(conversion.dailyUse(this.props.drug.daily1), conversion.dailyUse(this.props.drug.daily2), conversion.dailyUse(this.props.drug.daily3), conversion.dailyUse(this.props.drug.daily4)),
-
-   user.toNativeArray(this.props.sides.side_effect_general),
-   'yes',
-
-   ['domperidone','ranitidine', 'sucralfate'],
-   'yes',
-
-   ['calcium','magnesium', 'iron'],
-   'yes',
-
-   ['rosemarie','ginger', 'ACV'],
-   ['calcium'],
-
-   'hpylori',
-   'exeric',
-   'smoke',
-   'alcocohol',
-   'obese',
-   'healthy eat',
-   'stres',
-   'familly',
-   'anx',
-   'gl',
-   'lac',
-   'substitute',
-   'off drug',
-   'acid rebound',
-   'overall experience'
-
-   ).then(()=> {
-     // 3 is the array amount which you will calculate on the frontend side...
-       user.postRequest('http://projectsgono.com/medsforlife/ppi_input/side_effect_ppi_drug.php',
-       3,
-       ['first side','first side2', 'first side3'],
-       ['first side','first side2'],
-       ['first side'])
-       .then(()=> {alert("Form completed, thank you!")
-
-     }).catch((err)=>{
-         alert("Error occured, please try again");
-        });
-   }).catch((err)=>{
-       alert("Error occured, please try again");
-      });
-  }).catch((err)=>{
-      alert("Error occured, please try again");
-     });
-}).catch((err)=>{
-    alert("Error occured, please try again");
-   });
+// this.props.dispatch(user.getRequest('http://www.projectsgono.com/medsforlife/ppi_input/get_last_id.php', 'get-max-id')).then(()=> {
+//   let FK_id = this.props.getId.getLastId;
+//   user.postRequest('http://projectsgono.com/medsforlife/ppi_input/basic.php', FK_id,
+//   this.props.basic.age,
+//   this.props.basic.weight,
+//   this.props.basic.weight_select,
+//   this.props.basic.height,
+//   this.props.basic.height_select,
+//   conversion.genderValue(this.props.basic.gender),
+//   conversion.raceValue(this.props.basic.race)).then(()=> {
+//
+//    user.postRequest('http://projectsgono.com/medsforlife/ppi_input/all_other.php',
+//    user.toNativeArray(this.props.condition.gastro),
+//    user.toNativeArray(this.props.condition.other),
+//    user.toNativeArray(this.props.condition.ppi),
+//    FK_id,
+//
+//    user.createDrugSectionArray(this.props.drug.generic1, this.props.drug.generic2, this.props.drug.generic3, this.props.drug.generic4),
+//    user.createDrugSectionArray(this.props.drug.brand1, this.props.drug.brand2, this.props.drug.brand3, this.props.drug.brand4),
+//    user.createDrugSectionArray(this.props.drug.dosage1, this.props.drug.dosage2, this.props.drug.dosage3, this.props.drug.dosage4),
+//    user.createDrugSectionArray(this.props.drug.duration1, this.props.drug.duration2, this.props.drug.duration3, this.props.drug.duration4),
+//    user.createDrugSectionArray(conversion.globalTime(this.props.drug.globaltime1), conversion.globalTime(this.props.drug.globaltime2), conversion.globalTime(this.props.drug.globaltime3), conversion.globalTime(this.props.drug.globaltime4)),
+//    user.createDrugSectionArray(conversion.dailyUse(this.props.drug.daily1), conversion.dailyUse(this.props.drug.daily2), conversion.dailyUse(this.props.drug.daily3), conversion.dailyUse(this.props.drug.daily4)),
+//
+//    user.toNativeArray(this.props.sides.side_effect_general),
+//    'yes',
+//
+//    ['domperidone','ranitidine', 'sucralfate'],
+//    'yes',
+//
+//    ['calcium','magnesium', 'iron'],
+//    'yes',
+//
+//    ['rosemarie','ginger', 'ACV'],
+//    ['calcium'],
+//
+//    'hpylori',
+//    'exeric',
+//    'smoke',
+//    'alcocohol',
+//    'obese',
+//    'healthy eat',
+//    'stres',
+//    'familly',
+//    'anx',
+//    'gl',
+//    'lac',
+//    'substitute',
+//    'off drug',
+//    'acid rebound',
+//    'overall experience'
+//
+//    ).then(()=> {
+//      // 3 is the array amount which you will calculate on the frontend side...
+//        user.postRequest('http://projectsgono.com/medsforlife/ppi_input/side_effect_ppi_drug.php',
+//        3,
+//        ['first side','first side2', 'first side3'],
+//        ['first side','first side2'],
+//        ['first side'])
+//        .then(()=> {console.log("Form completed, thank you!")
+//
+//      }).catch((err)=>{
+//          console.log("Error occured, please try again");
+//         });
+//    }).catch((err)=>{
+//        console.log("Error occured, please try again");
+//       });
+//   }).catch((err)=>{
+//       console.log("Error occured, please try again");
+//      });
+// }).catch((err)=>{
+//     console.log("Error occured, please try again");
+//    });
 
 
   //display data from first section
@@ -302,7 +310,6 @@ this.props.dispatch(user.getRequest('http://www.projectsgono.com/medsforlife/ppi
    console.log("--------------------------");
   console.log("gastro value: "+this.props.condition.gastro)
   for(var key in this.props.condition.gastro) {
-    alert("key is: "+key);
     console.log(this.props.condition.gastro[key]);
   }
   console.log("other value: "+this.props.condition.other)
@@ -314,7 +321,7 @@ this.props.dispatch(user.getRequest('http://www.projectsgono.com/medsforlife/ppi
   // one element is inside
     console.log("DRUGS")
     console.log("--------------------------");
-   console.log("generic value: "+this.props.drug.generic1)
+   console.log("generic value: "+this.props.drug.generic1.value);
    console.log("brand value: "+this.props.drug.brand1)
    console.log("dosage si value: "+this.props.drug.dosage1)
    console.log("duration value: "+this.props.drug.duration1)

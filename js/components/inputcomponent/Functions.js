@@ -119,7 +119,7 @@ else{
 
   export function objToString(obj) {
     let result_string = null;
-    if (obj.hasOwnProperty('value')){
+    if (obj.hasOwnProperty('value')) {
       result_string = obj.value;
     }
     return result_string;
@@ -134,7 +134,7 @@ else{
      array.push(obj_value2);
     }
     if (obj_value3 !== null) {
-     array.push(obj_valu31);
+     array.push(obj_value3);
     }
     if (obj_value4 !== null) {
      array.push(obj_value4);
