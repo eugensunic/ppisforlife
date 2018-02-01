@@ -109,10 +109,36 @@ else{
     return new_arr_obj.array0;
   }
 
-  export function toNativeArray(obj_arr) {[];
+  export function toNativeArray(obj_arr) {
     let array = [];
     for(let key in obj_arr) {
       array.push(obj_arr[key].value);
     }
+    return array;
+  }
+
+  export function objToString(obj) {
+    let result_string = null;
+    if (obj.hasOwnProperty('value')){
+      result_string = obj.value;
+    }
+    return result_string;
+  }
+
+  export function createDrugSectionArray(obj_value1, obj_value2, obj_value3, obj_value4) {
+    let array=[];
+    if (obj_value1 !== null) {
+     array.push(obj_value1);
+    }
+    if (obj_value2 !== null) {
+     array.push(obj_value2);
+    }
+    if (obj_value3 !== null) {
+     array.push(obj_valu31);
+    }
+    if (obj_value4 !== null) {
+     array.push(obj_value4);
+    }
+
     return array;
   }

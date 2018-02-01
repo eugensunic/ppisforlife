@@ -1,289 +1,289 @@
-  export function genderValue(one, two, three) {
-     if (one) {
+  export function genderValue(array) {
+     if (array[0]) {
       return 'male';
      }
-     if (two) {
+     if (array[1]) {
       return 'female';
      }
-     if (three) {
+     if (array[2]) {
       return 'other'
      }
     return 'unknown';
   }
 
-  export function raceValue(one, two, three, four, five) {
-     if (one) {
+  export function raceValue(array) {
+     if (array[0]) {
       return 'white';
      }
-     if (two) {
+     if (array[1]) {
       return 'black';
      }
-     if (three) {
+     if (array[2]) {
       return 'asian';
      }
-     if (four) {
+     if (array[3]) {
       return 'hispanic/latino';
      }
-     if (five) {
+     if (array[4]) {
       return 'other';
      }
     return 'unknown';
   }
 
-  export function globalTime(one, two, three, four) {
-     if (one) {
+  export function globalTime(array) {
+     if (array[0]) {
       return 'day';
      }
-     if (two) {
+     if (array[1]) {
       return 'week';
      }
-     if (three) {
+     if (array[2]) {
       return 'month';
      }
-     if (four) {
+     if (array[3]) {
       return 'year';
      }
     return 'unknown';
   }
 
-  export function dailyUse(one, two, three) {
-     if (one) {
+  export function dailyUse(array) {
+     if (array[0]) {
       return 'yes';
      }
-     if (two) {
+     if (array[1]) {
       return 'no';
      }
-     if (three) {
+     if (array[2]) {
       return 'unknown';
      }
     return 'unknown';
   }
 
-  export function extraExercise(one, two, three, four, five) {
-     if (one) {
+  export function extraExercise(array) {
+     if (array[0]) {
       return 'daily';
      }
-     if (two) {
+     if (array[1]) {
       return 'few times per week';
      }
-     if (three) {
+     if (array[2]) {
       return 'few times per month';
      }
-     if (four) {
+     if (array[3]) {
       return 'few times a year';
      }
-     if (five) {
+     if (array[4]) {
       return 'never';
      }
     return 'unknown';
   }
 
-  export function extraSmoke(one, two, three, four, five) {
-     if (one) {
+  export function extraSmoke(array) {
+     if (array[0]) {
       return 'daily';
      }
-     if (two) {
+     if (array[1]) {
       return 'few times per week';
      }
-     if (three) {
+     if (array[2]) {
       return 'few times per month';
      }
-     if (four) {
+     if (array[3]) {
       return 'few times a year';
      }
-     if (five) {
+     if (array[4]) {
       return 'never';
      }
     return 'unknown';
   }
 
-  export function extraAlcohol(one, two, three, four, five) {
-     if (one) {
+  export function extraAlcohol(array) {
+     if (array[0]) {
       return 'daily';
      }
-     if (two) {
+     if (array[1]) {
       return 'few times per week';
      }
-     if (three) {
+     if (array[2]) {
       return 'few times per month';
      }
-     if (four) {
+     if (array[3]) {
       return 'few times a year';
      }
-     if (five) {
+     if (array[4]) {
       return 'never';
      }
     return 'unknown';
   }
 
-  export function extraObese(one, two, three, four) {
-     if (one) {
+  export function extraObese(array) {
+     if (array[0]) {
       return 'yes';
      }
-     if (two) {
+     if (array[1]) {
       return 'no';
      }
-     if (three) {
+     if (array[2]) {
       return 'little';
      }
-     if (four) {
+     if (array[3]) {
       return 'not sure';
      }
     return 'unknown';
   }
 
-  export function extraEat(one, two, three, four, five) {
-     if (one) {
+  export function extraEat(array) {
+     if (array[0]) {
       return 'daily';
      }
-     if (two) {
+     if (array[1]) {
       return 'few times per week';
      }
-     if (three) {
+     if (array[2]) {
       return 'few times per month';
      }
-     if (four) {
+     if (array[3]) {
       return 'few times a year';
      }
-     if (five) {
+     if (array[4]) {
       return 'rarely eat healthy';
      }
     return 'unknown';
   }
 
-  export function extraStress(one, two, three, four, five) {
-     if (one) {
+  export function extraStress(array) {
+     if (array[0]) {
       return 'yes';
      }
-     if (two) {
+     if (array[1]) {
       return 'no';
      }
-     if (three) {
+     if (array[2]) {
       return 'sometimes';
      }
-     if (four) {
+     if (array[3]) {
       return 'rarely get stressed';
      }
-     if (five) {
+     if (array[4]) {
       return 'not sure';
      }
     return 'unknown';
   }
 
-  export function extraAnxiety(one, two, three, four) {
-     if (one) {
+  export function extraAnxiety(array) {
+     if (array[0]) {
       return 'yes';
      }
-     if (two) {
+     if (array[1]) {
       return 'no';
      }
-     if (three) {
+     if (array[2]) {
       return 'maybe';
      }
-     if (four) {
+     if (array[3]) {
       return 'dont know';
      }
     return 'unknown';
   }
 
-  export function extraFamily(one, two, three) {
-     if (one) {
+  export function extraFamily(array) {
+     if (array[0]) {
       return 'yes';
      }
-     if (two) {
+     if (array[1]) {
       return 'no';
      }
-     if (three) {
+     if (array[2]) {
       return 'dont know';
      }
     return 'unknown';
   }
 
-  export function extraGluten(one, two, three) {
-     if (one) {
+  export function extraGluten(array) {
+     if (array[0]) {
       return 'yes';
      }
-     if (two) {
+     if (array[1]) {
       return 'no';
      }
-     if (three) {
+     if (array[2]) {
       return 'dont know';
      }
     return 'unknown';
   }
 
-  export function extraLactose(one, two, three) {
-     if (one) {
+  export function extraLactose(array) {
+     if (array[0]) {
       return 'yes';
      }
-     if (two) {
+     if (array[1]) {
       return 'no';
      }
-     if (three) {
+     if (array[2]) {
       return 'dont know';
      }
     return 'unknown';
   }
 
-  export function extraAcid(one, two, three, four) {
-     if (one) {
+  export function extraAcid(array) {
+     if (array[0]) {
       return 'yes';
      }
-     if (two) {
+     if (array[1]) {
       return 'no';
      }
-     if (three) {
+     if (array[2]) {
       return 'sometimes';
      }
-     if (four) {
+     if (array[3]) {
       return 'dont know';
      }
     return 'unknown';
   }
 
-  export function extraOverall(one, two, three, four, five) {
-     if (one) {
+  export function extraOverall(array) {
+     if (array[0]) {
       return 'very satisfied';
      }
-     if (two) {
+     if (array[1]) {
       return 'satisfied';
      }
-     if (three) {
+     if (array[2]) {
       return 'good';
      }
-     if (four) {
+     if (array[3]) {
       return 'poor';
      }
-     if (five) {
+     if (array[4]) {
       return 'horrible';
      }
     return 'unknown';
   }
 
-  export function extraGood(one, two, three, four) {
-     if (one) {
+  export function extraGood(array) {
+     if (array[0]) {
       return '';
      }
-     if (two) {
+     if (array[1]) {
       return '';
      }
-     if (three) {
+     if (array[2]) {
       return '';
      }
-     if (four) {
+     if (array[3]) {
       return '';
      }
     return 'unknown';
   }
 
-  export function extraPylori(one, two, three) {
-     if (one) {
+  export function extraPylori(array) {
+     if (array[0]) {
       return 'yes';
      }
-     if (two) {
+     if (array[1]) {
       return 'no';
      }
-     if (three) {
+     if (array[2]) {
       return 'dont know';
     }
     return 'unknown';

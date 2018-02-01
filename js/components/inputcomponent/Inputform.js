@@ -210,7 +210,6 @@ export default class Inputform extends React.Component {
 sendDataToDatabase(){
   console.log("sending the data to database");
 
-user.toNativeArray()
 this.props.dispatch(user.getRequest('http://www.projectsgono.com/medsforlife/ppi_input/get_last_id.php', 'get-max-id')).then(()=> {
   let FK_id = this.props.getId.getLastId;
   user.postRequest('http://projectsgono.com/medsforlife/ppi_input/basic.php', FK_id,
@@ -227,15 +226,15 @@ this.props.dispatch(user.getRequest('http://www.projectsgono.com/medsforlife/ppi
    user.toNativeArray(this.props.condition.other),
    user.toNativeArray(this.props.condition.ppi),
    FK_id,
-  
-   ['esomeprazole', 'pantoprazole','eastdam'],
-   ['nexium', 'protonix',''],
-   [20, 40, 40],
-   [3, 2, 30],
-   ['year', 'week', ''],
-   ['yes', 'no', ''],
 
-   ['arm pain','feet pain', 'other pain'],
+   user.createDrugSectionArray(this.props.drug.generic1, this.props.drug.generic2, this.props.drug.generic3, this.props.drug.generic4),
+   user.createDrugSectionArray(this.props.drug.brand1, this.props.drug.brand2, this.props.drug.brand3, this.props.drug.brand4),
+   user.createDrugSectionArray(this.props.drug.dosage1, this.props.drug.dosage2, this.props.drug.dosage3, this.props.drug.dosage4),
+   user.createDrugSectionArray(this.props.drug.duration1, this.props.drug.duration2, this.props.drug.duration3, this.props.drug.duration4),
+   user.createDrugSectionArray(conversion.globalTime(this.props.drug.globaltime1), conversion.globalTime(this.props.drug.globaltime2), conversion.globalTime(this.props.drug.globaltime3), conversion.globalTime(this.props.drug.globaltime4)),
+   user.createDrugSectionArray(conversion.dailyUse(this.props.drug.daily1), conversion.dailyUse(this.props.drug.daily2), conversion.dailyUse(this.props.drug.daily3), conversion.dailyUse(this.props.drug.daily4)),
+
+   user.toNativeArray(this.props.sides.side_effect_general),
 
    ['domperidone','ranitidine', 'sucralfate'],
 
