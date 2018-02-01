@@ -235,10 +235,13 @@ this.props.dispatch(user.getRequest('http://www.projectsgono.com/medsforlife/ppi
    user.createDrugSectionArray(conversion.dailyUse(this.props.drug.daily1), conversion.dailyUse(this.props.drug.daily2), conversion.dailyUse(this.props.drug.daily3), conversion.dailyUse(this.props.drug.daily4)),
 
    user.toNativeArray(this.props.sides.side_effect_general),
+   'yes',
 
    ['domperidone','ranitidine', 'sucralfate'],
+   'yes',
 
    ['calcium','magnesium', 'iron'],
+   'yes',
 
    ['rosemarie','ginger', 'ACV'],
    ['calcium'],

@@ -1,3 +1,40 @@
+
+  export function radioSideEffects(array) {
+     if (array[0]) {
+      return 'yes';
+     }
+     if (array[1]) {
+      return 'no';
+     }
+     if (array[2]) {
+      return 'dont know';
+    }
+    return 'unknown';
+  }
+
+  export function radioOtherDrugs(array) {
+     if (array[0]) {
+      return 'yes';
+     }
+     if (array[1]) {
+      return 'no';
+     }
+    return 'unknown';
+  }
+
+  export function radioNutrient(array) {
+     if (array[0]) {
+      return 'yes';
+     }
+     if (array[1]) {
+      return 'no';
+     }
+     if (array[2]) {
+      return 'dont know';
+     }
+    return 'unknown';
+  }
+
   export function genderValue(array) {
      if (array[0]) {
       return 'male';
