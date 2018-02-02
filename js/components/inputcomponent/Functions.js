@@ -127,16 +127,17 @@ else{
 
   export function createDrugSectionArray(obj_value1, obj_value2, obj_value3, obj_value4) {
     let array=[];
-    if (obj_value1 !== null) {
+
+    if (typeof obj_value1 !== 'undefined') {
      array.push(obj_value1);
     }
-    if (obj_value2 !== null) {
+    if (typeof obj_value2 !== 'undefined') {
      array.push(obj_value2);
     }
-    if (obj_value3 !== null) {
+    if (typeof obj_value3 !== 'undefined') {
      array.push(obj_value3);
     }
-    if (obj_value4 !== null) {
+    if (typeof obj_value4 !== 'undefined') {
      array.push(obj_value4);
     }
 

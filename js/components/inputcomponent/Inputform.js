@@ -212,12 +212,10 @@ sendDataToDatabase(){
   console.log("Testing disease gastro:  "+  user.toNativeArray(this.props.condition.gastro));
   console.log("Testing disease other:  "+  user.toNativeArray(this.props.condition.other));
   console.log("Testing disease  ppi:  "+  user.toNativeArray(this.props.condition.ppi));
-  for ( let property in this.props.drug.generic1  ) {
-  console.log( "check this out: "+ property  ); // Outputs: foo, fiz or fiz, foo
-}
+
   console.log(user.toNativeArray(this.props.sides.side_effect_general));
   console.log("testing drugs: "+  user.createDrugSectionArray(this.props.drug.generic1.value, this.props.drug.generic2.value, this.props.drug.generic3.value, this.props.drug.generic4.value));
-
+  console.log(user.createDrugSectionArray(conversion.dailyUse(this.props.drug.daily1), conversion.dailyUse(this.props.drug.daily2), conversion.dailyUse(this.props.drug.daily3), conversion.dailyUse(this.props.drug.daily4)));
 // this.props.dispatch(user.getRequest('http://www.projectsgono.com/medsforlife/ppi_input/get_last_id.php', 'get-max-id')).then(()=> {
 //   let FK_id = this.props.getId.getLastId;
 //   user.postRequest('http://projectsgono.com/medsforlife/ppi_input/basic.php', FK_id,

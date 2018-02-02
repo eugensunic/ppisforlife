@@ -1,12 +1,5 @@
 
-export default function reducer(state={
-  generic1:{value:null}, generic2:{value:null}, generic3:{value:null}, generic4:{value:null},
-  brand1:{value:null}, brand2:{value:null}, brand3:{value:null}, brand4:{value:null},
-  dosage1:null, dosage2:null, dosage3:null, dosage4:null,
-  duration1:null, duration2:null, duration3:null, duration4:null,
-  globaltime1:null, globaltime2:null, globaltime3:null, globaltime4:null,
-  daily1:null, daily2:null, daily3:null, daily4:null
-}, action){
+export default function reducer(state={}, action){
 
   if(action.type==="drug_generic" && action.payload1=="first"){
 
