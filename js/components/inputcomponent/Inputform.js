@@ -209,13 +209,32 @@ export default class Inputform extends React.Component {
  //daj ove checkboxe resetaj obavezno na onclick nemoj da mi se tam vrijednsoti pojavljuju
 sendDataToDatabase(){
   console.log("sending the data to database");
+
   console.log("Testing disease gastro:  "+  user.toNativeArray(this.props.condition.gastro));
   console.log("Testing disease other:  "+  user.toNativeArray(this.props.condition.other));
   console.log("Testing disease  ppi:  "+  user.toNativeArray(this.props.condition.ppi));
 
-  console.log(user.toNativeArray(this.props.sides.side_effect_general));
-  console.log("testing drugs: "+  user.createDrugSectionArray(this.props.drug.generic1.value, this.props.drug.generic2.value, this.props.drug.generic3.value, this.props.drug.generic4.value));
-  console.log(user.createDrugSectionArray(conversion.dailyUse(this.props.drug.daily1), conversion.dailyUse(this.props.drug.daily2), conversion.dailyUse(this.props.drug.daily3), conversion.dailyUse(this.props.drug.daily4)));
+  console.log("Side effect generla: "+ user.toNativeArray(this.props.sides.side_effect_general));
+  console.log("drugs generic array: "+  user.createArray(this.props.drug.generic1, this.props.drug.generic2, this.props.drug.generic3, this.props.drug.generic4));
+  console.log("drugs brand array: "+  user.createArray(this.props.drug.brand1, this.props.drug.brand2, this.props.drug.brand3, this.props.drug.brand4));
+  console.log("duration array: "+  user.createArray(this.props.drug.duration1, this.props.drug.duration2, this.props.drug.duration3, this.props.drug.duration4));
+  console.log("dosage array: "+  user.createArray(this.props.drug.dosage1, this.props.drug.dosage2, this.props.drug.dosage3, this.props.drug.dosage4));
+
+  console.log("daily use array: "+user.createArray(conversion.dailyUse(this.props.drug.daily1), conversion.dailyUse(this.props.drug.daily2), conversion.dailyUse(this.props.drug.daily3), conversion.dailyUse(this.props.drug.daily4)));
+  console.log("globaltime use array: "+user.createArray(conversion.dailyUse(this.props.drug.globaltime1), conversion.dailyUse(this.props.drug.globaltime2), conversion.dailyUse(this.props.drug.globaltime3), conversion.dailyUse(this.props.drug.globaltime4)));
+
+  console.log("Testing nutrient:  "+  user.toNativeArray(this.props.nutrient.nutrient));
+  console.log("Testing other drugs:  "+  user.toNativeArray(this.props.other.otherdrug));
+  console.log("Testing natural helped:  "+  user.toNativeArray(this.props.natural.naturalhelped));
+  console.log("Testing natural not helped:  "+  user.toNativeArray(this.props.natural.naturalnothelped));
+
+  console.log("side effect  array: "+  user.toNativeArray(this.props.sides.effect1));
+  console.log("side effect  array: "+  user.toNativeArray(this.props.sides.effect2));
+  console.log("side effect  array: "+  user.toNativeArray(this.props.sides.effect3));
+  console.log("side effect  array: "+  user.toNativeArray(this.props.sides.effect4));
+
+
+
 // this.props.dispatch(user.getRequest('http://www.projectsgono.com/medsforlife/ppi_input/get_last_id.php', 'get-max-id')).then(()=> {
 //   let FK_id = this.props.getId.getLastId;
 //   user.postRequest('http://projectsgono.com/medsforlife/ppi_input/basic.php', FK_id,
@@ -233,24 +252,24 @@ sendDataToDatabase(){
 //    user.toNativeArray(this.props.condition.ppi),
 //    FK_id,
 //
-//    user.createDrugSectionArray(this.props.drug.generic1, this.props.drug.generic2, this.props.drug.generic3, this.props.drug.generic4),
-//    user.createDrugSectionArray(this.props.drug.brand1, this.props.drug.brand2, this.props.drug.brand3, this.props.drug.brand4),
-//    user.createDrugSectionArray(this.props.drug.dosage1, this.props.drug.dosage2, this.props.drug.dosage3, this.props.drug.dosage4),
-//    user.createDrugSectionArray(this.props.drug.duration1, this.props.drug.duration2, this.props.drug.duration3, this.props.drug.duration4),
-//    user.createDrugSectionArray(conversion.globalTime(this.props.drug.globaltime1), conversion.globalTime(this.props.drug.globaltime2), conversion.globalTime(this.props.drug.globaltime3), conversion.globalTime(this.props.drug.globaltime4)),
-//    user.createDrugSectionArray(conversion.dailyUse(this.props.drug.daily1), conversion.dailyUse(this.props.drug.daily2), conversion.dailyUse(this.props.drug.daily3), conversion.dailyUse(this.props.drug.daily4)),
+//    user.createArray(this.props.drug.generic1, this.props.drug.generic2, this.props.drug.generic3, this.props.drug.generic4),
+//    user.createArray(this.props.drug.brand1, this.props.drug.brand2, this.props.drug.brand3, this.props.drug.brand4),
+//    user.createArray(this.props.drug.dosage1, this.props.drug.dosage2, this.props.drug.dosage3, this.props.drug.dosage4),
+//    user.createArray(this.props.drug.duration1, this.props.drug.duration2, this.props.drug.duration3, this.props.drug.duration4),
+//    user.createArray(conversion.globalTime(this.props.drug.globaltime1), conversion.globalTime(this.props.drug.globaltime2), conversion.globalTime(this.props.drug.globaltime3), conversion.globalTime(this.props.drug.globaltime4)),
+//    user.createArray(conversion.dailyUse(this.props.drug.daily1), conversion.dailyUse(this.props.drug.daily2), conversion.dailyUse(this.props.drug.daily3), conversion.dailyUse(this.props.drug.daily4)),
 //
 //    user.toNativeArray(this.props.sides.side_effect_general),
 //    'yes',
 //
-//    ['domperidone','ranitidine', 'sucralfate'],
+//    user.toNativeArray(this.props.other.otherdrug),
 //    'yes',
 //
-//    ['calcium','magnesium', 'iron'],
+//    user.toNativeArray(this.props.nutrient.nutrient),
 //    'yes',
 //
-//    ['rosemarie','ginger', 'ACV'],
-//    ['calcium'],
+//    user.toNativeArray(this.props.natural.naturalhelped),
+//    user.toNativeArray(this.props.natural.naturalnothelped),
 //
 //    'hpylori',
 //    'exeric',
@@ -271,10 +290,11 @@ sendDataToDatabase(){
 //    ).then(()=> {
 //      // 3 is the array amount which you will calculate on the frontend side...
 //        user.postRequest('http://projectsgono.com/medsforlife/ppi_input/side_effect_ppi_drug.php',
-//        3,
-//        ['first side','first side2', 'first side3'],
-//        ['first side','first side2'],
-//        ['first side'])
+//        user.createArray(this.props.drug.generic1, this.props.drug.generic2, this.props.drug.generic3, this.props.drug.generic4).length,
+//        user.toNativeArray(this.props.sides.effect1),
+//        user.toNativeArray(this.props.sides.effect2),
+//        user.toNativeArray(this.props.sides.effect3),
+        //user.toNativeArray(this.props.sides.effect4))
 //        .then(()=> {console.log("Form completed, thank you!")
 //
 //      }).catch((err)=>{

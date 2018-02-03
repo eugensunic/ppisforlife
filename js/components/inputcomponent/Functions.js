@@ -125,20 +125,42 @@ else{
     return result_string;
   }
 
-  export function createDrugSectionArray(obj_value1, obj_value2, obj_value3, obj_value4) {
+  export function createArray(obj_value1, obj_value2, obj_value3, obj_value4) {
     let array=[];
 
-    if (typeof obj_value1 !== 'undefined') {
-     array.push(obj_value1);
+    if (typeof obj_value1 !== 'undefined'  && obj_value1 !== null) {
+      alert("went here: "+ obj_value1.value);
+      if (obj_value1.hasOwnProperty('value')) {
+        alert("went here: "+ obj_value1.value);
+        array.push(obj_value1.value);
+      }
+      else {
+        array.push(obj_value1);
+      }
     }
-    if (typeof obj_value2 !== 'undefined') {
-     array.push(obj_value2);
+    if (typeof obj_value2 !== 'undefined'  && obj_value2 !== null) {
+      if (obj_value2.hasOwnProperty('value')) {
+        array.push(obj_value2.value);
+      }
+      else {
+        array.push(obj_value2);
+      }
     }
-    if (typeof obj_value3 !== 'undefined') {
-     array.push(obj_value3);
+    if (typeof obj_value3!== 'undefined'  && obj_value3 !== null) {
+      if (obj_value3.hasOwnProperty('value')) {
+        array.push(obj_value3.value);
+      }
+      else {
+        array.push(obj_value3);
+      }
     }
-    if (typeof obj_value4 !== 'undefined') {
-     array.push(obj_value4);
+    if (typeof obj_value4 !== 'undefined'  && obj_value4 !== null) {
+      if (obj_value4.hasOwnProperty('value')) {
+        array.push(obj_value4.value);
+      }
+      else {
+        array.push(obj_value4);
+      }
     }
 
     return array;
