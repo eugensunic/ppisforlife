@@ -111,8 +111,10 @@ else{
 
   export function toNativeArray(obj_arr) {
     let array = [];
-    for(let key in obj_arr) {
-      array.push(obj_arr[key].value);
+    if (typeof obj_arr !=='undefined') {
+      for(let key in obj_arr) {
+        array.push(obj_arr[key].value);
+      }
     }
     return array;
   }
