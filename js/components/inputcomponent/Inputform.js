@@ -235,80 +235,93 @@ sendDataToDatabase(){
 
 
 
-// this.props.dispatch(user.getRequest('http://www.projectsgono.com/medsforlife/ppi_input/get_last_id.php', 'get-max-id')).then(()=> {
-//   let FK_id = this.props.getId.getLastId;
-//   user.postRequest('http://projectsgono.com/medsforlife/ppi_input/basic.php', FK_id,
-//   this.props.basic.age,
-//   this.props.basic.weight,
-//   this.props.basic.weight_select,
-//   this.props.basic.height,
-//   this.props.basic.height_select,
-//   conversion.genderValue(this.props.basic.gender),
-//   conversion.raceValue(this.props.basic.race)).then(()=> {
-//
-//    user.postRequest('http://projectsgono.com/medsforlife/ppi_input/all_other.php',
-//    user.toNativeArray(this.props.condition.gastro),
-//    user.toNativeArray(this.props.condition.other),
-//    user.toNativeArray(this.props.condition.ppi),
-//    FK_id,
-//
-//    user.createArray(this.props.drug.generic1, this.props.drug.generic2, this.props.drug.generic3, this.props.drug.generic4),
-//    user.createArray(this.props.drug.brand1, this.props.drug.brand2, this.props.drug.brand3, this.props.drug.brand4),
-//    user.createArray(this.props.drug.dosage1, this.props.drug.dosage2, this.props.drug.dosage3, this.props.drug.dosage4),
-//    user.createArray(this.props.drug.duration1, this.props.drug.duration2, this.props.drug.duration3, this.props.drug.duration4),
-//    user.createArray(conversion.globalTime(this.props.drug.globaltime1), conversion.globalTime(this.props.drug.globaltime2), conversion.globalTime(this.props.drug.globaltime3), conversion.globalTime(this.props.drug.globaltime4)),
-//    user.createArray(conversion.dailyUse(this.props.drug.daily1), conversion.dailyUse(this.props.drug.daily2), conversion.dailyUse(this.props.drug.daily3), conversion.dailyUse(this.props.drug.daily4)),
-//
-//    user.toNativeArray(this.props.sides.side_effect_general),
-//    'yes',
-//
-//    user.toNativeArray(this.props.other.otherdrug),
-//    'yes',
-//
-//    user.toNativeArray(this.props.nutrient.nutrient),
-//    'yes',
-//
-//    user.toNativeArray(this.props.natural.naturalhelped),
-//    user.toNativeArray(this.props.natural.naturalnothelped),
-//
-//    'hpylori',
-//    'exeric',
-//    'smoke',
-//    'alcocohol',
-//    'obese',
-//    'healthy eat',
-//    'stres',
-//    'familly',
-//    'anx',
-//    'gl',
-//    'lac',
-//    'substitute',
-//    'off drug',
-//    'acid rebound',
-//    'overall experience'
-//
-//    ).then(()=> {
-//      // 3 is the array amount which you will calculate on the frontend side...
-//        user.postRequest('http://projectsgono.com/medsforlife/ppi_input/side_effect_ppi_drug.php',
-//        user.createArray(this.props.drug.generic1, this.props.drug.generic2, this.props.drug.generic3, this.props.drug.generic4).length,
-//        user.toNativeArray(this.props.sides.effect1),
-//        user.toNativeArray(this.props.sides.effect2),
-//        user.toNativeArray(this.props.sides.effect3),
-        //user.toNativeArray(this.props.sides.effect4))
-//        .then(()=> {console.log("Form completed, thank you!")
-//
-//      }).catch((err)=>{
-//          console.log("Error occured, please try again");
-//         });
-//    }).catch((err)=>{
-//        console.log("Error occured, please try again");
-//       });
-//   }).catch((err)=>{
-//       console.log("Error occured, please try again");
-//      });
-// }).catch((err)=>{
-//     console.log("Error occured, please try again");
-//    });
+this.props.dispatch(user.getRequest('http://www.projectsgono.com/medsforlife/ppi_input/get_last_id.php', 'get-max-id')).then(()=> {
+  let FK_id = this.props.getId.getLastId;
+  user.postRequest('http://projectsgono.com/medsforlife/ppi_input/basic.php', FK_id,
+  this.props.basic.age,
+  this.props.basic.weight,
+  this.props.basic.weight_select,
+  this.props.basic.height,
+  this.props.basic.height_select,
+  conversion.genderValue(this.props.basic.gender),
+  conversion.raceValue(this.props.basic.race)).then(()=> {
+
+   user.postRequest('http://projectsgono.com/medsforlife/ppi_input/all_other.php',
+   user.toNativeArray(this.props.condition.gastro),
+   user.toNativeArray(this.props.condition.other),
+   user.toNativeArray(this.props.condition.ppi),
+   FK_id,
+
+   user.createArray(this.props.drug.generic1, this.props.drug.generic2, this.props.drug.generic3, this.props.drug.generic4),
+   user.createArray(this.props.drug.brand1, this.props.drug.brand2, this.props.drug.brand3, this.props.drug.brand4),
+   user.createArray(this.props.drug.dosage1, this.props.drug.dosage2, this.props.drug.dosage3, this.props.drug.dosage4),
+   user.createArray(this.props.drug.duration1, this.props.drug.duration2, this.props.drug.duration3, this.props.drug.duration4),
+   user.createArray(conversion.globalTime(this.props.drug.globaltime1), conversion.globalTime(this.props.drug.globaltime2), conversion.globalTime(this.props.drug.globaltime3), conversion.globalTime(this.props.drug.globaltime4)),
+   user.createArray(conversion.dailyUse(this.props.drug.daily1), conversion.dailyUse(this.props.drug.daily2), conversion.dailyUse(this.props.drug.daily3), conversion.dailyUse(this.props.drug.daily4)),
+
+   user.toNativeArray(this.props.sides.side_effect_general),
+   conversion.radioSideEffects(this.props.side.radio_side),
+
+   user.toNativeArray(this.props.other.otherdrug),
+   conversion.radioOtherDrugs(this.props.other.radio_other),
+
+   user.toNativeArray(this.props.nutrient.nutrient),
+   conversion.radioNutrient(this.props.nutrient.radio_nutrient),
+
+   user.toNativeArray(this.props.natural.naturalhelped),
+   user.toNativeArray(this.props.natural.naturalnothelped),
+   console.log("exercise: "+this.props.extra.exercise)
+   console.log("smoke: "+this.props.extra.smoke)
+   console.log("alcohol: "+this.props.extra.alcohol)
+   console.log("obesse: "+this.props.extra.obesse)
+   console.log("eat: "+this.props.extra.eat)
+   console.log("stress: "+this.props.extra.stress)
+   console.log("anxiety: "+this.props.extra.anxiety)
+   console.log("familly: "+this.props.extra.familly)
+   console.log("gluten: "+this.props.extra.gluten)
+   console.log("lactose: "+this.props.extra.lactose)
+   console.log("acid: "+this.props.extra.acid)
+   console.log("overall: "+this.props.extra.overall)
+   console.log("good: "+this.props.extra.good)
+   console.log("pylori: "+this.props.extra.pylori)
+   conversion.extraPylori(this.props.extra.pylori),
+   conversion.extraExercise(this.props.extra.exercise),
+   'smoke',
+   'alcocohol',
+   'obese',
+   'healthy eat',
+   'stres',
+   'familly',
+   'anx',
+   'gl',
+   'lac',
+   'substitute',
+   'off drug',
+   'acid rebound',
+   'overall experience'
+
+   ).then(()=> {
+     // 3 is the array amount which you will calculate on the frontend side...
+       user.postRequest('http://projectsgono.com/medsforlife/ppi_input/side_effect_ppi_drug.php',
+       user.createArray(this.props.drug.generic1, this.props.drug.generic2, this.props.drug.generic3, this.props.drug.generic4).length,
+       user.toNativeArray(this.props.sides.effect1),
+       user.toNativeArray(this.props.sides.effect2),
+       user.toNativeArray(this.props.sides.effect3),
+        user.toNativeArray(this.props.sides.effect4))
+       .then(()=> {console.log("Form completed, thank you!")
+
+     }).catch((err)=>{
+         console.log("Error occured, please try again");
+        });
+   }).catch((err)=>{
+       console.log("Error occured, please try again");
+      });
+  }).catch((err)=>{
+      console.log("Error occured, please try again");
+     });
+}).catch((err)=>{
+    console.log("Error occured, please try again");
+   });
 
 
   //display data from first section
@@ -372,20 +385,7 @@ sendDataToDatabase(){
   console.log("helped: "+this.props.natural.naturalhelped)
   console.log("not helped: "+this.props.natural.naturalnothelped)
   //extra
-  console.log("exercise: "+this.props.extra.exercise)
-  console.log("smoke: "+this.props.extra.smoke)
-  console.log("alcohol: "+this.props.extra.alcohol)
-  console.log("obesse: "+this.props.extra.obesse)
-  console.log("eat: "+this.props.extra.eat)
-  console.log("stress: "+this.props.extra.stress)
-  console.log("anxiety: "+this.props.extra.anxiety)
-  console.log("familly: "+this.props.extra.familly)
-  console.log("gluten: "+this.props.extra.gluten)
-  console.log("lactose: "+this.props.extra.lactose)
-  console.log("acid: "+this.props.extra.acid)
-  console.log("overall: "+this.props.extra.overall)
-  console.log("good: "+this.props.extra.good)
-  console.log("pylori: "+this.props.extra.pylori)
+
 
   //-----------------------------------------------------------
   // POST SEND PARAMS

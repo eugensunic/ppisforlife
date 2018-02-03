@@ -129,9 +129,7 @@ else{
     let array=[];
 
     if (typeof obj_value1 !== 'undefined'  && obj_value1 !== null) {
-      alert("went here: "+ obj_value1.value);
       if (obj_value1.hasOwnProperty('value')) {
-        alert("went here: "+ obj_value1.value);
         array.push(obj_value1.value);
       }
       else {

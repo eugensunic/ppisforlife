@@ -111,6 +111,8 @@
     return null;
   }
 
+
+// ---------------------EXTRA BEGIN-------------------------
   export function extraExercise(array) {
     if (typeof array!=='undefined') {
      if (array[0]) {
