@@ -341,17 +341,29 @@
   export function extraGood(array) {
     if (typeof array!=='undefined') {
      if (array[0]) {
-      return '';
+      return 'yes';
      }
      if (array[1]) {
-      return '';
+      return 'no';
      }
      if (array[2]) {
-      return '';
+      return 'somehow';
      }
      if (array[3]) {
-      return '';
+      return 'dont know';
     }
+  }
+    return 'unknown';
+  }
+
+  export function extraAcidRebound(array) {
+    if (typeof array!=='undefined') {
+     if (array[0]) {
+      return 'yes';
+     }
+     if (array[1]) {
+      return 'no';
+     }
   }
     return 'unknown';
   }
