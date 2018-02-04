@@ -210,30 +210,9 @@ export default class Inputform extends React.Component {
  //daj ove checkboxe resetaj obavezno na onclick nemoj da mi se tam vrijednsoti pojavljuju
 sendDataToDatabase(){
   console.log("sending the data to database");
-  // console.log("Testing disease gastro:  "+  user.toNativeArray(this.props.condition.gastro));
-  // console.log("Testing disease other:  "+  user.toNativeArray(this.props.condition.other));
-  // console.log("Testing disease  ppi:  "+  user.toNativeArray(this.props.condition.ppi));
-  //
-  // console.log("Side effect generla: "+ user.toNativeArray(this.props.sides.side_effect_general));
-  // console.log("drugs generic array: "+  user.createArray(this.props.drug.generic1, this.props.drug.generic2, this.props.drug.generic3, this.props.drug.generic4));
-  // console.log("drugs brand array: "+  user.createArray(this.props.drug.brand1, this.props.drug.brand2, this.props.drug.brand3, this.props.drug.brand4));
-  // console.log("duration array: "+  user.createArray(this.props.drug.duration1, this.props.drug.duration2, this.props.drug.duration3, this.props.drug.duration4));
-  // console.log("dosage array: "+  user.createArray(this.props.drug.dosage1, this.props.drug.dosage2, this.props.drug.dosage3, this.props.drug.dosage4));
-  //
-  // console.log("daily use array: "+user.createArray(conversion.dailyUse(this.props.drug.daily1), conversion.dailyUse(this.props.drug.daily2), conversion.dailyUse(this.props.drug.daily3), conversion.dailyUse(this.props.drug.daily4)));
-  // console.log("globaltime use array: "+user.createArray(conversion.dailyUse(this.props.drug.globaltime1), conversion.dailyUse(this.props.drug.globaltime2), conversion.dailyUse(this.props.drug.globaltime3), conversion.dailyUse(this.props.drug.globaltime4)));
-  //
-  // console.log("Testing nutrient:  "+  user.toNativeArray(this.props.nutrient.nutrient));
-  // console.log("Testing other drugs:  "+  user.toNativeArray(this.props.other.otherdrug));
-  // console.log("Testing natural helped:  "+  user.toNativeArray(this.props.natural.naturalhelped));
-  // console.log("Testing natural not helped:  "+  user.toNativeArray(this.props.natural.naturalnothelped));
-  //
-  // console.log("side effect  array: "+  user.toNativeArray(this.props.sides.effect1));
-  // console.log("side effect  array: "+  user.toNativeArray(this.props.sides.effect2));
-  // console.log("side effect  array: "+  user.toNativeArray(this.props.sides.effect3));
-  // console.log("side effect  array: "+  user.toNativeArray(this.props.sides.effect4));
-
-
+  console.log("drugs: "+  user.createArray(this.props.drug.brand1, this.props.drug.brand2, this.props.drug.brand3, this.props.drug.brand4));
+  console.log("dosage prop +160 value: "+  this.props.drug.dosage1);
+  // you have to send only appropriate data to database so do proper inline validation
 if(typeof this.props.getId.getLastId==='undefined') {
 this.props.dispatch(user.getRequest('http://www.projectsgono.com/medsforlife/ppi_input/get_last_id.php', 'get-max-id')).then(()=> {
   this.setState({final_success:false, ajax_call:false});
@@ -307,7 +286,7 @@ this.props.dispatch(user.getRequest('http://www.projectsgono.com/medsforlife/ppi
        console.log("Error occured, please try again");
       });
   }).catch((err)=>{
-      console.log("Error occured, please try again"+ err);
+      console.log("Error occured, please try again");
      });
 }).catch((err)=>{
     console.log("Error occured, please try again");
