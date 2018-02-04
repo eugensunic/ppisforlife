@@ -187,16 +187,7 @@ export default class Drug extends React.Component {
           searchable={true}
           multi={false}
           onChange={(e)=>{
-            if (this.props.id=="first"){
-              this.props.dispatch({type:"drug_generic", payload1:this.props.id, payload2:e})
-            }
-            if (this.props.id=="second"){
-              this.props.dispatch({type:"drug_generic", payload1:this.props.id, payload2:e})
-            }
-            if (this.props.id=="third"){
-              this.props.dispatch({type:"drug_generic", payload1:this.props.id, payload2:e})
-            }
-            if (this.props.id=="fourth"){
+            if (this.props.id=="first" || this.props.id=="second" || this.props.id=="third" || this.props.id=="fourth") {
               this.props.dispatch({type:"drug_generic", payload1:this.props.id, payload2:e})
             }
           }}
@@ -216,16 +207,7 @@ export default class Drug extends React.Component {
             searchable={true}
             multi={false}
             onChange={(e)=>{
-              if (this.props.id=="first"){
-                this.props.dispatch({type:"drug_brand", payload1:this.props.id, payload2:e})
-              }
-              if (this.props.id=="second"){
-                this.props.dispatch({type:"drug_brand", payload1:this.props.id, payload2:e})
-              }
-              if (this.props.id=="third"){
-                this.props.dispatch({type:"drug_brand", payload1:this.props.id, payload2:e})
-              }
-              if (this.props.id=="fourth"){
+              if (this.props.id=="first" || this.props.id=="second" || this.props.id=="third" || this.props.id=="fourth") {
                 this.props.dispatch({type:"drug_brand", payload1:this.props.id, payload2:e})
               }
             }}
@@ -233,16 +215,7 @@ export default class Drug extends React.Component {
           <div><p></p> <input  type="text" style={{width:this.state.width}} className={user.isValidString(this.state.input_first)+this.findAppropriateClassBrand2(this.props.id)} maxLength="30"
             onChange={(e)=>{
               this.setState({input_first:e.target.value})
-              if (this.props.id=="first"){
-                this.props.dispatch({type:"drug_brand", payload1:this.props.id, payload2:{ value: e.target.value, label: e.target.value} })
-              }
-              if (this.props.id=="second"){
-                this.props.dispatch({type:"drug_brand", payload1:this.props.id, payload2:{ value: e.target.value, label: e.target.value}})
-              }
-              if (this.props.id=="third"){
-                this.props.dispatch({type:"drug_brand", payload1:this.props.id, payload2:{ value: e.target.value, label: e.target.value}})
-              }
-              if (this.props.id=="fourth"){
+              if (this.props.id=="first" || this.props.id=="second" || this.props.id=="third" || this.props.id=="fourth") {
                 this.props.dispatch({type:"drug_brand", payload1:this.props.id, payload2:{ value: e.target.value, label: e.target.value}})
               }
             }}
@@ -256,16 +229,7 @@ export default class Drug extends React.Component {
         <p className="inline">Dosage (total daily mg)</p>
         <select name="dosage"  className={this.findAppropriateClassDosage(this.props.id)}
           onChange={(e)=>{
-            if (this.props.id=="first"){
-              this.props.dispatch({type:"dosage", payload1:this.props.id, payload2:e.target.value})
-            }
-            if (this.props.id=="second"){
-              this.props.dispatch({type:"dosage", payload1:this.props.id, payload2:e.target.value})
-            }
-            if (this.props.id=="third"){
-              this.props.dispatch({type:"dosage", payload1:this.props.id, payload2:e.target.value})
-            }
-            if (this.props.id=="fourth"){
+            if (this.props.id=="first" || this.props.id=="second" || this.props.id=="third" || this.props.id=="fourth"){
               this.props.dispatch({type:"dosage", payload1:this.props.id, payload2:e.target.value})
             }
           }}>
@@ -287,16 +251,7 @@ export default class Drug extends React.Component {
         <p className="">Duration of treatment(from therapy start till today)</p>
         <input className={this.props.validation+this.findAppropriateClassDuration(this.props.id)} style={{marginBottom:7, width:40}} type="text"  defaultValue=""
           onChange={(e)=>{
-            if (this.props.id=="first"){
-              this.props.dispatch({type:"duration", payload1:this.props.id, payload2:e.target.value})
-            }
-            if (this.props.id=="second"){
-              this.props.dispatch({type:"duration", payload1:this.props.id, payload2:e.target.value})
-            }
-            if (this.props.id=="third"){
-              this.props.dispatch({type:"duration", payload1:this.props.id, payload2:e.target.value})
-            }
-            if (this.props.id=="fourth"){
+            if (this.props.id=="first" || this.props.id=="second" || this.props.id=="third" || this.props.id=="fourth"){
               this.props.dispatch({type:"duration", payload1:this.props.id, payload2:e.target.value})
             }
           }}
