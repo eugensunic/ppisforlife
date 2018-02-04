@@ -1,11 +1,14 @@
-
+  IMPORTANT
+  ---------
+  1. Make mapping on frontend values to true false false arrays and then send to database!
   TODO
   ----
-  1. Fill info with doctors from medscape articles on PPIs
+  1. Fill info with doctors from medscape articles on PPIs (add more values)
   2. research just put params for the time being
   3. create quick database for upcoming data, abandon big database
   10. Try to route numbers when click on a number so that back button works, route patient, doctor, pharma also, window.pushState maybe
-
+  11. Fix media query on open page resolution select boxes width and up bottom offset in basic row
+  12 When opening home page wait for the data to be loaded and then display.
 
   WHAT YOU''LL DO IN 1 DAY ON SATURDAY 20.01.2018.
   -----------------------------------------------
@@ -21,6 +24,7 @@
   WHAT YOU''LL DO IN 1 DAY ON SUNDAY 21.01.2018.
   ------------------------------------------------
   1. rewrite PHP calls for stats page to prepared statement
+  2. rewrite everything to prepared statement
 
   REFACTORING
   -----------

@@ -246,7 +246,7 @@ export default class Drug extends React.Component {
                 this.props.dispatch({type:"drug_brand", payload1:this.props.id, payload2:{ value: e.target.value, label: e.target.value}})
               }
             }}
-            placeholder="write your drug" />
+                       placeholder="write your drug" />
           </div>
         }
         <p className="inline">Drug not found</p>
@@ -275,14 +275,14 @@ export default class Drug extends React.Component {
           <option value="20">20</option>
           <option value="30">30</option>
           <option value="40">40</option>
-          <option value="40">45</option>
+          <option value="45">45</option>
           <option value="60">60</option>
-          <option value="160">75</option>
+          <option value="75">75</option>
           <option value="80">80</option>
-          <option value="160">100</option>
-          <option value="160">120</option>
+          <option value="100">100</option>
+          <option value="120">120</option>
           <option value="160">160</option>
-          <option value="160">+160</option>
+          <option value="+160">+160</option>
         </select>
         <p className="">Duration of treatment(from therapy start till today)</p>
         <input className={this.props.validation+this.findAppropriateClassDuration(this.props.id)} style={{marginBottom:7, width:40}} type="text"  defaultValue=""

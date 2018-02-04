@@ -1,5 +1,28 @@
   import store from "../../store.js"
+  import axios from "axios";
 
+  export function getRequest(url_id, dispatch_name) {
+    return function(dispatch) {
+      return axios.get(url_id)
+        .then((response)=>{
+          dispatch({type:dispatch_name, payload:response.data[0]['id'] });
+      })
+        .catch((err)=>{
+      })
+  }
+}
+
+  export function postRequest(url, ...args) {
+    let params = new URLSearchParams();
+    for (let i in args) {
+      params.append('param_' + i, args[i]);
+    }
+    return axios.post(url, params)
+      .then(response => {
+    })
+      .catch((err)=>{
+    })
+  }
 
   export function isValidString(val){
     console.log("value of input box is:"+val)
@@ -84,4 +107,67 @@ else{
         new_arr_obj.array0.push({value:array[i], label:array[i].charAt(0).toUpperCase() + array[i].slice(1)});
     }
     return new_arr_obj.array0;
+  }
+
+  export function toNativeArray(obj_arr) {
+    let array = [];
+    if (typeof obj_arr !=='undefined') {
+      for(let key in obj_arr) {
+        array.push(obj_arr[key].value);
+      }
+    }
+    return array;
+  }
+
+  export function objToString(obj) {
+    let result_string = null;
+    if (obj.hasOwnProperty('value')) {
+      result_string = obj.value;
+    }
+    return result_string;
+  }
+
+  export function createArray(obj_value1, obj_value2, obj_value3, obj_value4) {
+    let array=[];
+
+    if (typeof obj_value1 !== 'undefined'  && obj_value1 !== null) {
+      if (obj_value1.hasOwnProperty('value')) {
+        array.push(obj_value1.value);
+      }
+      else {
+        array.push(obj_value1);
+      }
+    }
+    if (typeof obj_value2 !== 'undefined'  && obj_value2 !== null) {
+      if (obj_value2.hasOwnProperty('value')) {
+        array.push(obj_value2.value);
+      }
+      else {
+        array.push(obj_value2);
+      }
+    }
+    if (typeof obj_value3!== 'undefined'  && obj_value3 !== null) {
+      if (obj_value3.hasOwnProperty('value')) {
+        array.push(obj_value3.value);
+      }
+      else {
+        array.push(obj_value3);
+      }
+    }
+    if (typeof obj_value4 !== 'undefined'  && obj_value4 !== null) {
+      if (obj_value4.hasOwnProperty('value')) {
+        array.push(obj_value4.value);
+      }
+      else {
+        array.push(obj_value4);
+      }
+    }
+
+    return array;
+  }
+  export function removeArrayValues(radio_value, array) {
+    if (radio_value ==='no' || radio_value ==='dont know') {
+      return [];
+    }
+    return array;
   }

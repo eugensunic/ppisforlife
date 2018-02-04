@@ -1,3 +1,4 @@
+
 export default function reducer(state={}, action){
 
   if(action.type==="drug_generic" && action.payload1=="first"){

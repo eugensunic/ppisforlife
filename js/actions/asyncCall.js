@@ -1,11 +1,13 @@
   import axios from "axios";
 
   export function asyncAll(url, name, args) {
-    return function(dispatch){
+    return function(dispatch) {
       let output;
       let element = {};
+      if (args!==null ) {
       for (let i in args) {
-         element['param_'+i]=args[i];
+         element['param_' + i]=args[i];
+        }
       }
       axios.get(url, {
         params: element
@@ -13,12 +15,13 @@
         .then((response)=>{
           dispatch({type:name,payload:response.data})
           output=true;
+
       })
          .catch((err)=>{
           dispatch({type:"FAIL",payload:err});
           output=false;
       })
-  }
+   }
   }
 
   export function getIntervalArray(array,start,end) {

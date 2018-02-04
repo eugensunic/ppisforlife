@@ -17,7 +17,11 @@ import Success from './Buttonsuccess.js'
 import Navbar from '../Navbar.js'
 import Navfooter from '../Navfooter.js'
 
+import * as conversion from './SubmitDatabase.js'
 import * as user from "./Functions.js"
+
+import axios from "axios";
+
 
 @connect((store) => {
   return {
@@ -29,8 +33,8 @@ import * as user from "./Functions.js"
     nutrient:store.nutrient,
     natural:store.natural,
     extra:store.extra,
-    other:store.other
-
+    other:store.other,
+    getId:store.getId
 
   };
 })
@@ -39,9 +43,12 @@ export default class Inputform extends React.Component {
      super(props);
      this.updateDimensions = this.updateDimensions.bind(this);
      this.state = ({add_drug_one:false,add_drug_two:false,add_drug_three:false,add_drug_four:false,success:false,
-       clicked:false,new_success:false,clicked2:false,final_success:false,warning_clicked:false, proceed_main_clicked:false, mgcondition:{marginTop:0}
+       clicked:false,new_success:false,clicked2:false,final_success:false,warning_clicked:false, proceed_main_clicked:false, mgcondition:{marginTop:0},
+       ajax_call:true
      });
+
    }
+
    updateDimensions(){
      if (window.innerWidth<992){
        console.log("INSIDE");
@@ -203,66 +210,168 @@ export default class Inputform extends React.Component {
  //daj ove checkboxe resetaj obavezno na onclick nemoj da mi se tam vrijednsoti pojavljuju
 sendDataToDatabase(){
   console.log("sending the data to database");
+  // you have to send only appropriate data to database so do proper inline validation
+if(typeof this.props.getId.getLastId==='undefined') {
+this.props.dispatch(user.getRequest('http://www.projectsgono.com/medsforlife/ppi_input/get_last_id.php', 'get-max-id')).then(()=> {
+  this.setState({final_success:false, ajax_call:false});
+  let FK_id = this.props.getId.getLastId;
+  user.postRequest('http://projectsgono.com/medsforlife/ppi_input/basic.php', FK_id,
+  this.props.basic.age,
+  this.props.basic.weight,
+  this.props.basic.weight_select,
+  this.props.basic.height,
+  this.props.basic.height_select,
+  conversion.genderValue(this.props.basic.gender),
+  conversion.raceValue(this.props.basic.race)).then(()=> {
+  // this.setState({final_success:false, new_success:false});
+   user.postRequest('http://projectsgono.com/medsforlife/ppi_input/all_other.php',
+   user.toNativeArray(this.props.condition.gastro),
+   user.toNativeArray(this.props.condition.other),
+   user.toNativeArray(this.props.condition.ppi),
+   FK_id,
+
+   user.createArray(this.props.drug.generic1, this.props.drug.generic2, this.props.drug.generic3, this.props.drug.generic4),
+   user.createArray(this.props.drug.brand1, this.props.drug.brand2, this.props.drug.brand3, this.props.drug.brand4),
+   user.createArray(this.props.drug.dosage1, this.props.drug.dosage2, this.props.drug.dosage3, this.props.drug.dosage4),
+   user.createArray(this.props.drug.duration1, this.props.drug.duration2, this.props.drug.duration3, this.props.drug.duration4),
+   user.createArray(conversion.globalTime(this.props.drug.globaltime1), conversion.globalTime(this.props.drug.globaltime2), conversion.globalTime(this.props.drug.globaltime3), conversion.globalTime(this.props.drug.globaltime4)),
+   user.createArray(conversion.dailyUse(this.props.drug.daily1), conversion.dailyUse(this.props.drug.daily2), conversion.dailyUse(this.props.drug.daily3), conversion.dailyUse(this.props.drug.daily4)),
+
+   user.removeArrayValues(conversion.radioSideEffects(this.props.sides.radio_side),user.toNativeArray(this.props.sides.side_effect_general)),
+   conversion.radioSideEffects(this.props.sides.radio_side),
+
+   user.removeArrayValues(conversion.radioOtherDrugs(this.props.other.radio_other), user.toNativeArray(this.props.other.otherdrug)),
+   conversion.radioOtherDrugs(this.props.other.radio_other),
+
+   user.removeArrayValues(conversion.radioNutrient(this.props.nutrient.radio_nutrient), user.toNativeArray(this.props.nutrient.nutrient)),
+   conversion.radioNutrient(this.props.nutrient.radio_nutrient),
+
+   user.toNativeArray(this.props.natural.naturalhelped),
+   user.toNativeArray(this.props.natural.naturalnothelped),
+
+   conversion.extraPylori(this.props.extra.pylori),
+   conversion.extraExercise(this.props.extra.exercise),
+   conversion.extraSmoke(this.props.extra.smoke),
+   conversion.extraAlcohol(this.props.extra.alcohol),
+   conversion.extraObese(this.props.extra.obesse),
+   conversion.extraEat(this.props.extra.eat),
+   conversion.extraStress(this.props.extra.stress),
+   conversion.extraFamily(this.props.extra.familly),
+   conversion.extraAnxiety(this.props.extra.anxiety),
+   conversion.extraGluten(this.props.extra.gluten),
+   conversion.extraLactose(this.props.extra.lactose),
+   conversion.extraAcid(this.props.extra.acid),
+   conversion.extraGood(this.props.extra.good),
+   conversion.extraAcidRebound(this.props.extra.a_rebound),
+   conversion.extraOverall(this.props.extra.overall)
+
+   ).then(()=> {
+     // 3 is the array amount which you will calculate on the frontend side...
+       // this.setState({final_success:false, new_success:false});
+       user.postRequest('http://projectsgono.com/medsforlife/ppi_input/side_effect_ppi_drug.php',
+       user.createArray(this.props.drug.generic1, this.props.drug.generic2, this.props.drug.generic3, this.props.drug.generic4).length,
+       user.removeArrayValues(conversion.radioSideEffects(this.props.sides.radio_side),user.toNativeArray(this.props.sides.effect1)),
+       user.removeArrayValues(conversion.radioSideEffects(this.props.sides.radio_side),user.toNativeArray(this.props.sides.effect2)),
+       user.removeArrayValues(conversion.radioSideEffects(this.props.sides.radio_side),user.toNativeArray(this.props.sides.effect3)),
+       user.removeArrayValues(conversion.radioSideEffects(this.props.sides.radio_side),user.toNativeArray(this.props.sides.effect4)))
+       .then(()=> {console.log("Form completed, thank you!")
+         // this.setState({final_success:false, new_success:false});
+
+     }).catch((err)=>{
+         console.log("Error occured, please try again");
+        });
+   }).catch((err)=>{
+       console.log("Error occured, please try again");
+      });
+  }).catch((err)=>{
+      console.log("Error occured, please try again");
+     });
+}).catch((err)=>{
+    console.log("Error occured, please try again");
+   });
+}
+
   //display data from first section
   //basic
-   console.log("BASIC")
-  console.log("age value: "+this.props.basic.age)
-  console.log("weight value: "+this.props.basic.weight)
-  console.log("weight si value: "+this.props.basic.weight_select)
-  console.log("height value: "+this.props.basic.height)
-  console.log("height si value: "+this.props.basic.height_select)
-  console.log("gender value: "+this.props.basic.gender)
-  console.log("race value: "+this.props.basic.race)
-  //condition
-   console.log("CONDITION")
-  console.log("gastro value: "+this.props.condition.gastro)
-  console.log("other value: "+this.props.condition.other)
-  console.log("ppi si value: "+this.props.condition.ppi)
-  //drugs
-    console.log("DRUGS")
-   console.log("generic value: "+this.props.drug.generic1)
-   console.log("brand value: "+this.props.drug.brand1)
-   console.log("dosage si value: "+this.props.drug.dosage1)
-   console.log("duration value: "+this.props.drug.duration1)
-   console.log("globaltime value: "+this.props.drug.globaltime1)
-   console.log("daily value: "+this.props.drug.daily1)
-   //display data from second section
-   //sides
-   console.log("SIDES")
-  console.log("radio value: "+this.props.sides.radio_side)
-  console.log("side1 value: "+this.props.sides.effect1)
-  console.log("side2 si value: "+this.props.sides.effect2)
-  console.log("side3 value: "+this.props.sides.effect3)
-  console.log("side4 value: "+this.props.sides.effect4)
-  console.log("general value: "+this.props.sides.side_effect_general)
-  //other
-   console.log("OTHER DRUG")
-
-  console.log("radio value: "+this.props.other.radio_other)
-  console.log("other drug value: "+this.props.other.otherdrug)
-  //nutrient
-   console.log("NUTRIENT")
-  console.log("radio value: "+this.props.nutrient.radio_nutrient)
-  console.log("nutrient: "+this.props.nutrient.nutrient)
-  //natural
-   console.log("NATURAL")
-  console.log("helped: "+this.props.natural.naturalhelped)
-  console.log("not helped: "+this.props.natural.naturalnothelped)
-  //extra
-  console.log("exercise: "+this.props.extra.exercise)
-  console.log("smoke: "+this.props.extra.smoke)
-  console.log("alcohol: "+this.props.extra.alcohol)
-  console.log("obesse: "+this.props.extra.obesse)
-  console.log("eat: "+this.props.extra.eat)
-  console.log("stress: "+this.props.extra.stress)
-  console.log("anxiety: "+this.props.extra.anxiety)
-  console.log("familly: "+this.props.extra.familly)
-  console.log("gluten: "+this.props.extra.gluten)
-  console.log("lactose: "+this.props.extra.lactose)
-  console.log("acid: "+this.props.extra.acid)
-  console.log("overall: "+this.props.extra.overall)
-  console.log("good: "+this.props.extra.good)
-  console.log("pylori: "+this.props.extra.pylori)
+  //  console.log("BASIC")
+  //  console.log("--------------------------");
+  // console.log("age value: "+this.props.basic.age)
+  // console.log("weight value: "+this.props.basic.weight)
+  // console.log("weight si value: "+this.props.basic.weight_select)
+  // console.log("height value: "+this.props.basic.height)
+  // console.log("height si value: "+this.props.basic.height_select)
+  // console.log("gender value: "+this.props.basic.gender)
+  // console.log("race value: "+this.props.basic.race)
+  //
+  // //condition
+  //  console.log("CONDITION")
+  //  console.log("--------------------------");
+  // console.log("gastro value: "+this.props.condition.gastro)
+  // for(var key in this.props.condition.gastro) {
+  //   console.log(this.props.condition.gastro[key]);
+  // }
+  // console.log("other value: "+this.props.condition.other)
+  // console.log("ppi si value: "+this.props.condition.ppi)
+  //
+  // //drugs
+  // // you will have to put this into an array, don't send evetything
+  // // to the backend just stuff that you need to send. send array anyways no matter if just
+  // // one element is inside
+  //   console.log("DRUGS")
+  //   console.log("--------------------------");
+  //  console.log("generic value: "+this.props.drug.generic1.value);
+  //  console.log("brand value: "+this.props.drug.brand1)
+  //  console.log("dosage si value: "+this.props.drug.dosage1)
+  //  console.log("duration value: "+this.props.drug.duration1)
+  //  console.log("globaltime value: "+this.props.drug.globaltime1)
+  //  console.log("daily value: "+this.props.drug.daily1)
+  //  //display data from second section
+  //  //sides
+  //  console.log("SIDES")
+  //  console.log("--------------------------");
+  // console.log("radio value: "+this.props.sides.radio_side)
+  // console.log("side1 value: "+this.props.sides.effect1)
+  // console.log("side2 si value: "+this.props.sides.effect2)
+  // console.log("side3 value: "+this.props.sides.effect3)
+  // console.log("side4 value: "+this.props.sides.effect4)
+  // console.log("general value: "+this.props.sides.side_effect_general)
+  // //other
+  //  console.log("OTHER DRUG")
+  //  console.log("--------------------------");
+  //
+  // console.log("radio value: "+this.props.other.radio_other)
+  // console.log("other drug value: "+this.props.other.otherdrug)
+  // //nutrient
+  //  console.log("NUTRIENT")
+  //  console.log("--------------------------");
+  // console.log("radio value: "+this.props.nutrient.radio_nutrient)
+  // console.log("nutrient: "+this.props.nutrient.nutrient)
+  // //natural
+  //  console.log("NATURAL")
+  //  console.log("--------------------------");
+  // console.log("helped: "+this.props.natural.naturalhelped)
+  // console.log("not helped: "+this.props.natural.naturalnothelped)
+  // //extra
+  //
+  //
+  // //-----------------------------------------------------------
+  // // POST SEND PARAMS
+  // //-----------------------------------------------------------
+  //    console.log("exercise: "+this.props.extra.exercise)
+  //    console.log("smoke: "+this.props.extra.smoke)
+  //    console.log("alcohol: "+this.props.extra.alcohol)
+  //    console.log("obesse: "+this.props.extra.obesse)
+  //    console.log("eat: "+this.props.extra.eat)
+  //    console.log("stress: "+this.props.extra.stress)
+  //    console.log("anxiety: "+this.props.extra.anxiety)
+  //    console.log("familly: "+this.props.extra.familly)
+  //    console.log("gluten: "+this.props.extra.gluten)
+  //    console.log("lactose: "+this.props.extra.lactose)
+  //    console.log("acid: "+this.props.extra.acid)
+  //    console.log("overall: "+this.props.extra.overall)
+  //    console.log("good: "+this.props.extra.good)
+  //    console.log("pylori: "+this.props.extra.pylori)
+  //    console.log("AREBOUND: "+this.props.extra.a_rebound);
 
 
 
@@ -279,7 +388,7 @@ finalConfirm(){
                   if (this.props.nutrient.radio_nutrient[0]){
                     if (this.props.nutrient.nutrient!=undefined && this.props.nutrient.nutrient!=""){
                         if (this.extraReturnTrue.call(this)){
-                          console.log("SUCCESS FINAL");
+                          console.log("SUCCESS FINAL first one");
                            this.setState({final_success:true})
                         }
                         else{
@@ -295,7 +404,7 @@ finalConfirm(){
                   else{
                       //radio nutrient is unknown or false, continue to Extra
                       if (this.extraReturnTrue.call(this)){
-                        console.log("SUCCESS FINAL");
+                        console.log("SUCCESS FINAL second one");
                          this.setState({final_success:true})
                       }
                       else{
@@ -521,7 +630,6 @@ reverseToPrevious(){
     return(
 
       <div className="bordering" id="target_row">
-        {console.log("waring is: "+this.state.warning_clicked)}
         {this.state.warning_clicked?this.reverseToPrevious.call(this):""}
         <Button id="reverse" className="btn btn-warning" val="Edit previous section" onClick={()=>this.setState({warning_clicked:true})}></Button>
         <Sides brand1={this.props.drug.brand1!=undefined?this.props.drug.brand1.value:null} brand2={this.props.drug.brand2!=undefined?this.props.drug.brand2.value:null}
@@ -629,11 +737,6 @@ reverseToPrevious(){
   }
 
   render(){
-
-  var options = [
-      { value: 'one', label: 'One' },
-      { value: 'two', label: 'Two' }
-  ];
     return(
       <div className="container">
         <Navbar></Navbar>
