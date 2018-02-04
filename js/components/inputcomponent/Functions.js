@@ -165,3 +165,9 @@ else{
 
     return array;
   }
+  export function removeArrayValues(radio_value, array) {
+    if (radio_value ==='no' || radio_value ==='dont know') {
+      return [];
+    }
+    return array;
+  }

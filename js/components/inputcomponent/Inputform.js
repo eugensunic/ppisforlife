@@ -260,13 +260,13 @@ this.props.dispatch(user.getRequest('http://www.projectsgono.com/medsforlife/ppi
    user.createArray(conversion.globalTime(this.props.drug.globaltime1), conversion.globalTime(this.props.drug.globaltime2), conversion.globalTime(this.props.drug.globaltime3), conversion.globalTime(this.props.drug.globaltime4)),
    user.createArray(conversion.dailyUse(this.props.drug.daily1), conversion.dailyUse(this.props.drug.daily2), conversion.dailyUse(this.props.drug.daily3), conversion.dailyUse(this.props.drug.daily4)),
 
-   user.toNativeArray(this.props.sides.side_effect_general),
+   user.removeArrayValues(conversion.radioSideEffects(this.props.sides.radio_side),user.toNativeArray(this.props.sides.side_effect_general)),
    conversion.radioSideEffects(this.props.sides.radio_side),
 
-   user.toNativeArray(this.props.other.otherdrug),
+   user.removeArrayValues(conversion.radioOtherDrugs(this.props.other.radio_other), user.toNativeArray(this.props.other.otherdrug)),
    conversion.radioOtherDrugs(this.props.other.radio_other),
 
-   user.toNativeArray(this.props.nutrient.nutrient),
+   user.removeArrayValues(conversion.radioNutrient(this.props.nutrient.radio_nutrient), user.toNativeArray(this.props.nutrient.nutrient)),
    conversion.radioNutrient(this.props.nutrient.radio_nutrient),
 
    user.toNativeArray(this.props.natural.naturalhelped),
@@ -293,10 +293,10 @@ this.props.dispatch(user.getRequest('http://www.projectsgono.com/medsforlife/ppi
        // this.setState({final_success:false, new_success:false});
        user.postRequest('http://projectsgono.com/medsforlife/ppi_input/side_effect_ppi_drug.php',
        user.createArray(this.props.drug.generic1, this.props.drug.generic2, this.props.drug.generic3, this.props.drug.generic4).length,
-       user.toNativeArray(this.props.sides.effect1),
-       user.toNativeArray(this.props.sides.effect2),
-       user.toNativeArray(this.props.sides.effect3),
-       user.toNativeArray(this.props.sides.effect4))
+       user.removeArrayValues(conversion.radioSideEffects(this.props.sides.radio_side),user.toNativeArray(this.props.sides.effect1)),
+       user.removeArrayValues(conversion.radioSideEffects(this.props.sides.radio_side),user.toNativeArray(this.props.sides.effect2)),
+       user.removeArrayValues(conversion.radioSideEffects(this.props.sides.radio_side),user.toNativeArray(this.props.sides.effect3)),
+       user.removeArrayValues(conversion.radioSideEffects(this.props.sides.radio_side),user.toNativeArray(this.props.sides.effect4)))
        .then(()=> {console.log("Form completed, thank you!")
          // this.setState({final_success:false, new_success:false});
 
