@@ -210,8 +210,6 @@ export default class Inputform extends React.Component {
  //daj ove checkboxe resetaj obavezno na onclick nemoj da mi se tam vrijednsoti pojavljuju
 sendDataToDatabase(){
   console.log("sending the data to database");
-  console.log("drugs: "+  user.createArray(this.props.drug.brand1, this.props.drug.brand2, this.props.drug.brand3, this.props.drug.brand4));
-  console.log("dosage prop +160 value: "+  this.props.drug.dosage1);
   // you have to send only appropriate data to database so do proper inline validation
 if(typeof this.props.getId.getLastId==='undefined') {
 this.props.dispatch(user.getRequest('http://www.projectsgono.com/medsforlife/ppi_input/get_last_id.php', 'get-max-id')).then(()=> {

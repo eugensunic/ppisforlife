@@ -275,7 +275,7 @@ export default class Drug extends React.Component {
           <option value="20">20</option>
           <option value="30">30</option>
           <option value="40">40</option>
-          <option value="40">45</option>
+          <option value="45">45</option>
           <option value="60">60</option>
           <option value="75">75</option>
           <option value="80">80</option>
