@@ -167,10 +167,6 @@ export default class Drug extends React.Component {
      'Zegerid', 'Kapidex', 'Prevacid', 'Nolpaza','Dexilant', 'Zoton','Protium','Losec','Ares','Prilosec','Tecta','Somac','Pantoloc','Pariet','Solox'
     ];
 
-  var options = [
-      { value: 'one', label: 'One' },
-      { value: 'two', label: 'Two' }
-  ];
     return(
 <div>
   <div className="row" id ="drugs_info">
