@@ -22,7 +22,7 @@ export default class Main extends React.Component {
       <div className="container">
         <Navbar/>
         <div className="row" style={{marginTop:15, marginBottom:10}}>
-         
+        </div>
         <Navfooter/>
       </div>
     );
