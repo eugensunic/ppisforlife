@@ -740,7 +740,7 @@ reverseToPrevious(){
     return(
       <div className="container">
         <Navbar></Navbar>
-        <div className="lang">
+        <div className="lang lanuage_input">
           <select name="language" className={this.props.error_height} onChange={(e)=>{this.props.dispatch({type:"language",payload:e.target.value})}} defaultValue="">
             <option value="" style={{display:'none'}} defaultValue="selected" label="choose language"></option>
             <option value="en">english</option>
@@ -758,9 +758,9 @@ reverseToPrevious(){
             age={user.isValidInteger(this.props.basic.age,0,110)} height={user.isValidInteger(this.props.basic.height,0,300)} weight={user.isValidInteger(this.props.basic.weight,0,1000)}
             race={((this.props.basic.race==undefined || this.props.basic.race.length==0) && this.state.clicked)?" redness_radio":""}
             gender={((this.props.basic.gender==undefined || this.props.basic.gender.length==0) && this.state.clicked)?" redness_radio":""}
-            error_height_input={((this.props.basic.height==undefined || this.props.basic.height.length==0) && this.state.clicked)?" redness_radio":""}
-            error_weight_input={((this.props.basic.weight==undefined || this.props.basic.weight.length==0) && this.state.clicked)?" redness_radio":""}
-            error_age_input={((this.props.basic.age==undefined || this.props.basic.age==0) && this.state.clicked)?" redness_radio":""}
+            error_height_input={((this.props.basic.height==undefined || this.props.basic.height.length==0) && this.state.clicked)?" redness_radio redness_input_border":""}
+            error_weight_input={((this.props.basic.weight==undefined || this.props.basic.weight.length==0) && this.state.clicked)?" redness_radio redness_input_border":""}
+            error_age_input={((this.props.basic.age==undefined || this.props.basic.age==0) && this.state.clicked)?" redness_radio redness_input_border":""}
           ></Basic>
           <hr/>
           <Condition class_modification={this.state.mgcondition} error_gastro={((this.props.condition.gastro==undefined || this.props.condition.gastro.length==0) && this.state.clicked)?" redness_input":""}
@@ -811,8 +811,8 @@ reverseToPrevious(){
           }
           <p>{this.state.add_drug_four?"Maximum reached":""}</p>
           <div className="row">
-            <Button class="btn-default" val="+" onClick={this.addComponent.bind(this)}></Button>
-            {this.state.add_drug_one? <Button class="btn-default" val="-" onClick={this.removeComponent.bind(this)}></Button>:<span></span>}
+            <Button class="btn-default " val="+" onClick={this.addComponent.bind(this)}></Button>
+            {this.state.add_drug_one? <Button class="btn-default plus_minus_button"  val="-" onClick={this.removeComponent.bind(this)}></Button>:<span></span>}
 
             <Success class="btn-primary mg_top maxpercent" val="Proceed" style="width:100%" onClick={this.successConfirm.bind(this)} disabled={this.state.proceed_main_clicked}></Success>
           </div>

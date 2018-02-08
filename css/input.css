@@ -19,12 +19,13 @@
 .input_basic{
   color:blue;
   font-weight: 570;
-  font-size: 14px;
+  font-size: 17px;
   margin-left: 2px;
 }
 .number{
   width: 40px;
   margin-right: 5px;
+  height:27px;
 }
 .widing{
   width:200px;
@@ -63,6 +64,10 @@
   background-color: pink;
   border-radius: 3px;
   display: inline-block;
+
+}
+.redness_input_border{
+  border: 1px solid #807e7e;
 }
 .bordering{
   margin-top:10px;
@@ -101,14 +106,18 @@
   padding: 20px;
   border: 3px solid #888;
   width: 80%;
+  padding-top: 30px;
+  padding-bottom: 50px;
 }
 
 /* The Close Button */
 .close_pop {
   color: black;
   float: right;
-  font-size: 20px;
+  font-size: 30px;
   font-weight: bold;
+  margin-top: -25px;
+
 }
 
 .close_pop:hover, .close_pop:focus {
@@ -150,4 +159,17 @@
   margin-left: 15px;
   color: #5a5f9a;
   font-weight: bold;
+}
+
+
+
+.plus_minus_button{
+  padding: 8px 15px;
+}
+.extra_margin_minus_add{
+   padding: 8px 17px;
+}
+.proceed_button, .submit_button{
+  font-size:17px;
+  height:35px;
 }

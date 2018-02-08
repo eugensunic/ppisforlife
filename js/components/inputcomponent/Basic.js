@@ -66,9 +66,9 @@ export default class Basic extends React.Component {
     </select>
     <p className="inline">Gender</p>
     <div className={"inline"+this.props.gender}>
-      <span className={this.props.basic.gender!=undefined?this.props.basic.gender[0]?"radio_clicked_input":"radio_normal_input":"radio_normal_input"} onClick={()=>this.onRadio("first_gender")}>M</span>
+      <span className={this.props.basic.gender!=undefined?this.props.basic.gender[0]?"radio_clicked_input":"radio_normal_input cancel":"radio_normal_input"} onClick={()=>this.onRadio("first_gender")}>M</span>
       <span className={this.props.basic.gender!=undefined?this.props.basic.gender[1]?"radio_clicked_input":"radio_normal_input":"radio_normal_input"} onClick={()=>this.onRadio("second_gender")}>F</span>
-      <span className={this.props.basic.gender!=undefined?this.props.basic.gender[2]?"radio_clicked_input":"radio_normal_input":"radio_normal_input"} onClick={()=>this.onRadio("third_gender")}>Other</span>
+      <span className={this.props.basic.gender!=undefined?this.props.basic.gender[2]?"radio_clicked_input":"radio_normal_input cancel_margin_last":"radio_normal_input cancel_margin_last"} onClick={()=>this.onRadio("third_gender")}>Other</span>
     </div>
     <p className="inline">Race</p>
     <div className={"inline"+this.props.race}>
@@ -76,7 +76,7 @@ export default class Basic extends React.Component {
       <span className={this.props.basic.race!=undefined?this.props.basic.race[1]?"radio_clicked_input":"radio_normal_input":"radio_normal_input"} onClick={()=>this.onRadio("second_race")}>Black</span>
       <span className={this.props.basic.race!=undefined?this.props.basic.race[2]?"radio_clicked_input":"radio_normal_input":"radio_normal_input"} onClick={()=>this.onRadio("third_race")}>Asian</span>
       <span className={this.props.basic.race!=undefined?this.props.basic.race[3]?"radio_clicked_input":"radio_normal_input":"radio_normal_input"} onClick={()=>this.onRadio("fourth_race")}>Hispanic/Latino</span>
-      <span className={this.props.basic.race!=undefined?this.props.basic.race[4]?"radio_clicked_input":"radio_normal_input":"radio_normal_input"} onClick={()=>this.onRadio("fifth_race")}>Other</span>
+      <span className={this.props.basic.race!=undefined?this.props.basic.race[4]?"radio_clicked_input":"radio_normal_input cancel_margin_last":"radio_normal_input cancel_margin_last"} onClick={()=>this.onRadio("fifth_race")}>Other</span>
     </div>
     <div className="inline">
       <a target="_blank" href="http://www.unitconverters.net">Need converter?</a>
