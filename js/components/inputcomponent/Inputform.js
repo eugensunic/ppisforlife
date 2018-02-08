@@ -812,9 +812,9 @@ reverseToPrevious(){
           <p>{this.state.add_drug_four?"Maximum reached":""}</p>
           <div className="row">
             <Button class="btn-default " val="+" onClick={this.addComponent.bind(this)}></Button>
-            {this.state.add_drug_one? <Button class="btn-default plus_minus_button"  val="-" onClick={this.removeComponent.bind(this)}></Button>:<span></span>}
+            {this.state.add_drug_one? <Button class="btn-default extra_margin_minus_add" val="-" onClick={this.removeComponent.bind(this)}></Button>:<span></span>}
 
-            <Success class="btn-primary mg_top maxpercent" val="Proceed" style="width:100%" onClick={this.successConfirm.bind(this)} disabled={this.state.proceed_main_clicked}></Success>
+            <Success class="btn-primary mg_top maxpercent confirm_button" val="Proceed" style="width:100%" onClick={this.successConfirm.bind(this)} disabled={this.state.proceed_main_clicked}></Success>
           </div>
         </div>
         {this.state.success?this.popUpBox():<span></span>}

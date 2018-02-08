@@ -169,7 +169,7 @@
 .extra_margin_minus_add{
    padding: 8px 17px;
 }
-.proceed_button, .submit_button{
+.confirm_button{
   font-size:17px;
   height:35px;
 }

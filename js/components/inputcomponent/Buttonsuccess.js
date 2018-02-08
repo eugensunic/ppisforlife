@@ -9,7 +9,7 @@ export default class Success extends React.Component {
   render(){
 
     return(
-    <button className={this.props.class}  onClick={this.props.onClick} disabled={this.props.disabled}>{this.props.val}</button>
+    <button className={this.props.class+" confirm_button"}  onClick={this.props.onClick} disabled={this.props.disabled}>{this.props.val}</button>
   );
 }
 }
