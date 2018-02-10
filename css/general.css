@@ -104,10 +104,7 @@ a.list-group-item:focus, a.list-group-item:hover, button.list-group-item:focus, 
   border: 1px solid #726e6e;
   border-radius: 1px;
   color: #474444;
-  padding-left: 3px;
-  padding-right: 3px;
-  padding-top:3px;
-  padding-bottom:3px;
+  padding:3px;
   margin-right: 2px;
   box-shadow: 1px 1px 1px grey;
   display: inline-block;

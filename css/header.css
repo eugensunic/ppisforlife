@@ -156,8 +156,7 @@
   border: 1px solid grey;
   border-radius: 2px;
   margin-right: 1px;
-  padding-left: 1px;
-  padding-right: 1px;
+  padding:3px;
 }
 .header_border_tag:hover{
   background-color: #dfe8ed;
@@ -165,8 +164,11 @@
 
 }
 .number_below_main_header{
-  float:left;
-  color:#989292
+  float: left;
+  color: #989292;
+  background: #ededed;
+  border-radius: 3px;
+  width: 20px;
 }
 .post_footer_div{
   border: 1px solid #d7d7d7;
