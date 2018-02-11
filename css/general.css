@@ -167,3 +167,9 @@ input[type=checkbox]{
   border-bottom: 1px solid #ebe2e2;
 
 }
+
+/* media queries begin */
+/* @media only screen and (max-width: ...px) {
+
+} */
+/* media queries end */

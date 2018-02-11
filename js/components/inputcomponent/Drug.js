@@ -18,16 +18,11 @@ export default class Drug extends React.Component {
    }
    updateDimensions(){
      if (window.innerWidth<768){
-       console.log("INSIDE");
        this.setState({width:198, "red_border":" redness_below768"});
 
      }
      else if (window.innerWidth<992){
-       console.log("INSIDE");
        this.setState({width:150, "red_border":" redness_below992"});
-       //solve condition row
-
-       //solve drug row
      }
 
      else if (window.innerWidth>=992){
@@ -36,6 +31,7 @@ export default class Drug extends React.Component {
    }
    componentDidMount(){
      window.addEventListener("resize", this.updateDimensions);
+     this.updateDimensions();
    }
    componentWillUnmount(){
      window.removeEventListener('resize', this.updateDimensions);

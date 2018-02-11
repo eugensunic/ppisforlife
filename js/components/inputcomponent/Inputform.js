@@ -51,11 +51,7 @@ export default class Inputform extends React.Component {
 
    updateDimensions(){
      if (window.innerWidth<992){
-       console.log("INSIDE");
        this.setState({mgcondition:{marginTop:22}})
-       //solve condition row
-
-       //solve drug row
      }
      else if (window.innerWidth>=992){
         this.setState({mgcondition:{marginTop:0}})
@@ -63,6 +59,7 @@ export default class Inputform extends React.Component {
    }
    componentDidMount(){
      window.addEventListener("resize", this.updateDimensions);
+     this.updateDimensions();
    }
    componentWillUnmount(){
      window.removeEventListener('resize', this.updateDimensions);
