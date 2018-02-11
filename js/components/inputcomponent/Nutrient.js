@@ -47,7 +47,7 @@ export default class Nutrient extends React.Component {
           <div className={"inline"+this.props.radio} >
             <span className={this.props.nutrient.radio_nutrient!=undefined?this.props.nutrient.radio_nutrient[0]?"radio_clicked_input":"radio_normal_input":"radio_normal_input"} onClick={()=>this.onRadio("first")}>YES</span>
             <span className={this.props.nutrient.radio_nutrient!=undefined?this.props.nutrient.radio_nutrient[1]?"radio_clicked_input":"radio_normal_input":"radio_normal_input"} onClick={()=>this.onRadio("second")}>NO</span>
-            <span className={this.props.nutrient.radio_nutrient!=undefined?this.props.nutrient.radio_nutrient[2]?"radio_clicked_input":"radio_normal_input":"radio_normal_input"} onClick={()=>this.onRadio("third")}>I don't know</span>
+            <span className={this.props.nutrient.radio_nutrient!=undefined?this.props.nutrient.radio_nutrient[2]?"radio_clicked_input":"radio_normal_input cancel_margin_last":"radio_normal_input cancel_margin_last"} onClick={()=>this.onRadio("third")}>I don't know</span>
           </div>
         </div>
         {this.props.nutrient.radio_nutrient!=undefined?this.props.nutrient.radio_nutrient[0]===true?this.displayNutrient.call(this,nutrient_array):"":""}

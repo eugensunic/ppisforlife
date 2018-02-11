@@ -77,6 +77,12 @@
 .lang{
   float:right;
 }
+.confirm_button_alternative {
+  height: 33px;
+}
+.input_expand {
+  height: 34px;
+}
 
 /*-------------------------------------------------------------------------------------------------------------*/
 /* The Modal (background) */

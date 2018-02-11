@@ -20,7 +20,7 @@ export default class Extra extends React.Component {
        <p className="sub_question">Did you experience acid rebound?</p>
        <div className={"inline move_extra_div_up"+this.props.arebound} style={{marginLeft:15}}>
          <span className={this.props.extra.a_rebound!=undefined?this.props.extra.a_rebound[0]?"radio_clicked_input":"radio_normal_input":"radio_normal_input"} onClick={()=>this.onRadio("first_a_rebound")}>Yes</span>
-         <span className={this.props.extra.a_rebound!=undefined?this.props.extra.a_rebound[1]?"radio_clicked_input":"radio_normal_input":"radio_normal_input"} onClick={()=>this.onRadio("second_a_rebound")}>No</span>
+         <span className={this.props.extra.a_rebound!=undefined?this.props.extra.a_rebound[1]?"radio_clicked_input":"radio_normal_input cancel_margin_last":"radio_normal_input cancel_margin_last"} onClick={()=>this.onRadio("second_a_rebound")}>No</span>
        </div>
      </div>
    );
@@ -221,7 +221,7 @@ export default class Extra extends React.Component {
         <div className={"inline move_extra_div_up"+this.props.pylori}>
           <span className={this.props.extra.pylori!=undefined?this.props.extra.pylori[0]?"radio_clicked_input":"radio_normal_input":"radio_normal_input"} onClick={()=>this.onRadio("first_pylori")}>Yes</span>
           <span className={this.props.extra.pylori!=undefined?this.props.extra.pylori[1]?"radio_clicked_input":"radio_normal_input":"radio_normal_input"} onClick={()=>this.onRadio("second_pylori")}>No</span>
-          <span className={this.props.extra.pylori!=undefined?this.props.extra.pylori[2]?"radio_clicked_input":"radio_normal_input":"radio_normal_input"} onClick={()=>this.onRadio("third_pylori")}>I don't know</span>
+          <span className={this.props.extra.pylori!=undefined?this.props.extra.pylori[2]?"radio_clicked_input":"radio_normal_input cancel_margin_last":"radio_normal_input cancel_margin_last"} onClick={()=>this.onRadio("third_pylori")}>I don't know</span>
         </div>
         <p className="extra_question">Do you exercise?</p>
         <div className={"inline move_extra_div_up"+this.props.exercise}>
@@ -229,7 +229,7 @@ export default class Extra extends React.Component {
           <span className={this.props.extra.exercise!=undefined?this.props.extra.exercise[1]?"radio_clicked_input":"radio_normal_input":"radio_normal_input"} onClick={()=>this.onRadio("second_exercise")}>Few times per week</span>
           <span className={this.props.extra.exercise!=undefined?this.props.extra.exercise[2]?"radio_clicked_input":"radio_normal_input":"radio_normal_input"} onClick={()=>this.onRadio("third_exercise")}>Few times per month</span>
           <span className={this.props.extra.exercise!=undefined?this.props.extra.exercise[3]?"radio_clicked_input":"radio_normal_input":"radio_normal_input"} onClick={()=>this.onRadio("fourth_exercise")}>Few times per year</span>
-          <span className={this.props.extra.exercise!=undefined?this.props.extra.exercise[4]?"radio_clicked_input":"radio_normal_input":"radio_normal_input"} onClick={()=>this.onRadio("fifth_exercise")}>Never</span>
+          <span className={this.props.extra.exercise!=undefined?this.props.extra.exercise[4]?"radio_clicked_input":"radio_normal_input cancel_margin_last":"radio_normal_input cancel_margin_last"} onClick={()=>this.onRadio("fifth_exercise")}>Never</span>
         </div>
         <p className="extra_question">Do you smoke?</p>
         <div className={"inline move_extra_div_up"+this.props.smoke}>
@@ -237,7 +237,7 @@ export default class Extra extends React.Component {
           <span className={this.props.extra.smoke!=undefined?this.props.extra.smoke[1]?"radio_clicked_input":"radio_normal_input":"radio_normal_input"} onClick={()=>this.onRadio("second_smoke")}>Few times per week</span>
           <span className={this.props.extra.smoke!=undefined?this.props.extra.smoke[2]?"radio_clicked_input":"radio_normal_input":"radio_normal_input"} onClick={()=>this.onRadio("third_smoke")}>Few times per month</span>
           <span className={this.props.extra.smoke!=undefined?this.props.extra.smoke[3]?"radio_clicked_input":"radio_normal_input":"radio_normal_input"} onClick={()=>this.onRadio("fourth_smoke")}>Few times per year</span>
-          <span className={this.props.extra.smoke!=undefined?this.props.extra.smoke[4]?"radio_clicked_input":"radio_normal_input":"radio_normal_input"} onClick={()=>this.onRadio("fifth_smoke")}>Never</span>
+          <span className={this.props.extra.smoke!=undefined?this.props.extra.smoke[4]?"radio_clicked_input":"radio_normal_input cancel_margin_last":"radio_normal_input cancel_margin_last"} onClick={()=>this.onRadio("fifth_smoke")}>Never</span>
 
         </div>
         <p className="extra_question">Do you drink alcohol?</p>
@@ -246,14 +246,14 @@ export default class Extra extends React.Component {
           <span className={this.props.extra.alcohol!=undefined?this.props.extra.alcohol[1]?"radio_clicked_input":"radio_normal_input":"radio_normal_input"} onClick={()=>this.onRadio("second_alcohol")}>Few times per week</span>
           <span className={this.props.extra.alcohol!=undefined?this.props.extra.alcohol[2]?"radio_clicked_input":"radio_normal_input":"radio_normal_input"} onClick={()=>this.onRadio("third_alcohol")}>Few times per month</span>
           <span className={this.props.extra.alcohol!=undefined?this.props.extra.alcohol[3]?"radio_clicked_input":"radio_normal_input":"radio_normal_input"} onClick={()=>this.onRadio("fourth_alcohol")}>Few times per year</span>
-          <span className={this.props.extra.alcohol!=undefined?this.props.extra.alcohol[4]?"radio_clicked_input":"radio_normal_input":"radio_normal_input"} onClick={()=>this.onRadio("fifth_alcohol")}>Never</span>
+          <span className={this.props.extra.alcohol!=undefined?this.props.extra.alcohol[4]?"radio_clicked_input":"radio_normal_input cancel_margin_last":"radio_normal_input cancel_margin_last"} onClick={()=>this.onRadio("fifth_alcohol")}>Never</span>
         </div>
         <p className="extra_question">Are you overweight/obesse?</p>
         <div className={"inline move_extra_div_up"+this.props.obesse}>
           <span className={this.props.extra.obesse!=undefined?this.props.extra.obesse[0]?"radio_clicked_input":"radio_normal_input":"radio_normal_input"} onClick={()=>this.onRadio("first_obesse")}>Yes</span>
           <span className={this.props.extra.obesse!=undefined?this.props.extra.obesse[1]?"radio_clicked_input":"radio_normal_input":"radio_normal_input"} onClick={()=>this.onRadio("second_obesse")}>No</span>
           <span className={this.props.extra.obesse!=undefined?this.props.extra.obesse[2]?"radio_clicked_input":"radio_normal_input":"radio_normal_input"} onClick={()=>this.onRadio("third_obesse")}>A little</span>
-          <span className={this.props.extra.obesse!=undefined?this.props.extra.obesse[3]?"radio_clicked_input":"radio_normal_input":"radio_normal_input"} onClick={()=>this.onRadio("fourth_obesse")}>I'm not sure</span>
+          <span className={this.props.extra.obesse!=undefined?this.props.extra.obesse[3]?"radio_clicked_input":"radio_normal_input cancel_margin_last":"radio_normal_input cancel_margin_last"} onClick={()=>this.onRadio("fourth_obesse")}>I'm not sure</span>
         </div>
         <p className="extra_question">Do you eat healthy?</p>
         <div className={"inline move_extra_div_up"+this.props.eat}>
@@ -261,7 +261,7 @@ export default class Extra extends React.Component {
           <span className={this.props.extra.eat!=undefined?this.props.extra.eat[1]?"radio_clicked_input":"radio_normal_input":"radio_normal_input"} onClick={()=>this.onRadio("second_eat")}>Few times per week</span>
           <span className={this.props.extra.eat!=undefined?this.props.extra.eat[2]?"radio_clicked_input":"radio_normal_input":"radio_normal_input"} onClick={()=>this.onRadio("third_eat")}>Few times per month</span>
           <span className={this.props.extra.eat!=undefined?this.props.extra.eat[3]?"radio_clicked_input":"radio_normal_input":"radio_normal_input"} onClick={()=>this.onRadio("fourth_eat")}>Few times a year</span>
-          <span className={this.props.extra.eat!=undefined?this.props.extra.eat[4]?"radio_clicked_input":"radio_normal_input":"radio_normal_input"} onClick={()=>this.onRadio("fifth_eat")}>I rarely eat healthy</span>
+          <span className={this.props.extra.eat!=undefined?this.props.extra.eat[4]?"radio_clicked_input":"radio_normal_input cancel_margin_last":"radio_normal_input cancel_margin_last"} onClick={()=>this.onRadio("fifth_eat")}>I rarely eat healthy</span>
         </div>
         <p className="extra_question">Are you under a lot of stress?</p>
         <div className={"inline move_extra_div_up"+this.props.stress}>
@@ -269,13 +269,13 @@ export default class Extra extends React.Component {
           <span className={this.props.extra.stress!=undefined?this.props.extra.stress[1]?"radio_clicked_input":"radio_normal_input":"radio_normal_input"} onClick={()=>this.onRadio("second_stress")}>No</span>
           <span className={this.props.extra.stress!=undefined?this.props.extra.stress[2]?"radio_clicked_input":"radio_normal_input":"radio_normal_input"} onClick={()=>this.onRadio("third_stress")}>Sometimes</span>
           <span className={this.props.extra.stress!=undefined?this.props.extra.stress[3]?"radio_clicked_input":"radio_normal_input":"radio_normal_input"} onClick={()=>this.onRadio("fourth_stress")}>I rarely get stressed</span>
-          <span className={this.props.extra.stress!=undefined?this.props.extra.stress[4]?"radio_clicked_input":"radio_normal_input":"radio_normal_input"} onClick={()=>this.onRadio("fifth_stress")}>I'm not sure</span>
+          <span className={this.props.extra.stress!=undefined?this.props.extra.stress[4]?"radio_clicked_input":"radio_normal_input cancel_margin_last":"radio_normal_input cancel_margin_last"} onClick={()=>this.onRadio("fifth_stress")}>I'm not sure</span>
         </div>
         <p className="extra_question">Has anyone in your familly ever had a gastrointestinal disorder/disease?</p>
         <div className={"inline move_extra_div_up"+this.props.familly}>
           <span className={this.props.extra.familly!=undefined?this.props.extra.familly[0]?"radio_clicked_input":"radio_normal_input":"radio_normal_input"} onClick={()=>this.onRadio("first_familly")}>Yes</span>
           <span className={this.props.extra.familly!=undefined?this.props.extra.familly[1]?"radio_clicked_input":"radio_normal_input":"radio_normal_input"} onClick={()=>this.onRadio("second_familly")}>No</span>
-          <span className={this.props.extra.familly!=undefined?this.props.extra.familly[2]?"radio_clicked_input":"radio_normal_input":"radio_normal_input"} onClick={()=>this.onRadio("third_familly")}>I don't know</span>
+          <span className={this.props.extra.familly!=undefined?this.props.extra.familly[2]?"radio_clicked_input":"radio_normal_input cancel_margin_last":"radio_normal_input cancel_margin_last"} onClick={()=>this.onRadio("third_familly")}>I don't know</span>
 
         </div>
         <p className="extra_question">Do you have some kind of anxiety disorder?</p>
@@ -283,34 +283,34 @@ export default class Extra extends React.Component {
           <span className={this.props.extra.anxiety!=undefined?this.props.extra.anxiety[0]?"radio_clicked_input":"radio_normal_input":"radio_normal_input"} onClick={()=>this.onRadio("first_anxiety")}>Yes</span>
           <span className={this.props.extra.anxiety!=undefined?this.props.extra.anxiety[1]?"radio_clicked_input":"radio_normal_input":"radio_normal_input"} onClick={()=>this.onRadio("second_anxiety")}>No</span>
           <span className={this.props.extra.anxiety!=undefined?this.props.extra.anxiety[2]?"radio_clicked_input":"radio_normal_input":"radio_normal_input"} onClick={()=>this.onRadio("third_anxiety")}>Maybe</span>
-          <span className={this.props.extra.anxiety!=undefined?this.props.extra.anxiety[3]?"radio_clicked_input":"radio_normal_input":"radio_normal_input"} onClick={()=>this.onRadio("fourth_anxiety")}>I don't know</span>
+          <span className={this.props.extra.anxiety!=undefined?this.props.extra.anxiety[3]?"radio_clicked_input":"radio_normal_input cancel_margin_last":"radio_normal_input cancel_margin_last"} onClick={()=>this.onRadio("fourth_anxiety")}>I don't know</span>
 
         </div>
         <p className="extra_question">Are you gluten sensitive?</p>
         <div className={"inline move_extra_div_up"+this.props.gluten}>
           <span className={this.props.extra.gluten!=undefined?this.props.extra.gluten[0]?"radio_clicked_input":"radio_normal_input":"radio_normal_input"} onClick={()=>this.onRadio("first_gluten")}>Yes</span>
           <span className={this.props.extra.gluten!=undefined?this.props.extra.gluten[1]?"radio_clicked_input":"radio_normal_input":"radio_normal_input"} onClick={()=>this.onRadio("second_gluten")}>No</span>
-          <span className={this.props.extra.gluten!=undefined?this.props.extra.gluten[2]?"radio_clicked_input":"radio_normal_input":"radio_normal_input"} onClick={()=>this.onRadio("third_gluten")}>I don't know</span>
+          <span className={this.props.extra.gluten!=undefined?this.props.extra.gluten[2]?"radio_clicked_input":"radio_normal_input cancel_margin_last":"radio_normal_input cancel_margin_last"} onClick={()=>this.onRadio("third_gluten")}>I don't know</span>
         </div>
         <p className="extra_question">Are you lactose intolerant?</p>
         <div className={"inline move_extra_div_up"+this.props.lactose}>
           <span className={this.props.extra.lactose!=undefined?this.props.extra.lactose[0]?"radio_clicked_input":"radio_normal_input":"radio_normal_input"} onClick={()=>this.onRadio("first_lactose")}>Yes</span>
           <span className={this.props.extra.lactose!=undefined?this.props.extra.lactose[1]?"radio_clicked_input":"radio_normal_input":"radio_normal_input"} onClick={()=>this.onRadio("second_lactose")}>No</span>
-          <span className={this.props.extra.lactose!=undefined?this.props.extra.lactose[2]?"radio_clicked_input":"radio_normal_input":"radio_normal_input"} onClick={()=>this.onRadio("third_lactose")}>I don't know</span>
+          <span className={this.props.extra.lactose!=undefined?this.props.extra.lactose[2]?"radio_clicked_input":"radio_normal_input cancel_margin_last":"radio_normal_input cancel_margin_last"} onClick={()=>this.onRadio("third_lactose")}>I don't know</span>
         </div>
         <p className="extra_question">Are you able to substitute your drug with another less potent acid reducer?</p>
         <div className={"inline move_extra_div_up"+this.props.acid}>
           <span className={this.props.extra.acid!=undefined?this.props.extra.acid[0]?"radio_clicked_input":"radio_normal_input":"radio_normal_input"} onClick={()=>this.onRadio("first_acid")}>Yes</span>
           <span className={this.props.extra.acid!=undefined?this.props.extra.acid[1]?"radio_clicked_input":"radio_normal_input":"radio_normal_input"} onClick={()=>this.onRadio("second_acid")}>No</span>
           <span className={this.props.extra.acid!=undefined?this.props.extra.acid[2]?"radio_clicked_input":"radio_normal_input":"radio_normal_input"} onClick={()=>this.onRadio("third_acid")}>Sometimes</span>
-          <span className={this.props.extra.acid!=undefined?this.props.extra.acid[3]?"radio_clicked_input":"radio_normal_input":"radio_normal_input"} onClick={()=>this.onRadio("fourth_acid")}>I don't know</span>
+          <span className={this.props.extra.acid!=undefined?this.props.extra.acid[3]?"radio_clicked_input":"radio_normal_input cancel_margin_last":"radio_normal_input cancel_margin_last"} onClick={()=>this.onRadio("fourth_acid")}>I don't know</span>
         </div>
         <p className="extra_question">Were you able to get off the drug (PPIs) completely? <span>(optional)</span></p>
         <div className={"inline move_extra_div_up"+this.props.good}>
           <span className={this.props.extra.good!=undefined?this.props.extra.good[0]?"radio_clicked_input":"radio_normal_input":"radio_normal_input"} onClick={()=>{this.onRadio("first_good");this.setState({rebound_checked:true})}}>Yes</span>
           <span className={this.props.extra.good!=undefined?this.props.extra.good[1]?"radio_clicked_input":"radio_normal_input":"radio_normal_input"} onClick={()=>{this.onRadio("second_good");this.setState({rebound_checked:false})}}>No</span>
           <span className={this.props.extra.good!=undefined?this.props.extra.good[2]?"radio_clicked_input":"radio_normal_input":"radio_normal_input"} onClick={()=>{this.onRadio("third_good");this.setState({rebound_checked:true})}}>Somehow</span>
-          <span className={this.props.extra.good!=undefined?this.props.extra.good[3]?"radio_clicked_input":"radio_normal_input":"radio_normal_input"} onClick={()=>{this.onRadio("fourth_good");this.setState({rebound_checked:false})}}>I don't know</span>
+          <span className={this.props.extra.good!=undefined?this.props.extra.good[3]?"radio_clicked_input":"radio_normal_input cancel_margin_last":"radio_normal_input cancel_margin_last"} onClick={()=>{this.onRadio("fourth_good");this.setState({rebound_checked:false})}}>I don't know</span>
         </div>
         {this.state.rebound_checked?this.additionalQuestion():""}
         <p className="extra_question">How would you rate your overall experience with PPIs?</p>
@@ -319,7 +319,7 @@ export default class Extra extends React.Component {
           <span className={this.props.extra.overall!=undefined?this.props.extra.overall[1]?"radio_clicked_input":"radio_normal_input":"radio_normal_input"} onClick={()=>this.onRadio("second_overall")}>Satisfied</span>
           <span className={this.props.extra.overall!=undefined?this.props.extra.overall[2]?"radio_clicked_input":"radio_normal_input":"radio_normal_input"} onClick={()=>this.onRadio("third_overall")}>Good</span>
           <span className={this.props.extra.overall!=undefined?this.props.extra.overall[3]?"radio_clicked_input":"radio_normal_input":"radio_normal_input"} onClick={()=>this.onRadio("fourth_overall")}>Poor</span>
-          <span className={this.props.extra.overall!=undefined?this.props.extra.overall[4]?"radio_clicked_input":"radio_normal_input":"radio_normal_input"} onClick={()=>this.onRadio("fifth_overall")}>Horrible drug</span>
+          <span className={this.props.extra.overall!=undefined?this.props.extra.overall[4]?"radio_clicked_input":"radio_normal_input cancel_margin_last":"radio_normal_input cancel_margin_last"} onClick={()=>this.onRadio("fifth_overall")}>Horrible drug</span>
         </div>
 
       </div>

@@ -62,11 +62,11 @@ export default class Basic extends React.Component {
       <option value="pd">pounds</option>
       <option value="st">stones</option>
 
-
+      
     </select>
     <p className="inline">Gender</p>
     <div className={"inline"+this.props.gender}>
-      <span className={this.props.basic.gender!=undefined?this.props.basic.gender[0]?"radio_clicked_input":"radio_normal_input cancel":"radio_normal_input"} onClick={()=>this.onRadio("first_gender")}>M</span>
+      <span className={this.props.basic.gender!=undefined?this.props.basic.gender[0]?"radio_clicked_input":"radio_normal_input":"radio_normal_input"} onClick={()=>this.onRadio("first_gender")}>M</span>
       <span className={this.props.basic.gender!=undefined?this.props.basic.gender[1]?"radio_clicked_input":"radio_normal_input":"radio_normal_input"} onClick={()=>this.onRadio("second_gender")}>F</span>
       <span className={this.props.basic.gender!=undefined?this.props.basic.gender[2]?"radio_clicked_input":"radio_normal_input cancel_margin_last":"radio_normal_input cancel_margin_last"} onClick={()=>this.onRadio("third_gender")}>Other</span>
     </div>

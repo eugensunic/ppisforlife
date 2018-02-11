@@ -54,6 +54,9 @@ td,th{
 .margin-left-5{
   margin-left:5px;
 }
+.margin-top-negative-10{
+  margin-top: -10px
+}
 .center_div{
   width: 50%;
   margin: 0 auto;

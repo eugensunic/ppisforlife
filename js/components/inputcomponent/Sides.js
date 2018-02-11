@@ -84,8 +84,8 @@ export default class Sides extends React.Component {
        <p className="inline">Side effect not found?</p>
        <input className="inline"  type="checkbox"  checked={this.state.open_input} onChange={this.onChangeCheck.bind(this,"disease_input")}/>
        {
-         this.state.open_input===false?<span></span>: <div><p></p> <input className={user.isValidString(this.state.disease_general)}   type="text" value={value_input || ''}  onChange={(e)=> this.setState({disease_general:e.target.value})} placeholder="write your side effect" maxLength="60" />
-           <button onClick={()=>{user.updateSelect(this.props.sides.side_effect_general,"side_general",this.state.disease_general);this.setState({disease_general:""})}}>Submit</button>
+         this.state.open_input===false?<span></span>: <div><p></p> <input className={user.isValidString(this.state.disease_general)+" input_expand"}   type="text" value={value_input || ''}  onChange={(e)=> this.setState({disease_general:e.target.value})} placeholder="write your side effect" maxLength="60" />
+           <button className="confirm_button_alternative" onClick={()=>{user.updateSelect(this.props.sides.side_effect_general,"side_general",this.state.disease_general);this.setState({disease_general:""})}}>Confirm</button>
            </div>
          }
        </div>
@@ -116,7 +116,7 @@ export default class Sides extends React.Component {
               <input className="inline" type="checkbox"  checked={this.findAppropriateCheckbox.call(this,side_name)} onChange={this.findAppropriateChangeState.bind(this,side_name)} />
               {
                 checkit===false?<span></span>:
-                <div><p></p> <input className={user.isValidString(this.findAppropriateSideEffect.call(this,side_name))}  type="text" value={this.findAppropriateSideEffect.call(this,side_name) || ''} maxLength="60"
+                <div><p></p> <input className={user.isValidString(this.findAppropriateSideEffect.call(this,side_name))+" input_expand"}  type="text" value={this.findAppropriateSideEffect.call(this,side_name) || ''} maxLength="60"
                   onChange={(e)=>{
                     if (side_name=="side_effect1"){
                       this.setState({input_first:e.target.value})
@@ -131,8 +131,8 @@ export default class Sides extends React.Component {
                       this.setState({input_fourth:e.target.value})
                     }
                   }}
-                  placeholder="write your side effect" />
-                  <button onClick={()=>{user.updateSelect(prop_value,side_name,state_0);this.setState({input_first:""})}}>Submit</button>
+                             placeholder="write your side effect" />
+                  <button className="confirm_button_alternative" onClick={()=>{user.updateSelect(prop_value,side_name,state_0);this.setState({input_first:""})}}>Confirm</button>
                 </div>
               }
             </div>
@@ -189,7 +189,7 @@ render(){
         <div className={"inline"+this.props.radio}>
           <span className={this.props.sides.radio_side!=undefined?this.props.sides.radio_side[0]?"radio_clicked_input":"radio_normal_input":"radio_normal_input"} onClick={()=>this.onRadio("first")}>YES</span>
           <span className={this.props.sides.radio_side!=undefined?this.props.sides.radio_side[1]?"radio_clicked_input":"radio_normal_input":"radio_normal_input"} onClick={()=>this.onRadio("second")}>NO</span>
-          <span className={this.props.sides.radio_side!=undefined?this.props.sides.radio_side[2]?"radio_clicked_input":"radio_normal_input":"radio_normal_input"} onClick={()=>this.onRadio("third")}>I don't know</span>
+          <span className={this.props.sides.radio_side!=undefined?this.props.sides.radio_side[2]?"radio_clicked_input":"radio_normal_input cancel_margin_last":"radio_normal_input cancel_margin_last"} onClick={()=>this.onRadio("third")}>I don't know</span>
         </div>
       </div>
       {this.props.sides.radio_side!=undefined?this.props.sides.radio_side[0]===true?this.displaySides.call(this,array_sides):"":""}

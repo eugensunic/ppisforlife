@@ -17,8 +17,8 @@ export default class Other extends React.Component {
   displayOther(options){
    return(
    <div className="row">
-     <div><p></p> <input className={user.isValidString(this.state.input_first)} style={{marginBottom:7}}  type="text" value={this.state.input_first || ''} onChange={(e)=> this.setState({input_first:e.target.value})} placeholder="write your drug" maxLength="60" />
-       <button onClick={()=>{user.updateSelect(this.props.other.otherdrug,"other",this.state.input_first);this.setState({input_first:""})}}>Confirm</button>
+     <div><p></p> <input className={user.isValidString(this.state.input_first)+ " input_expand"} style={{marginBottom:7}}  type="text" value={this.state.input_first || ''} onChange={(e)=> this.setState({input_first:e.target.value})} placeholder="write your drug" maxLength="60" />
+       <button className="confirm_button_alternative" onClick={()=>{user.updateSelect(this.props.other.otherdrug,"other",this.state.input_first);this.setState({input_first:""})}}>Confirm</button>
      </div>
 
      <Select
@@ -66,7 +66,7 @@ export default class Other extends React.Component {
           <p className="inline">Are you taking any other drugs along with PPIs (blood pressure, pain, cholesterol meds...)?</p>
           <div className={"inline"+this.props.radio} >
             <span className={this.props.other.radio_other!=undefined?this.props.other.radio_other[0]?"radio_clicked_input":"radio_normal_input":"radio_normal_input"} onClick={()=>this.onRadio("first")}>YES</span>
-            <span className={this.props.other.radio_other!=undefined?this.props.other.radio_other[1]?"radio_clicked_input":"radio_normal_input":"radio_normal_input"} onClick={()=>this.onRadio("second")}>NO</span>
+            <span className={this.props.other.radio_other!=undefined?this.props.other.radio_other[1]?"radio_clicked_input":"radio_normal_input cancel_margin_last":"radio_normal_input cancel_margin_last"} onClick={()=>this.onRadio("second")}>NO</span>
           </div>
         </div>
         {this.props.other.radio_other!=undefined?this.props.other.radio_other[0]===true?this.displayOther.call(this,user.pushToObject(other_array.sort())):"":""}

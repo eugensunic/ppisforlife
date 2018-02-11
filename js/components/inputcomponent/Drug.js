@@ -208,7 +208,7 @@ export default class Drug extends React.Component {
               }
             }}
           />:
-          <div><p></p> <input  type="text" style={{width:this.state.width}} className={user.isValidString(this.state.input_first)+this.findAppropriateClassBrand2(this.props.id)} maxLength="30"
+          <div className="margin-top-negative-10"><p></p> <input  type="text" style={{width:this.state.width}} className={user.isValidString(this.state.input_first)+this.findAppropriateClassBrand2(this.props.id)+" input_expand"} maxLength="30"
             onChange={(e)=>{
               this.setState({input_first:e.target.value})
               if (this.props.id=="first" || this.props.id=="second" || this.props.id=="third" || this.props.id=="fourth") {
@@ -251,12 +251,12 @@ export default class Drug extends React.Component {
               this.props.dispatch({type:"duration", payload1:this.props.id, payload2:e.target.value})
             }
           }}
-          maxLength="4"/>
+        maxLength="4"/>
         <div className={"inline"+this.findAppropriateClassGlobaltime(this.props.id)}>
           <span className={this.state.duration[0]?"radio_clicked_input":"radio_normal_input"} onClick={()=>this.onRadio("global_day")}>Day</span>
           <span className={this.state.duration[1]?"radio_clicked_input":"radio_normal_input"} onClick={()=>this.onRadio("global_week")}>Week</span>
           <span className={this.state.duration[2]?"radio_clicked_input":"radio_normal_input"} onClick={()=>this.onRadio("global_month")}>Month</span>
-          <span className={this.state.duration[3]?"radio_clicked_input":"radio_normal_input"} onClick={()=>this.onRadio("global_year")}>Year</span>
+          <span className={this.state.duration[3]?"radio_clicked_input":"radio_normal_input cancel_margin_last"} onClick={()=>this.onRadio("global_year")}>Year</span>
         </div>
       </div>
       <div className="col-sm-3 bootstrap_col_modification">
@@ -264,7 +264,7 @@ export default class Drug extends React.Component {
         <div className={"inline"+this.findAppropriateClassDaily(this.props.id)}>
           <span className={this.state.daily[0]?"radio_clicked_input":"radio_normal_input"} onClick={()=>this.onRadio("daily_first")}>YES</span>
           <span className={this.state.daily[1]?"radio_clicked_input":"radio_normal_input"} onClick={()=>this.onRadio("daily_second")}>NO</span>
-          <span className={this.state.daily[2]?"radio_clicked_input":"radio_normal_input"} onClick={()=>this.onRadio("daily_third")}>Unknown</span>
+          <span className={this.state.daily[2]?"radio_clicked_input":"radio_normal_input cancel_margin_last"} onClick={()=>this.onRadio("daily_third")}>Unknown</span>
         </div>
       </div>
     </div>

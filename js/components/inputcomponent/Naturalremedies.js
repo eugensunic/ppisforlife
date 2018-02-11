@@ -47,8 +47,8 @@ export default class Natural extends React.Component {
           <p className="inline">Remedy not found?</p>
           <input className="inline" type="checkbox"  checked={this.state.first_check} onChange={this.onChange.bind(this,"first")} />
           {
-            this.state.first_check===false?<span></span>: <div><p></p> <input className={user.isValidString(this.state.input_first)}  type="text" value={this.state.input_first || ''}  onChange={(e)=> this.setState({input_first:e.target.value})} placeholder="write your natural remedy" maxLength="60" />
-              <button onClick={()=>{user.updateSelect(this.props.natural.naturalhelped,"natural_helped",this.state.input_first);this.setState({input_first:""})}}>OK</button>
+            this.state.first_check===false?<span></span>: <div><p></p> <input className={user.isValidString(this.state.input_first)+ " input_expand"}  type="text" value={this.state.input_first || ''}  onChange={(e)=> this.setState({input_first:e.target.value})} placeholder="write your natural remedy" maxLength="60" />
+              <button className="confirm_button_alternative" onClick={()=>{user.updateSelect(this.props.natural.naturalhelped,"natural_helped",this.state.input_first);this.setState({input_first:""})}}>Confirm</button>
               </div>
             }
             </div>
@@ -66,8 +66,8 @@ export default class Natural extends React.Component {
               <p className="inline">Remedy not found?</p>
               <input className="inline" type="checkbox"  checked={this.state.second_check} onChange={this.onChange.bind(this,"second")} />
               {
-                this.state.second_check===false?<span></span>: <div><p></p> <input className={user.isValidString(this.state.input_second)}  type="text" value={this.state.input_second || ''}  onChange={(e)=> this.setState({input_second:e.target.value})} placeholder="write your natural remedy" maxLength="60" />
-                  <button onClick={()=>{user.updateSelect(this.props.natural.naturalnothelped,"natural_nothelped",this.state.input_second);this.setState({input_second:""})}}>OK</button>
+                this.state.second_check===false?<span></span>: <div><p></p> <input className={user.isValidString(this.state.input_second)+" input_expand"}  type="text" value={this.state.input_second || ''}  onChange={(e)=> this.setState({input_second:e.target.value})} placeholder="write your natural remedy" maxLength="60" />
+                  <button className="confirm_button_alternative" onClick={()=>{user.updateSelect(this.props.natural.naturalnothelped,"natural_nothelped",this.state.input_second);this.setState({input_second:""})}}>Confirm</button>
                   </div>
                 }
                 </div>

@@ -776,7 +776,7 @@ reverseToPrevious(){
             dosage1={((this.props.drug.dosage1==undefined || this.props.drug.dosage1.length==0) && this.state.clicked)?" redness_input":""}
             globaltime1={((this.props.drug.globaltime1==undefined || this.props.drug.globaltime1.length==0) && this.state.clicked)?" redness_radio":""}
             daily1={((this.props.drug.daily1==undefined || this.props.drug.daily1.length==0) && this.state.clicked)?" redness_radio":""}
-            duration1={((this.props.drug.duration1==undefined || this.props.drug.duration1==0) && this.state.clicked)?" redness_radio":""}
+            duration1={((this.props.drug.duration1==undefined || this.props.drug.duration1==0) && this.state.clicked)?" redness_radio redness_input_border":""}
           ></Drug>
 
           {this.state.add_drug_one?
@@ -787,7 +787,7 @@ reverseToPrevious(){
               dosage2={((this.props.drug.dosage2==undefined || this.props.drug.dosage2.length==0) && this.state.clicked)?" redness_input":""}
               globaltime2={((this.props.drug.globaltime2==undefined || this.props.drug.globaltime2.length==0) && this.state.clicked)?" redness_radio":""}
               daily2={((this.props.drug.daily2==undefined || this.props.drug.daily2.length==0) && this.state.clicked)?" redness_radio":""}
-              duration2={((this.props.drug.duration2==undefined || this.props.drug.duration2==0) && this.state.clicked)?" redness_radio":""}
+              duration2={((this.props.drug.duration2==undefined || this.props.drug.duration2==0) && this.state.clicked)?" redness_radio redness_input_border":""}
             ></Drug>:<span></span>}
           {this.state.add_drug_two?
             <Drug id="third" clicked={this.state.success} validation={user.isValidInteger(this.props.drug.duration3,0,400)}
@@ -797,7 +797,7 @@ reverseToPrevious(){
               dosage3={((this.props.drug.dosage3==undefined || this.props.drug.dosage3.length==0) && this.state.clicked)?" redness_input":""}
               globaltime3={((this.props.drug.globaltime3==undefined || this.props.drug.globaltime3.length==0) && this.state.clicked)?" redness_radio":""}
               daily3={((this.props.drug.daily3==undefined || this.props.drug.daily3.length==0) && this.state.clicked)?" redness_radio":""}
-              duration3={((this.props.drug.duration3==undefined || this.props.drug.duration3==0) && this.state.clicked)?" redness_radio":""}
+              duration3={((this.props.drug.duration3==undefined || this.props.drug.duration3==0) && this.state.clicked)?" redness_radio redness_input_border":""}
             ></Drug>:<span></span>}
           {this.state.add_drug_three?
             <Drug id="fourth" clicked={this.state.success} validation={user.isValidInteger(this.props.drug.duration4,0,400)}
@@ -807,7 +807,7 @@ reverseToPrevious(){
               dosage4={((this.props.drug.dosage4==undefined || this.props.drug.dosage4.length==0) && this.state.clicked)?" redness_input":""}
               globaltime4={((this.props.drug.globaltime4==undefined || this.props.drug.globaltime4.length==0) && this.state.clicked)?" redness_radio":""}
               daily4={((this.props.drug.daily4==undefined || this.props.drug.daily4.length==0) && this.state.clicked)?" redness_radio":""}
-              duration4={((this.props.drug.duration4==undefined || this.props.drug.duration4==0) && this.state.clicked)?" redness_radio":""}></Drug>:<span></span>
+              duration4={((this.props.drug.duration4==undefined || this.props.drug.duration4==0) && this.state.clicked)?" redness_radio redness_input_border":""}></Drug>:<span></span>
           }
           <p>{this.state.add_drug_four?"Maximum reached":""}</p>
           <div className="row">
