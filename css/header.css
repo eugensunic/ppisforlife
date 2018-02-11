@@ -180,11 +180,13 @@
 
 }
 .number_below_main_header{
+
   float: left;
   color: #989292;
-  background: #ededed;
-  border-radius: 3px;
-  width: 20px;
+background: #ededed;
+border-radius: 3px;
+width: 20px;
+margin-top: 3px;
 }
 .post_footer_div{
   border: 1px solid #d7d7d7;

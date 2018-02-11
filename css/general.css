@@ -51,6 +51,9 @@ td,th{
 .margin-right-3{
   margin-right:3px;
 }
+.margin-left-5{
+  margin-left:5px;
+}
 .center_div{
   width: 50%;
   margin: 0 auto;
