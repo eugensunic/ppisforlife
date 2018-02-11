@@ -84,7 +84,7 @@ export default class Headerbardoctor extends React.Component {
       <span className="number_below_main_header">{"#"+this.props.bar_change.page_num_dr}</span>
 
       <div className="center" style={{marginRight:46}}>
-        <span className="inline">Criteria:</span><span className="inline">GERD</span>
+        <span className="inline criteria_heading">Criteria:</span><span className="inline criteria_value">GERD</span>
       </div>
 
     </div>
