@@ -28,9 +28,10 @@ export default class Research extends React.Component {
         <Navbar/>
         <Quickstats/>
         <p className="title_research">Published research</p>
-        <div style={{marginLeft:17}}>
+        {/* will maybe come later */}
+        {/* <div style={{marginLeft:17}}>
           <p style={{'display':'inline'}}>Order by:</p> <span className="orderby_heading">Date</span> <span className="orderby_heading">Condition</span>
-        </div>
+        </div> */}
         <div className="row">
           <div className="col-sm-6">
             <div className="research_wrapper">
@@ -40,7 +41,7 @@ export default class Research extends React.Component {
                 Lorem Ipsum has been the industry's
                 standard dummy text ever since the 1500s, when an unknown printer took a galley
                 of type and scrambled it to make a type specimen book. It has survived not only
-                five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."/>
+              five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."/>
               <Stats/>
               <Problem content=""/>
               <Conclusion content=""/>
@@ -54,7 +55,7 @@ export default class Research extends React.Component {
                 Lorem Ipsum has been the industry's
                 standard dummy text ever since the 1500s, when an unknown printer took a galley
                 of type and scrambled it to make a type specimen book. It has survived not only
-                five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."/>
+              five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."/>
               <Stats/>
               <Problem content=""/>
               <Conclusion content=""/>
@@ -70,7 +71,7 @@ export default class Research extends React.Component {
                 Lorem Ipsum has been the industry's
                 standard dummy text ever since the 1500s, when an unknown printer took a galley
                 of type and scrambled it to make a type specimen book. It has survived not only
-                five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."/>
+              five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."/>
               <Stats/>
               <Problem content=""/>
               <Conclusion content=""/>
@@ -84,7 +85,7 @@ export default class Research extends React.Component {
                 Lorem Ipsum has been the industry's
                 standard dummy text ever since the 1500s, when an unknown printer took a galley
                 of type and scrambled it to make a type specimen book. It has survived not only
-                five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."/>
+              five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."/>
               <Stats/>
               <Problem content=""/>
               <Conclusion content=""/>
