@@ -30,6 +30,7 @@ select{
   border: none; /* <-- This thing here */
   border:solid 1px #ccc;
   border-radius: 2px;
+  height: 27px;
 }
 button{
   border: none; /* <-- This thing here */
@@ -49,6 +50,12 @@ td,th{
 }
 .margin-right-3{
   margin-right:3px;
+}
+.margin-left-5{
+  margin-left:5px;
+}
+.margin-top-negative-10{
+  margin-top: -10px
 }
 .center_div{
   width: 50%;
@@ -94,6 +101,8 @@ a.list-group-item:focus, a.list-group-item:hover, button.list-group-item:focus, 
   background-color: #a2ecad;
   padding-left: 3px;
   padding-right: 3px;
+  padding-top:3px;
+  padding-bottom:3px;
   margin-right: 1px;
   display: inline-block;
 }
@@ -101,10 +110,13 @@ a.list-group-item:focus, a.list-group-item:hover, button.list-group-item:focus, 
   border: 1px solid #726e6e;
   border-radius: 1px;
   color: #474444;
-  padding-left: 3px;
-  padding-right: 3px;
-  margin-right: 1px;
+  padding:3px;
+  margin-right: 2px;
+  box-shadow: 1px 1px 1px grey;
   display: inline-block;
+}
+.cancel_margin_last {
+  margin-right: 0px;
 }
 .radio_clicked_input, .radio_normal_input:hover {
   cursor: pointer;
@@ -124,6 +136,13 @@ a.list-group-item:focus, a.list-group-item:hover, button.list-group-item:focus, 
   font-size:13px;
 }
 
+input[type=checkbox]{
+  margin-left: 2px;
+}
+
+.lanuage_input{
+  margin-top: -4px;
+}
 /*----------------------------------------------------------------------------*/
 /*spinner*/
 .loader {

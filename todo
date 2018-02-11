@@ -1,24 +1,18 @@
   IMPORTANT
   ---------
-  1. Make mapping on frontend values to true false false arrays and then send to database!
+
   TODO
   ----
   1. Fill info with doctors from medscape articles on PPIs (add more values)
-  2. research just put params for the time being
-  3. create quick database for upcoming data, abandon big database
+  2. research page just put params for the time being
   10. Try to route numbers when click on a number so that back button works, route patient, doctor, pharma also, window.pushState maybe
   11. Fix media query on open page resolution select boxes width and up bottom offset in basic row
   12 When opening home page wait for the data to be loaded and then display.
 
   WHAT YOU''LL DO IN 1 DAY ON SATURDAY 20.01.2018.
   -----------------------------------------------
-  3. Adjust GERD header when criteria selected (style it)
-  4. introduce change themes (fonts, background, font color) localStorage, introduce themes make them on index.html so they are global
-  8. Reactive select on input-page does not go away when clicking outside the dropdown,
   9. Fix inputs, allow no char other than numbers
-  11. Add percentage sign to stats next to percentage
   12. Remove acid reflux just keep GERD
-  13. ORIGINAL refreshes, call the initial call instead on all 3 tags
   14. FAQ css, tips calculation, statistics write info below other stats, cover all
 
   WHAT YOU''LL DO IN 1 DAY ON SUNDAY 21.01.2018.
@@ -63,12 +57,18 @@
    - css again the post doctor and pharmacy text
    - Add routing
    - http get with params and introduce params on backend php
+   - create quick database for upcoming data, abandon big database
+   - Make mapping on frontend values to true false false arrays and then send to database!
+   - Add percentage sign to stats next to percentage (don't want that)
+   - Adjust GERD header when criteria selected (style it)
+   - introduce change themes (fonts, background, font color) localStorage, introduce themes make them on index.html so they are global
+   - Reactive select on input-page does not go away when clicking outside the dropdown,
 
   NOTES
   -----
    - write params for testing in this way: url?param_0=0&param_1=20
    - always delete branch when you finished with it (when merged to master)
    - in post php data (not the main one, all the other ones) put order by asc and put distinct id, because sometimes you get doubles and
-   things get messed up when associating on frontend.
+   - things get messed up when associating on frontend.
 
   brand-nexium data, post, rest all id's match perfectly

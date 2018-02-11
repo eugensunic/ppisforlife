@@ -245,7 +245,7 @@ console.log("in other"+this.props.everything.first_other);
             <button type="button" className="btn btn-default" onClick={()=>this.setState({twenty:true,ten:false})}>Show 20</button>
             <span className="inline">Hide value line</span>   <input type="checkbox" checked={this.state.middle_value} onChange={()=>this.setState({middle_value:!this.state.middle_value})} />
           </div>
-          <div className="">
+          <div className="margin-left-5">
             <span className={this.state.radio7?"radio_clicked":"radio_normal"} style={{marginRight:3}} onClick={()=>this.setState({radio7:true,radio8:false})}>Value</span>
             <span className={this.state.radio8?"radio_clicked":"radio_normal"} onClick={()=>this.setState({radio7:false,radio8:true})}>Percentage</span>
           </div>
