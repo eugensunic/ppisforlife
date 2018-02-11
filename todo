@@ -1,18 +1,17 @@
   IMPORTANT
   ---------
-
+  fix cross SetStates when opening third and fourth drug, along with maximum
   TODO
   ----
   1. Fill info with doctors from medscape articles on PPIs (add more values)
   2. research page just put params for the time being
   10. Try to route numbers when click on a number so that back button works, route patient, doctor, pharma also, window.pushState maybe
   11. Fix media query on open page resolution select boxes width and up bottom offset in basic row
-  12 When opening home page wait for the data to be loaded and then display.
+  12. When opening home page wait for the data to be loaded and then display.
 
   WHAT YOU''LL DO IN 1 DAY ON SATURDAY 20.01.2018.
   -----------------------------------------------
-  9. Fix inputs, allow no char other than numbers
-  12. Remove acid reflux just keep GERD
+  12. Remove acid reflux just keep GERD, do this in select on database
   14. FAQ css, tips calculation, statistics write info below other stats, cover all
 
   WHAT YOU''LL DO IN 1 DAY ON SUNDAY 21.01.2018.
@@ -63,6 +62,7 @@
    - Adjust GERD header when criteria selected (style it)
    - introduce change themes (fonts, background, font color) localStorage, introduce themes make them on index.html so they are global
    - Reactive select on input-page does not go away when clicking outside the dropdown,
+   - Fix inputs, allow no char other than numbers
 
   NOTES
   -----

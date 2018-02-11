@@ -96,7 +96,14 @@ export default class Inputform extends React.Component {
                       if (this.state.add_drug_three){
                         if ((this.props.drug.generic4!=null)  && this.props.drug.dosage4!==undefined
                         && (this.props.drug.duration4!==undefined && this.props.drug.duration4!="" && user.isValidInteger(this.props.drug.duration4,0,1000)!="error_red") && this.props.drug.globaltime4!==undefined && this.props.drug.daily4!==undefined){
-                          this.setState({success:true,clicked:true})
+                          if (this.state.add_drug_three || this.state.add_drug_four){
+                            this.setState({new_success:true, success:false, warning_clicked:false, clicked:true});
+                          }
+                          else{
+                            this.setState({success:true,clicked:true})
+                          }
+
+
                           console.log("fourth row success");
                         }
                         else{
@@ -106,7 +113,12 @@ export default class Inputform extends React.Component {
 
                       }
                       else{
-                        this.setState({success:true,clicked:true})
+                        if (this.state.add_drug_three || this.state.add_drug_four){
+                          this.setState({new_success:true, success:false, warning_clicked:false, clicked:true});
+                        }
+                        else{
+                          this.setState({success:true,clicked:true})
+                        }
                         console.log("third row success");
                       }
                     }
@@ -116,7 +128,12 @@ export default class Inputform extends React.Component {
                     }
                  }
                  else{
-                   this.setState({success:true,clicked:true})
+                   if (this.state.add_drug_three || this.state.add_drug_four){
+                     this.setState({new_success:true, success:false, warning_clicked:false, clicked:true});
+                   }
+                   else{
+                     this.setState({success:true,clicked:true})
+                   }
                    console.log("second row success");
                    //success first row
                  }
@@ -129,7 +146,12 @@ export default class Inputform extends React.Component {
 
           }
           else{
+            if (this.state.add_drug_three || this.state.add_drug_four){
+              this.setState({new_success:true, success:false, warning_clicked:false, clicked:true});
+            }
+            else{
               this.setState({success:true,clicked:true})
+            }
               console.log("first row success");
               //success first row
           }
@@ -137,7 +159,7 @@ export default class Inputform extends React.Component {
         }
         else{
           this.setState({clicked:true})
-      console.log("failed something up to first row");
+          console.log("failed something up to first row");
           console.log("gastro value: "+this.props.condition.gastro)
           console.log("other value: "+this.props.condition.other)
           console.log("ppi si value: "+this.props.condition.ppi)
@@ -589,9 +611,9 @@ finalConfirm(){
   }
 
 }
-popUpBox(){
+popUpBox() {
 
- if (this.state.success && this.state.add_drug_three===false){
+ if (this.state.success){
   return(
   <div className="modal_main">
     <div className="modal_sub_pop">
@@ -603,13 +625,7 @@ popUpBox(){
       </div>
     </div>
   </div>);
-}
-  else{
-    {
-       console.log("entered where it should")
-      if (this.state.success){console.log("entered the success");this.setState({new_success:true,success:false})}
-  }
-}
+ }
 }
 reverseToPrevious(){
   console.log("IS THIS TRUE: "+this.state.warning_clicked)
@@ -819,6 +835,7 @@ reverseToPrevious(){
         </div>
         {this.state.success?this.popUpBox():<span></span>}
         {this.state.new_success?this.successAdd():<span></span>}
+        {/* // new_success is for the down section */}
         {this.state.final_success?this.sendDataToDatabase():<span></span>}
         <Navfooter/>
       </div>
