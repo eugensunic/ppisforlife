@@ -81,9 +81,21 @@ export default class Ohterstats extends React.Component {
    }
 
   render(){
-  var conclusion1= "Most patients have been on the drug for 10 years. However, as numbers tend to drop after 10 years on the drug, there is a big number of patients being on the drug for 15 and 20 years.";
-  var conclusion2="Daily used PPIs means that patients were daily on them (continuously/non-stop) for the given amount of years. Most patients were on them continuously for equal or less than 10 years, but there are also patient’s who’ve been on them for 15 and 20 years continuously";
-  var conclusion3="Most patients are on a maintenance dose (pantoprazole, esomeprazole: 40mg, omeprazole, rabeprazole: 20mg, lansoprazole: 30mg), few are on a high dosage and OTC-low dosage";
+  var conclusion1= `Most patients have been on the drug for 10 years. However, as numbers tend to drop after 10 years on the drug, there is a big number of patients being on the drug for 15 and 20 years`;
+  var conclusion2= `Daily used PPIs means that patients were daily on them (continuously/non-stop) for the given amount of years. Most patients were on them continuously for equal or less than 10 years, but there are also patient’s who’ve been on them for 15 and 20 years continuously`;
+  var conclusion3= `Most patients are on a maintenance dose (pantoprazole, esomeprazole: 40mg, omeprazole, rabeprazole: 20mg, lansoprazole: 30mg), few are on a high dosage and OTC-low dosage`;
+  var conclusion4= `The table shows the relation between the dosage of the drug taken and number of side effects.  If we exclude the amount of side effects which don't have reported dosage (dosage = 0, which means that the user post did not specify the dosage parameter) we can see that most side effects occur at dosage of 40mg`;
+  var conclusion5= `Duration and side effects represent one of the most important relations when it comes to drug usage. A lot of people who are on PPIs for a period of 0-3 years experience side effects. Patients experience most side effects after being on them for 10 years. We can again see an increase in 15 and 20 years of being on PPIs. NOTE: x years does not mean that a patient has been on them continuously. He may have altered his therapy during those years`;
+  var conclusion6= `Most side effects occurred with generic drugs Omeprazole, Esomeprazole, Lansoprazole, respectively`;
+  var conclusion7= `The highest occurrence of “zero side effects” was reported with the usage of omeprazole, esomeprazole, lansoprazole. This means that for omeprazole, 43 users said that they experienced zero (0) side effects, for patients using esomeprazole, 13 users experienced zero side effects, and for lansoprazole 10 users experienced zero side effects`;
+  var conclusion8= `The numbers are low for the shown table. Few post out of 1200+ were found where patients discussed stomach polyps. We can make a conclusion that an occurrence of stomach polyps is rare, but apparently can happen`;
+  var conclusion9= `The numbers are low for the shown table. Few post out of 1200+ were found where patients discussed kidney problems associated to PPI usage. We can make a conclusion that an occurrence of kidney conditions are rare, but apparently can happen`;
+  var conclusion10= `The numbers are low for the shown table. Few post out of 1200+ were found where patients discussed bone problems associated to PPI usage. We can make a conclusion that an occurrence of bone problems are rare, but apparently can happen. Bone fractures and weakness has been a primary issue with these drugs, however low numbers show that not too many patients complain about it.  Bone problems may arise from this drugs since it is reported higher than average if we look at other diseases which PPIs may “cause”`;
+  var conclusion11= `The numbers are low for the shown table. Few post out of 1200+ were found where patients discussed anxiety problems associated to PPI usage. Anxiety is a broad topic and many patients may attribute their mental problems to these drugs rather than looking at other factors. A form of anxiety may arise from these drugs since it has been reported higher than average if we look at other diseases which PPIs may “cause”.`;
+  var conclusion12= `The numbers are low for the shown table. An extremely low amount of posts out of 1200+ were found where patients discussed cognitive decline problems associated to PPI usage. In the latest studies no links were found which would show relatively strong connection between PPIs and mental capabilities decline`;
+  var conclusion13= `The numbers are low for the shown table. A low amount of posts out of 1200+ were found where patients discussed vitamin B12 problems associated to PPIs usage. Vitamin B12 deficiency was broadly discussed along with bone issues when talking about PPIs side effects and harmfulness`;
+  var conclusion14= `The numbers are low for the shown table. A low amount of posts out of 1200+ were found where patients discussed magnesium deficiency associated to PPIs usage. Although small numbers, it's interesting to see esomeprazole ahead of every other drug despite the biggest amount of data coming from omeprazole (omeprazole users are the most frequent ones)`;
+  var conclusion15= `The numbers are low for the shown table. A low amount of posts out of 1200+ were found where patients discussed calcium deficiency associated to PPIs usage. Calcium deficiency is connected to bone loss, since it is the main ingredient for bones strength. Interestingly, not many people were to be found complaining about it despite being discussed widely in the media`;
 
   var PieChart;
   PieChart = require("react-chartjs").Pie;
@@ -122,21 +134,21 @@ export default class Ohterstats extends React.Component {
         <div className="row">
           <div className="col-sm-4">
             <h5 className="others_heading">Dosage related to side effects</h5>
-            {user.getTable(this.props.dosage_to_sides,"Dosage", "Side effects","","firstcol","secondcol")}
+            {user.getTable(this.props.dosage_to_sides,"Dosage", "Side effects", conclusion4,"firstcol","secondcol")}
             {/*select dosage, count(sides.name) as ppi_sides from post, post_sides,data,sides
               where data.post_FK=post.id  AND post_sides.post=post.id AND post_sides.sides=sides.id
             GROUP BY dosage */}
           </div>
           <div className="col-sm-4">
             <h5 className="others_heading">Duration related to side effects</h5>
-            {user.getTable(this.props.duration_to_sides,"Duration (years)", "Side effects","","firstcol","secondcol")}
+            {user.getTable(this.props.duration_to_sides,"Duration (years)", "Side effects",conclusion5,"firstcol","secondcol")}
             {/* select duration, count(sides.name) as ppi_sides from post, post_sides,data,sides
               where data.post_FK=post.id  AND post_sides.post=post.id AND post_sides.sides=sides.id
             GROUP BY duration */}
           </div>
           <div className="col-sm-4">
             <h5 className="others_heading">Drug <span>generic</span> related to side effects</h5>
-            {user.getTable(this.props.side_effects_generic,"Drug generic", "Side effects (amount)","","firstcol","secondcol")}
+            {user.getTable(this.props.side_effects_generic,"Drug generic", "Side effects (amount)",conclusion6,"firstcol","secondcol")}
             {/* select drug_generic.name, count(post_sides.sides) as amount_of_sides from post, post_sides, drug_generic, data
               where data.post_FK=post.id and drug_generic.id=data.drug_generic_FK AND post_sides.post=post.id
             GROUP BY drug_generic.name */}
@@ -146,7 +158,7 @@ export default class Ohterstats extends React.Component {
         <div className="row">
           <div className="col-sm-4">
             <h5 className="others_heading">Drugs <span>generic</span> associated to zero side effects</h5>
-            {user.getTable(this.props.drugs_to_explicitnone,"Drug generic", "No side effects","","firstcol","secondcol")}
+            {user.getTable(this.props.drugs_to_explicitnone,"Drug generic", "No side effects",conclusion7,"firstcol","secondcol")}
             {/* select drug_generic.name, count(post_sides.sides) as amount_of_sides from post, post_sides, drug_generic, data,sides
               where data.post_FK=post.id and drug_generic.id=data.drug_generic_FK AND post_sides.post=post.id AND post_sides.sides=sides.id
               and sides.name='explicitnone'
@@ -154,7 +166,7 @@ export default class Ohterstats extends React.Component {
           </div>
           <div className="col-sm-4">
             <h5 className="others_heading">Drugs <span>generic</span> associated to stomach polyps <span>(side effect)</span></h5>
-            {user.getTable(this.props.drugs_to_stomach_polyps,"Drug generic", "Stomach polyp side effect","","firstcol","secondcol")}
+            {user.getTable(this.props.drugs_to_stomach_polyps,"Drug generic", "Stomach polyp side effect",conclusion8,"firstcol","secondcol")}
             {/* select drug_generic.name, count(post_sides.sides) as amount_of_sides from post, post_sides, drug_generic, data,sides
               where data.post_FK=post.id and drug_generic.id=data.drug_generic_FK AND post_sides.post=post.id AND post_sides.sides=sides.id
               and sides.name='stomach polyps'
@@ -162,7 +174,7 @@ export default class Ohterstats extends React.Component {
           </div>
           <div className="col-sm-4">
             <h5 className="others_heading">Drug <span>generic</span> associated to kidney problems <span>(kidney failure, ckd, nephritis etc.)</span></h5>
-            {user.getTable(this.props.drugs_to_kidney,"Drug generic", "Kidney condition side effect","","firstcol","secondcol")}
+            {user.getTable(this.props.drugs_to_kidney,"Drug generic", "Kidney condition side effect",conclusion9,"firstcol","secondcol")}
             {/* select drug_generic.name, count(conditionppi.name) as amount_of_anxiety from post, post_conditionppi, drug_generic, data, conditionppi
               where data.post_FK=post.id and drug_generic.id=data.drug_generic_FK AND post_conditionppi.post=post.id AND post_conditionppi.conditionppi=conditionppi.id
               and conditionppi.name='CKD' OR conditionppi.name='Kidney failure' OR conditionppi.name='kidney problem' OR conditionppi.name='nephritis'
@@ -173,7 +185,7 @@ export default class Ohterstats extends React.Component {
         <div className="row">
           <div className="col-sm-4">
             <h5 className="others_heading">Drugs <span>generic</span> associated to bone problems <span>(osteopenia, osteoporosis, bone fracture etc.)</span></h5>
-            {user.getTable(this.props.drugs_to_osteo,"Drug generic", "Bone problems side effect","","firstcol","secondcol")}
+            {user.getTable(this.props.drugs_to_osteo,"Drug generic", "Bone problems side effect",conclusion10,"firstcol","secondcol")}
             {/* select drug_generic.name, count(conditionppi.name) as amount_of_anxiety from post, post_conditionppi, drug_generic, data, conditionppi
               where data.post_FK=post.id and drug_generic.id=data.drug_generic_FK AND post_conditionppi.post=post.id AND post_conditionppi.conditionppi=conditionppi.id
               and conditionppi.name='Osteoporosis' or conditionppi.name='Osteopenia' or conditionppi.name='bone fracture'
@@ -181,7 +193,7 @@ export default class Ohterstats extends React.Component {
           </div>
           <div className="col-sm-4">
             <h5 className="others_heading">Drugs <span>generic</span> associated with Anxiety</h5>
-            {user.getTable(this.props.drugs_to_anxiety,"Drug generic", "Anxiety side effect","","firstcol","secondcol")}
+            {user.getTable(this.props.drugs_to_anxiety,"Drug generic", "Anxiety side effect",conclusion11,"firstcol","secondcol")}
             {/* select drug_generic.name, count(conditionppi.name) as amount_of_anxiety from post, post_conditionppi, drug_generic, data, conditionppi
               where data.post_FK=post.id and drug_generic.id=data.drug_generic_FK AND post_conditionppi.post=post.id AND post_conditionppi.conditionppi=conditionppi.id
               and conditionppi.name='Anxiety'
@@ -189,7 +201,7 @@ export default class Ohterstats extends React.Component {
           </div>
           <div className="col-sm-4">
             <h5 className="others_heading">Drug <span>generic</span> associated to dementia</h5>
-            {user.getTable(this.props.drugs_to_dementia,"Drug generic", "Dementia side effect","","firstcol","secondcol")}
+            {user.getTable(this.props.drugs_to_dementia,"Drug generic", "Dementia side effect",conclusion12,"firstcol","secondcol")}
             {/* select drug_generic.name, count(conditionppi.name) as amount_of_anxiety from post, post_conditionppi, drug_generic, data, conditionppi
               where data.post_FK=post.id and drug_generic.id=data.drug_generic_FK AND post_conditionppi.post=post.id AND post_conditionppi.conditionppi=conditionppi.id
               and conditionppi.name='Dementia'
@@ -201,7 +213,7 @@ export default class Ohterstats extends React.Component {
         <div className="row">
           <div className="col-sm-4">
             <h5 className="others_heading">Drugs <span>generic</span> associated to vitamin B12 defficiency </h5>
-            {user.getTable(this.props.drugs_to_b12,"Drug generic", "B12 defficiency","","firstcol","secondcol")}
+            {user.getTable(this.props.drugs_to_b12,"Drug generic", "B12 defficiency",conclusion13,"firstcol","secondcol")}
             {/* select drug_generic.name, count(conditionppi.name) as amount_of_anxiety from post, post_conditionppi, drug_generic, data, conditionppi
               where data.post_FK=post.id and drug_generic.id=data.drug_generic_FK AND post_conditionppi.post=post.id AND post_conditionppi.conditionppi=conditionppi.id
               and conditionppi.name='Osteoporosis' or conditionppi.name='Osteopenia' or conditionppi.name='bone fracture'
@@ -209,7 +221,7 @@ export default class Ohterstats extends React.Component {
           </div>
           <div className="col-sm-4">
             <h5 className="others_heading">Drugs <span>generic</span> associated to vitamin Mg defficiency</h5>
-            {user.getTable(this.props.drugs_to_magnesium,"Drug generic", "Mg defficiency","","firstcol","secondcol")}
+            {user.getTable(this.props.drugs_to_magnesium,"Drug generic", "Mg defficiency",conclusion14,"firstcol","secondcol")}
             {/* select drug_generic.name, count(conditionppi.name) as amount_of_anxiety from post, post_conditionppi, drug_generic, data, conditionppi
               where data.post_FK=post.id and drug_generic.id=data.drug_generic_FK AND post_conditionppi.post=post.id AND post_conditionppi.conditionppi=conditionppi.id
               and conditionppi.name='Anxiety'
@@ -217,7 +229,7 @@ export default class Ohterstats extends React.Component {
           </div>
           <div className="col-sm-4">
             <h5 className="others_heading">Drug <span>generic</span> associated to Calcium defficiency</h5>
-            {user.getTable(this.props.drugs_to_calcium,"Drug generic", "Ca defficiency","","firstcol","secondcol")}
+            {user.getTable(this.props.drugs_to_calcium,"Drug generic", "Ca defficiency",conclusion15,"firstcol","secondcol")}
             {/* select drug_generic.name, count(conditionppi.name) as amount_of_anxiety from post, post_conditionppi, drug_generic, data, conditionppi
               where data.post_FK=post.id and drug_generic.id=data.drug_generic_FK AND post_conditionppi.post=post.id AND post_conditionppi.conditionppi=conditionppi.id
               and conditionppi.name='Dementia'

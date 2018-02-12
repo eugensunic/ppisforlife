@@ -296,11 +296,11 @@ console.log("in other"+this.props.everything.first_other);
           </div>
           <Graph  width={this.state.width} x_arr={this.state.sending_array_val.length!=0?this.state.twenty?this.state.sending_array_val.slice(0,21):this.state.sending_array_val.slice(0,11):this.state.twenty?condition_arr.slice(0,21):condition_arr.slice(0,11)}
             value_arr={this.state.sending_array_count.length!=0?this.state.twenty?this.state.sending_array_count.slice(0,21):this.state.sending_array_count.slice(0,11):this.state.twenty?condition_count_arr.slice(0,21):condition_count_arr.slice(0,11)} which_one={this.state.radio3} percent_value={this.state.radio5}></Graph>
-          <div className="">
+          <div className="margin-left-5">
             <span className={this.state.radio3?"radio_clicked":"radio_normal"} style={{marginRight:3}} onClick={()=>this.setState({radio3:true,radio4:false})}>Bar chart</span>
             <span className={this.state.radio4?"radio_clicked":"radio_normal"} onClick={()=>this.setState({radio3:false,radio4:true})}>Pie chart</span>
           </div>
-          <div style={{marginTop:3}} className="">
+          <div className="margin-left-5 margin-top-3">
             <span className={this.state.radio5?"radio_clicked":"radio_normal"} style={{marginRight:3}} onClick={()=>this.setState({radio5:true,radio6:false})}>Value</span>
             <span className={this.state.radio6?"radio_clicked":"radio_normal"} onClick={()=>this.setState({radio5:false,radio6:true})}>Percentage</span>
           </div>

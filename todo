@@ -11,7 +11,6 @@
   WHAT YOU'' LL DO IN 1 DAY ON SATURDAY 20.01.2018.
   -----------------------------------------------
   12. Remove acid reflux just keep GERD, do this in select on database
-  14. statistics write info below other stats
 
   WHAT YOU''LL DO IN 1 DAY ON SUNDAY 21.01.2018.
   ------------------------------------------------
@@ -62,6 +61,7 @@
    - fix cross SetStates when opening third and fourth drug, along with maximum
    - Fix media query on open page resolution select boxes width and up bottom offset in basic row
    - When opening home page wait for the data to be loaded and then display. (NOT TO BE DONE)
+   - statistics write info below other stats
 
   NOTES
   -----
