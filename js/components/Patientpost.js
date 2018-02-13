@@ -92,7 +92,7 @@ export default class Patientpost extends React.Component {
       if (total_break) {
         break;
       }
-      if (flag == false) {
+      if (!flag) {
         ++i;
       }
       if (i == obj.length - 1) {

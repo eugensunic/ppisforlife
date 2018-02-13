@@ -10,10 +10,12 @@ import * as user from "../actions/asyncCAll.js"
 export default class Headerbardoctor extends React.Component {
   constructor(props) {
     super(props);
+    this.state=({criteria_value:'default'});
   }
 
   callDoctorAll(url, ...args) {
     this.props.dispatch(user.asyncAll(url, 'doctor_call_all', args));
+
   }
 
   reloadIndexPage(){
@@ -30,9 +32,11 @@ export default class Headerbardoctor extends React.Component {
 
       <span className="header_border_tag" onClick={()=>{
         this.callDoctorAll('http://projectsgono.com/medsforlife/appcall_doctor/user_or_doctor.php', 1);
+        this.setState({criteria_value:'Personal doctor opinion'});
       }}>doctor explicit</span>
       <span className="header_border_tag" onClick={()=>{
         this.callDoctorAll('http://projectsgono.com/medsforlife/appcall_doctor/user_or_doctor.php', 0);
+        this.setState({criteria_value:'Doctor opinion expressed by patient'});
       }}>user associated</span>
 
 
@@ -40,21 +44,27 @@ export default class Headerbardoctor extends React.Component {
       <p className="post_elementheaderbar">opinion on drug</p>
       <span className="header_border_tag" onClick={()=> {
         this.callDoctorAll('http://projectsgono.com/medsforlife/appcall_doctor/get_opinion.php', 'good');
+        this.setState({criteria_value:'Positive opinion'});
       }}>good</span>
       <span className="header_border_tag" onClick={()=> {
         this.callDoctorAll('http://projectsgono.com/medsforlife/appcall_doctor/get_opinion.php', 'good(shortterm)');
+        this.setState({criteria_value:'Positive opinion(short-term drug usage)'});
       }}>good (short-term)</span>
       <span className="header_border_tag" onClick={()=> {
         this.callDoctorAll('http://projectsgono.com/medsforlife/appcall_doctor/get_opinion.php', 'good(longterm)');
+        this.setState({criteria_value:'Positive opinion(long-term drug usage)'});
       }}>good (long-term)</span>
       <span className="header_border_tag" onClick={()=> {
         this.callDoctorAll('http://projectsgono.com/medsforlife/appcall_doctor/get_opinion.php', 'notgood');
+        this.setState({criteria_value:'Negative opinion(drug usage)'});
       }}>not good</span>
       <span className="header_border_tag" onClick={()=> {
         this.callDoctorAll('http://projectsgono.com/medsforlife/appcall_doctor/get_opinion.php', 'notgood(longterm)');
+        this.setState({criteria_value:'Negative opinion(long-term drug usage)'});
       }}>not good (long-term)</span>
       <span className="header_border_tag" onClick={()=> {
         this.callDoctorAll('http://projectsgono.com/medsforlife/appcall_doctor/get_opinion.php', 'unknown');
+        this.setState({criteria_value:'Unknown opinion(short-term drug usage)'});
       }}>unknown</span>
 
       <br/>
@@ -64,6 +74,7 @@ export default class Headerbardoctor extends React.Component {
       <select name="url_drop" className={""} onChange={(e)=>{
         let param=e.nativeEvent.target[e.nativeEvent.target.selectedIndex].text.trim();
         this.callDoctorAll('http://projectsgono.com/medsforlife/appcall_doctor/url_name.php', param);
+        this.setState({criteria_value: param});
       }} defaultValue="">
         <option value="" style={{display:'none'}} defaultValue="selected" label="choose url"></option>
         <option value="patientinf">patient.info</option>
@@ -84,7 +95,7 @@ export default class Headerbardoctor extends React.Component {
       <span className="number_below_main_header">{"#"+this.props.bar_change.page_num_dr}</span>
 
       <div className="center" style={{marginRight:46}}>
-        <span className="inline criteria_heading">Criteria:</span><span className="inline criteria_value">GERD</span>
+        <span className="inline criteria_heading">Criteria:</span><span className="inline criteria_value">{this.state.criteria_value}</span>
       </div>
 
     </div>

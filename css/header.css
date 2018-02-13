@@ -173,6 +173,7 @@
   border-radius: 2px;
   margin-right: 1px;
   padding:3px;
+  margin-bottom:5px;
 }
 .header_border_tag:hover{
   background-color: #dfe8ed;
