@@ -1,12 +1,15 @@
   IMPORTANT
   ---------
-
+  react dinamic routing: https://stackoverflow.com/questions/47245999/how-to-achieve-dynamic-routing-in-react-router-4
+  - test everyhting before proceeding to final page
   TODO
   ----
   1. Fill info with doctors from medscape articles on PPIs (add more values)
   2. research page just put params for the time being
   10. Try to route numbers when click on a number so that back button works, route patient, doctor, pharma also, window.pushState maybe
   11. Fill in new FAQ questions which you have in .docx word file
+  12. Calculation of barrett's esophaugs occurance
+  13. Find info about stats
 
   WHAT YOU'' LL DO IN 1 DAY ON SATURDAY 20.01.2018.
   -----------------------------------------------
@@ -62,6 +65,8 @@
    - Fix media query on open page resolution select boxes width and up bottom offset in basic row
    - When opening home page wait for the data to be loaded and then display. (NOT TO BE DONE)
    - statistics write info below other stats
+   - removed explanation button and show example
+   - criteria value adjusted
 
   NOTES
   -----
