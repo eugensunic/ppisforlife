@@ -92,10 +92,10 @@ export default class Research extends React.Component {
             </div>
           </div>
         </div>
-        <div className="row">
+        {/* <div className="row">
           <button id="button_explanation" type="button" className="btn btn-default" style={{marginTop:20,marginLeft:20}} onClick={""}>Show explanation</button>
-        </div>
-        <Explanation/>
+          </div>
+        <Explanation/> */}
         <Social shown={true}/>
         <Navfooter/>
       </div>
