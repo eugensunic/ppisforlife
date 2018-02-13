@@ -89,7 +89,7 @@ export default class Headerbarpharma extends React.Component {
 
       <hr style={{marginTop:0,marginBottom:0}}/>
       <span className="number_below_main_header">{"#"+this.props.bar_change.page_num_pharma}</span>
-      <div className="center" style={{marginRight:46}}>
+      <div className="center" style={{marginRight:46, paddingBottom:1}}>
         <span className="inline criteria_heading">Criteria:</span><span className="inline criteria_value">{this.state.criteria_value}</span>
       </div>
 
