@@ -1,4 +1,4 @@
-export const Htmlstring=`<div class="container">
+`<div class="container">
 
   <div class="panel panel-primary">
     <div class="panel-heading">Info</div>
@@ -3063,7 +3063,7 @@ Its relative safety and efficacy are controversial, with the American College of
   </div>
 </div>
 
-<h3 id="statistic_heading" style="color:#34919f;">Statisticss</h3>
+<h3 id="statistic_heading" style="color:#34919f;">Statistics</h3>
 <div class="card">
 <div class="card-header" role="tab" id="heading_new1">
   <h5 class="mb-0">
