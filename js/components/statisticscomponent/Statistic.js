@@ -39,7 +39,7 @@ export default class Statistic extends React.Component {
          <br/>
          <span className="inline">In post collection the following was assumed: <span className="heartburn_gerd_reflux">longterm-heartburn=GERD=acid-reflux</span></span>
          <br/>
-         <p className="inline">Total <a href="">forum posts</a>: 1230</p>
+         <p className="inline">Total <a href="">forum posts</a>: >1200</p>
          <br/>
        </div>);
      }

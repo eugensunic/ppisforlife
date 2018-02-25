@@ -7,16 +7,10 @@
   1. Fill info with doctors from medscape articles on PPIs (add more values)
   2. research page just put params for the time being
   10. Try to route numbers when click on a number so that back button works, route patient, doctor, pharma also, window.pushState maybe
-  11. Fill in new FAQ questions which you have in .docx word file
   12. Calculation of barrett's esophaugs occurance
-  13. Find info about stats
-
-  WHAT YOU'' LL DO IN 1 DAY ON SATURDAY 20.01.2018.
-  -----------------------------------------------
+  13. Remove <p> inside div card block on FAQ, it breaks increase in font
+  14. ORIGINAL bug when clickin on pharma and doc, should route this as well
   12. Remove acid reflux just keep GERD, do this in select on database
-
-  WHAT YOU''LL DO IN 1 DAY ON SUNDAY 21.01.2018.
-  ------------------------------------------------
   1. rewrite PHP calls for stats page to prepared statement
   2. rewrite everything to prepared statement
 
@@ -67,6 +61,8 @@
    - statistics write info below other stats
    - removed explanation button and show example
    - criteria value adjusted
+   - Fill in new FAQ questions which you have in .docx word file
+   - Find info about stats
 
   NOTES
   -----

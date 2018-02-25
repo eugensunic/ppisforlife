@@ -1,11 +1,11 @@
-.nav_center{
+.nav_center {
   text-align: center;
   width: auto;
   margin: auto;
   margin-bottom: 8px;
- }
- 
-.nav_element{
+}
+
+.nav_element {
   border: 1px solid #a3a3a5;
   margin-right: 4px;
   border-radius: 2px;
@@ -16,7 +16,7 @@
   background-color: #f6f6f6;
   box-shadow: 1px 1px 1px #d2d2d2;
 }
-.nav_element:hover{
-   cursor:pointer;
-   opacity: 0.9;
+.nav_element:hover {
+  cursor: pointer;
+  opacity: 0.9;
 }

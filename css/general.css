@@ -1,99 +1,104 @@
 body {
-  background-color: #f4f2f2!important;
+  background-color: #f4f2f2 !important;
 }
-h4{
-  color:#0061b6 !important;
+h4 {
+  color: #0061b6 !important;
 }
-h5{
-  color: #286090 ;
+h5 {
+  color: #286090;
   font-weight: 500;
 }
-p{
-  font-size:15px;
+p {
+  font-size: 15px;
 }
-a{
+a {
   color: #1268b2 !important;
   text-decoration: none !important;
   font-size: 14px;
 }
-input,select,button{
+input,
+select,
+button {
   border: none; /* <-- This thing here */
-  border:solid 1px #ccc;
+  border: solid 1px #ccc;
   border-radius: 3px;
-
 }
-input{
+input {
   margin-left: 2px;
 }
 
-select{
+select {
   border: none; /* <-- This thing here */
-  border:solid 1px #ccc;
+  border: solid 1px #ccc;
   border-radius: 2px;
   height: 27px;
 }
-button{
+button {
   border: none; /* <-- This thing here */
-  border:solid 1px #ccc;
+  border: solid 1px #ccc;
   border-radius: 2px;
 }
 
-td,th{
-  padding:4px;
+td,
+th {
+  padding: 4px;
 }
 /*----------------------------------------------------------------------------*/
-.black-color{
-  color:black;
+.black-color {
+  color: black;
 }
-.big-font{
+.big-font {
   font-size: 25px;
 }
-.margin-left-3{
-  margin-left:3px;
+.margin-left-3 {
+  margin-left: 3px;
 }
-.margin-right-3{
-  margin-right:3px;
+.margin-right-3 {
+  margin-right: 3px;
 }
-.margin-left-5{
-  margin-left:5px;
+.margin-left-5 {
+  margin-left: 5px;
 }
-.margin-top-negative-10{
+.margin-top-negative-10 {
   margin-top: -10px;
 }
-.margin-top-3{
+.margin-top-3 {
   margin-top: 3px;
 }
-.center_div{
+.center_div {
   width: 50%;
   margin: 0 auto;
 }
-.container{
+.container {
   margin-top: 10px;
 }
-.row{
-  margin-left:0px !important;
-  margin-right:0px !important;
+.row {
+  margin-left: 0px !important;
+  margin-right: 0px !important;
 }
-a.list-group-item:focus, a.list-group-item:hover, button.list-group-item:focus, button.list-group-item:hover {
+a.list-group-item:focus,
+a.list-group-item:hover,
+button.list-group-item:focus,
+button.list-group-item:hover {
   color: white !important;
   text-decoration: none !important;
   background-color: white !important;
   cursor: auto !important;
 }
-.list-group-item{
+.list-group-item {
   padding: 0px !important;
 }
-.bold{
+.bold {
   font-weight: bold;
 }
-.center{
+.center {
   text-align: center;
 }
-.inlineblock{
+.inlineblock {
   display: inline-block;
 }
 
-.radio_check_basic{
+.radio_check_basic {
   position: relative;
   top: -15px;
   right: 12px;
@@ -107,8 +112,8 @@ a.list-group-item:focus, a.list-group-item:hover, button.list-group-item:focus, 
   background-color: #a2ecad;
   padding-left: 3px;
   padding-right: 3px;
-  padding-top:3px;
-  padding-bottom:3px;
+  padding-top: 3px;
+  padding-bottom: 3px;
   margin-right: 1px;
   display: inline-block;
 }
@@ -116,7 +121,7 @@ a.list-group-item:focus, a.list-group-item:hover, button.list-group-item:focus, 
   border: 1px solid #726e6e;
   border-radius: 1px;
   color: #474444;
-  padding:3px;
+  padding: 3px;
   margin-right: 2px;
   box-shadow: 1px 1px 1px grey;
   display: inline-block;
@@ -124,7 +129,8 @@ a.list-group-item:focus, a.list-group-item:hover, button.list-group-item:focus, 
 .cancel_margin_last {
   margin-right: 0px;
 }
-.radio_clicked_input, .radio_normal_input:hover {
+.radio_clicked_input,
+.radio_normal_input:hover {
   cursor: pointer;
 }
 .footer {
@@ -138,15 +144,15 @@ a.list-group-item:focus, a.list-group-item:hover, button.list-group-item:focus, 
   text-align: center;
   border-radius: 3px;
 }
-.little-font{
-  font-size:13px;
+.little-font {
+  font-size: 13px;
 }
 
-input[type=checkbox]{
+input[type="checkbox"] {
   margin-left: 2px;
 }
 
-.lanuage_input{
+.lanuage_input {
   margin-top: -4px;
 }
 /*----------------------------------------------------------------------------*/
@@ -162,20 +168,21 @@ input[type=checkbox]{
   margin-top: 25px;
 }
 @-webkit-keyframes spin {
-  0% { -webkit-transform: rotate(0deg); }
-  100% { -webkit-transform: rotate(360deg); }
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
 }
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 .card-header {
   border-bottom: 1px solid #ebe2e2;
-
 }
-
-/* media queries begin */
-/* @media only screen and (max-width: ...px) {
-
-} */
-/* media queries end */

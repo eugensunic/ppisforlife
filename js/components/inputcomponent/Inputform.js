@@ -753,16 +753,6 @@ reverseToPrevious(){
     return(
       <div className="container">
         <Navbar></Navbar>
-        <div className="lang lanuage_input">
-          <select name="language" className={this.props.error_height} onChange={(e)=>{this.props.dispatch({type:"language",payload:e.target.value})}} defaultValue="">
-            <option value="" style={{display:'none'}} defaultValue="selected" label="choose language"></option>
-            <option value="en">english</option>
-            <option value="fr">french</option>
-            <option value="sp">spanish</option>
-            <option value="mt">german</option>
-            <option value="mt">croatian</option>
-          </select>
-        </div>
 
         <About/>
         <div className={this.state.new_success?"disable_upper_container":""}>
