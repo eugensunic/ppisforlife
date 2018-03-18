@@ -2,6 +2,11 @@ import React from 'react'
 import { Switch, Route, Router } from 'react-router-dom'
 
 import Layout from './components/Layout.js'
+
+import Patientpost from './components/Patientpost.js'
+import Pharmapost from './components/Pharmapost.js'
+import Doctorpost from './components/Doctorpost.js'
+
 import Statistic from './components/statisticscomponent/Statistic.js'
 import Research from './components/researchcomponent/Research.js'
 import Inputform from './components/inputcomponent/Inputform.js'
@@ -21,6 +26,9 @@ export const Routing = () => (
         <Route path='/tips' component={Ppistarter}/>
         <Route path='/faq' component={Faq}/>
         <Route path='/about' component={About}/>
+        <Route path='/patientpost' component={Patientpost}/>
+        <Route path='/doctorpost' component={Doctorpost}/>
+        <Route path='/pharmapost' component={Pharmapost}/>
         <Route component={Notfound} />
       </Switch>
   )
