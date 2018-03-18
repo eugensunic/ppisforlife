@@ -198,6 +198,7 @@
   margin-right: 4px;
   cursor: pointer;
   background-color: #fce38a;
+  pointer-events:none;
 }
 /*-----------------------------------------------------
 Doctor post
