@@ -24,7 +24,7 @@ export default class Headerbarpharma extends React.Component {
   render() {
   return(
     <div className="headerbar">
-      <p className="post_elementheaderbar_tag_original" onClick={this.reloadIndexPage}>ORIGINAL</p>
+
       <img src="../../pics/filter.png" className="filter_icon" />
       <p className="post_elementheaderbar" onClick={""}>{this.props.is_pharma==="pharmacist"?"pharmacist":"doctor"}</p>
 

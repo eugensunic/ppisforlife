@@ -24,6 +24,9 @@ export default class Navbar extends React.Component {
               <span className="nav_element" onClick={()=>history.push('/')}>home</span>
             )} />
             <Route render={({ history }) => (
+              <span className="nav_element" onClick={()=>history.push('/posts')}>posts</span>
+            )} />
+            <Route render={({ history }) => (
               <span className="nav_element" onClick={()=>history.push('/statistics')}>statistics</span>
             )} />
             <Route render={({ history}) => (

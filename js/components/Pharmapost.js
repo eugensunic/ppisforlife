@@ -7,7 +7,6 @@ import Postmain from './Postmain'
 import Barpharma from './Barpharma'
 import Headerbarpharma from './Headerbarpharma.js'
 import * as user from "../actions/asyncCAll.js"
-
 @connect((store) => {
   return {
    bar_change:store.bar_change,
@@ -57,7 +56,7 @@ export default class Pharmapost extends React.Component {
                   <div className="unit_div col-sm-3" key={item1.id}>
                     <Postheaderfirstdoctor is_pharma={"pharma"} user={item1.assoc_username} url={item1.url} opinion={item1.flag} doc_alone={item1.phalone}></Postheaderfirstdoctor>
                     <br/>
-                    <Postmain bg_color={this.props.bg_color_post} content_cite={item1.pharm_tought} number={item1.id}></Postmain>
+                    <Postmain bg_color={"post_main_pharma"} content_cite={item1.pharm_tought} number={item1.id}></Postmain>
 
                   </div>);
               })

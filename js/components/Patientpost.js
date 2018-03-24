@@ -274,7 +274,7 @@ export default class Patientpost extends React.Component
                                     array_data[this.findIndexOf(array_data, item1.newid, "id2")].sex
                                   } > < /Postheadersecond> <
                                   Postmain bg_color = {
-                                    this.props.bg_color_post
+                                    "post_main"
                                   }
                                   content_cite = {
                                     item1.content_cite
@@ -403,7 +403,7 @@ export default class Patientpost extends React.Component
                                         arraytag2[this.findIndexOf(arraytag2, item1.id, "id")].sex
                                       } > < /Postheadersecond> <
                                       Postmain bg_color = {
-                                        this.props.bg_color_post
+                                        "post_main"
                                       }
                                       content_cite = {
                                         item1.content_cite

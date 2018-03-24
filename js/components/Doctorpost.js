@@ -8,6 +8,12 @@ import Bardoctor from './Bardoctor'
 import Headerbardoctor from './Headerbardoctor.js'
 import * as user from "../actions/asyncCAll.js"
 
+// import Patientpost from './components/Patientpost.js'
+// import Pharmapost from './components/Pharmapost.js'
+// import Doctorpost from './components/Doctorpost.js'
+// <Route path='/patientpost' component={Patientpost}/>
+// <Route path='/doctorpost' component={Doctorpost}/>
+// <Route path='/pharmapost' component={Pharmapost}/>
 @connect((store) => {
   return {
    bar_change:store.bar_change,
@@ -67,7 +73,7 @@ export default class Doctorpost extends React.Component {
                     </Postheaderfirstdoctor>
                     <br/>
                     <Postmain
-                      bg_color={this.props.bg_color_post}
+                      bg_color={"post_main_doctor"}
                       content_cite={item1.doctors_tought}
                       number={item1.id}>
                     </Postmain>

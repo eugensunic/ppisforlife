@@ -11,6 +11,7 @@ import Navbar from '../Navbar.js'
 import Navfooter from '../Navfooter.js'
 import Social from '../Social.js'
 import * as user from "../../actions/asyncCAll.js"
+import { withRouter, Route, Router, Link } from 'react-router-dom'
 
 export default class Statistic extends React.Component {
   constructor(props) {
@@ -27,7 +28,7 @@ export default class Statistic extends React.Component {
          <p>Forum/discussion posts parameters were extracted (by myself) and therefore this statistics was created.
          The parameters (age, condition, side effects, duration of treatment, daily usage, drug generic, drug brand, nutrient def. etc.) extraction was accurate.</p>
 
-         <span className="inline">Unknown: Data wasn't found in the forum post</span>
+         <span className="inline">Unknown: Data wasnt found in the forum post</span>
          <br/>
          <span className="inline">explicit-none: <span className="">user reported explicitly having NO side effects</span></span>
          <br/>
@@ -84,23 +85,33 @@ export default class Statistic extends React.Component {
       }
 }
    render(){
-     console.log("stats render: "+this.state.width);
+
 return (
    <div className="container">
      <Navbar></Navbar>
      <h3 className="inline">Internet comments statistics<span className="little-font"> (patient.info, peoplespharmacy, dailymail, telegraph, reddit, cbs, thesun, chronsforum, chriskresser.com, barrettscampaign.org, healingwell.com, nytimes etc.)</span></h3>
      <div style={{marginTop:3}}>
-       <span className={this.state.radio1?"radio_clicked":"radio_normal"} style={{marginRight:3}} onClick={()=>this.setState({radio1:true,radio2:false,radio3:false})}>Patient</span>
-       <span className={this.state.radio2?"radio_clicked":"radio_normal"} style={{marginRight:3}} onClick={()=>this.setState({radio1:false,radio2:true,radio3:false})}>Doctor</span>
-       <span className={this.state.radio3?"radio_clicked":"radio_normal"} onClick={()=>this.setState({radio1:false,radio2:false,radio3:true})}>Pharmacist</span>
-     </div>
-     <div className="info-box-stats">
+        <Link to={this.props.match.url}>
+          <span className={(this.state.radio1?"radio_clicked":"radio_normal")} onClick={()=>this.setState({radio1:true,radio2:false,radio3:false})}>Patient</span>
+        </Link>
+
+        <Link to={this.props.match.url+'/doctor'}>
+           <span className={this.state.radio2?"radio_clicked":"radio_normal"} onClick={()=>this.setState({radio1:false,radio2:true,radio3:false})}>Doctor</span>
+        </Link>
+
+        <Link to={this.props.match.url+`/pharma`}>
+           <span className={this.state.radio3?"radio_clicked":"radio_normal"} onClick={()=>this.setState({radio1:false,radio2:false,radio3:true})}>Pharma</span>
+        </Link>
+      </div>
+   <div className="info-box-stats">
        {this.patientOrDoctorOrPharma()}
-     </div>
-     {console.log("radio 1 is"+this.state.radio1)}
-     {this.state.radio1?<Patient></Patient>:""}
-     {this.state.radio2?<Doctor></Doctor>:""}
-     {this.state.radio3?<Pharmacist></Pharmacist>:""}
+   </div>
+
+
+     <Route exact path={this.props.match.url} component={Patient} />
+     <Route path={this.props.match.url+'/doctor'} component={Doctor}/>
+     <Route path={this.props.match.url+'/pharma'} component={Pharmacist}/>
+
      <Social shown={true}/>
      <Navfooter></Navfooter>
    </div>
