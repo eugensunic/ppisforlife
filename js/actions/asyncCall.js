@@ -48,6 +48,7 @@ export function changeBarNum(bar, type) {
     });
   };
 }
+// refactor this to one method, no need for 3!!
 export function sendBarDataPatient(type, array0, next0, selected0, stop_location) {
   return function(dispatch) {
     dispatch({
@@ -59,24 +60,26 @@ export function sendBarDataPatient(type, array0, next0, selected0, stop_location
     });
   };
 }
-export function sendBarDataDoctor(type, array0, next0, selected0) {
+export function sendBarDataDoctor(type, array0, next0, selected0, stop_location) {
   return function(dispatch) {
     dispatch({
       type: type,
       array_doctor: array0,
       next_doctor: next0,
-      selected_doctor: selected0
+      selected_doctor: selected0,
+      stop_navigation: stop_location
     });
   };
 }
 
-export function sendBarDataPharma(type, array_0, next_0, selected_0) {
+export function sendBarDataPharma(type, array_0, next_0, selected_0, stop_location) {
   return function(dispatch) {
     dispatch({
       type: type,
       array_pharma: array_0,
       next_pharma: next_0,
-      selected_pharma: selected_0
+      selected_pharma: selected_0,
+      stop_navigation: stop_location
     });
   };
 }

@@ -82,16 +82,36 @@ export default function reducer(
       ...state,
       array_doctor: action.array_doctor,
       next_doctor: action.next_doctor,
-      selected_doctor: action.selected_doctor
+      selected_doctor: action.selected_doctor,
+      stop_navigation: action.stop_navigation
     };
+    if (state.stop_navigation != 'stop') {
+      window.history.pushState(
+        {
+          num: state.selected_doctor
+        },
+        null,
+        '?doctor_num=' + state.selected_doctor
+      );
+    }
   }
   if (action.type === 'pharma_bar_send') {
     state = {
       ...state,
       array_pharma: action.array_pharma,
       next_pharma: action.next_pharma,
-      selected_pharma: action.selected_pharma
+      selected_pharma: action.selected_pharma,
+      stop_navigation: action.stop_navigation
     };
+    if (state.stop_navigation != 'stop') {
+      window.history.pushState(
+        {
+          num: state.selected_pharma
+        },
+        null,
+        '?pharma_num=' + state.selected_pharma
+      );
+    }
   }
   return state;
 }

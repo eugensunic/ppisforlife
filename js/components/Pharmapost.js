@@ -24,10 +24,10 @@ export default class Pharmapost extends React.Component {
     }
   }
   componentDidUpdate() {
-    if (this.props.bar_change.clicked_pharma) {
-      this.props.bar_change.clicked_pharma = false;
-      location.href = '#target_div';
-    }
+    // if (this.props.bar_change.clicked_pharma) {
+    //   this.props.bar_change.clicked_pharma = false;
+    //   location.href = '#target_div';
+    // }
   }
   aboutWritting() {
     return (

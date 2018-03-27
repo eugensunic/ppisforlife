@@ -94,6 +94,7 @@ export default class Barpatient extends React.Component {
           'patient_bar_send',
           stop
         );
+    window.scrollTo(0, 0);
   }
   render() {
     return (

@@ -29,8 +29,9 @@ export function barChange(arg0, prop_arr, prop_next, string_change, string_send,
     }
     flag_it = true;
   }
-
-  if (stop_location == 'stop') {
+  // REFACTOR THE ifs
+  // filter patient pharma and doctor here in if
+  if (stop_location == 'stop' && string_change == 'bar_change_patient') {
     // backwards navigation
     if (history.state.num == '4') {
       temp_arr = [1, 2, 3, 4, 5];
@@ -55,6 +56,60 @@ export function barChange(arg0, prop_arr, prop_next, string_change, string_send,
       //prop_next = false;
     }
   }
+  if (stop_location == 'stop' && string_change == 'bar_change_pharma') {
+    console.log('went here inside pHARMA STOP LOCATION');
+    // backwards navigation
+    if (history.state.num == '4') {
+      temp_arr = [1, 2, 3, 4, 5];
+      arg0 = 4;
+      string_change = 'bar_change_pharma';
+      flag_it = false;
+      //prop_next = false;
+    } else if (checkNumber(history.state.num, 4, 1300)) {
+      // history.state.num=9
+      temp_arr = makeFormula(history.state.num, 9);
+      arg0 = history.state.num;
+      string_change = 'bar_change_pharma';
+      flag_it = true;
+      console.log('went to ELSE IF STOP');
+    }
+
+    //forward navigation
+    if (checkHistoryForwards(history.state.num)) {
+      temp_arr = makeFormula(history.state.num, 5);
+      arg0 = history.state.num;
+      string_change = 'bar_change_pharma';
+      flag_it = true;
+      //prop_next = false;
+    }
+  }
+  if (stop_location == 'stop' && string_change == 'bar_change_doctor') {
+    console.log('went here inside DOCTOR STOP LOCATION');
+    // backwards navigation
+    if (history.state.num == '4') {
+      temp_arr = [1, 2, 3, 4, 5];
+      arg0 = 4;
+      string_change = 'bar_change_doctor';
+      flag_it = false;
+      //prop_next = false;
+    } else if (checkNumber(history.state.num, 4, 1300)) {
+      // history.state.num=9
+      temp_arr = makeFormula(history.state.num, 9);
+      arg0 = history.state.num;
+      string_change = 'bar_change_doctor';
+      flag_it = true;
+      console.log('went to ELSE IF STOP');
+    }
+
+    //forward navigation
+    if (checkHistoryForwards(history.state.num)) {
+      temp_arr = makeFormula(history.state.num, 5);
+      arg0 = history.state.num;
+      string_change = 'bar_change_doctor';
+      flag_it = true;
+      //prop_next = false;
+    }
+  }
 
   console.log('final temp array is: ' + temp_arr);
   console.log('value of bars arg0 is: ' + arg0);
@@ -63,9 +118,9 @@ export function barChange(arg0, prop_arr, prop_next, string_change, string_send,
   if (string_change === 'bar_change_patient') {
     store.dispatch(user.sendBarDataPatient(string_send, temp_arr, flag_it, arg0, stop_location));
   } else if (string_change === 'bar_change_doctor') {
-    store.dispatch(user.sendBarDataDoctor(string_send, temp_arr, flag_it, arg0));
+    store.dispatch(user.sendBarDataDoctor(string_send, temp_arr, flag_it, arg0, stop_location));
   } else if (string_change === 'bar_change_pharma') {
-    store.dispatch(user.sendBarDataPharma(string_send, temp_arr, flag_it, arg0));
+    store.dispatch(user.sendBarDataPharma(string_send, temp_arr, flag_it, arg0, stop_location));
   }
 }
 

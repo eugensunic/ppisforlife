@@ -4,18 +4,18 @@
   - test everyhting before proceeding to final page
   TODO
   ----
+  0. Fix 1 route for dr, ph, patient, fix on link provide through URL, fix window.scrollTo(0,0) on back button
   1. Fill info with doctors from medscape articles on PPIs (add more values)
   2. research page just put params for the time being
-  10. Try to route numbers when click on a number so that back button works, route patient, doctor, pharma also, window.pushState maybe
   12. Calculation of barrett's esophaugs occurance
   13. Remove <p> inside div card block on FAQ, it breaks increase in font
-  14. ORIGINAL bug when clickin on pharma and doc, should route this as well
   12. Remove acid reflux just keep GERD, do this in select on database
   1. rewrite PHP calls for stats page to prepared statement
   2. rewrite everything to prepared statement
 
   REFACTORING
   -----------
+  - refactor on bar functions and async functions, see comments
   - make relative links once in production
   - remove inline styles make similar to CS-Manfred classes
   - add css to one file only
@@ -42,6 +42,8 @@
 
   DONE
   ----
+   - ORIGINAL bug when clickin on pharma and doc, should route this as well
+   - Try to route numbers when click on a number so that back button works, route patient, doctor, pharma also, window.pushState maybe
    - maybe adjust css to be nicer for post-div
    - integrate html page to app
    - put images which are not there now
