@@ -66,6 +66,7 @@ export default function reducer(
       selected_patient: action.selected_patient,
       stop_navigation: action.stop_navigation
     };
+    window.scrollTo(0, 0);
     console.log('IN ACTION TYPE: ' + state.selected_patient);
     if (state.stop_navigation != 'stop') {
       window.history.pushState(
@@ -85,6 +86,7 @@ export default function reducer(
       selected_doctor: action.selected_doctor,
       stop_navigation: action.stop_navigation
     };
+    window.scrollTo(0, 0);
     if (state.stop_navigation != 'stop') {
       window.history.pushState(
         {
@@ -103,6 +105,7 @@ export default function reducer(
       selected_pharma: action.selected_pharma,
       stop_navigation: action.stop_navigation
     };
+    window.scrollTo(0, 0);
     if (state.stop_navigation != 'stop') {
       window.history.pushState(
         {

@@ -14,7 +14,6 @@ export default class Bardoctor extends React.Component {
     this._isMounted = true;
     window.onpopstate = () => {
       if (this._isMounted) {
-        window.scrollTo(0, 0);
         // history.state.num ===   this.props.bar_change.page_num_doctor
         // you can also compare with window.location.href
         //user.barChangeCheck(this.props.bar_change.array_doctor[1], this.props.bar_change.array_doctor, this.props.bar_change.next_doctor)
@@ -95,7 +94,6 @@ export default class Bardoctor extends React.Component {
           'doctor_bar_send',
           stop
         );
-    window.scrollTo(0, 0);
   }
   render() {
     return (

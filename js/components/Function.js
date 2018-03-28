@@ -33,87 +33,135 @@ export function barChange(arg0, prop_arr, prop_next, string_change, string_send,
   // filter patient pharma and doctor here in if
   if (stop_location == 'stop' && string_change == 'bar_change_patient') {
     // backwards navigation
-    if (history.state.num == '4') {
-      temp_arr = [1, 2, 3, 4, 5];
-      arg0 = 4;
-      string_change = 'bar_change_patient';
-      flag_it = false;
-      //prop_next = false;
-    } else if (checkNumber(history.state.num, 4, 1300)) {
-      // history.state.num=9
-      temp_arr = makeFormula(history.state.num, 9);
-      arg0 = history.state.num;
-      string_change = 'bar_change_patient';
-      flag_it = true;
-    }
+    if (history.hasOwnProperty('state')) {
+      if (history.state.num == '4') {
+        temp_arr = [1, 2, 3, 4, 5];
+        arg0 = 4;
+        string_change = 'bar_change_patient';
+        flag_it = false;
+        //prop_next = false;
+      } else if (checkNumber(history.state.num, 4, 1300)) {
+        // history.state.num=9
+        temp_arr = makeFormula(history.state.num, 9);
+        arg0 = history.state.num;
+        string_change = 'bar_change_patient';
+        flag_it = true;
+      }
 
-    //forward navigation
-    if (checkHistoryForwards(history.state.num)) {
-      temp_arr = makeFormula(history.state.num, 5);
-      arg0 = history.state.num;
-      string_change = 'bar_change_patient';
-      flag_it = true;
-      //prop_next = false;
+      //forward navigation
+      if (checkHistoryForwards(history.state.num)) {
+        temp_arr = makeFormula(history.state.num, 5);
+        arg0 = history.state.num;
+        string_change = 'bar_change_patient';
+        flag_it = true;
+        //prop_next = false;
+      }
+    } else {
+      if (window.location.href.includes('4')) {
+        temp_arr = [1, 2, 3, 4, 5];
+        arg0 = 4;
+        string_change = 'bar_change_patient';
+        flag_it = false;
+        //prop_next = false;
+      } else if (checkNumber(window.location.href[window.location.href.length - 1], 4, 1300)) {
+        // history.state.num=9
+        temp_arr = makeFormula(window.location.href[window.location.href.length - 1], 9);
+        arg0 = window.location.href[window.location.href.length - 1];
+        string_change = 'bar_change_patient';
+        flag_it = true;
+        console.log('went to ELSE IF STOP');
+      }
     }
   }
   if (stop_location == 'stop' && string_change == 'bar_change_pharma') {
     console.log('went here inside pHARMA STOP LOCATION');
     // backwards navigation
-    if (history.state.num == '4') {
-      temp_arr = [1, 2, 3, 4, 5];
-      arg0 = 4;
-      string_change = 'bar_change_pharma';
-      flag_it = false;
-      //prop_next = false;
-    } else if (checkNumber(history.state.num, 4, 1300)) {
-      // history.state.num=9
-      temp_arr = makeFormula(history.state.num, 9);
-      arg0 = history.state.num;
-      string_change = 'bar_change_pharma';
-      flag_it = true;
-      console.log('went to ELSE IF STOP');
-    }
+    if (history.hasOwnProperty('state')) {
+      if (history.state.num == '4') {
+        temp_arr = [1, 2, 3, 4, 5];
+        arg0 = 4;
+        string_change = 'bar_change_pharma';
+        flag_it = false;
+        //prop_next = false;
+      } else if (checkNumber(history.state.num, 4, 1300)) {
+        // history.state.num=9
+        temp_arr = makeFormula(history.state.num, 9);
+        arg0 = history.state.num;
+        string_change = 'bar_change_pharma';
+        flag_it = true;
+        console.log('went to ELSE IF STOP');
+      }
 
-    //forward navigation
-    if (checkHistoryForwards(history.state.num)) {
-      temp_arr = makeFormula(history.state.num, 5);
-      arg0 = history.state.num;
-      string_change = 'bar_change_pharma';
-      flag_it = true;
-      //prop_next = false;
+      //forward navigation
+
+      if (checkHistoryForwards(history.state.num)) {
+        temp_arr = makeFormula(history.state.num, 5);
+        arg0 = history.state.num;
+        string_change = 'bar_change_pharma';
+        flag_it = true;
+        //prop_next = false;
+      }
+    } else {
+      if (window.location.href.includes('4')) {
+        temp_arr = [1, 2, 3, 4, 5];
+        arg0 = 4;
+        string_change = 'bar_change_pharma';
+        flag_it = false;
+        //prop_next = false;
+      } else if (checkNumber(window.location.href[window.location.href.length - 1], 4, 1300)) {
+        // history.state.num=9
+        temp_arr = makeFormula(window.location.href[window.location.href.length - 1], 9);
+        arg0 = window.location.href[window.location.href.length - 1];
+        string_change = 'bar_change_pharma';
+        flag_it = true;
+        console.log('went to ELSE IF STOP');
+      }
     }
   }
   if (stop_location == 'stop' && string_change == 'bar_change_doctor') {
     console.log('went here inside DOCTOR STOP LOCATION');
     // backwards navigation
-    if (history.state.num == '4') {
-      temp_arr = [1, 2, 3, 4, 5];
-      arg0 = 4;
-      string_change = 'bar_change_doctor';
-      flag_it = false;
-      //prop_next = false;
-    } else if (checkNumber(history.state.num, 4, 1300)) {
-      // history.state.num=9
-      temp_arr = makeFormula(history.state.num, 9);
-      arg0 = history.state.num;
-      string_change = 'bar_change_doctor';
-      flag_it = true;
-      console.log('went to ELSE IF STOP');
-    }
+    if (history.hasOwnProperty('state')) {
+      if (history.state.num == '4') {
+        temp_arr = [1, 2, 3, 4, 5];
+        arg0 = 4;
+        string_change = 'bar_change_doctor';
+        flag_it = false;
+        //prop_next = false;
+      } else if (checkNumber(history.state.num, 4, 1300)) {
+        // history.state.num=9
+        temp_arr = makeFormula(history.state.num, 9);
+        arg0 = history.state.num;
+        string_change = 'bar_change_doctor';
+        flag_it = true;
+        console.log('went to ELSE IF STOP');
+      }
 
-    //forward navigation
-    if (checkHistoryForwards(history.state.num)) {
-      temp_arr = makeFormula(history.state.num, 5);
-      arg0 = history.state.num;
-      string_change = 'bar_change_doctor';
-      flag_it = true;
-      //prop_next = false;
+      //forward navigation
+      if (checkHistoryForwards(history.state.num)) {
+        temp_arr = makeFormula(history.state.num, 5);
+        arg0 = history.state.num;
+        string_change = 'bar_change_doctor';
+        flag_it = true;
+        //prop_next = false;
+      }
+    } else {
+      if (window.location.href.includes('4')) {
+        temp_arr = [1, 2, 3, 4, 5];
+        arg0 = 4;
+        string_change = 'bar_change_doctor';
+        flag_it = false;
+        //prop_next = false;
+      } else if (checkNumber(window.location.href[window.location.href.length - 1], 4, 1300)) {
+        // history.state.num=9
+        temp_arr = makeFormula(window.location.href[window.location.href.length - 1], 9);
+        arg0 = window.location.href[window.location.href.length - 1];
+        string_change = 'bar_change_doctor';
+        flag_it = true;
+        console.log('went to ELSE IF STOP');
+      }
     }
   }
-
-  console.log('final temp array is: ' + temp_arr);
-  console.log('value of bars arg0 is: ' + arg0);
-  console.log('value of bars string change is: ' + string_change);
   store.dispatch(user.changeBarNum(arg0, string_change));
   if (string_change === 'bar_change_patient') {
     store.dispatch(user.sendBarDataPatient(string_send, temp_arr, flag_it, arg0, stop_location));

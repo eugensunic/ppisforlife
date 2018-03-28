@@ -4,14 +4,16 @@
   - test everyhting before proceeding to final page
   TODO
   ----
-  0. Fix 1 route for dr, ph, patient, fix on link provide through URL, fix window.scrollTo(0,0) on back button
+  0. Fix 1 route for dr, ph, patient,
+  3. Fix on link provide through URL,--> aparently this is done, but cannot fully test due to css not appearing
   1. Fill info with doctors from medscape articles on PPIs (add more values)
   2. research page just put params for the time being
-  12. Calculation of barrett's esophaugs occurance
+  12. Calculation of Barrett's esophagus occurance
   13. Remove <p> inside div card block on FAQ, it breaks increase in font
   12. Remove acid reflux just keep GERD, do this in select on database
   1. rewrite PHP calls for stats page to prepared statement
   2. rewrite everything to prepared statement
+  7. Reload page after if loading more than 5 seconds if again then tell to come back later
 
   REFACTORING
   -----------
@@ -42,6 +44,8 @@
 
   DONE
   ----
+
+   - fix window.scrollTo(0,0) on back button
    - ORIGINAL bug when clickin on pharma and doc, should route this as well
    - Try to route numbers when click on a number so that back button works, route patient, doctor, pharma also, window.pushState maybe
    - maybe adjust css to be nicer for post-div
