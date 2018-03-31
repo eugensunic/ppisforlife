@@ -5,7 +5,6 @@
   TODO
   ----
   0. Fix 1 route for dr, ph, patient,
-  3. Fix on link provide through URL,--> aparently this is done, but cannot fully test due to css not appearing
   1. Fill info with doctors from medscape articles on PPIs (add more values)
   2. research page just put params for the time being
   12. Calculation of Barrett's esophagus occurance
@@ -17,6 +16,7 @@
 
   REFACTORING
   -----------
+  - Fix on link provide through URL,--> aparently this is done, but cannot fully test due to css not appearing dont' do that on release
   - refactor on bar functions and async functions, see comments
   - make relative links once in production
   - remove inline styles make similar to CS-Manfred classes
