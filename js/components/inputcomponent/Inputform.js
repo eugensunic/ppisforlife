@@ -37,6 +37,7 @@ import axios from 'axios';
   };
 })
 export default class Inputform extends React.Component {
+  // REFACOTR UNDEFINED TO A METHOD
   constructor(props) {
     super(props);
     this.updateDimensions = this.updateDimensions.bind(this);

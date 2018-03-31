@@ -32,12 +32,7 @@ export default class Doctorpost extends React.Component {
     }
   }
 
-  componentDidUpdate() {
-    // if (this.props.bar_change.clicked_doctor) {
-    //   this.props.bar_change.clicked_doctor = false;
-    //   location.href = '#target_div';
-    // }
-  }
+  componentDidUpdate() {}
 
   aboutWritting() {
     return (

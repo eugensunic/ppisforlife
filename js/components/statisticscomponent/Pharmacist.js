@@ -166,24 +166,6 @@ export default class Pharmacist extends React.Component {
   }
 
   render() {
-    return (
-      <div className="">
-        {/* select count(id) as all_count from doctors
-            UNION
-            select COUNT(docalone) as doc_themselve  from doctors
-            where docalone=1
-            UNION
-        SELECT (COUNT(id)-(select count(docalone) from doctors where docalone=1)) as difference from doctors */}
-
-        {/* select flag_doc, count(id) as amount from doctors
-        group by flag_doc */}
-
-        {/* SELECT SUBSTRING_INDEX(url, '/', 3) as urlextract, COUNT(SUBSTRING_INDEX(url, '/', 3)) as amount from doctors
-            group by urlextract
-        order by amount DESC */}
-
-        {this.showDoctorMethod()}
-      </div>
-    );
+    return <div className="">{this.showDoctorMethod()}</div>;
   }
 }

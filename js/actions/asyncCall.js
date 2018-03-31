@@ -83,7 +83,3 @@ export function sendBarDataPharma(type, array_0, next_0, selected_0, stop_locati
     });
   };
 }
-
-export function printSomething() {
-  console.log("I'VE PRINTED SOMETHING-TEST_FUNCTION");
-}

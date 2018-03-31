@@ -106,30 +106,18 @@ export default class Ohterstats extends React.Component {
               Period on drug <span>(duration)</span>
             </h5>
             {user.getTable(this.props.drug_years, 'Duration (years)', 'Post', conclusion1, 'firstcol', 'secondcol')}
-            {/* SELECT duration, COUNT( data.id )
-              FROM data
-              WHERE duration <=30
-            GROUP BY duration */}
           </div>
           <div className="col-sm-4">
             <h5 className="others_heading">
               Period on drug daily <span>(duration)</span>
             </h5>
             {user.getTable(this.props.patients_on_daily, 'Duration_daily (years)', 'Post', conclusion2, 'firstcol', 'secondcol')}
-            {/* select duration as daily_duration, count(data.id) as post from data
-              where dailyuse='yes'
-              group by duration
-            having duration<30 */}
           </div>
           <div className="col-sm-4">
             <h5 id="targeting" className="others_heading">
               Period on drug <span>(dosage)</span>
             </h5>
             {user.getTable(this.props.patients_on_dosage, 'Dosage', 'Post', conclusion3, 'firstcol', 'secondcol')}
-            {/* SELECT dosage, COUNT( data.id )
-              FROM data
-              WHERE duration <=30
-            GROUP BY dosage */}
           </div>
         </div>
         <hr />
@@ -137,25 +125,16 @@ export default class Ohterstats extends React.Component {
           <div className="col-sm-4">
             <h5 className="others_heading">Dosage related to side effects</h5>
             {user.getTable(this.props.dosage_to_sides, 'Dosage', 'Side effects', conclusion4, 'firstcol', 'secondcol')}
-            {/*select dosage, count(sides.name) as ppi_sides from post, post_sides,data,sides
-              where data.post_FK=post.id  AND post_sides.post=post.id AND post_sides.sides=sides.id
-            GROUP BY dosage */}
           </div>
           <div className="col-sm-4">
             <h5 className="others_heading">Duration related to side effects</h5>
             {user.getTable(this.props.duration_to_sides, 'Duration (years)', 'Side effects', conclusion5, 'firstcol', 'secondcol')}
-            {/* select duration, count(sides.name) as ppi_sides from post, post_sides,data,sides
-              where data.post_FK=post.id  AND post_sides.post=post.id AND post_sides.sides=sides.id
-            GROUP BY duration */}
           </div>
           <div className="col-sm-4">
             <h5 className="others_heading">
               Drug <span>generic</span> related to side effects
             </h5>
             {user.getTable(this.props.side_effects_generic, 'Drug generic', 'Side effects (amount)', conclusion6, 'firstcol', 'secondcol')}
-            {/* select drug_generic.name, count(post_sides.sides) as amount_of_sides from post, post_sides, drug_generic, data
-              where data.post_FK=post.id and drug_generic.id=data.drug_generic_FK AND post_sides.post=post.id
-            GROUP BY drug_generic.name */}
           </div>
         </div>
         <hr />
@@ -165,30 +144,18 @@ export default class Ohterstats extends React.Component {
               Drugs <span>generic</span> associated to zero side effects
             </h5>
             {user.getTable(this.props.drugs_to_explicitnone, 'Drug generic', 'No side effects', conclusion7, 'firstcol', 'secondcol')}
-            {/* select drug_generic.name, count(post_sides.sides) as amount_of_sides from post, post_sides, drug_generic, data,sides
-              where data.post_FK=post.id and drug_generic.id=data.drug_generic_FK AND post_sides.post=post.id AND post_sides.sides=sides.id
-              and sides.name='explicitnone'
-            GROUP BY drug_generic.name */}
           </div>
           <div className="col-sm-4">
             <h5 className="others_heading">
               Drugs <span>generic</span> associated to stomach polyps <span>(side effect)</span>
             </h5>
             {user.getTable(this.props.drugs_to_stomach_polyps, 'Drug generic', 'Stomach polyp side effect', conclusion8, 'firstcol', 'secondcol')}
-            {/* select drug_generic.name, count(post_sides.sides) as amount_of_sides from post, post_sides, drug_generic, data,sides
-              where data.post_FK=post.id and drug_generic.id=data.drug_generic_FK AND post_sides.post=post.id AND post_sides.sides=sides.id
-              and sides.name='stomach polyps'
-            GROUP BY drug_generic.name */}
           </div>
           <div className="col-sm-4">
             <h5 className="others_heading">
               Drug <span>generic</span> associated to kidney problems <span>(kidney failure, ckd, nephritis etc.)</span>
             </h5>
             {user.getTable(this.props.drugs_to_kidney, 'Drug generic', 'Kidney condition side effect', conclusion9, 'firstcol', 'secondcol')}
-            {/* select drug_generic.name, count(conditionppi.name) as amount_of_anxiety from post, post_conditionppi, drug_generic, data, conditionppi
-              where data.post_FK=post.id and drug_generic.id=data.drug_generic_FK AND post_conditionppi.post=post.id AND post_conditionppi.conditionppi=conditionppi.id
-              and conditionppi.name='CKD' OR conditionppi.name='Kidney failure' OR conditionppi.name='kidney problem' OR conditionppi.name='nephritis'
-            GROUP BY drug_generic.name */}
           </div>
         </div>
         <hr />
@@ -198,30 +165,18 @@ export default class Ohterstats extends React.Component {
               Drugs <span>generic</span> associated to bone problems <span>(osteopenia, osteoporosis, bone fracture etc.)</span>
             </h5>
             {user.getTable(this.props.drugs_to_osteo, 'Drug generic', 'Bone problems side effect', conclusion10, 'firstcol', 'secondcol')}
-            {/* select drug_generic.name, count(conditionppi.name) as amount_of_anxiety from post, post_conditionppi, drug_generic, data, conditionppi
-              where data.post_FK=post.id and drug_generic.id=data.drug_generic_FK AND post_conditionppi.post=post.id AND post_conditionppi.conditionppi=conditionppi.id
-              and conditionppi.name='Osteoporosis' or conditionppi.name='Osteopenia' or conditionppi.name='bone fracture'
-            GROUP BY drug_generic.name */}
           </div>
           <div className="col-sm-4">
             <h5 className="others_heading">
               Drugs <span>generic</span> associated with Anxiety
             </h5>
             {user.getTable(this.props.drugs_to_anxiety, 'Drug generic', 'Anxiety side effect', conclusion11, 'firstcol', 'secondcol')}
-            {/* select drug_generic.name, count(conditionppi.name) as amount_of_anxiety from post, post_conditionppi, drug_generic, data, conditionppi
-              where data.post_FK=post.id and drug_generic.id=data.drug_generic_FK AND post_conditionppi.post=post.id AND post_conditionppi.conditionppi=conditionppi.id
-              and conditionppi.name='Anxiety'
-            GROUP BY drug_generic.name */}
           </div>
           <div className="col-sm-4">
             <h5 className="others_heading">
               Drug <span>generic</span> associated to dementia
             </h5>
             {user.getTable(this.props.drugs_to_dementia, 'Drug generic', 'Dementia side effect', conclusion12, 'firstcol', 'secondcol')}
-            {/* select drug_generic.name, count(conditionppi.name) as amount_of_anxiety from post, post_conditionppi, drug_generic, data, conditionppi
-              where data.post_FK=post.id and drug_generic.id=data.drug_generic_FK AND post_conditionppi.post=post.id AND post_conditionppi.conditionppi=conditionppi.id
-              and conditionppi.name='Dementia'
-            GROUP BY drug_generic.name */}
           </div>
         </div>
         <hr />
@@ -232,30 +187,18 @@ export default class Ohterstats extends React.Component {
               Drugs <span>generic</span> associated to vitamin B12 defficiency{' '}
             </h5>
             {user.getTable(this.props.drugs_to_b12, 'Drug generic', 'B12 defficiency', conclusion13, 'firstcol', 'secondcol')}
-            {/* select drug_generic.name, count(conditionppi.name) as amount_of_anxiety from post, post_conditionppi, drug_generic, data, conditionppi
-              where data.post_FK=post.id and drug_generic.id=data.drug_generic_FK AND post_conditionppi.post=post.id AND post_conditionppi.conditionppi=conditionppi.id
-              and conditionppi.name='Osteoporosis' or conditionppi.name='Osteopenia' or conditionppi.name='bone fracture'
-            GROUP BY drug_generic.name */}
           </div>
           <div className="col-sm-4">
             <h5 className="others_heading">
               Drugs <span>generic</span> associated to vitamin Mg defficiency
             </h5>
             {user.getTable(this.props.drugs_to_magnesium, 'Drug generic', 'Mg defficiency', conclusion14, 'firstcol', 'secondcol')}
-            {/* select drug_generic.name, count(conditionppi.name) as amount_of_anxiety from post, post_conditionppi, drug_generic, data, conditionppi
-              where data.post_FK=post.id and drug_generic.id=data.drug_generic_FK AND post_conditionppi.post=post.id AND post_conditionppi.conditionppi=conditionppi.id
-              and conditionppi.name='Anxiety'
-            GROUP BY drug_generic.name */}
           </div>
           <div className="col-sm-4">
             <h5 className="others_heading">
               Drug <span>generic</span> associated to Calcium defficiency
             </h5>
             {user.getTable(this.props.drugs_to_calcium, 'Drug generic', 'Ca defficiency', conclusion15, 'firstcol', 'secondcol')}
-            {/* select drug_generic.name, count(conditionppi.name) as amount_of_anxiety from post, post_conditionppi, drug_generic, data, conditionppi
-              where data.post_FK=post.id and drug_generic.id=data.drug_generic_FK AND post_conditionppi.post=post.id AND post_conditionppi.conditionppi=conditionppi.id
-              and conditionppi.name='Dementia'
-            GROUP BY drug_generic.name */}
           </div>
         </div>
         <hr />

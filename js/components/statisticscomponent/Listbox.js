@@ -1,6 +1,7 @@
 import React from 'react';
 
 export default class Listbox extends React.Component {
+  // REFACTOR THE BIG LISTS (use loop)
   constructor(props) {
     super(props);
     this.updateDimensions = this.updateDimensions.bind(this);

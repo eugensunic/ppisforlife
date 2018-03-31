@@ -30,6 +30,7 @@ export default class Patientpost extends React.Component {
       first_check: false
     };
   }
+
   componentWillMount() {
     if (this.props.header.first == undefined && this.props.tag1.second == undefined && this.props.tag2.third == undefined) {
       this.props.dispatch(user.asyncAll('http://projectsgono.com/medsforlife/appcall/get_tag1.php', 'tag1', ''));
@@ -37,11 +38,13 @@ export default class Patientpost extends React.Component {
       this.props.dispatch(user.asyncAll('http://projectsgono.com/medsforlife/appcall/getheaderpost.php', 'header', ''));
     }
   }
+
   componentDidUpdate() {
     if (this.props.bar_change.clicked_patient) {
       this.props.bar_change.clicked_patient = false;
     }
   }
+
   aboutWritting() {
     return (
       <div
@@ -67,6 +70,7 @@ export default class Patientpost extends React.Component {
       </div>
     );
   }
+
   addColumnId(obj) {
     var obj_arr = obj;
     for (let i = 0; i < obj.length; i++) {
@@ -74,9 +78,8 @@ export default class Patientpost extends React.Component {
     }
     return obj_arr;
   }
-
+  // main mapping algorithm
   adjustRowId(obj) {
-    //OVO JE SUPER DOBRO! sve sta ne valja je u bazi zapravo.
     var cnt = 0;
     var obj_arr = obj;
     var i = 0;
@@ -92,7 +95,7 @@ export default class Patientpost extends React.Component {
         ++i;
         obj_arr[i]['id2'] = cnt;
         flag = true;
-        //console.log(obj[i].id+"index"+i+"total length"+(templen)+"flag"+flag);
+
         if (i != templen) {
           if (obj[i].id != obj[i + 1].id) {
             i++;
@@ -118,6 +121,7 @@ export default class Patientpost extends React.Component {
     console.log('COUNTER VALUE: ' + cnt);
     return obj_arr;
   }
+
   removeDuplicate(arr) {
     var obj = {};
     var newarr = [];
@@ -129,6 +133,7 @@ export default class Patientpost extends React.Component {
     }
     return newarr;
   }
+
   getMultipleValue(arr, id, name, id_name) {
     var newarr = [];
     var temp;
@@ -142,6 +147,7 @@ export default class Patientpost extends React.Component {
     }
     return newarr;
   }
+
   displayTime(i) {
     switch (parseInt(i)) {
       case 1:
@@ -156,6 +162,7 @@ export default class Patientpost extends React.Component {
         return ' year';
     }
   }
+
   findIndexOf(arr, id, name) {
     var index = 0;
     for (var i = id - 1; i < arr.length; i++) {
