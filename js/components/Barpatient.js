@@ -12,13 +12,13 @@ export default class Barpatient extends React.Component {
   }
   componentDidMount() {
     this._isMounted = true;
+    // BACK AND FORWARD BUTTON NAVIGATION EVENT
+    //-----------------------------------------
     window.onpopstate = () => {
+      console.log('property exits check: ' + JSON.stringify(history.state));
       if (this._isMounted) {
-        // history.state.num ===   this.props.bar_change.page_num_patient
-        // you can also compare with window.location.href
-        //user.barChangeCheck(this.props.bar_change.array_patient[1], this.props.bar_change.array_patient, this.props.bar_change.next_patient)
-        if (history.state.num == '1') {
-          console.log('THIS IS NEXT PATIENT VALUE: ' + this.props.bar_change.next_patient);
+        if (history.state == null || history.state.num == '1') {
+          // //console.log('THIS IS NEXT PATIENT VALUE: ' + this.props.bar_change.next_patient);
           // 0
           //0,1   1
           //1,2   2
@@ -27,43 +27,35 @@ export default class Barpatient extends React.Component {
           //5     ...
           //4,6
           this.callButtonData(0, 1, 'stop');
-        }
-        if (history.state.num == '2') {
-          console.log('THIS IS NEXT PATIENT VALUE: ' + this.props.bar_change.next_patient);
+        } else if (history.state.num == '2') {
+          //console.log('THIS IS NEXT PATIENT VALUE: ' + this.props.bar_change.next_patient);
           this.callButtonData(1, 2, 'stop');
-        }
-        if (history.state.num == '3') {
-          console.log('THIS IS NEXT PATIENT VALUE: ' + this.props.bar_change.next_patient);
+        } else if (history.state.num == '3') {
+          //console.log('THIS IS NEXT PATIENT VALUE: ' + this.props.bar_change.next_patient);
 
           this.callButtonData(2, 3, 'stop');
-        }
-        if (history.state.num == '4') {
-          console.log('THIS IS NEXT PATIENT VALUE: ' + this.props.bar_change.next_patient);
+        } else if (history.state.num == '4') {
+          //console.log('THIS IS NEXT PATIENT VALUE: ' + this.props.bar_change.next_patient);
           console.log('should have gone here');
           this.callButtonData(3, 4, 'stop');
-        }
-        // The rest
-        //------------------------------------------
+        } else if (user.checkNumber(history.state.num, 5, 1300)) {
+          // The rest
+          //------------------------------------------
 
-        if (user.checkNumber(history.state.num, 5, 1300)) {
-          console.log('THIS IS NEXT PATIENT VALUE: ' + this.props.bar_change.next_patient);
+          //console.log('THIS IS NEXT PATIENT VALUE: ' + this.props.bar_change.next_patient);
           this.callButtonData(0, 1, 'stop');
-        }
-        if (user.checkNumber(history.state.num, 6, 1300)) {
-          console.log('THIS IS NEXT PATIENT VALUE: ' + this.props.bar_change.next_patient);
+        } else if (user.checkNumber(history.state.num, 6, 1300)) {
+          //console.log('THIS IS NEXT PATIENT VALUE: ' + this.props.bar_change.next_patient);
           this.callButtonData(1, 2, 'stop');
-        }
-        if (user.checkNumber(history.state.num, 7, 1300)) {
-          console.log('THIS IS NEXT PATIENT VALUE: ' + this.props.bar_change.next_patient);
+        } else if (user.checkNumber(history.state.num, 7, 1300)) {
+          //console.log('THIS IS NEXT PATIENT VALUE: ' + this.props.bar_change.next_patient);
           this.callButtonData(2, 3, 'stop');
-        }
-        if (user.checkNumber(history.state.num, 8, 1300)) {
-          console.log('THIS IS NEXT PATIENT VALUE: ' + this.props.bar_change.next_patient);
+        } else if (user.checkNumber(history.state.num, 8, 1300)) {
+          //console.log('THIS IS NEXT PATIENT VALUE: ' + this.props.bar_change.next_patient);
           console.log('went here');
           this.callButtonData(3, 4, 'stop');
-        }
-        if (user.checkNumber(history.state.num, 9, 1300)) {
-          console.log('THIS IS NEXT PATIENT VALUE: ' + this.props.bar_change.next_patient);
+        } else if (user.checkNumber(history.state.num, 9, 1300)) {
+          //console.log('THIS IS NEXT PATIENT VALUE: ' + this.props.bar_change.next_patient);
           user.barChange(
             this.props.bar_change.array_patient[5],
             this.props.bar_change.array_patient,

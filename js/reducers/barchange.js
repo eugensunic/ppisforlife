@@ -25,8 +25,6 @@ export default function reducer(
   },
   action
 ) {
-  console.log('get state of reducer:' + state.clicked_doctor);
-
   if (action.type === 'bar_change_patient') {
     state = {
       ...state,
@@ -67,14 +65,15 @@ export default function reducer(
       stop_navigation: action.stop_navigation
     };
     window.scrollTo(0, 0);
-    console.log('IN ACTION TYPE: ' + state.selected_patient);
     if (state.stop_navigation != 'stop') {
+      console.log('should not go here');
+
       window.history.pushState(
         {
           num: state.selected_patient
         },
         null,
-        '?patient_num=' + state.selected_patient
+        '?' + state.selected_patient
       );
     }
   }
@@ -93,7 +92,7 @@ export default function reducer(
           num: state.selected_doctor
         },
         null,
-        '?doctor_num=' + state.selected_doctor
+        '?' + state.selected_doctor
       );
     }
   }
@@ -112,7 +111,7 @@ export default function reducer(
           num: state.selected_pharma
         },
         null,
-        '?pharma_num=' + state.selected_pharma
+        '?' + state.selected_pharma
       );
     }
   }

@@ -9,19 +9,11 @@ import * as user from './Function.js';
 export default class Barpharma extends React.Component {
   constructor(props) {
     super(props);
-    alert();
-    console.log('loaded');
   }
   componentDidMount() {
-    alert();
     this._isMounted = true;
-    window.onload = () => {
-      alert();
-    };
     window.onpopstate = () => {
-      alert('state poped');
       if (this._isMounted) {
-        alert('state poped');
         // history.state.num ===   this.props.bar_change.page_num_pharma
         // you can also compare with window.location.href
         //user.barChangeCheck(this.props.bar_change.array_pharma[1], this.props.bar_change.array_pharma, this.props.bar_change.next_pharma)

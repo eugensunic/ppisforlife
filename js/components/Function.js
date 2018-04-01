@@ -33,135 +33,86 @@ export function barChange(arg0, prop_arr, prop_next, string_change, string_send,
   // filter patient pharma and doctor here in if
   if (stop_location == 'stop' && string_change == 'bar_change_patient') {
     // backwards navigation
-    if (history.hasOwnProperty('state')) {
+    console.log('this is temparr: ' + temp_arr);
+    if (history.state != null) {
       if (history.state.num == '4') {
+        console.log('in if 4');
         temp_arr = [1, 2, 3, 4, 5];
         arg0 = 4;
         string_change = 'bar_change_patient';
         flag_it = false;
         //prop_next = false;
-      } else if (checkNumber(history.state.num, 4, 1300)) {
-        // history.state.num=9
-        temp_arr = makeFormula(history.state.num, 9);
+      } else if (history.state.num > 4 && checkNumberUnexport(history.state.num, temp_arr)) {
+        console.log('else if history: ' + history.state.num + ' array: ' + temp_arr);
+        temp_arr = makeFormulaNew(history.state.num, temp_arr);
         arg0 = history.state.num;
         string_change = 'bar_change_patient';
         flag_it = true;
-      }
-
-      //forward navigation
-      if (checkHistoryForwards(history.state.num)) {
-        temp_arr = makeFormula(history.state.num, 5);
-        arg0 = history.state.num;
-        string_change = 'bar_change_patient';
-        flag_it = true;
-        //prop_next = false;
-      }
-    } else {
-      if (window.location.href.includes('4')) {
-        temp_arr = [1, 2, 3, 4, 5];
-        arg0 = 4;
-        string_change = 'bar_change_patient';
-        flag_it = false;
-        //prop_next = false;
-      } else if (checkNumber(window.location.href[window.location.href.length - 1], 4, 1300)) {
-        // history.state.num=9
-        temp_arr = makeFormula(window.location.href[window.location.href.length - 1], 9);
-        arg0 = window.location.href[window.location.href.length - 1];
-        string_change = 'bar_change_patient';
-        flag_it = true;
-        console.log('went to ELSE IF STOP');
       }
     }
+
+    //forward navigation
+    // if (checkHistoryForwards(history.state.num)) {
+    //   temp_arr = makeFormula(history.state.num, 5);
+    //   arg0 = history.state.num;
+    //   string_change = 'bar_change_patient';
+    //   flag_it = true;
+    //   //prop_next = false;
+    // }
   }
   if (stop_location == 'stop' && string_change == 'bar_change_pharma') {
-    console.log('went here inside pHARMA STOP LOCATION');
+    console.log('this is temparr: ' + temp_arr);
     // backwards navigation
-    if (history.hasOwnProperty('state')) {
-      if (history.state.num == '4') {
-        temp_arr = [1, 2, 3, 4, 5];
-        arg0 = 4;
-        string_change = 'bar_change_pharma';
-        flag_it = false;
-        //prop_next = false;
-      } else if (checkNumber(history.state.num, 4, 1300)) {
-        // history.state.num=9
-        temp_arr = makeFormula(history.state.num, 9);
-        arg0 = history.state.num;
-        string_change = 'bar_change_pharma';
-        flag_it = true;
-        console.log('went to ELSE IF STOP');
-      }
+    console.log('WENT IN');
+    if (history.state.num == '4') {
+      temp_arr = [1, 2, 3, 4, 5];
+      arg0 = 4;
+      string_change = 'bar_change_pharma';
+      flag_it = false;
+    } else if (checkNumber(history.state.num, 4, 1300) && history.state.num > 5) {
+      temp_arr = makeFormula(history.state.num, 9);
+      arg0 = history.state.num;
+      string_change = 'bar_change_pharma';
+      flag_it = true;
+      console.log('went to ELSE IF STOP');
+    }
 
-      //forward navigation
-
-      if (checkHistoryForwards(history.state.num)) {
-        temp_arr = makeFormula(history.state.num, 5);
-        arg0 = history.state.num;
-        string_change = 'bar_change_pharma';
-        flag_it = true;
-        //prop_next = false;
-      }
-    } else {
-      if (window.location.href.includes('4')) {
-        temp_arr = [1, 2, 3, 4, 5];
-        arg0 = 4;
-        string_change = 'bar_change_pharma';
-        flag_it = false;
-        //prop_next = false;
-      } else if (checkNumber(window.location.href[window.location.href.length - 1], 4, 1300)) {
-        // history.state.num=9
-        temp_arr = makeFormula(window.location.href[window.location.href.length - 1], 9);
-        arg0 = window.location.href[window.location.href.length - 1];
-        string_change = 'bar_change_pharma';
-        flag_it = true;
-        console.log('went to ELSE IF STOP');
-      }
+    //forward navigation
+    if (checkHistoryForwards(history.state.num)) {
+      temp_arr = makeFormula(history.state.num, 5);
+      arg0 = history.state.num;
+      string_change = 'bar_change_pharma';
+      flag_it = true;
     }
   }
   if (stop_location == 'stop' && string_change == 'bar_change_doctor') {
-    console.log('went here inside DOCTOR STOP LOCATION');
     // backwards navigation
-    if (history.hasOwnProperty('state')) {
-      if (history.state.num == '4') {
-        temp_arr = [1, 2, 3, 4, 5];
-        arg0 = 4;
-        string_change = 'bar_change_doctor';
-        flag_it = false;
-        //prop_next = false;
-      } else if (checkNumber(history.state.num, 4, 1300)) {
-        // history.state.num=9
-        temp_arr = makeFormula(history.state.num, 9);
-        arg0 = history.state.num;
-        string_change = 'bar_change_doctor';
-        flag_it = true;
-        console.log('went to ELSE IF STOP');
-      }
 
-      //forward navigation
-      if (checkHistoryForwards(history.state.num)) {
-        temp_arr = makeFormula(history.state.num, 5);
-        arg0 = history.state.num;
-        string_change = 'bar_change_doctor';
-        flag_it = true;
-        //prop_next = false;
-      }
-    } else {
-      if (window.location.href.includes('4')) {
-        temp_arr = [1, 2, 3, 4, 5];
-        arg0 = 4;
-        string_change = 'bar_change_doctor';
-        flag_it = false;
-        //prop_next = false;
-      } else if (checkNumber(window.location.href[window.location.href.length - 1], 4, 1300)) {
-        // history.state.num=9
-        temp_arr = makeFormula(window.location.href[window.location.href.length - 1], 9);
-        arg0 = window.location.href[window.location.href.length - 1];
-        string_change = 'bar_change_doctor';
-        flag_it = true;
-        console.log('went to ELSE IF STOP');
-      }
+    if (history.state.num == '4') {
+      temp_arr = [1, 2, 3, 4, 5];
+      arg0 = 4;
+      string_change = 'bar_change_doctor';
+      flag_it = false;
+      //prop_next = false;
+    } else if (checkNumber(history.state.num, 4, 1300)) {
+      // history.state.num=9
+      temp_arr = makeFormula(history.state.num, 9);
+      arg0 = history.state.num;
+      string_change = 'bar_change_doctor';
+      flag_it = true;
+      console.log('went to ELSE IF STOP');
+    }
+
+    //forward navigation
+    if (checkHistoryForwards(history.state.num)) {
+      temp_arr = makeFormula(history.state.num, 5);
+      arg0 = history.state.num;
+      string_change = 'bar_change_doctor';
+      flag_it = true;
+      //prop_next = false;
     }
   }
+  console.log('temp array: ' + temp_arr);
   store.dispatch(user.changeBarNum(arg0, string_change));
   if (string_change === 'bar_change_patient') {
     store.dispatch(user.sendBarDataPatient(string_send, temp_arr, flag_it, arg0, stop_location));
@@ -171,7 +122,16 @@ export function barChange(arg0, prop_arr, prop_next, string_change, string_send,
     store.dispatch(user.sendBarDataPharma(string_send, temp_arr, flag_it, arg0, stop_location));
   }
 }
-
+function makeFormulaNew(history_num, array) {
+  let array_new = [];
+  let start_number = array[1] - 6;
+  let end_number = array[1];
+  for (let i = start_number; i <= end_number; i++) {
+    array_new.push(i);
+  }
+  console.log('new array is: ' + array_new);
+  return array_new;
+}
 function makeFormula(history_num, low_end) {
   let lowest = low_end;
   let five = 5;
@@ -208,6 +168,7 @@ function checkHistoryForwards(history_num) {
 }
 
 export function checkNumber(number_to_check, num, database_data_amount) {
+  //history.state.num, 4,
   // the 1300 should be dinamic
   // patient --> 1300 currently 1207
   // pharma --> 50 currently 8
@@ -216,13 +177,28 @@ export function checkNumber(number_to_check, num, database_data_amount) {
   //database_data_amount should be 1300 for patients but you should retrieve the maximum
   const DATABASE_MAX = database_data_amount / 16; // 76
   let n = 1;
-  let result = num;
+  let result = num; // 4
   while (result < DATABASE_MAX) {
     if (number_to_check == result) {
       return true;
     }
-    result = num + 5 * n;
+    result = num + 5 * n; //9, 14, 19, 24
     ++n;
   }
   return false;
 }
+function checkNumberUnexport(history_num, array) {
+  //history.state.num, 4,
+  // the 1300 should be dinamic
+  // patient --> 1300 currently 1207
+  // pharma --> 50 currently 8
+  // doctor --> 300 currently 198
+  // 16 is the number for boxes, 5 is the amount of numbers in the down bar
+  //database_data_amount should be 1300 for patients but you should retrieve the maximum
+  if (history_num <= array[0]) {
+    return true;
+  }
+  return false;
+}
+
+// ti moras provjeriti kad je 9 ili manji od 9 kad je 14 ili manji od 14 jer nemora biti da ce ekipa kliknuti 14, 9 i tak to
