@@ -18,6 +18,7 @@ export default class Barpatient extends React.Component {
       console.log('property exits check: ' + JSON.stringify(history.state));
       if (this._isMounted) {
         if (history.state == null || history.state.num == '1') {
+          console.log('have gone here for doctor');
           // //console.log('THIS IS NEXT PATIENT VALUE: ' + this.props.bar_change.next_patient);
           // 0
           //0,1   1

@@ -14,11 +14,8 @@ export default class Barpharma extends React.Component {
     this._isMounted = true;
     window.onpopstate = () => {
       if (this._isMounted) {
-        // history.state.num ===   this.props.bar_change.page_num_pharma
-        // you can also compare with window.location.href
-        //user.barChangeCheck(this.props.bar_change.array_pharma[1], this.props.bar_change.array_pharma, this.props.bar_change.next_pharma)
-        if (history.state.num == '1') {
-          console.log('THIS IS NEXT pharma VALUE: ' + this.props.bar_change.next_pharma);
+        if (history.state == null || history.state.state == undefined || history.state.num == '1') {
+          // //console.log('THIS IS NEXT PATIENT VALUE: ' + this.props.bar_change.next_patient);
           // 0
           //0,1   1
           //1,2   2
@@ -27,42 +24,34 @@ export default class Barpharma extends React.Component {
           //5     ...
           //4,6
           this.callButtonData(0, 1, 'stop');
-        }
-        if (history.state.num == '2') {
+        } else if (history.state.num == '2') {
           console.log('THIS IS NEXT pharma VALUE: ' + this.props.bar_change.next_pharma);
           this.callButtonData(1, 2, 'stop');
-        }
-        if (history.state.num == '3') {
+        } else if (history.state.num == '3') {
           console.log('THIS IS NEXT pharma VALUE: ' + this.props.bar_change.next_pharma);
 
           this.callButtonData(2, 3, 'stop');
-        }
-        if (history.state.num == '4') {
+        } else if (history.state.num == '4') {
           console.log('THIS IS NEXT pharma VALUE: ' + this.props.bar_change.next_pharma);
           console.log('should have gone here');
           this.callButtonData(3, 4, 'stop');
-        }
-        // The rest
-        //------------------------------------------
+        } else if (user.checkNumber(history.state.num, 5, 1300)) {
+          // The rest
+          //------------------------------------------
 
-        if (user.checkNumber(history.state.num, 5, 1300)) {
           console.log('THIS IS NEXT pharma VALUE: ' + this.props.bar_change.next_pharma);
           this.callButtonData(0, 1, 'stop');
-        }
-        if (user.checkNumber(history.state.num, 6, 1300)) {
+        } else if (user.checkNumber(history.state.num, 6, 1300)) {
           console.log('THIS IS NEXT pharma VALUE: ' + this.props.bar_change.next_pharma);
           this.callButtonData(1, 2, 'stop');
-        }
-        if (user.checkNumber(history.state.num, 7, 1300)) {
+        } else if (user.checkNumber(history.state.num, 7, 1300)) {
           console.log('THIS IS NEXT pharma VALUE: ' + this.props.bar_change.next_pharma);
           this.callButtonData(2, 3, 'stop');
-        }
-        if (user.checkNumber(history.state.num, 8, 1300)) {
+        } else if (user.checkNumber(history.state.num, 8, 1300)) {
           console.log('THIS IS NEXT pharma VALUE: ' + this.props.bar_change.next_pharma);
           console.log('went here');
           this.callButtonData(3, 4, 'stop');
-        }
-        if (user.checkNumber(history.state.num, 9, 1300)) {
+        } else if (user.checkNumber(history.state.num, 9, 1300)) {
           console.log('THIS IS NEXT pharma VALUE: ' + this.props.bar_change.next_pharma);
           user.barChange(
             this.props.bar_change.array_pharma[5],
