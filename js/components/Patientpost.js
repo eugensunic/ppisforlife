@@ -29,6 +29,7 @@ export default class Patientpost extends React.Component {
       radio2: false,
       first_check: false
     };
+    history.replaceState(null, null, null);
   }
 
   componentWillMount() {
@@ -37,6 +38,7 @@ export default class Patientpost extends React.Component {
       this.props.dispatch(user.asyncAll('http://projectsgono.com/medsforlife/appcall/get_tag2.php', 'tag2', ''));
       this.props.dispatch(user.asyncAll('http://projectsgono.com/medsforlife/appcall/getheaderpost.php', 'header', ''));
     }
+    this.props.dispatch(user.changeNavigationColor('post-nav', [true, false, false]));
   }
 
   componentDidUpdate() {
@@ -199,7 +201,7 @@ export default class Patientpost extends React.Component {
                 })
               }
             />{' '}
-            <span className="margin-left-3">{this.state.first_check ? 'hide About' : 'show about'} </span>{' '}
+            <span className="margin-left--1">{this.state.first_check ? 'hide About' : 'show about'} </span>{' '}
           </div>
           {this.state.first_check ? this.aboutWritting() : <Headerbarpatient> </Headerbarpatient>}
           {[1, 2, 3, 4].map((item0, i) => {
@@ -265,7 +267,7 @@ export default class Patientpost extends React.Component {
                 })
               }
             />{' '}
-            <span className="margin-left-3">{this.state.first_check ? 'hide About' : 'show About'} </span>{' '}
+            <span className="margin-left--1">{this.state.first_check ? 'hide About' : 'show About'} </span>{' '}
           </div>
           {this.state.first_check ? this.aboutWritting() : <Headerbarpatient> </Headerbarpatient>}
           {[1, 2, 3, 4].map((item0, i) => {

@@ -6,6 +6,7 @@ import Postmain from './Postmain';
 
 import Bardoctor from './Bardoctor';
 import Headerbardoctor from './Headerbardoctor.js';
+
 import * as user from '../actions/asyncCAll.js';
 
 @connect(store => {
@@ -25,6 +26,7 @@ export default class Doctorpost extends React.Component {
     if (this.props.dr_call.first == undefined) {
       this.props.dispatch(user.asyncAll('http://projectsgono.com/medsforlife/appcall_doctor/get_all_columns_doctor.php', 'doctor_call_all'));
     }
+    this.props.dispatch(user.changeNavigationColor('post-nav', [false, true, false]));
   }
 
   componentDidUpdate() {}

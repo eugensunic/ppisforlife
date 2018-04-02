@@ -1,3 +1,6 @@
+.margin-left--1 {
+  margin-left: -1px;
+}
 .about_first {
   border: 1px solid #e1dddd;
   border-radius: 3px;

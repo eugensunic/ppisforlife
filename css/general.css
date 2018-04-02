@@ -53,6 +53,9 @@ th {
 .margin-left-3 {
   margin-left: 3px;
 }
+.margin-left--1 {
+  margin-left: -1px;
+}
 .margin-right-3 {
   margin-right: 3px;
 }

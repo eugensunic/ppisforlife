@@ -1,7 +1,7 @@
 import * as user from '../actions/asyncCAll.js';
 import store from '../store';
 
-//ovo bi trebalo default
+// flag_it false is for 1-5 array else navigation flag_it is true
 export function barChange(arg0, prop_arr, prop_next, string_change, string_send, stop_location) {
   var temp_arr = prop_arr;
   var flag_it = prop_next;
@@ -29,42 +29,35 @@ export function barChange(arg0, prop_arr, prop_next, string_change, string_send,
       flag_it = true;
     }
   } else if (stop_location) {
-    // REFACTOR THE ifs
-    // flag_it= false represetns the first state when array is [1,2,3,4,5] all the other arrays have a value of flag_it=true
-    // filter patient pharma and doctor here in if
-    // backward navigation
-
+    // backwards navigation
     if (history.state != null) {
-      console.log(history.state);
-      console.log('could not have gone here');
       if (history.state.num <= 4) {
-        console.log('should have gone hre for 1');
         temp_arr = [1, 2, 3, 4, 5];
         arg0 = history.state.num;
         flag_it = false; // because of this false
-        //prop_next = false;
-      } else if (checkNumberUnexport(history.state.num, temp_arr)) {
-        temp_arr = makeFormulaNew(history.state.num, temp_arr);
+      } else if (checkHistoryBackwards(history.state.num, temp_arr)) {
+        temp_arr = makeFormulaBackwards(history.state.num, temp_arr);
         arg0 = history.state.num;
         flag_it = true;
       }
 
-      //forward navigation
+      // forwards navigation
       if (checkHistoryForwards(history.state.num)) {
-        temp_arr = makeFormula(history.state.num, 5);
+        temp_arr = makeFormulaForwards(history.state.num, 5);
         arg0 = history.state.num;
         flag_it = true;
       }
     } else {
+      // handles the / to 5 transition
       temp_arr = [1, 2, 3, 4, 5];
       arg0 = 1;
       flag_it = false;
     }
   }
 
-  console.log('temp array: ' + temp_arr);
-  console.log('flag_it:' + flag_it);
-  console.log('arg0:' + arg0);
+  // console.log('temp array: ' + temp_arr);
+  // console.log('flag_it:' + flag_it);
+  // console.log('arg0:' + arg0);
   store.dispatch(user.changeBarNum(arg0, string_change));
   if (string_change === 'bar_change_patient') {
     store.dispatch(user.sendBarDataPatient(string_send, temp_arr, flag_it, arg0, stop_location));
@@ -75,7 +68,7 @@ export function barChange(arg0, prop_arr, prop_next, string_change, string_send,
   }
 }
 
-function makeFormulaNew(history_num, array) {
+function makeFormulaBackwards(history_num, array) {
   if ((array[0] = 1)) {
     let array_extra = [];
     let counter1 = history_num;
@@ -101,7 +94,7 @@ function makeFormulaNew(history_num, array) {
   return array_new;
 }
 
-function makeFormula(history_num, low_end) {
+function makeFormulaForwards(history_num, low_end) {
   let lowest = low_end;
   let five = 5;
   let counter = 1;
@@ -119,6 +112,10 @@ function makeFormula(history_num, low_end) {
     lowest += 5;
   }
   return array;
+}
+
+function checkHistoryBackwards(history_num, array) {
+  return history_num <= array[0] || array[0] == 1;
 }
 
 function checkHistoryForwards(history_num) {
@@ -155,9 +152,3 @@ export function checkNumber(number_to_check, num, database_data_amount) {
   }
   return false;
 }
-
-function checkNumberUnexport(history_num, array) {
-  return history_num <= array[0] || array[0] == 1;
-}
-
-// ti moras provjeriti kad je 9 ili manji od 9 kad je 14 ili manji od 14 jer nemora biti da ce ekipa kliknuti 14, 9 i tak to

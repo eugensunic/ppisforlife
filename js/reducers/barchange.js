@@ -73,7 +73,7 @@ export default function reducer(
           num: state.selected_patient
         },
         null,
-        '?' + state.selected_patient
+        null
       );
     }
   }
@@ -92,7 +92,7 @@ export default function reducer(
           num: state.selected_doctor
         },
         null,
-        '?' + state.selected_doctor
+        null
       );
     }
   }
@@ -111,7 +111,7 @@ export default function reducer(
           num: state.selected_pharma
         },
         null,
-        '?' + state.selected_pharma
+        null
       );
     }
   }

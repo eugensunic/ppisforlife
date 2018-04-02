@@ -7,6 +7,7 @@ import header from './asyncheader';
 import filtercall from './filtersql';
 import getId from './getmax';
 import bar_change from './barchange';
+import color_navigation from './color_change_navigation';
 
 import data_input from './datainputpage/datainput';
 import basic from './datainputpage/basic';
@@ -39,6 +40,7 @@ export default combineReducers({
   tag2,
   header,
   bar_change,
+  color_navigation,
   filtercall,
   getId,
   data_input,

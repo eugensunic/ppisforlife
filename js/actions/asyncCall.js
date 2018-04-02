@@ -48,6 +48,15 @@ export function changeBarNum(bar, type) {
     });
   };
 }
+// action.type, action.color
+export function changeNavigationColor(type, value) {
+  return function(dispatch) {
+    dispatch({
+      type: type,
+      color: value
+    });
+  };
+}
 // refactor this to one method, no need for 3!!
 export function sendBarDataPatient(type, array0, next0, selected0, stop_location) {
   return function(dispatch) {

@@ -15,19 +15,22 @@ import Social from './Social.js';
 import { withRouter, Route, Router, Link } from 'react-router-dom';
 import store from '../store';
 import * as user from './Function.js';
+import * as user2 from '../actions/asyncCAll.js';
 
 @connect(store => {
   return {
     navbar: store.nav,
-    bar_change: store.bar_change
+    bar_change: store.bar_change,
+    color_navigation: store.color_navigation
   };
 })
 export default class Layout extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { radio1: true, radio2: false, radio3: false, first_check: false };
   }
-  componentDidMount() {}
+  componentDidMount() {
+    console.log(this.props.color_navigation.post_navigation);
+  }
 
   render() {
     return (
@@ -35,19 +38,31 @@ export default class Layout extends React.Component {
         <Navbar />
 
         <Link to={this.props.match.url}>
-          <span className={this.state.radio1 ? 'radio_clicked' : 'radio_normal'} onClick={() => this.setState({ radio1: true, radio2: false, radio3: false })}>
+          <span
+            className={this.props.color_navigation.post_navigation[0] ? 'radio_clicked' : 'radio_normal'}
+            onClick={() => {
+              this.props.dispatch(user2.changeNavigationColor('post-nav', [true, false, false]));
+            }}>
             Patient
           </span>
         </Link>
 
         <Link to={this.props.match.url + '/doctorPost'}>
-          <span className={this.state.radio2 ? 'radio_clicked' : 'radio_normal'} onClick={() => this.setState({ radio1: false, radio2: true, radio3: false })}>
+          <span
+            className={this.props.color_navigation.post_navigation[1] ? 'radio_clicked' : 'radio_normal'}
+            onClick={() => {
+              this.props.dispatch(user2.changeNavigationColor('post-nav', [false, true, false]));
+            }}>
             Doctor
           </span>
         </Link>
 
         <Link to={this.props.match.url + `/pharmaPost`}>
-          <span className={this.state.radio3 ? 'radio_clicked' : 'radio_normal'} onClick={() => this.setState({ radio1: false, radio2: false, radio3: true })}>
+          <span
+            className={this.props.color_navigation.post_navigation[2] ? 'radio_clicked' : 'radio_normal'}
+            onClick={() => {
+              this.props.dispatch(user2.changeNavigationColor('post-nav', [false, false, true]));
+            }}>
             Pharma
           </span>
         </Link>

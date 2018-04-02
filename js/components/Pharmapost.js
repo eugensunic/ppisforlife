@@ -23,6 +23,7 @@ export default class Pharmapost extends React.Component {
     if (this.props.pharma_call.first == undefined) {
       this.props.dispatch(user.asyncAll('http://projectsgono.com/medsforlife/appcall_pharma/get_all_columns_pharmacist.php', 'pharma_call_all'));
     }
+    this.props.dispatch(user.changeNavigationColor('post-nav', [false, false, true]));
   }
   componentDidUpdate() {
     // if (this.props.bar_change.clicked_pharma) {
