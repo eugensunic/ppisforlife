@@ -1,17 +1,18 @@
-import store from "../../store.js"
-import axios from "axios";
+import store from '../../store.js';
+import axios from 'axios';
 
 export function getRequest(url_id, dispatch_name) {
   return function(dispatch) {
-    return axios.get(url_id)
-      .then((response) => {
+    return axios
+      .get(url_id)
+      .then(response => {
         dispatch({
           type: dispatch_name,
           payload: response.data[0]['id']
         });
       })
-      .catch((err) => {})
-  }
+      .catch(err => {});
+  };
 }
 
 export function postRequest(url, ...args) {
@@ -19,21 +20,22 @@ export function postRequest(url, ...args) {
   for (let i in args) {
     params.append('param_' + i, args[i]);
   }
-  return axios.post(url, params)
+  return axios
+    .post(url, params)
     .then(response => {})
-    .catch((err) => {})
+    .catch(err => {});
 }
 
 // for alternative inputs
 export function isValidString(val) {
   if (val != undefined) {
-    if ((parseInt(val) > 0) || !(/^[a-zA-Z0-9- ]*$/.test(val[0]))) {
-      return "error_red_string";
+    if (parseInt(val) > 0 || !/^[a-zA-Z0-9- ]*$/.test(val[0])) {
+      return 'error_red_string';
     } else {
-      return "input_basic";
+      return 'input_basic';
     }
   } else {
-    return "input_basic"
+    return 'input_basic';
   }
 }
 
@@ -41,25 +43,22 @@ export function isValidString(val) {
 export function isValidInteger(val, int_val1, int_val2) {
   if (val != undefined) {
     if (val === '') {
-      return "input_basic";
+      return 'input_basic';
     }
-    if (val.match(/^\d+$/) &&
-      (parseInt(val, 10) > int_val1) && (parseInt(val, 10) <= int_val2)) {
-      return "input_basic";
+    if (val.match(/^\d+$/) && parseInt(val, 10) > int_val1 && parseInt(val, 10) <= int_val2) {
+      return 'input_basic';
     } else {
-      return "error_red";
+      return 'error_red';
     }
   }
-  return "input_basic";
-
+  return 'input_basic';
 }
-
 
 export function checkObjectDuplicate(arr, item) {
   if (arr == undefined) return true;
   else {
     for (var i = 0; i < arr.length; i++) {
-      if ((arr[i]['label']).toLowerCase().trim() == item.toLowerCase().trim()) {
+      if (arr[i]['label'].toLowerCase().trim() == item.toLowerCase().trim()) {
         return true;
       }
     }
@@ -73,9 +72,10 @@ export function capitalizeFirst(stringy) {
 }
 
 export function updateSelect(arr, type0, state0) {
-  if (state0 != undefined && isValidString(state0) === "input_basic") {
+  if (state0 != undefined && isValidString(state0) === 'input_basic') {
     var check = checkObjectDuplicate(arr, state0);
-    if (state0.trim() === "") {} else if (arr != undefined) {
+    if (state0.trim() === '') {
+    } else if (arr != undefined) {
       if (!check)
         store.dispatch({
           type: type0,
@@ -83,7 +83,7 @@ export function updateSelect(arr, type0, state0) {
             label: capitalizeFirst(state0),
             value: capitalizeFirst(state0)
           })
-        })
+        });
     } else if (arr === undefined) {
       store.dispatch({
         type: type0,
@@ -91,7 +91,7 @@ export function updateSelect(arr, type0, state0) {
           label: capitalizeFirst(state0),
           value: capitalizeFirst(state0)
         })
-      })
+      });
     }
   }
 }

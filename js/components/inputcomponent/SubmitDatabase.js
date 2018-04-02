@@ -1,384 +1,381 @@
-
-  export function radioSideEffects(array) {
-    if (typeof array!=='undefined') {
-     if (array[0]) {
+export function radioSideEffects(array) {
+  if (typeof array !== 'undefined') {
+    if (array[0]) {
       return 'yes';
-     }
-     if (array[1]) {
+    }
+    if (array[1]) {
       return 'no';
-     }
-     if (array[2]) {
+    }
+    if (array[2]) {
       return 'dont know';
     }
   }
-    return 'unknown';
-  }
+  return 'unknown';
+}
 
-  export function radioOtherDrugs(array) {
-    if (typeof array!=='undefined') {
-     if (array[0]) {
+export function radioOtherDrugs(array) {
+  if (typeof array !== 'undefined') {
+    if (array[0]) {
       return 'yes';
-     }
-     if (array[1]) {
+    }
+    if (array[1]) {
       return 'no';
     }
   }
-    return 'unknown';
-  }
+  return 'unknown';
+}
 
-  export function radioNutrient(array) {
-    if (typeof array!=='undefined') {
-     if (array[0]) {
+export function radioNutrient(array) {
+  if (typeof array !== 'undefined') {
+    if (array[0]) {
       return 'yes';
-     }
-     if (array[1]) {
+    }
+    if (array[1]) {
       return 'no';
-     }
-     if (array[2]) {
+    }
+    if (array[2]) {
       return 'dont know';
     }
   }
-    return 'unknown';
-  }
+  return 'unknown';
+}
 
-  export function genderValue(array) {
-    if (typeof array!=='undefined') {
-     if (array[0]) {
+export function genderValue(array) {
+  if (typeof array !== 'undefined') {
+    if (array[0]) {
       return 'male';
-     }
-     if (array[1]) {
-      return 'female';
-     }
-     if (array[2]) {
-      return 'other'
     }
-  }
-    return 'unknown';
-  }
-
-  export function raceValue(array) {
-    if (typeof array!=='undefined') {
-     if (array[0]) {
-      return 'white';
-     }
-     if (array[1]) {
-      return 'black';
-     }
-     if (array[2]) {
-      return 'asian';
-     }
-     if (array[3]) {
-      return 'hispanic/latino';
-     }
-     if (array[4]) {
+    if (array[1]) {
+      return 'female';
+    }
+    if (array[2]) {
       return 'other';
     }
   }
-    return 'unknown';
-  }
+  return 'unknown';
+}
 
-  export function globalTime(array) {
-    if (typeof array!=='undefined') {
-     if (array[0]) {
+export function raceValue(array) {
+  if (typeof array !== 'undefined') {
+    if (array[0]) {
+      return 'white';
+    }
+    if (array[1]) {
+      return 'black';
+    }
+    if (array[2]) {
+      return 'asian';
+    }
+    if (array[3]) {
+      return 'hispanic/latino';
+    }
+    if (array[4]) {
+      return 'other';
+    }
+  }
+  return 'unknown';
+}
+
+export function globalTime(array) {
+  if (typeof array !== 'undefined') {
+    if (array[0]) {
       return 'day';
-     }
-     if (array[1]) {
+    }
+    if (array[1]) {
       return 'week';
-     }
-     if (array[2]) {
+    }
+    if (array[2]) {
       return 'month';
-     }
-     if (array[3]) {
+    }
+    if (array[3]) {
       return 'year';
     }
   }
-    return null;
-  }
+  return null;
+}
 
-  export function dailyUse(array) {
-
-   if (typeof array!=='undefined') {
-     if (array[0]) {
+export function dailyUse(array) {
+  if (typeof array !== 'undefined') {
+    if (array[0]) {
       return 'yes';
-     }
-     if (array[1]) {
+    }
+    if (array[1]) {
       return 'no';
-     }
-     if (array[2]) {
+    }
+    if (array[2]) {
       return 'unknown';
     }
   }
-    return null;
-  }
-
+  return null;
+}
 
 // ---------------------EXTRA BEGIN-------------------------
-  export function extraExercise(array) {
-    if (typeof array!=='undefined') {
-     if (array[0]) {
+export function extraExercise(array) {
+  if (typeof array !== 'undefined') {
+    if (array[0]) {
       return 'daily';
-     }
-     if (array[1]) {
+    }
+    if (array[1]) {
       return 'few times per week';
-     }
-     if (array[2]) {
+    }
+    if (array[2]) {
       return 'few times per month';
-     }
-     if (array[3]) {
+    }
+    if (array[3]) {
       return 'few times a year';
-     }
-     if (array[4]) {
+    }
+    if (array[4]) {
       return 'never';
     }
   }
-    return 'unknown';
-  }
+  return 'unknown';
+}
 
-  export function extraSmoke(array) {
-    if (typeof array!=='undefined') {
-     if (array[0]) {
+export function extraSmoke(array) {
+  if (typeof array !== 'undefined') {
+    if (array[0]) {
       return 'daily';
-     }
-     if (array[1]) {
+    }
+    if (array[1]) {
       return 'few times per week';
-     }
-     if (array[2]) {
+    }
+    if (array[2]) {
       return 'few times per month';
-     }
-     if (array[3]) {
+    }
+    if (array[3]) {
       return 'few times a year';
-     }
-     if (array[4]) {
+    }
+    if (array[4]) {
       return 'never';
     }
   }
-    return 'unknown';
-  }
+  return 'unknown';
+}
 
-  export function extraAlcohol(array) {
-    if (typeof array!=='undefined') {
-     if (array[0]) {
+export function extraAlcohol(array) {
+  if (typeof array !== 'undefined') {
+    if (array[0]) {
       return 'daily';
-     }
-     if (array[1]) {
+    }
+    if (array[1]) {
       return 'few times per week';
-     }
-     if (array[2]) {
+    }
+    if (array[2]) {
       return 'few times per month';
-     }
-     if (array[3]) {
+    }
+    if (array[3]) {
       return 'few times a year';
-     }
-     if (array[4]) {
+    }
+    if (array[4]) {
       return 'never';
     }
   }
-    return 'unknown';
-  }
+  return 'unknown';
+}
 
-  export function extraObese(array) {
-    if (typeof array!=='undefined') {
-     if (array[0]) {
+export function extraObese(array) {
+  if (typeof array !== 'undefined') {
+    if (array[0]) {
       return 'yes';
-     }
-     if (array[1]) {
+    }
+    if (array[1]) {
       return 'no';
-     }
-     if (array[2]) {
+    }
+    if (array[2]) {
       return 'little';
-     }
-     if (array[3]) {
+    }
+    if (array[3]) {
       return 'not sure';
     }
   }
-    return 'unknown';
-  }
+  return 'unknown';
+}
 
-  export function extraEat(array) {
-    if (typeof array!=='undefined') {
-     if (array[0]) {
+export function extraEat(array) {
+  if (typeof array !== 'undefined') {
+    if (array[0]) {
       return 'daily';
-     }
-     if (array[1]) {
+    }
+    if (array[1]) {
       return 'few times per week';
-     }
-     if (array[2]) {
+    }
+    if (array[2]) {
       return 'few times per month';
-     }
-     if (array[3]) {
+    }
+    if (array[3]) {
       return 'few times a year';
-     }
-     if (array[4]) {
+    }
+    if (array[4]) {
       return 'rarely eat healthy';
     }
   }
-    return 'unknown';
-  }
+  return 'unknown';
+}
 
-  export function extraStress(array) {
-    if (typeof array!=='undefined') {
-     if (array[0]) {
+export function extraStress(array) {
+  if (typeof array !== 'undefined') {
+    if (array[0]) {
       return 'yes';
-     }
-     if (array[1]) {
+    }
+    if (array[1]) {
       return 'no';
-     }
-     if (array[2]) {
+    }
+    if (array[2]) {
       return 'sometimes';
-     }
-     if (array[3]) {
+    }
+    if (array[3]) {
       return 'rarely get stressed';
-     }
-     if (array[4]) {
+    }
+    if (array[4]) {
       return 'not sure';
     }
   }
-    return 'unknown';
-  }
+  return 'unknown';
+}
 
-  export function extraAnxiety(array) {
-    if (typeof array!=='undefined') {
-     if (array[0]) {
+export function extraAnxiety(array) {
+  if (typeof array !== 'undefined') {
+    if (array[0]) {
       return 'yes';
-     }
-     if (array[1]) {
+    }
+    if (array[1]) {
       return 'no';
-     }
-     if (array[2]) {
+    }
+    if (array[2]) {
       return 'maybe';
-     }
-     if (array[3]) {
+    }
+    if (array[3]) {
       return 'dont know';
     }
   }
-    return 'unknown';
-  }
+  return 'unknown';
+}
 
-  export function extraFamily(array) {
-    if (typeof array!=='undefined') {
-     if (array[0]) {
+export function extraFamily(array) {
+  if (typeof array !== 'undefined') {
+    if (array[0]) {
       return 'yes';
-     }
-     if (array[1]) {
+    }
+    if (array[1]) {
       return 'no';
-     }
-     if (array[2]) {
+    }
+    if (array[2]) {
       return 'dont know';
     }
   }
-    return 'unknown';
-  }
+  return 'unknown';
+}
 
-  export function extraGluten(array) {
-    if (typeof array!=='undefined') {
-     if (array[0]) {
+export function extraGluten(array) {
+  if (typeof array !== 'undefined') {
+    if (array[0]) {
       return 'yes';
-     }
-     if (array[1]) {
+    }
+    if (array[1]) {
       return 'no';
-     }
-     if (array[2]) {
+    }
+    if (array[2]) {
       return 'dont know';
     }
   }
-    return 'unknown';
-  }
+  return 'unknown';
+}
 
-  export function extraLactose(array) {
-    if (typeof array!=='undefined') {
-     if (array[0]) {
+export function extraLactose(array) {
+  if (typeof array !== 'undefined') {
+    if (array[0]) {
       return 'yes';
-     }
-     if (array[1]) {
+    }
+    if (array[1]) {
       return 'no';
-     }
-     if (array[2]) {
+    }
+    if (array[2]) {
       return 'dont know';
     }
   }
-    return 'unknown';
-  }
+  return 'unknown';
+}
 
-  export function extraAcid(array) {
-    if (typeof array!=='undefined') {
-     if (array[0]) {
+export function extraAcid(array) {
+  if (typeof array !== 'undefined') {
+    if (array[0]) {
       return 'yes';
-     }
-     if (array[1]) {
+    }
+    if (array[1]) {
       return 'no';
-     }
-     if (array[2]) {
+    }
+    if (array[2]) {
       return 'sometimes';
-     }
-     if (array[3]) {
+    }
+    if (array[3]) {
       return 'dont know';
     }
   }
-    return 'unknown';
-  }
+  return 'unknown';
+}
 
-  export function extraOverall(array) {
-    if (typeof array!=='undefined') {
-     if (array[0]) {
+export function extraOverall(array) {
+  if (typeof array !== 'undefined') {
+    if (array[0]) {
       return 'very satisfied';
-     }
-     if (array[1]) {
+    }
+    if (array[1]) {
       return 'satisfied';
-     }
-     if (array[2]) {
+    }
+    if (array[2]) {
       return 'good';
-     }
-     if (array[3]) {
+    }
+    if (array[3]) {
       return 'poor';
-     }
-     if (array[4]) {
+    }
+    if (array[4]) {
       return 'horrible';
-     }
-   }
-    return 'unknown';
+    }
   }
+  return 'unknown';
+}
 
-  export function extraGood(array) {
-    if (typeof array!=='undefined') {
-     if (array[0]) {
+export function extraGood(array) {
+  if (typeof array !== 'undefined') {
+    if (array[0]) {
       return 'yes';
-     }
-     if (array[1]) {
+    }
+    if (array[1]) {
       return 'no';
-     }
-     if (array[2]) {
+    }
+    if (array[2]) {
       return 'somehow';
-     }
-     if (array[3]) {
+    }
+    if (array[3]) {
       return 'dont know';
     }
   }
-    return 'unknown';
-  }
+  return 'unknown';
+}
 
-  export function extraAcidRebound(array) {
-    if (typeof array!=='undefined') {
-     if (array[0]) {
+export function extraAcidRebound(array) {
+  if (typeof array !== 'undefined') {
+    if (array[0]) {
       return 'yes';
-     }
-     if (array[1]) {
+    }
+    if (array[1]) {
       return 'no';
-     }
+    }
   }
-    return 'unknown';
-  }
+  return 'unknown';
+}
 
-  export function extraPylori(array) {
-   if (typeof array!=='undefined') {
-     if (array[0]) {
+export function extraPylori(array) {
+  if (typeof array !== 'undefined') {
+    if (array[0]) {
       return 'yes';
-     }
-     if (array[1]) {
+    }
+    if (array[1]) {
       return 'no';
-     }
-     if (array[2]) {
+    }
+    if (array[2]) {
       return 'dont know';
     }
   }
-    return 'unknown';
-  }
+  return 'unknown';
+}

@@ -1,4 +1,4 @@
-export const Htmlstring=`<div class="container">
+export const Htmlstring = `<div class="container">
 
 <div class="panel panel-primary">
   <div class="panel-heading">Info</div>
@@ -4098,4 +4098,4 @@ export const Htmlstring=`<div class="container">
   </div>
 </div>
 
-</div>`
+</div>`;

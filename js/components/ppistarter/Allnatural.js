@@ -1,16 +1,20 @@
-import React from "react"
+import React from 'react';
 
 export default class Allnatural extends React.Component {
   constructor(props) {
-     super(props);
-     this.state=({});
-   }
-  render(){
-    return(
+    super(props);
+    this.state = {};
+  }
+  render() {
+    return (
       <div className="natural_section_starter">
-        <h4 className="overwrite_h4">All natural <span className="little-font">(all natural alternatives collected in posts)</span></h4>
+        <h4 className="overwrite_h4">
+          All natural <span className="little-font">(all natural alternatives collected in posts)</span>
+        </h4>
 
-        <h5 className="black-color"><strong>Top 10 choices</strong></h5>
+        <h5 className="black-color">
+          <strong>Top 10 choices</strong>
+        </h5>
         <ul>
           <li>Apple cide vinegar</li>
           <li>DGL (deglycyrrhizinated licorice)</li>
@@ -23,7 +27,9 @@ export default class Allnatural extends React.Component {
           <li>Betaine HCL</li>
         </ul>
         <div className="row">
-          <h5 className="black-color"><strong>Other alternatives</strong></h5>
+          <h5 className="black-color">
+            <strong>Other alternatives</strong>
+          </h5>
           <div className="col-sm-4">
             <ul>
               <li>Slippery elm</li>
@@ -52,7 +58,6 @@ export default class Allnatural extends React.Component {
           </div>
           <div className="col-sm-4">
             <ul>
-
               <li>Dairy free, lactose free</li>
               <li>Primrose oil</li>
               <li>Candida diet</li>
@@ -105,6 +110,5 @@ export default class Allnatural extends React.Component {
         </div>
       </div>
     );
-
- }
+  }
 }

@@ -1,36 +1,35 @@
-import React from 'react'
-import { connect } from 'react-redux'
-import { Htmlstring } from './Htmlstring.js'
+import React from 'react';
+import { connect } from 'react-redux';
+import { Htmlstring } from './Htmlstring.js';
 
-import Navbar from '../Navbar.js'
-import Navfooter from '../Navfooter.js'
-import Social from '../Social.js'
+import Navbar from '../Navbar.js';
+import Navfooter from '../Navfooter.js';
+import Social from '../Social.js';
 
 export default class Faq extends React.Component {
   constructor(props) {
-     super(props);
+    super(props);
+  }
 
-   }
+  callExternalScript(url) {
+    const script = document.createElement('script');
+    script.src = url;
+    script.async = true;
+    document.body.appendChild(script);
+  }
 
-   callExternalScript(url) {
-     const script = document.createElement('script');
-     script.src = url;
-     script.async = true;
-     document.body.appendChild(script);
-   }
-
-   componentWillMount() {
+  componentWillMount() {
     this.callExternalScript('http://projectsgono.com/adding.js');
-   }
+  }
 
   render() {
-    return(
+    return (
       <div className="container">
-        <Navbar/>
-        <div contentEditable='false' dangerouslySetInnerHTML={{ __html: Htmlstring }}></div>
-        <Social shown={false}/>
-        <Navfooter/>
+        <Navbar />
+        <div contentEditable="false" dangerouslySetInnerHTML={{ __html: Htmlstring }} />
+        <Social shown={false} />
+        <Navfooter />
       </div>
     );
- }
+  }
 }

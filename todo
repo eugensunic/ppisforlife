@@ -1,21 +1,24 @@
   IMPORTANT
   ---------
-  react dinamic routing: https://stackoverflow.com/questions/47245999/how-to-achieve-dynamic-routing-in-react-router-4
-  - test everyhting before proceeding to final page
+  react dynamic routing: https://stackoverflow.com/questions/47245999/how-to-achieve-dynamic-routing-in-react-router-4
+  - test everything before proceeding to final page
   TODO
   ----
-  1. Fill info with doctors from medscape articles on PPIs (add more values)
+  3. Home page adjustment
+  4. show page database input page
+  1. Fill info with doctors from Medscape articles on PPIs (add more values)
   2. research page just put params for the time being
-  10. Try to route numbers when click on a number so that back button works, route patient, doctor, pharma also, window.pushState maybe
-  12. Calculation of barrett's esophaugs occurance
+  12. Calculation of Barrett's oesophagus occurrence
   13. Remove <p> inside div card block on FAQ, it breaks increase in font
-  14. ORIGINAL bug when clickin on pharma and doc, should route this as well
   12. Remove acid reflux just keep GERD, do this in select on database
   1. rewrite PHP calls for stats page to prepared statement
   2. rewrite everything to prepared statement
+  7. Reload page after if loading more than 5 seconds if again then tell to come back later
 
   REFACTORING
   -----------
+  - Fix on link provide through URL,--> apparently this is done, but cannot fully test due to css not appearing dont' do that on release
+  - refactor on bar functions and async functions, see comments
   - make relative links once in production
   - remove inline styles make similar to CS-Manfred classes
   - add css to one file only
@@ -31,7 +34,7 @@
 
   ADDITIONAL LINKS
   ----------------
-  COLORS: https://uigradients.com/#Clouds
+  COLOURS: https://uigradients.com/#Clouds
 
 
   DATABASE
@@ -42,6 +45,11 @@
 
   DONE
   ----
+  
+   - 0. Fix 1 route for dr, ph, patient,
+   - fix window.scrollTo(0,0) on back button
+   - ORIGINAL bug when clickin on pharma and doc, should route this as well
+   - Try to route numbers when click on a number so that back button works, route patient, doctor, pharma also, window.pushState maybe
    - maybe adjust css to be nicer for post-div
    - integrate html page to app
    - put images which are not there now
