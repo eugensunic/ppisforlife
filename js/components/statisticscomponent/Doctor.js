@@ -20,6 +20,7 @@ export default class Doctor extends React.Component {
       this.props.dispatch(user.asyncAll('http://projectsgono.com/medsforlife/othercall/doc_call/flag_grouping.php', 'flag_grouping', ''));
       this.props.dispatch(user.asyncAll('http://projectsgono.com/medsforlife/othercall/doc_call/number_of_posts.php', 'number_of_posts', ''));
     }
+    this.props.dispatch(user.changeNavigationColor('stat-nav', [false, true, false]));
   }
   showDoctorMethod() {
     var PieChart;

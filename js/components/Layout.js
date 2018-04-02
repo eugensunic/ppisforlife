@@ -16,7 +16,7 @@ import { withRouter, Route, Router, Link } from 'react-router-dom';
 import store from '../store';
 import * as user from './Function.js';
 import * as user2 from '../actions/asyncCAll.js';
-
+//
 @connect(store => {
   return {
     navbar: store.nav,

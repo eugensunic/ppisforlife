@@ -13,14 +13,18 @@ import Social from '../Social.js';
 import * as user from '../../actions/asyncCAll.js';
 import { withRouter, Route, Router, Link } from 'react-router-dom';
 
+@connect(store => {
+  return {
+    color_navigation: store.color_navigation
+  };
+})
 export default class Statistic extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { radio1: true, radio2: false, radio3: false };
   }
   patientOrDoctorOrPharma() {
     //patient
-    if (this.state.radio1) {
+    if (this.props.color_navigation.post_navigation[0]) {
       return (
         <div>
           <span className="dr_heading">What is this?</span>
@@ -53,7 +57,7 @@ export default class Statistic extends React.Component {
       );
     }
     //doctor
-    if (this.state.radio2) {
+    if (this.props.color_navigation.post_navigation[1]) {
       return (
         <div>
           <span className="dr_heading">What is this?</span>
@@ -104,19 +108,31 @@ export default class Statistic extends React.Component {
         </h3>
         <div style={{ marginTop: 3 }}>
           <Link to={this.props.match.url}>
-            <span className={this.state.radio1 ? 'radio_clicked' : 'radio_normal'} onClick={() => this.setState({ radio1: true, radio2: false, radio3: false })}>
+            <span
+              className={this.props.color_navigation.post_navigation[0] ? 'radio_clicked' : 'radio_normal'}
+              onClick={() => {
+                this.props.dispatch(user.changeNavigationColor('stat-nav', [true, false, false]));
+              }}>
               Patient
             </span>
           </Link>
 
           <Link to={this.props.match.url + '/doctor'}>
-            <span className={this.state.radio2 ? 'radio_clicked' : 'radio_normal'} onClick={() => this.setState({ radio1: false, radio2: true, radio3: false })}>
+            <span
+              className={this.props.color_navigation.post_navigation[1] ? 'radio_clicked' : 'radio_normal'}
+              onClick={() => {
+                this.props.dispatch(user.changeNavigationColor('stat-nav', [false, true, false]));
+              }}>
               Doctor
             </span>
           </Link>
 
           <Link to={this.props.match.url + `/pharma`}>
-            <span className={this.state.radio3 ? 'radio_clicked' : 'radio_normal'} onClick={() => this.setState({ radio1: false, radio2: false, radio3: true })}>
+            <span
+              className={this.props.color_navigation.post_navigation[2] ? 'radio_clicked' : 'radio_normal'}
+              onClick={() => {
+                this.props.dispatch(user.changeNavigationColor('stat-nav', [false, false, true]));
+              }}>
               Pharma
             </span>
           </Link>

@@ -84,6 +84,8 @@ export default class Statistic extends React.Component {
       this.props.dispatch(user.asyncAll('http://projectsgono.com/medsforlife/statscall/nutrient.php', 'nutrient_stat', ''));
       this.props.dispatch(user.asyncAll('http://projectsgono.com/medsforlife/statscall/natural.php', 'natural_stat', ''));
     }
+
+    this.props.dispatch(user.changeNavigationColor('stat-nav', [true, false, false]));
   }
   componentDidMount() {}
   componentDidUpdate() {}
