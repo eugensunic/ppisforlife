@@ -8,12 +8,6 @@ import Bardoctor from './Bardoctor';
 import Headerbardoctor from './Headerbardoctor.js';
 import * as user from '../actions/asyncCAll.js';
 
-// import Patientpost from './components/Patientpost.js'
-// import Pharmapost from './components/Pharmapost.js'
-// import Doctorpost from './components/Doctorpost.js'
-// <Route path='/patientpost' component={Patientpost}/>
-// <Route path='/doctorpost' component={Doctorpost}/>
-// <Route path='/pharmapost' component={Pharmapost}/>
 @connect(store => {
   return {
     bar_change: store.bar_change,
@@ -24,6 +18,7 @@ export default class Doctorpost extends React.Component {
   constructor(props) {
     super(props);
     this.state = { first_check: false };
+    history.replaceState(null, null, null);
   }
 
   componentWillMount() {

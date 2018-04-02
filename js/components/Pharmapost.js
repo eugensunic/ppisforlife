@@ -17,6 +17,7 @@ export default class Pharmapost extends React.Component {
   constructor(props) {
     super(props);
     this.state = { first_check: false };
+    history.replaceState(null, null, null);
   }
   componentWillMount() {
     if (this.props.pharma_call.first == undefined) {

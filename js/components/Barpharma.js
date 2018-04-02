@@ -14,7 +14,7 @@ export default class Barpharma extends React.Component {
     this._isMounted = true;
     window.onpopstate = () => {
       if (this._isMounted) {
-        if (history.state == null || history.state.state == undefined || history.state.num == '1') {
+        if (history.state == null || history.state.num == '1') {
           // //console.log('THIS IS NEXT PATIENT VALUE: ' + this.props.bar_change.next_patient);
           // 0
           //0,1   1

@@ -33,6 +33,7 @@ export function barChange(arg0, prop_arr, prop_next, string_change, string_send,
     // flag_it= false represetns the first state when array is [1,2,3,4,5] all the other arrays have a value of flag_it=true
     // filter patient pharma and doctor here in if
     // backward navigation
+
     if (history.state != null) {
       console.log(history.state);
       console.log('could not have gone here');
