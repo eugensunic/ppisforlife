@@ -11,6 +11,7 @@ import Quickstats from './Quickstats.js';
 import Navbar from '../Navbar.js';
 import Navfooter from '../Navfooter.js';
 import Social from '../Social.js';
+import { content } from './Contentobject.js';
 
 export default class Research extends React.Component {
   constructor(props) {
@@ -20,6 +21,8 @@ export default class Research extends React.Component {
     //na 363 px ga moras izlomiti...
   }
   render() {
+    //  &#39; --> apostrophe
+
     return (
       <div className="container">
         <Navbar />
@@ -32,36 +35,20 @@ export default class Research extends React.Component {
         <div className="row">
           <div className="col-sm-6">
             <div className="research_wrapper">
-              <Headerfirst id="1" date="27.02.2011." url="" />
-              <Headermain
-                heading={'Kidney disease'}
-                image={'../../pics/organs/kidney.jpg'}
-                info_content="Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                Lorem Ipsum has been the industry's
-                standard dummy text ever since the 1500s, when an unknown printer took a galley
-                of type and scrambled it to make a type specimen book. It has survived not only
-              five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."
-              />
-              <Stats />
-              <Problem content="" />
-              <Conclusion content="" />
+              <Headerfirst id="1" date={content.date1} url={content.url1} show_pdf={false} />
+              <Headermain heading={content.heading1} image={content.image1} info_content={content.info_content1} />
+              <Stats content={content.stats1} />
+              <Problem content={content.problem1} />
+              <Conclusion content={content.conclusion1} />
             </div>
           </div>
           <div className="col-sm-6">
             <div className="research_wrapper">
-              <Headerfirst id="2" date="27.02.2011." url="" />
-              <Headermain
-                heading={'Heart disease'}
-                image={'../../pics/organs/heart.png'}
-                info_content="Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                Lorem Ipsum has been the industry's
-                standard dummy text ever since the 1500s, when an unknown printer took a galley
-                of type and scrambled it to make a type specimen book. It has survived not only
-              five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."
-              />
-              <Stats />
-              <Problem content="" />
-              <Conclusion content="" />
+              <Headerfirst id="1" date={content.date2} url={content.url2} show_pdf={false} />
+              <Headermain heading={content.heading2} image={content.image2} info_content={content.info_content2} />
+              <Stats content={content.stats2} />
+              <Problem content={content.problem2} />
+              <Conclusion content={content.conclusion2} />
             </div>
           </div>
         </div>
@@ -72,11 +59,7 @@ export default class Research extends React.Component {
               <Headermain
                 heading={'Kidney disease'}
                 image={'../../pics/organs/kidney.jpg'}
-                info_content="Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                Lorem Ipsum has been the industry's
-                standard dummy text ever since the 1500s, when an unknown printer took a galley
-                of type and scrambled it to make a type specimen book. It has survived not only
-              five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."
+                info_content=" laksjflkasjf aklsfj alfkajfl kasjflakf jalkfj alkaj flkas faklčsfj alksfjalskfjasl čfajslkf aslkfasj flakj faklfj alfkaj flkas fjlakakljfdkla flasjf askfjdsal kfjafklč ajkčajs flkčsjf aklsčfajs fkaf asdlkčfj asflčkajsflčksdajfas čfjka asklčfajsfkl čafjsl čkasfjalčkfjdlčkfj aflčkajsf alčskfj asslčfkajs flksajflakčs fjakdsfj ads "
               />
               <Stats />
               <Problem content="" />
@@ -86,15 +69,7 @@ export default class Research extends React.Component {
           <div className="col-sm-6">
             <div className="research_wrapper">
               <Headerfirst id="4" date="27.02.2011." url="" />
-              <Headermain
-                heading={'Heart disease'}
-                image={'../../pics/organs/heart.png'}
-                info_content="Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                Lorem Ipsum has been the industry's
-                standard dummy text ever since the 1500s, when an unknown printer took a galley
-                of type and scrambled it to make a type specimen book. It has survived not only
-              five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."
-              />
+              <Headermain heading={'Heart disease'} image={'../../pics/organs/heart.png'} info_content="" />
               <Stats />
               <Problem content="" />
               <Conclusion content="" />

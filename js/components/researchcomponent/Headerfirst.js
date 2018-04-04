@@ -13,12 +13,11 @@ export default class Headerfirst extends React.Component {
           <span>Date published:</span>
           <span className="research_date_element_val">{this.props.date}</span>
         </div>
-        <a href="#" className="research_url_header">
+        <a href={this.props.url} className="research_url_header" target="_blank">
           URL
         </a>
-        <a href="#">
-          <img src="../../pics/pdf_icon.png" className="pdf_in_right" />
-        </a>
+        <a href={this.props.url} className="research_url_header" target="_blank" />
+        <img src={this.props.show_pdf ? '../../pics/pdf_icon.png' : ''} className="pdf_in_right" />
       </div>
     );
   }
