@@ -4,6 +4,8 @@
   - test everything before proceeding to final page
   TODO
   ----
+  2. Natural remedies on form page should go away in both react-select box when one is chosen.
+  9. Should maybe add country on form page, also reload after submit ok but first display popup
   3. Home page adjustment
   4. show page database input page
   1. Fill info with doctors from Medscape articles on PPIs (add more values)
@@ -45,7 +47,7 @@
 
   DONE
   ----
-  
+
    - 0. Fix 1 route for dr, ph, patient,
    - fix window.scrollTo(0,0) on back button
    - ORIGINAL bug when clickin on pharma and doc, should route this as well
