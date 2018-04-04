@@ -22,7 +22,7 @@
   - Fix on link provide through URL,--> apparently this is done, but cannot fully test due to css not appearing dont' do that on release
   - refactor on bar functions and async functions, see comments
   - make relative links once in production
-  - remove inline styles make similar to CS-Manfred classes
+  - remove inline styles make similar to Manfris classes
   - add css to one file only
   - '' instead of ""
   - ES6 everything what you can, functions, this, use lexical scope, get rid of returns, spaces between curly brackets, spaces, don't use
