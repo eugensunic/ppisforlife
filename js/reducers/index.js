@@ -3,7 +3,7 @@ import { combineReducers } from 'redux';
 import tag1 from './asynctag1';
 import tag2 from './asynctag2';
 import header from './asyncheader';
-
+import overviewstats from './overviewstats.js';
 import filtercall from './filtersql';
 import getId from './getmax';
 import bar_change from './barchange';
@@ -66,5 +66,6 @@ export default combineReducers({
   ph,
   dr_all,
   pharma_all,
-  nav
+  nav,
+  overviewstats
 });

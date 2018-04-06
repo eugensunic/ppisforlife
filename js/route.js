@@ -12,6 +12,7 @@ import Notfound from './components/notfound/Notfound.js';
 import Patientpost from './components/Patientpost.js';
 import Pharmapost from './components/Pharmapost.js';
 import Doctorpost from './components/Doctorpost.js';
+import Overview from './components/overviewcomponent/Overview.js';
 
 export const Routing = () => (
   <Switch>
@@ -23,6 +24,7 @@ export const Routing = () => (
     <Route path="/tips" component={Ppistarter} />
     <Route path="/faq" component={Faq} />
     <Route path="/about" component={About} />
+    <Route path="/overview" component={Overview} />
     <Route component={Notfound} />
   </Switch>
 );

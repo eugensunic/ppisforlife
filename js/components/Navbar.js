@@ -74,6 +74,13 @@ export default class Navbar extends React.Component {
               </span>
             )}
           />
+          <Route
+            render={({ history }) => (
+              <span className="nav_element" style={{ marginLeft: 15 }} onClick={() => history.push('/overview')}>
+                form overview
+              </span>
+            )}
+          />
         </div>
       </div>
     );
