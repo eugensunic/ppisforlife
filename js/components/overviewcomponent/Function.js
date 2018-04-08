@@ -12,12 +12,77 @@ export function setTableHeaderColumn(obj) {
     return <TableHeaderColumn>{key}</TableHeaderColumn>;
   });
 }
+function ulItemList(array) {
+  return (
+    <TableRowColumn>
+      <ul>
+        {array.map((elm, j) => {
+          if (!elm) {
+            return '';
+          }
+          return <li>{elm}</li>;
+        })}
+      </ul>
+    </TableRowColumn>
+  );
+}
+// for sides-drugs
 
 export function setTableBodyColumn(array) {
+  // you have to find out how to avodi undefined early on
+
   return array.map((item, i) => {
     return (
       <TableRow>
         {Object.keys(item).map((key, i) => {
+          if (Array.isArray(item[key])) {
+            return ulItemList(item[key]);
+          }
+          return <TableRowColumn>{item[key]}</TableRowColumn>;
+        })}
+      </TableRow>
+    );
+  });
+}
+export function setTableBodyColumnDrugSides(array) {
+  let counter = -1;
+  return array.map((item, i) => {
+    counter++;
+    return (
+      <TableRow>
+        {Object.keys(item).map((key, i) => {
+          if (Array.isArray(item[key])) {
+            let temp_array = array[counter].ppi_drugID;
+            return (
+              <TableRowColumn>
+                <ul>
+                  {item[key].map((elm, j) => {
+                    if (temp_array[j] != temp_array[j + 1]) {
+                      if (!elm) {
+                        return (
+                          <li>
+                            {''}
+                            <hr />
+                          </li>
+                        );
+                      }
+                      return (
+                        <li>
+                          {elm}
+                          <hr />
+                        </li>
+                      );
+                    }
+
+                    if (!elm) {
+                      return <li>{''}</li>;
+                    }
+                    return <li>{elm}</li>;
+                  })}
+                </ul>
+              </TableRowColumn>
+            );
+          }
           return <TableRowColumn>{item[key]}</TableRowColumn>;
         })}
       </TableRow>
@@ -33,31 +98,40 @@ export function setTableHeader(obj) {
   );
 }
 
-export function setTableBody(arr, obj) {
-  return <TableBody>{setTableBodyColumn(arr, obj)}</TableBody>;
+export function setTableBody(arr) {
+  return <TableBody>{setTableBodyColumn(arr)}</TableBody>;
 }
+export function setTableBodyDrugSides(arr, reducer_arr) {
+  return <TableBody>{setTableBodyColumnDrugSides(arr, reducer_arr)}</TableBody>;
+}
+
 function createEquivalentObject(obj) {
   let obj2 = {};
   for (let key in obj) {
     obj2[key] = '';
   }
-  console.log('this is the new object: ' + JSON.stringify(obj2));
   return obj2;
 }
 
-// this is a test function
+//disease function
 export function checkWhenNumberChange(array) {
-  let obj_temp = { basicID: '', gastro: [], other: [], ppis: [] }; // provide as param
   let global_array = [];
+
   let gastro = [];
+  let other = [];
+  let ppis = [];
+
   let basic_copy;
   let flag = false;
-
-  let obj_array = [];
   let first_entrance = true;
-
+  // you have to make this generic
   if (array.length === 1) {
-    global_array.push({ basicID: array[array.length - 1].basicID, gastro: array[array.length - 1].gastro, other: [], ppis: [] });
+    global_array.push({
+      basicID: array[array.length - 1].basicID,
+      gastro: array[array.length - 1].gastro,
+      other: array[array.length - 1].other,
+      ppis: array[array.length - 1].ppis
+    });
   } else {
     for (let i in array) {
       i = parseInt(i);
@@ -69,18 +143,26 @@ export function checkWhenNumberChange(array) {
           if (first_entrance) {
             first_entrance = false;
             gastro.push(array[i].gastro);
+            other.push(array[i].other);
+            ppis.push(array[i].ppis);
           }
           gastro.push(array[i + 1].gastro);
+          other.push(array[i + 1].other);
+          ppis.push(array[i + 1].ppis);
         }
         // checks all others, adds only one file
         if (array[i].basicID !== array[i + 1].basicID && !flag) {
           gastro.push(array[i].gastro);
+          other.push(array[i].other);
+          ppis.push(array[i].ppis);
         }
         if (array[i].basicID !== array[i + 1].basicID) {
           basic_copy = array[i].basicID;
-          global_array.push({ basicID: basic_copy, gastro: gastro, other: [], ppis: [] });
+          global_array.push({ basicID: basic_copy, gastro: gastro, other: other, ppis: ppis });
           first_entrance = true;
           gastro = [];
+          other = [];
+          ppis = [];
           flag = false;
         }
       }
@@ -88,15 +170,102 @@ export function checkWhenNumberChange(array) {
   }
   // checking last pair of consecutives if exist because of the upper constraint which doesn't permit going inside
   if (gastro.length > 0) {
-    global_array.push({ basicID: basic_copy + 1, gastro: gastro, other: [], ppis: [] });
+    global_array.push({ basicID: basic_copy + 1, gastro: gastro, other: other, ppis: ppis });
   }
   // checking last index only, because of the upper constraint which doesn't permit going inside
   if (array[array.length - 1].basicID !== array[array.length - 2].basicID) {
-    global_array.push({ basicID: array[array.length - 1].basicID, gastro: [array[array.length - 1].gastro], other: [], ppis: [] });
+    global_array.push({
+      basicID: array[array.length - 1].basicID,
+      gastro: [array[array.length - 1].gastro],
+      other: [array[array.length - 1].other],
+      ppis: [array[array.length - 1].ppis]
+    });
   }
-  printArray(global_array);
+  // testing purpose print
+  //printArray(global_array);
 
-  return '';
+  return global_array;
+}
+// drug_sides function
+export function checkWhenNumberChangeDrugSides(array) {
+  let global_array = [];
+
+  let name = [];
+  let generic = [];
+  let brand = [];
+  let ppi_drugID = [];
+
+  let basic_copy;
+  let flag = false;
+  let first_entrance = true;
+  // you have to make this generic
+  if (array.length === 1) {
+    global_array.push({
+      basicID: array[array.length - 1].basicID,
+      name: array[array.length - 1].name,
+      generic: array[array.length - 1].generic,
+      brand: array[array.length - 1].brand,
+      ppi_drugID: array[array.length - 1].ppi_drugID
+    });
+  } else {
+    for (let i in array) {
+      i = parseInt(i);
+      // because of i+1 otherwise it can step out of the array to non-existing element
+      if (i < array.length - 1) {
+        // checks all continous
+        if (array[i].basicID === array[i + 1].basicID) {
+          flag = true;
+          if (first_entrance) {
+            first_entrance = false;
+            name.push(array[i].name);
+            generic.push(array[i].generic);
+            brand.push(array[i].brand);
+            ppi_drugID.push(array[i].ppi_drugID);
+          }
+          name.push(array[i + 1].name);
+          generic.push(array[i + 1].generic);
+          brand.push(array[i + 1].brand);
+          ppi_drugID.push(array[i + 1].ppi_drugID);
+        }
+        // checks all others, adds only one file
+        if (array[i].basicID !== array[i + 1].basicID && !flag) {
+          name.push(array[i].name);
+          generic.push(array[i].generic);
+          brand.push(array[i].brand);
+          ppi_drugID.push(array[i + 1].ppi_drugID);
+        }
+        if (array[i].basicID !== array[i + 1].basicID) {
+          basic_copy = array[i].basicID;
+          global_array.push({ basicID: basic_copy, name: name, generic: generic, brand: brand, ppi_drugID: ppi_drugID });
+          first_entrance = true;
+          name = [];
+          generic = [];
+          brand = [];
+          ppi_drugID = [];
+
+          flag = false;
+        }
+      }
+    }
+  }
+  // checking last pair of consecutives if exist because of the upper constraint which doesn't permit going inside
+  if (name.length > 0) {
+    global_array.push({ basicID: basic_copy + 1, name: name, generic: generic, brand: brand, ppi_drugID: ppi_drugID });
+  }
+  // checking last index only, because of the upper constraint which doesn't permit going inside
+  if (array[array.length - 1].basicID !== array[array.length - 2].basicID) {
+    global_array.push({
+      basicID: array[array.length - 1].basicID,
+      name: [array[array.length - 1].name],
+      generic: [array[array.length - 1].generic],
+      brand: [array[array.length - 1].brand],
+      ppi_drugID: [array[array.length - 1].ppi_drugID]
+    });
+  }
+  // testing purpose print
+  //printArray(global_array);
+
+  return global_array;
 }
 // testing purpose only
 function printArray(array) {
