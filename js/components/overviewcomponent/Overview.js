@@ -66,7 +66,7 @@ export default class Overview extends React.Component {
           <div id="drugs-sides" className="container">
             <MuiThemeProvider>
               <Table>
-                {func.setTableHeader(this.props.overviewstat.overview.side_drug[0])}
+                {func.setTableHeaderDrugSides(this.props.overviewstat.overview.side_drug[0])}
                 {typeof this.props.overviewstat.overview.side_drug !== 'undefined'
                   ? func.setTableBodyDrugSides(func.checkWhenNumberChangeDrugSides(this.props.overviewstat.overview.side_drug))
                   : ''}

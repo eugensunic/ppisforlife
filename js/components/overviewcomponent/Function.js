@@ -6,10 +6,20 @@ import axios from 'axios';
 import { Table, TableBody, TableHeader, TableHeaderColumn, TableRow, TableRowColumn } from 'material-ui/Table';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
-export function setTableHeaderColumn(obj) {
+function setTableHeaderColumn(obj) {
   // adjust key name on backend
   return Object.keys(obj).map((key, i) => {
     return <TableHeaderColumn>{key}</TableHeaderColumn>;
+  });
+}
+
+function setTableHeaderColumnDrugSides(obj) {
+  // adjust key name on backend
+  return Object.keys(obj).map((key, i) => {
+    if (key !== 'ppi_drugID') {
+      return <TableHeaderColumn>{key}</TableHeaderColumn>;
+    }
+    return '';
   });
 }
 function ulItemList(array) {
@@ -45,43 +55,48 @@ export function setTableBodyColumn(array) {
   });
 }
 export function setTableBodyColumnDrugSides(array) {
-  let counter = -1;
+  let cnt = -1;
   return array.map((item, i) => {
-    counter++;
+    ++cnt;
     return (
       <TableRow>
         {Object.keys(item).map((key, i) => {
           if (Array.isArray(item[key])) {
-            let temp_array = array[counter].ppi_drugID;
-            return (
-              <TableRowColumn>
-                <ul>
-                  {item[key].map((elm, j) => {
-                    if (temp_array[j] != temp_array[j + 1]) {
-                      if (!elm) {
-                        return (
-                          <li>
-                            {''}
-                            <hr />
-                          </li>
-                        );
+            let temp_array = array[cnt].ppi_drugID;
+            if (key !== 'ppi_drugID') {
+              return (
+                <TableRowColumn>
+                  <ul>
+                    {item[key].map((elm, j) => {
+                      if (j < temp_array.length - 1) {
+                        if (temp_array[j] != temp_array[j + 1]) {
+                          if (!elm) {
+                            return (
+                              <li>
+                                {''}
+                                <hr />
+                              </li>
+                            );
+                          }
+                          return (
+                            <li>
+                              {elm}
+                              <hr />
+                            </li>
+                          );
+                        }
                       }
-                      return (
-                        <li>
-                          {elm}
-                          <hr />
-                        </li>
-                      );
-                    }
 
-                    if (!elm) {
-                      return <li>{''}</li>;
-                    }
-                    return <li>{elm}</li>;
-                  })}
-                </ul>
-              </TableRowColumn>
-            );
+                      if (!elm) {
+                        return <li>{''}</li>;
+                      }
+                      return <li>{elm}</li>;
+                    })}
+                  </ul>
+                </TableRowColumn>
+              );
+            }
+            return '';
           }
           return <TableRowColumn>{item[key]}</TableRowColumn>;
         })}
@@ -94,6 +109,13 @@ export function setTableHeader(obj) {
   return (
     <TableHeader displaySelectAll={false}>
       <TableRow>{setTableHeaderColumn(obj)}</TableRow>
+    </TableHeader>
+  );
+}
+export function setTableHeaderDrugSides(obj) {
+  return (
+    <TableHeader displaySelectAll={false}>
+      <TableRow>{setTableHeaderColumnDrugSides(obj)}</TableRow>
     </TableHeader>
   );
 }
