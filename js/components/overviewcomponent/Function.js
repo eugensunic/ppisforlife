@@ -289,6 +289,266 @@ export function checkWhenNumberChangeDrugSides(array) {
 
   return global_array;
 }
+export function checkWhenNumberChangeSideGeneral(array) {
+  let global_array = [];
+
+  let side_radio = [];
+  let name = [];
+
+  let basic_copy;
+  let flag = false;
+  let first_entrance = true;
+  // you have to make this generic
+  if (array.length === 1) {
+    global_array.push({
+      basicID: array[array.length - 1].basicID,
+      side_radio: array[array.length - 1].side_radio,
+      name: array[array.length - 1].name
+    });
+  } else {
+    for (let i in array) {
+      i = parseInt(i);
+      // because of i+1 otherwise it can step out of the array to non-existing element
+      if (i < array.length - 1) {
+        // checks all continous
+        if (array[i].basicID === array[i + 1].basicID) {
+          flag = true;
+          if (first_entrance) {
+            first_entrance = false;
+            side_radio.push(array[i].side_radio);
+            name.push(array[i].name);
+          }
+          side_radio.push(array[i + 1].side_radio);
+          name.push(array[i + 1].name);
+        }
+        // checks all others, adds only one file
+        if (array[i].basicID !== array[i + 1].basicID && !flag) {
+          side_radio.push(array[i].side_radio);
+          name.push(array[i].name);
+        }
+        if (array[i].basicID !== array[i + 1].basicID) {
+          basic_copy = array[i].basicID;
+          global_array.push({ basicID: basic_copy, side_radio: side_radio, name: name });
+          first_entrance = true;
+          side_radio = [];
+          name = [];
+          flag = false;
+        }
+      }
+    }
+  }
+  // checking last pair of consecutives if exist because of the upper constraint which doesn't permit going inside
+  if (side_radio.length > 0) {
+    global_array.push({ basicID: basic_copy + 1, side_radio: side_radio, name: name });
+  }
+  // checking last index only, because of the upper constraint which doesn't permit going inside
+  if (array[array.length - 1].basicID !== array[array.length - 2].basicID) {
+    global_array.push({
+      basicID: array[array.length - 1].basicID,
+      side_radio: [array[array.length - 1].side_radio],
+      name: [array[array.length - 1].name]
+    });
+  }
+  // testing purpose print
+  //printArray(global_array);
+
+  return global_array;
+}
+export function checkWhenNumberChangeOtherDrugs(array) {
+  let global_array = [];
+
+  let other_drug_radio = [];
+  let name = [];
+
+  let basic_copy;
+  let flag = false;
+  let first_entrance = true;
+  // you have to make this generic
+  if (array.length === 1) {
+    global_array.push({
+      basicID: array[array.length - 1].basicID,
+      other_drug_radio: array[array.length - 1].other_drug_radio,
+      name: array[array.length - 1].name
+    });
+  } else {
+    for (let i in array) {
+      i = parseInt(i);
+      // because of i+1 otherwise it can step out of the array to non-existing element
+      if (i < array.length - 1) {
+        // checks all continous
+        if (array[i].basicID === array[i + 1].basicID) {
+          flag = true;
+          if (first_entrance) {
+            first_entrance = false;
+            other_drug_radio.push(array[i].other_drug_radio);
+            name.push(array[i].name);
+          }
+          other_drug_radio.push(array[i + 1].other_drug_radio);
+          name.push(array[i + 1].name);
+        }
+        // checks all others, adds only one file
+        if (array[i].basicID !== array[i + 1].basicID && !flag) {
+          other_drug_radio.push(array[i].other_drug_radio);
+          name.push(array[i].name);
+        }
+        if (array[i].basicID !== array[i + 1].basicID) {
+          basic_copy = array[i].basicID;
+          global_array.push({ basicID: basic_copy, other_drug_radio: other_drug_radio, name: name });
+          first_entrance = true;
+          other_drug_radio = [];
+          name = [];
+          flag = false;
+        }
+      }
+    }
+  }
+  // checking last pair of consecutives if exist because of the upper constraint which doesn't permit going inside
+  if (other_drug_radio.length > 0) {
+    global_array.push({ basicID: basic_copy + 1, other_drug_radio: other_drug_radio, name: name });
+  }
+  // checking last index only, because of the upper constraint which doesn't permit going inside
+  if (array[array.length - 1].basicID !== array[array.length - 2].basicID) {
+    global_array.push({
+      basicID: array[array.length - 1].basicID,
+      other_drug_radio: [array[array.length - 1].other_drug_radio],
+      name: [array[array.length - 1].name]
+    });
+  }
+  // testing purpose print
+  //printArray(global_array);
+
+  return global_array;
+}
+export function checkWhenNumberChangeNutrient(array) {
+  let global_array = [];
+
+  let nutrient_radio = [];
+  let name = [];
+
+  let basic_copy;
+  let flag = false;
+  let first_entrance = true;
+  // you have to make this generic
+  if (array.length === 1) {
+    global_array.push({
+      basicID: array[array.length - 1].basicID,
+      nutrient_radio: array[array.length - 1].nutrient_radio,
+      name: array[array.length - 1].name
+    });
+  } else {
+    for (let i in array) {
+      i = parseInt(i);
+      // because of i+1 otherwise it can step out of the array to non-existing element
+      if (i < array.length - 1) {
+        // checks all continous
+        if (array[i].basicID === array[i + 1].basicID) {
+          flag = true;
+          if (first_entrance) {
+            first_entrance = false;
+            nutrient_radio.push(array[i].nutrient_radio);
+            name.push(array[i].name);
+          }
+          nutrient_radio.push(array[i + 1].nutrient_radio);
+          name.push(array[i + 1].name);
+        }
+        // checks all others, adds only one file
+        if (array[i].basicID !== array[i + 1].basicID && !flag) {
+          nutrient_radio.push(array[i].nutrient_radio);
+          name.push(array[i].name);
+        }
+        if (array[i].basicID !== array[i + 1].basicID) {
+          basic_copy = array[i].basicID;
+          global_array.push({ basicID: basic_copy, nutrient_radio: nutrient_radio, name: name });
+          first_entrance = true;
+          nutrient_radio = [];
+          name = [];
+          flag = false;
+        }
+      }
+    }
+  }
+  // checking last pair of consecutives if exist because of the upper constraint which doesn't permit going inside
+  if (nutrient_radio.length > 0) {
+    global_array.push({ basicID: basic_copy + 1, nutrient_radio: nutrient_radio, name: name });
+  }
+  // checking last index only, because of the upper constraint which doesn't permit going inside
+  if (array[array.length - 1].basicID !== array[array.length - 2].basicID) {
+    global_array.push({
+      basicID: array[array.length - 1].basicID,
+      nutrient_radio: [array[array.length - 1].nutrient_radio],
+      name: [array[array.length - 1].name]
+    });
+  }
+  // testing purpose print
+  //printArray(global_array);
+
+  return global_array;
+}
+export function checkWhenNumberChangeNatural(array) {
+  let global_array = [];
+
+  let helped = [];
+  let not_helped = [];
+
+  let basic_copy;
+  let flag = false;
+  let first_entrance = true;
+  // you have to make this generic
+  if (array.length === 1) {
+    global_array.push({
+      basicID: array[array.length - 1].basicID,
+      helped: array[array.length - 1].helped,
+      not_helped: array[array.length - 1].not_helped
+    });
+  } else {
+    for (let i in array) {
+      i = parseInt(i);
+      // because of i+1 otherwise it can step out of the array to non-existing element
+      if (i < array.length - 1) {
+        // checks all continous
+        if (array[i].basicID === array[i + 1].basicID) {
+          flag = true;
+          if (first_entrance) {
+            first_entrance = false;
+            helped.push(array[i].helped);
+            not_helped.push(array[i].not_helped);
+          }
+          helped.push(array[i + 1].helped);
+          not_helped.push(array[i + 1].not_helped);
+        }
+        // checks all others, adds only one file
+        if (array[i].basicID !== array[i + 1].basicID && !flag) {
+          helped.push(array[i].helped);
+          not_helped.push(array[i].not_helped);
+        }
+        if (array[i].basicID !== array[i + 1].basicID) {
+          basic_copy = array[i].basicID;
+          global_array.push({ basicID: basic_copy, helped: helped, not_helped: not_helped });
+          first_entrance = true;
+          helped = [];
+          not_helped = [];
+          flag = false;
+        }
+      }
+    }
+  }
+  // checking last pair of consecutives if exist because of the upper constraint which doesn't permit going inside
+  if (helped.length > 0) {
+    global_array.push({ basicID: basic_copy + 1, helped: helped, not_helped: not_helped });
+  }
+  // checking last index only, because of the upper constraint which doesn't permit going inside
+  if (array[array.length - 1].basicID !== array[array.length - 2].basicID) {
+    global_array.push({
+      basicID: array[array.length - 1].basicID,
+      helped: [array[array.length - 1].helped],
+      not_helped: [array[array.length - 1].not_helped]
+    });
+  }
+  // testing purpose print
+  //printArray(global_array);
+
+  return global_array;
+}
 // testing purpose only
 function printArray(array) {
   console.log('---------------');

@@ -1,0 +1,17 @@
+.overview-title {
+  height: 40px;
+  width: 100%;
+  color: #4e4747;
+  border: 1px solid #e2dfdf;
+  border-radius: 3px;
+  margin-bottom: 20px;
+  margin-top: 30px;
+  padding-left: 8px;
+  padding-top: 5px;
+  font-size: 24px;
+}
+.overwrite_title {
+  width: auto;
+  margin-left: 15px;
+  margin-right: 15px;
+}

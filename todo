@@ -2,6 +2,16 @@
   ---------
   react dynamic routing: https://stackoverflow.com/questions/47245999/how-to-achieve-dynamic-routing-in-react-router-4
   - test everything before proceeding to final page
+
+
+  OVERVIEW page
+  -------------
+  - navigate to upper section component
+  - loader spinner when data not yet arrived on FE
+  - little explanation component (what do tables represent)
+  - remove table classes CSS
+
+
   TODO
   ----
   2. Natural remedies on form page should go away in both react-select box when one is chosen.

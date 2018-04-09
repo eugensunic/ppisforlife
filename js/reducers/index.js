@@ -4,6 +4,7 @@ import tag1 from './asynctag1';
 import tag2 from './asynctag2';
 import header from './asyncheader';
 import overviewstats from './overviewstats.js';
+import overviewstats_extra from './overviewstatsextra.js';
 import filtercall from './filtersql';
 import getId from './getmax';
 import bar_change from './barchange';
@@ -67,5 +68,6 @@ export default combineReducers({
   dr_all,
   pharma_all,
   nav,
-  overviewstats
+  overviewstats,
+  overviewstats_extra
 });
