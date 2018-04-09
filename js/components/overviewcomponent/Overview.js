@@ -3,9 +3,12 @@ import { connect } from 'react-redux';
 import * as user from '../../actions/asyncCAll.js';
 import * as func from './Function.js';
 import axios from 'axios';
+
 import TableTitle from './Tabletitle.js';
 import Navfooter from '../Navfooter.js';
 import Navbar from '../Navbar.js';
+import Explanation from './Explanation.js';
+
 import { Table, TableBody, TableHeader, TableHeaderColumn, TableRow, TableRowColumnr } from 'material-ui/Table';
 import { Tabs, Tab } from 'material-ui/Tabs';
 import AppBar from 'material-ui/AppBar';
@@ -151,18 +154,21 @@ export default class Overview extends React.Component {
                         {func.setTableHeader(this.props.overview_extra_stat.overviewextra.age_person[0])}
                         {func.setTableBody(this.props.overview_extra_stat.overviewextra.age_person)}
                       </Table>
+                      <Explanation text="this is some text here which belongs here" />
                     </div>
                     <div className="col-sm-4">
                       <Table>
                         {func.setTableHeader(this.props.overview_extra_stat.overviewextra.race_person[0])}
                         {func.setTableBody(this.props.overview_extra_stat.overviewextra.race_person)}
                       </Table>
+                      <Explanation text="this is some text here which belongs here" />
                     </div>
                     <div className="col-sm-4">
                       <Table>
                         {func.setTableHeader(this.props.overview_extra_stat.overviewextra.gender_person[0])}
                         {func.setTableBody(this.props.overview_extra_stat.overviewextra.gender_person)}
                       </Table>
+                      <Explanation text="this is some text here which belongs here" />
                     </div>
                   </div>
                   <div id="condition-extract" className="row">
@@ -172,18 +178,21 @@ export default class Overview extends React.Component {
                         {func.setTableHeader(this.props.overview_extra_stat.overviewextra.gastro_person[0])}
                         {func.setTableBody(this.props.overview_extra_stat.overviewextra.gastro_person)}
                       </Table>
+                      <Explanation text="this is some text here which belongs here" />
                     </div>
                     <div className="col-sm-4">
                       <Table>
                         {func.setTableHeader(this.props.overview_extra_stat.overviewextra.other_person[0])}
                         {func.setTableBody(this.props.overview_extra_stat.overviewextra.other_person)}
                       </Table>
+                      <Explanation text="this is some text here which belongs here" />
                     </div>
                     <div className="col-sm-4">
                       <Table>
                         {func.setTableHeader(this.props.overview_extra_stat.overviewextra.ppi_person[0])}
                         {func.setTableBody(this.props.overview_extra_stat.overviewextra.ppi_person)}
                       </Table>
+                      <Explanation text="this is some text here which belongs here" />
                     </div>
                   </div>
                   <div id="drugs-extract-part1" className="row">
@@ -193,18 +202,21 @@ export default class Overview extends React.Component {
                         {func.setTableHeader(this.props.overview_extra_stat.overviewextra.generic_person[0])}
                         {func.setTableBody(this.props.overview_extra_stat.overviewextra.generic_person)}
                       </Table>
+                      <Explanation text="this is some text here which belongs here" />
                     </div>
                     <div className="col-sm-4">
                       <Table>
                         {func.setTableHeader(this.props.overview_extra_stat.overviewextra.brand_person[0])}
                         {func.setTableBody(this.props.overview_extra_stat.overviewextra.brand_person)}
                       </Table>
+                      <Explanation text="this is some text here which belongs here" />
                     </div>
                     <div className="col-sm-4">
                       <Table>
                         {func.setTableHeader(this.props.overview_extra_stat.overviewextra.treatment_duration_person[0])}
                         {func.setTableBody(this.props.overview_extra_stat.overviewextra.treatment_duration_person)}
                       </Table>
+                      <Explanation text="this is some text here which belongs here" />
                     </div>
                   </div>
                   <div id="drugs-extract-part2" className="row margin-top-30">
@@ -213,12 +225,14 @@ export default class Overview extends React.Component {
                         {func.setTableHeader(this.props.overview_extra_stat.overviewextra.daily_person[0])}
                         {func.setTableBody(this.props.overview_extra_stat.overviewextra.daily_person)}
                       </Table>
+                      <Explanation text="this is some text here which belongs here" />
                     </div>
                     <div className="col-sm-6">
                       <Table>
                         {func.setTableHeader(this.props.overview_extra_stat.overviewextra.dosage_person[0])}
                         {func.setTableBody(this.props.overview_extra_stat.overviewextra.dosage_person)}
                       </Table>
+                      <Explanation text="this is some text here which belongs here" />
                     </div>
                   </div>
                   <div id="sides-extract-part1" className="row">
@@ -228,12 +242,14 @@ export default class Overview extends React.Component {
                         {func.setTableHeader(this.props.overview_extra_stat.overviewextra.sides_person[0])}
                         {func.setTableBody(this.props.overview_extra_stat.overviewextra.sides_person)}
                       </Table>
+                      <Explanation text="this is some text here which belongs here" />
                     </div>
                     <div className="col-sm-6">
                       <Table>
                         {func.setTableHeader(this.props.overview_extra_stat.overviewextra.treatment_duration_side_amount[0])}
                         {func.setTableBody(this.props.overview_extra_stat.overviewextra.treatment_duration_side_amount)}
                       </Table>
+                      <Explanation text="this is some text here which belongs here" />
                     </div>
                   </div>
                   <div id="sides-extract-part2" className="row margin-top-30">
@@ -242,12 +258,14 @@ export default class Overview extends React.Component {
                         {func.setTableHeader(this.props.overview_extra_stat.overviewextra.generic_side_amount[0])}
                         {func.setTableBody(this.props.overview_extra_stat.overviewextra.generic_side_amount)}
                       </Table>
+                      <Explanation text="this is some text here which belongs here" />
                     </div>
                     <div className="col-sm-6">
                       <Table>
                         {func.setTableHeader(this.props.overview_extra_stat.overviewextra.brand_side_amount[0])}
                         {func.setTableBody(this.props.overview_extra_stat.overviewextra.brand_side_amount)}
                       </Table>
+                      <Explanation text="this is some text here which belongs here" />
                     </div>
                   </div>
                   <div id="other-nutrient-extract" className="row">
@@ -257,12 +275,14 @@ export default class Overview extends React.Component {
                         {func.setTableHeader(this.props.overview_extra_stat.overviewextra.other_drug[0])}
                         {func.setTableBody(this.props.overview_extra_stat.overviewextra.other_drug)}
                       </Table>
+                      <Explanation text="this is some text here which belongs here" />
                     </div>
                     <div className="col-sm-6">
                       <Table>
                         {func.setTableHeader(this.props.overview_extra_stat.overviewextra.nutrient_deficiency[0])}
                         {func.setTableBody(this.props.overview_extra_stat.overviewextra.nutrient_deficiency)}
                       </Table>
+                      <Explanation text="this is some text here which belongs here" />
                     </div>
                   </div>
                   <div id="natural-extract" className="row">
@@ -272,12 +292,14 @@ export default class Overview extends React.Component {
                         {func.setTableHeader(this.props.overview_extra_stat.overviewextra.natural_helped[0])}
                         {func.setTableBody(this.props.overview_extra_stat.overviewextra.natural_helped)}
                       </Table>
+                      <Explanation text="this is some text here which belongs here" />
                     </div>
                     <div className="col-sm-6">
                       <Table>
                         {func.setTableHeader(this.props.overview_extra_stat.overviewextra.natural_nothelped[0])}
                         {func.setTableBody(this.props.overview_extra_stat.overviewextra.natural_nothelped)}
                       </Table>
+                      <Explanation text="this is some text here which belongs here" />
                     </div>
                   </div>
                   <div id="extra-extract-part1" className="row">

@@ -24,226 +24,226 @@ export default class Otherdrugs extends React.Component {
         <table className="other_drugs_table">
           <tbody>
             <tr>
-              <td className="diagonal">
+              <td className="diagonal matrix">
                 <span className="go_right">Condition</span>
                 <br />
                 <span className="go_left">Medication</span>
               </td>
-              <td>
+              <td className="matrix">
                 <p className="center">
                   <strong>B12 def.</strong>
                 </p>
               </td>
-              <td>
+              <td className="matrix">
                 <p className="center">
                   <strong>Iron def.</strong>
                 </p>
               </td>
-              <td>
+              <td className="matrix">
                 <p className="center">
                   <strong>Mg def.</strong>
                 </p>
               </td>
-              <td>
+              <td className="matrix">
                 <p className="center">
                   <strong>Osteoporosis</strong>
                 </p>
               </td>
-              <td>
+              <td className="matrix">
                 <p className="center">
                   <strong>Heart problems</strong>
                 </p>
               </td>
-              <td>
+              <td className="matrix">
                 <p className="center">
                   <strong>Kidney problems</strong>
                 </p>
               </td>
-              <td>
+              <td className="matrix">
                 <p className="center">
                   <strong>Cognitive problems</strong>
                 </p>
               </td>
             </tr>
             <tr>
-              <td>
+              <td className="matrix">
                 <p className="meds_names">Cholesterol meds (statins)</p>
               </td>
-              <td>
+              <td className="matrix">
                 <p>no significant connection</p>
               </td>
-              <td>
+              <td className="matrix">
                 <p>no significant connection</p>
               </td>
-              <td>
+              <td className="matrix">
                 <p>no significant connection</p>
               </td>
-              <td>
+              <td className="matrix">
                 <p>no significant connection</p>
               </td>
-              <td>
+              <td className="matrix">
                 <p>connection exists (rare)</p>
               </td>
-              <td>
+              <td className="matrix">
                 <p>connection exists</p>
               </td>
-              <td>
+              <td className="matrix">
                 <p>connection exists (rare)</p>
               </td>
             </tr>
             <tr>
-              <td>
+              <td className="matrix">
                 <p className="meds_names">High blood pressure meds (beta blockers, calcium channel blockers, thiazide diuretics)</p>
               </td>
-              <td>
+              <td className="matrix">
                 <p>no significant connection</p>
               </td>
-              <td>
+              <td className="matrix">
                 <p>no significant connection</p>
               </td>
-              <td>
+              <td className="matrix">
                 <p>no significant connection</p>
               </td>
-              <td>
+              <td className="matrix">
                 <p>no significant connection</p>
               </td>
-              <td>
+              <td className="matrix">
                 <p>no significant connection</p>
               </td>
-              <td>
+              <td className="matrix">
                 <p>no significant connection</p>
               </td>
-              <td>
+              <td className="matrix">
                 <p>no significant connection</p>
               </td>
             </tr>
             <tr>
-              <td>
+              <td className="matrix">
                 <p className="meds_names">Aspirin (used for fever reducing and inflamation)</p>
               </td>
-              <td>
+              <td className="matrix">
                 <p>no significant connection</p>
               </td>
-              <td>
+              <td className="matrix">
                 <p>connection exists </p>
               </td>
-              <td>
+              <td className="matrix">
                 <p>no significant connection</p>
               </td>
-              <td>
+              <td className="matrix">
                 <p>no significant connection</p>
               </td>
-              <td>
+              <td className="matrix">
                 <p>no significant connection</p>
               </td>
-              <td>
+              <td className="matrix">
                 <p>connection exists (strong)</p>
               </td>
-              <td>
+              <td className="matrix">
                 <p>no significant connection</p>
               </td>
             </tr>
             <tr>
-              <td>
+              <td className="matrix">
                 <p className="meds_names">Pain meds (NSAIDs)</p>
               </td>
-              <td>
+              <td className="matrix">
                 <p>no significant connection</p>
               </td>
-              <td>
+              <td className="matrix">
                 <p>connection exists</p>
               </td>
-              <td>
+              <td className="matrix">
                 <p>no significant connection</p>
               </td>
-              <td>
+              <td className="matrix">
                 <p>no significant connection</p>
               </td>
-              <td>
+              <td className="matrix">
                 <p>connection exists</p>
               </td>
-              <td>
+              <td className="matrix">
                 <p>connection exists (strong)</p>
               </td>
-              <td>
+              <td className="matrix">
                 <p>no significant connection</p>
               </td>
             </tr>
             <tr>
-              <td>
+              <td className="matrix">
                 <p className="meds_names"> Respiratory (asthma) meds</p>
               </td>
-              <td>
+              <td className="matrix">
                 <p>no significant connection</p>
               </td>
-              <td>
+              <td className="matrix">
                 <p>no significant connection</p>
               </td>
-              <td>
+              <td className="matrix">
                 <p>no significant connection</p>
               </td>
-              <td>
+              <td className="matrix">
                 <p>connection exists</p>
               </td>
-              <td>
+              <td className="matrix">
                 <p>no significant connection</p>
               </td>
-              <td>
+              <td className="matrix">
                 <p>no significant connection</p>
               </td>
-              <td>
+              <td className="matrix">
                 <p>no significant connection</p>
               </td>
             </tr>
             <tr>
-              <td>
+              <td className="matrix">
                 <p className="meds_names">Diabetes meds (insulin)</p>
               </td>
-              <td>
+              <td className="matrix">
                 <p>no significant connection</p>
               </td>
-              <td>
+              <td className="matrix">
                 <p>no significant connection</p>
               </td>
-              <td>
+              <td className="matrix">
                 <p>no significant connection</p>
               </td>
-              <td>
+              <td className="matrix">
                 <p>no significant connection</p>
               </td>
-              <td>
+              <td className="matrix">
                 <p>no significant connection</p>
               </td>
-              <td>
+              <td className="matrix">
                 <p>no significant connection</p>
               </td>
-              <td>
+              <td className="matrix">
                 <p>no significant connection</p>
               </td>
             </tr>
             <tr>
-              <td>
+              <td className="matrix">
                 <p className="meds_names">Mental health (anxiety, depression, social disorders) meds (alprazolam, sertraline...)</p>
               </td>
-              <td>
+              <td className="matrix">
                 <p>no significant connection</p>
               </td>
-              <td>
+              <td className="matrix">
                 <p>no significant connection</p>
               </td>
-              <td>
+              <td className="matrix">
                 <p>no significant connection</p>
               </td>
-              <td>
+              <td className="matrix">
                 <p>no significant connection</p>
               </td>
-              <td>
+              <td className="matrix">
                 <p>no significant connection</p>
               </td>
-              <td>
+              <td className="matrix">
                 <p>no significant connection</p>
               </td>
-              <td>
+              <td className="matrix">
                 <p>connection exists</p>
               </td>
             </tr>
