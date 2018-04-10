@@ -349,7 +349,7 @@ export default class Drug extends React.Component {
                 <option value="160">160</option>
                 <option value="+160">+160</option>
               </select>
-              <p className="">Duration of treatment(from therapy start till today)</p>
+              <p className="">Duration of treatment (from therapy start till today)</p>
               <input
                 className={this.props.validation + this.findAppropriateClassDuration(this.props.id)}
                 style={{ marginBottom: 7, width: 40 }}

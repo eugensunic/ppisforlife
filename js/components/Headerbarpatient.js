@@ -448,7 +448,7 @@ export default class Headerbarpatient extends React.Component {
         <span className="number_below_main_header">{'#' + this.props.bar_change.page_num_patient}</span>
         <div className="center" style={{ marginRight: 46 }}>
           <span className="inline criteria_heading">Criteria:</span>
-          <span className="inlin criteria_value">{this.state.criteria_value}</span>
+          <span className="inline criteria_value">{this.state.criteria_value}</span>
         </div>
       </div>
     );

@@ -57,10 +57,11 @@ export default class Overview extends React.Component {
       url: 'http://projectsgono.com/medsforlife/ppi_input/ppi_input_fe/extra_info.php',
       dispatchType: 'fetch_overview_extra_stats_added_info'
     };
-
-    this.props.dispatch(user.asyncAll(urlData_1.url, urlData_1.dispatchType));
-    this.props.dispatch(user.asyncAll(urlData_2.url, urlData_2.dispatchType));
-    this.props.dispatch(user.asyncAll(urlData_3.url, urlData_3.dispatchType));
+    if (!this.props.overviewstat.overview && !this.props.overview_extra_stat.overviewextra && !this.props.overview_extra_stat.overviewextra_last_info) {
+      this.props.dispatch(user.asyncAll(urlData_1.url, urlData_1.dispatchType));
+      this.props.dispatch(user.asyncAll(urlData_2.url, urlData_2.dispatchType));
+      this.props.dispatch(user.asyncAll(urlData_3.url, urlData_3.dispatchType));
+    }
   }
 
   render() {
@@ -440,6 +441,14 @@ export default class Overview extends React.Component {
         </div>
       );
     }
-    return <div />;
+    return (
+      <div>
+        <div className="container margin-bottom-10">
+          <Navbar />
+        </div>
+        <div className="center_div loader"> </div>
+        <Navfooter />
+      </div>
+    );
   }
 }

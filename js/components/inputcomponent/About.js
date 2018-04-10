@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { withRouter, Route, Router } from 'react-router-dom';
 
 @connect(store => {
   return {
@@ -44,7 +45,7 @@ export default class About extends React.Component {
                 payload: 'newstats'
               });
             }}>
-            <strong>this page</strong>
+            <Route render={({ history }) => <strong onClick={() => history.push('/overview')}>this page</strong>} />
           </span>{' '}
           you can follow the statistics given from user inputs.
         </p>
