@@ -54,7 +54,8 @@ export default class Inputform extends React.Component {
       warning_clicked: false,
       proceed_main_clicked: false,
       mgcondition: { marginTop: 0 },
-      ajax_call: true
+      ajax_call: true,
+      data_in_database: false
     };
   }
 
@@ -346,7 +347,7 @@ export default class Inputform extends React.Component {
                     )
                     .then(() => {
                       console.log('Form completed, thank you!');
-                      // this.setState({final_success:false, new_success:false});
+                      this.setState({ data_in_database: true });
                     })
                     .catch(err => {
                       console.log('Error occured, please try again');
@@ -644,6 +645,23 @@ export default class Inputform extends React.Component {
       );
     }
   }
+  submitPopUp() {
+    setTimeout(
+      function() {
+        this.setState({ data_in_database: false });
+        location.reload();
+      }.bind(this),
+      1400
+    );
+    return (
+      <div className="modal_main">
+        <div className="modal_sub_pop">
+          <p className="center submit_database_modal">Thank you for submiting your data!</p>
+          // <div className="center_div loader" />
+        </div>
+      </div>
+    );
+  }
   reverseToPrevious() {
     console.log('IS THIS TRUE: ' + this.state.warning_clicked);
     return (
@@ -891,6 +909,7 @@ export default class Inputform extends React.Component {
         {this.state.new_success ? this.successAdd() : <span />}
         {/* // new_success is for the down section */}
         {this.state.final_success ? this.sendDataToDatabase() : <span />}
+        {this.state.data_in_database ? this.submitPopUp() : <span />}
         <Navfooter />
       </div>
     );

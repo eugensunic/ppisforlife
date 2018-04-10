@@ -81,6 +81,7 @@
 
 /*-------------------------------------------------------------------------------------------------------------*/
 /* The Modal (background) */
+
 .modal_main {
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
@@ -132,6 +133,10 @@
 }
 .btn_modal_success {
   margin-right: 4px;
+}
+.submit_database_modal {
+  color: #454545;
+  font-size: 25px;
 }
 .extra_question {
   color: #617bb7;
