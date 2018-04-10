@@ -1114,14 +1114,14 @@ export const Htmlstring = `<div class="container">
           <a href="https://www.drugs.com/health-guide/hiatal-hernia.html" class="url" target="_blank">#1</a>
         </div>
         <div class="card-block">
-          <p>
-            I once came across a scientific paper (cannot find it anymore) which described an older woman in her seventies who came to
-            the hospital because of chest pain. She had a strangulate hiatal hernia.</p>
 
-          <p>I could not find any forum neither a website or any other real-life source where someone mentions a strangulated
+            I once came across a scientific paper (cannot find it anymore) which described an older woman in her seventies who came to
+            the hospital because of chest pain. She had a strangulate hiatal hernia.<p></p>
+
+            I could not find any forum neither a website or any other real-life source where someone mentions a strangulated
             hiatal hernia. Thereby, we can conclude that this condition happens rarely.
-          </p>
-          <p>If you really had a strangulated hernia you would be in extreme pain and would have noticeable symptoms.</p>
+          <p></p>
+          If you really had a strangulated hernia you would be in extreme pain and would have noticeable symptoms.
         </div>
       </div>
     </div>
@@ -2504,15 +2504,15 @@ export const Htmlstring = `<div class="container">
           <a href="https://www.livestrong.com/article/104522-causes-black-stool-color/" class="url" target="_blank">#1</a>
         </div>
         <div class="card-block">
-          <p>Bleeding in the upper digestive tract including the esophagus, stomach and upper portion of the small intestine
+            Bleeding in the upper digestive tract including the esophagus, stomach and upper portion of the small intestine
             is the most worrisome cause of black stools. The blood causes the stool to turn black as it works its way
             from the upper to the lower intestine before being passed during a bowel movement. Bleeding in the lower
             digestive track usually causes red or maroon stools, or bloody streaks or clots in the fecal matter rather
             than black stool. It takes a significant amount of bleeding -- usually at least 100 milliliters or 0.4 cups
             -- from the upper digestive tract to cause black stools. Some of the possible causes of this type of upper
-            digestive tract bleeding include:</p>
-
-          <p>So, black stools could indicate upper GI bleeding, whereas bright red stool indicates lower GI bleeding.</p>
+            digestive tract bleeding include:
+            <p></p>
+          So, black stools could indicate upper GI bleeding, whereas bright red stool indicates lower GI bleeding.
 
         </div>
       </div>
@@ -2649,9 +2649,9 @@ export const Htmlstring = `<div class="container">
           <a href="https://en.wikipedia.org/wiki/Gastric_acid" class="url" target="_blank">#1</a>
         </div>
         <div class="card-block">
-          <p>The pancreas (organ) produces large amounts of bicarbonate and secretes bicarbonate through the pancreatic
+          The pancreas (organ) produces large amounts of bicarbonate and secretes bicarbonate through the pancreatic
             duct to the duodenum to completely neutralize any gastric acid that passes further down into the digestive
-            tract. Thereby, you don't have stomach acid which could harm your small intestine</p>
+            tract. Thereby, you don't have stomach acid which could harm your small intestine<
         </div>
       </div>
     </div>
@@ -2704,14 +2704,15 @@ export const Htmlstring = `<div class="container">
             target="_blank">#2</a>
         </div>
         <div class="card-block">
-          <p>A drug interaction is a reaction between two (or more) drugs or between a drug and a food or beverage. Taking
+          A drug interaction is a reaction between two (or more) drugs or between a drug and a food or beverage. Taking
             a drug while having certain medical conditions can also cause a drug interaction. For example, taking a nasal
             decongestant if you have high blood pressure may cause an unwanted reaction. A drug interaction can decrease
-            or increase the action of a drug or cause unwanted side effects.</p>
-          <p>Drug interactions occur when one drug alters the pharmacological effect of another drug. The pharmacological
+            or increase the action of a drug or cause unwanted side effects.<p></p>
+
+            Drug interactions occur when one drug alters the pharmacological effect of another drug. The pharmacological
             effect of one or both drugs may be increased or decreased, or a new and unanticipated adverse effect may
             be produced. Drug interactions may result from pharmacokinetic interactions (absorption, distribution, metabolism,
-            and excretion) or from interactions at drug receptors.</p>
+            and excretion) or from interactions at drug receptors.
 
         </div>
       </div>
@@ -2795,23 +2796,23 @@ export const Htmlstring = `<div class="container">
         <div class="card-block">
           <ul>
             <li>
-              <p class="" id="">If healthcare providers find the stomach cancer in early stages when the cancer is still only in the stomach,
+            If healthcare providers find the stomach cancer in early stages when the cancer is still only in the stomach,
                 the 5 year survival rate is about 65%.
-              </p>
+
             </li>
             <li>
-              <p class="" id="">If they find the stomach cancer when it has spread to areas near your stomach , the 5 year survival rate
+            If they find the stomach cancer when it has spread to areas near your stomach , the 5 year survival rate
                 is about 30%.
-              </p>
+
             </li>
             <li>
-              <p class="" id="">If they find the stomach cancer when it has spread far away from your stomach, the 5 year survival rate
+              If they find the stomach cancer when it has spread far away from your stomach, the 5 year survival rate
                 is about 5%.
-              </p>
+
             </li>
             <li>
-              <p class="" id="">For all stages of stomach cancer combined, the five-year survival rate is about 29%.
-              </p>
+            For all stages of stomach cancer combined, the five-year survival rate is about 29%.
+
             </li>
           </ul>
         </div>
@@ -3119,16 +3120,16 @@ export const Htmlstring = `<div class="container">
           <span class="url">URL</span>
           <a href="https://www.livestrong.com/article/348997-weight-lifting-hiatal-hernia/" class="url" target="_blank">#1</a>
           <p></p>
-          <p>You may lift weights and not realize you have a hiatal hernia if you don't develop the main symptom of acid
-            reflux. Upon discovery of a hernia, your doctor may restrict your weightlifting activities if he thinks the
-            sport is interfering with your health. Because excess pressure in the abdominal region can cause a hernia
-            to worsen, you may need to work with lighter weights, or switch to hand weights until you've had your hernia
-            repaired.
-          </p>
+
+
 
         </div>
         <div class="card-block">
-          some text
+        You may lift weights and not realize you have a hiatal hernia if you don't develop the main symptom of acid
+          reflux. Upon discovery of a hernia, your doctor may restrict your weightlifting activities if he thinks the
+          sport is interfering with your health. Because excess pressure in the abdominal region can cause a hernia
+          to worsen, you may need to work with lighter weights, or switch to hand weights until you've had your hernia
+          repaired.
         </div>
       </div>
     </div>
@@ -3325,7 +3326,7 @@ export const Htmlstring = `<div class="container">
 
         </div>
         <div class="card-block">
-          <p>The answer is quite extensive so please click on the link above</p>
+          The answer is quite extensive so please click on the link above
         </div>
       </div>
     </div>
@@ -3372,11 +3373,12 @@ export const Htmlstring = `<div class="container">
 
         </div>
         <div class="card-block">
-          <p> Anxiety is not your fault.</p>
-
-          <p>Psychological research is beginning to understand what causes anxiety (if we understand the cause, we can treat
+           Anxiety is not your fault.
+           <p></p>
+          Psychological research is beginning to understand what causes anxiety (if we understand the cause, we can treat
             anxiety by getting to the root of the problem) however, thus far researchers haven’t been able to definitively
-            pinpoint exact causes. That said, we do know some things:</p>
+            pinpoint exact causes. That said, we do know some things:
+            <p></p>
 
           <ol>
             <li>
@@ -3397,9 +3399,9 @@ export const Htmlstring = `<div class="container">
                 target="_blank" rel="noopener noreferrer">unhealthy thought patterns.</a>
             </li>
           </ol>
-
-          <p>Anxiety and stress are not the same. Anxiety is much more than stress. Even if you experience stress on a daily
-            basis (we all do today) this doesn't mean you are suffering from anxiety. </p>
+           <p></p>
+          Anxiety and stress are not the same. Anxiety is much more than stress. Even if you experience stress on a daily
+            basis (we all do today) this doesn't mean you are suffering from anxiety.
 
         </div>
       </div>
@@ -3613,9 +3615,12 @@ export const Htmlstring = `<div class="container">
           <a href="https://www.mayoclinic.org/tests-procedures/endoscopy/about/pac-20395197" class="url" target="_blank">#2</a>
         </div>
         <div class="card-block">
-          <p>This happens rarely.</p>
-          <p>Perforation would cause sudden unbearable pain, and you'd collapse in shock (nurse report).</p>
-          <p>Perforation symptoms can include:</p>
+          This happens rarely.
+          <p></p>
+          Perforation would cause sudden unbearable pain, and you'd collapse in shock (nurse report).
+          <p></p>
+          Perforation symptoms can include:
+          <p></p>
           <ul>
             <li>Fever</li>
             <li>Severe chest pain</li>
@@ -3626,7 +3631,8 @@ export const Htmlstring = `<div class="container">
               <b>Severe</b> or persistent abdominal pain</li>
             <li>Vomiting, especially if your vomit is bloody or looks like coffee grounds</li>
           </ul>
-          <p>Call your doctor or go to an emergency room if you experience any of these signs or symptoms.</p>
+          <p></p>
+          Call your doctor or go to an emergency room if you experience any of these signs or symptoms.
 
         </div>
       </div>
@@ -3647,10 +3653,11 @@ export const Htmlstring = `<div class="container">
           <!-- <a href="http://www.hmbendoscopy.com" class="url" target="_blank">#1</a> -->
         </div>
         <div class="card-block">
-          <p>It is safe to eat after the procedure. However, go with something light for the beginning. I went for an endoscopy
+          It is safe to eat after the procedure. However, go with something light for the beginning. I went for an endoscopy
             6 times and after an hour/hour and half I started with some liquid then a bit later proceeded with some food.
-            Do not overeat! </p>
-          <p>The next day, you can eat normally.</p>
+            Do not overeat!
+            <p></p>
+          The next day, you can eat normally.
 
         </div>
       </div>
@@ -3877,12 +3884,14 @@ export const Htmlstring = `<div class="container">
             <li>Can be revised if required</li>
           </ul>
         </div>
-        <p>The
+        <p></p>
+        The
           <strong> TIF</strong> procedure is performed through the mouth without incisions. A surgeon utilizes the EsophyX device
           to reconstruct the valve between the esophagus and the stomach and restore the body’s natural protection against
           reflux.
-        </p>
-        <p>TIF is an acronym:</p>
+        <p></p>
+        TIF is an acronym:
+        <p></p>
         <ul>
           <li>
             <em>Transoral</em> – The procedure is performed from within the GI tract, through the patient’s mouth</li>
@@ -3918,11 +3927,11 @@ export const Htmlstring = `<div class="container">
 
         </div>
         <div class="card-block">
-          <p>The relative risk (RR) of a bad outcome in a group given intervention is a proportional measure estimating
+            The relative risk (RR) of a bad outcome in a group given intervention is a proportional measure estimating
             the size of the effect of a treatment compared with other interventions or no treatment at all. It is the
             proportion of bad outcomes in the intervention group divided by the proportion of bad outcomes in the control
             group.
-          </p>
+
         </div>
       </div>
     </div>
@@ -3946,11 +3955,11 @@ export const Htmlstring = `<div class="container">
 
         </div>
         <div class="card-block">
-          <p>Absolute risk of a disease is your risk of developing the disease over a time period. We all have absolute
+            Absolute risk of a disease is your risk of developing the disease over a time period. We all have absolute
             risks of developing various diseases such as heart disease, cancer, stroke, etc. The same absolute risk can
             be expressed in different ways. For example, say you have a 1 in 10 risk of developing a certain disease
             in your life. This can also be said to be a 10% risk, or a 0.1 risk - depending on whether you use percentages
-            or decimals.</p>
+            or decimals.
         </div>
       </div>
     </div>
@@ -3973,18 +3982,18 @@ export const Htmlstring = `<div class="container">
 
         </div>
         <div class="card-block">
-          <p>
+
             Prevalence in medical parlance refers to the number of cases of a disease in a population during a specific period of time.
             It is used in reference to how widespread a disease has become and the ratio between those who are already
             infected and those who are at risk. It is used to determine the total number of cases of a disease in a given
             population and the impact that it has on society. It includes the length of time that the disease has been
-            encountered and takes into consideration old and new cases.</p>
-
-          <p>Incidence, on the other hand, refers to the rate of the manifestation of a certain disease. It is used to measure
+            encountered and takes into consideration old and new cases.
+            <p></p>
+            Incidence, on the other hand, refers to the rate of the manifestation of a certain disease. It is used to measure
             the rate of occurrence of a disease at a given period usually dealing with the number of new cases that are
             diagnosed within a population during a specific period.
 
-          </p>
+
 
 
         </div>
@@ -4009,9 +4018,9 @@ export const Htmlstring = `<div class="container">
 
         </div>
         <div class="card-block">
-          <p>The hazard ratio is a comparison between the probability of events in a treatment group, compared to the probability
+          The hazard ratio is a comparison between the probability of events in a treatment group, compared to the probability
             of events in a control group. It’s used to see if patients receiving a treatment progress faster (or slower)
-            than those not receiving treatment.</p>
+            than those not receiving treatment.
         </div>
       </div>
     </div>
@@ -4034,9 +4043,9 @@ export const Htmlstring = `<div class="container">
 
         </div>
         <div class="card-block">
-          <p>A Cohort study, used in the medical fields and social sciences, is an observational study used to estimate
+          A Cohort study, used in the medical fields and social sciences, is an observational study used to estimate
             how often disease or life events happen in a certain population. “Life events” might include: incidence rate,
-            relative risk or absolute risk.</p>
+            relative risk or absolute risk.
         </div>
       </div>
     </div>
@@ -4059,8 +4068,8 @@ export const Htmlstring = `<div class="container">
 
         </div>
         <div class="card-block">
-          <p>In the social sciences and life sciences, a case study is a research method involving an up-close, in-depth,
-            and detailed examination of a subject of study (the case), as well as its related contextual conditions.</p>
+          In the social sciences and life sciences, a case study is a research method involving an up-close, in-depth,
+            and detailed examination of a subject of study (the case), as well as its related contextual conditions.
         </div>
       </div>
     </div>
@@ -4083,9 +4092,10 @@ export const Htmlstring = `<div class="container">
           <a href="http://www.statisticshowto.com/experimental-design/confounding-variable/" class="url" target="_blank">#2</a>
         </div>
         <div class="card-block">
-          <p>In statistics, a confounder (also confounding variable or confounding factor) is a variable that influences
-            both the dependent variable and independent variable causing a false association. </p>
-          <p>A confounding variable is an “extra” variable that you didn’t account for. They can ruin an experiment and
+          In statistics, a confounder (also confounding variable or confounding factor) is a variable that influences
+            both the dependent variable and independent variable causing a false association.
+            <p></p>
+          A confounding variable is an “extra” variable that you didn’t account for. They can ruin an experiment and
             give you useless results. They can suggest there is correlation when in fact there isn’t. They can even introduce
             bias. That’s why it’s important to know what one is, and how to avoid getting them into your experiment in
             the first place.</p>

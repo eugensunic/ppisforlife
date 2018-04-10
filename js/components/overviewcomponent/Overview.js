@@ -34,7 +34,7 @@ export default class Overview extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      value: 'a'
+      value: 'b'
     };
   }
 
@@ -118,6 +118,7 @@ export default class Overview extends React.Component {
             <Tabs value={this.state.value} onChange={this.handleChange.bind(this)}>
               <Tab label="Input Proof" value="a">
                 <div>
+                  <div>Amount of total records: </div>
                   <h2 style={styles.headline}>Proof od data entry</h2>
                   <div id="basic-info">
                     <TableTitle backColor="#eaeaea" title="Person basic info" />
@@ -186,10 +187,10 @@ export default class Overview extends React.Component {
               </Tab>
               <Tab label="Extra stats" value="b">
                 <div>
+                  <div>Amount of total records: </div>
                   <h2 style={styles.headline}>Additional statistical data</h2>
                   <div id="basic-extract" className="row">
                     <TableTitle backColor="#eaeaea" title="Person basic info" overwrite="overwrite_title" />
-
                     <div className="col-sm-4">
                       <Table>
                         {func.setTableHeader(this.props.overview_extra_stat.overviewextra.age_person[0])}
