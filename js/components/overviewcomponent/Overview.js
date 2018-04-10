@@ -64,6 +64,46 @@ export default class Overview extends React.Component {
   }
 
   render() {
+    const explanation = {
+      basic_info: {
+        age_person: `Starting from the highest number of people to bottom having a certain age`,
+        race_person: `Starting from the highest number of people to bottom who belong to a certain race`,
+        gender_person: `Starting from the highest number of people to bottom considering their gender`
+      },
+      condition_disease: {
+        gastro_person: `Starting from the highest number of people to bottom having a gastro related condition only (upper-gullet diseases)`,
+        other_person: `Starting from the highest number of people to bottom who have any condition/disease apart from gastro related issues`,
+        ppi_person: `Starting from the highest number of people to bottom who suspect they may have got a certain disease by using PPIs`
+      },
+      ppi_drugs: {
+        generic_person: `Starting from the highest number of people to bottom who have specified the generic name of the proton pump inhibitor drug which they are using for their condition`,
+        brand_person: `Starting from the highest number of people to bottom who have specified the brand name of the proton pump inhibitor drug`,
+        generic_duration_person: `Showing the amount of people from top to bottom having spent a certain duration in years time on a generic PPI drug`,
+        daily_person: `Starting from the highest number of people to bottom who specified if they are/were daily (continuously) on the drug`,
+        dosage_person: `Starting from the highest number of people to bottom considering the drug dosage (10-160mg)`
+      },
+      side_effects: {
+        side_person: `Ordered by the side effect which most people have in common to the least one `,
+        treatment_duration_person: `Ordered by treatment duration time in years that has the most side effects to it. Trying to see if side effects increase with number of years being on the drug or does the body adapt therefore exhibiting less side effects`,
+        generic_person: `Generic PPI drug related to most/least side-effects. Trying to see if there is the 'best-> low side effects amount', 'worst-> high side effects amount' drug when it comes to side effects`,
+        brand_person: `Brand PPI drug related to most/least side-effects. Trying to see if there is the 'best- low side effects amount', 'worst-high side effects amount' drug when it comes to side effects`
+      },
+      other_nutrient: {
+        name_person_other: `Starting from the highest to the lowest number of people who take/took other drugs along with PPIs (PPIs should be excluded in this section)`,
+        name_person_nutrient: `Starting from the highest to the lowest amount of people who think they experience/experienced deficiencies due to PPI usage`
+      },
+      natural_supplements: {
+        helped: `Starting from the highest to the lowest number of people who specified which natural supplements has helped them with their gastro problem. Trying to suggest best natural supplements, diets to help with acid reflux disease`,
+        not_helped: `Starting from the highest to the lowest number of people who specified which natural supplements hasn't helped or poorly helped with their condition`
+      },
+      extra_info: {
+        last: `The 'Other person information' tables represent data grouped by a specific parameter like: smoking, alcohol use, exercise, H.pylori bacteria etc. All of the parameters have frequency value associated to them (yes, no, rarely, sometimes, never etc.). In other words, we are trying to find a connection with gastro conditions and certain habits like smoking, exercise etc. Tables are pretty much self-explanatory. Last table indicates the overall satisfaction concerning the PPI drug, wether or not users are pleased with it in terms of symptoms alleviation and side effects balance. Person number related to the parameters goes from top to bottom `,
+        genetics: `Shows if anyone in the family has gastro related issues such as gastritis, acid-reflux or any other kind of disorder involving the gullet`,
+        substitute: `Shows if a person was able to find a substitute drug for PPIs like H2 blockers (ranitidine, tagamet, zantac), natural supplement, some other therapy etc.`,
+        anxiety: `Shows if a person suffers from any kind of longterm anxiety`,
+        quit: `Shows if a person was able to fully quit PPIs`
+      }
+    };
     if (this.props.overviewstat.overview && this.props.overview_extra_stat.overviewextra && this.props.overview_extra_stat.overviewextra_last_info) {
       {
         console.log(this.props.overview_extra_stat.overviewextra);
@@ -154,21 +194,21 @@ export default class Overview extends React.Component {
                         {func.setTableHeader(this.props.overview_extra_stat.overviewextra.age_person[0])}
                         {func.setTableBody(this.props.overview_extra_stat.overviewextra.age_person)}
                       </Table>
-                      <Explanation text="this is some text here which belongs here" />
+                      <Explanation text={explanation.basic_info.age_person} />
                     </div>
                     <div className="col-sm-4">
                       <Table>
                         {func.setTableHeader(this.props.overview_extra_stat.overviewextra.race_person[0])}
                         {func.setTableBody(this.props.overview_extra_stat.overviewextra.race_person)}
                       </Table>
-                      <Explanation text="this is some text here which belongs here" />
+                      <Explanation text={explanation.basic_info.race_person} />
                     </div>
                     <div className="col-sm-4">
                       <Table>
                         {func.setTableHeader(this.props.overview_extra_stat.overviewextra.gender_person[0])}
                         {func.setTableBody(this.props.overview_extra_stat.overviewextra.gender_person)}
                       </Table>
-                      <Explanation text="this is some text here which belongs here" />
+                      <Explanation text={explanation.basic_info.gender_person} />
                     </div>
                   </div>
                   <div id="condition-extract" className="row">
@@ -178,21 +218,21 @@ export default class Overview extends React.Component {
                         {func.setTableHeader(this.props.overview_extra_stat.overviewextra.gastro_person[0])}
                         {func.setTableBody(this.props.overview_extra_stat.overviewextra.gastro_person)}
                       </Table>
-                      <Explanation text="this is some text here which belongs here" />
+                      <Explanation text={explanation.condition_disease.gastro_person} />
                     </div>
                     <div className="col-sm-4">
                       <Table>
                         {func.setTableHeader(this.props.overview_extra_stat.overviewextra.other_person[0])}
                         {func.setTableBody(this.props.overview_extra_stat.overviewextra.other_person)}
                       </Table>
-                      <Explanation text="this is some text here which belongs here" />
+                      <Explanation text={explanation.condition_disease.other_person} />
                     </div>
                     <div className="col-sm-4">
                       <Table>
                         {func.setTableHeader(this.props.overview_extra_stat.overviewextra.ppi_person[0])}
                         {func.setTableBody(this.props.overview_extra_stat.overviewextra.ppi_person)}
                       </Table>
-                      <Explanation text="this is some text here which belongs here" />
+                      <Explanation text={explanation.condition_disease.ppi_person} />
                     </div>
                   </div>
                   <div id="drugs-extract-part1" className="row">
@@ -202,21 +242,21 @@ export default class Overview extends React.Component {
                         {func.setTableHeader(this.props.overview_extra_stat.overviewextra.generic_person[0])}
                         {func.setTableBody(this.props.overview_extra_stat.overviewextra.generic_person)}
                       </Table>
-                      <Explanation text="this is some text here which belongs here" />
+                      <Explanation text={explanation.ppi_drugs.generic_person} />
                     </div>
                     <div className="col-sm-4">
                       <Table>
                         {func.setTableHeader(this.props.overview_extra_stat.overviewextra.brand_person[0])}
                         {func.setTableBody(this.props.overview_extra_stat.overviewextra.brand_person)}
                       </Table>
-                      <Explanation text="this is some text here which belongs here" />
+                      <Explanation text={explanation.ppi_drugs.brand_person} />
                     </div>
                     <div className="col-sm-4">
                       <Table>
                         {func.setTableHeader(this.props.overview_extra_stat.overviewextra.treatment_duration_person[0])}
                         {func.setTableBody(this.props.overview_extra_stat.overviewextra.treatment_duration_person)}
                       </Table>
-                      <Explanation text="this is some text here which belongs here" />
+                      <Explanation text={explanation.ppi_drugs.generic_duration_person} />
                     </div>
                   </div>
                   <div id="drugs-extract-part2" className="row margin-top-30">
@@ -225,14 +265,14 @@ export default class Overview extends React.Component {
                         {func.setTableHeader(this.props.overview_extra_stat.overviewextra.daily_person[0])}
                         {func.setTableBody(this.props.overview_extra_stat.overviewextra.daily_person)}
                       </Table>
-                      <Explanation text="this is some text here which belongs here" />
+                      <Explanation text={explanation.ppi_drugs.daily_person} />
                     </div>
                     <div className="col-sm-6">
                       <Table>
                         {func.setTableHeader(this.props.overview_extra_stat.overviewextra.dosage_person[0])}
                         {func.setTableBody(this.props.overview_extra_stat.overviewextra.dosage_person)}
                       </Table>
-                      <Explanation text="this is some text here which belongs here" />
+                      <Explanation text={explanation.ppi_drugs.dosage_person} />
                     </div>
                   </div>
                   <div id="sides-extract-part1" className="row">
@@ -242,14 +282,14 @@ export default class Overview extends React.Component {
                         {func.setTableHeader(this.props.overview_extra_stat.overviewextra.sides_person[0])}
                         {func.setTableBody(this.props.overview_extra_stat.overviewextra.sides_person)}
                       </Table>
-                      <Explanation text="this is some text here which belongs here" />
+                      <Explanation text={explanation.side_effects.side_person} />
                     </div>
                     <div className="col-sm-6">
                       <Table>
                         {func.setTableHeader(this.props.overview_extra_stat.overviewextra.treatment_duration_side_amount[0])}
                         {func.setTableBody(this.props.overview_extra_stat.overviewextra.treatment_duration_side_amount)}
                       </Table>
-                      <Explanation text="this is some text here which belongs here" />
+                      <Explanation text={explanation.side_effects.treatment_duration_person} />
                     </div>
                   </div>
                   <div id="sides-extract-part2" className="row margin-top-30">
@@ -258,14 +298,14 @@ export default class Overview extends React.Component {
                         {func.setTableHeader(this.props.overview_extra_stat.overviewextra.generic_side_amount[0])}
                         {func.setTableBody(this.props.overview_extra_stat.overviewextra.generic_side_amount)}
                       </Table>
-                      <Explanation text="this is some text here which belongs here" />
+                      <Explanation text={explanation.side_effects.generic_person} />
                     </div>
                     <div className="col-sm-6">
                       <Table>
                         {func.setTableHeader(this.props.overview_extra_stat.overviewextra.brand_side_amount[0])}
                         {func.setTableBody(this.props.overview_extra_stat.overviewextra.brand_side_amount)}
                       </Table>
-                      <Explanation text="this is some text here which belongs here" />
+                      <Explanation text={explanation.side_effects.brand_person} />
                     </div>
                   </div>
                   <div id="other-nutrient-extract" className="row">
@@ -275,14 +315,14 @@ export default class Overview extends React.Component {
                         {func.setTableHeader(this.props.overview_extra_stat.overviewextra.other_drug[0])}
                         {func.setTableBody(this.props.overview_extra_stat.overviewextra.other_drug)}
                       </Table>
-                      <Explanation text="this is some text here which belongs here" />
+                      <Explanation text={explanation.other_nutrient.name_person_other} />
                     </div>
                     <div className="col-sm-6">
                       <Table>
                         {func.setTableHeader(this.props.overview_extra_stat.overviewextra.nutrient_deficiency[0])}
                         {func.setTableBody(this.props.overview_extra_stat.overviewextra.nutrient_deficiency)}
                       </Table>
-                      <Explanation text="this is some text here which belongs here" />
+                      <Explanation text={explanation.other_nutrient.name_person_nutrient} />
                     </div>
                   </div>
                   <div id="natural-extract" className="row">
@@ -292,14 +332,14 @@ export default class Overview extends React.Component {
                         {func.setTableHeader(this.props.overview_extra_stat.overviewextra.natural_helped[0])}
                         {func.setTableBody(this.props.overview_extra_stat.overviewextra.natural_helped)}
                       </Table>
-                      <Explanation text="this is some text here which belongs here" />
+                      <Explanation text={explanation.natural_supplements.helped} />
                     </div>
                     <div className="col-sm-6">
                       <Table>
                         {func.setTableHeader(this.props.overview_extra_stat.overviewextra.natural_nothelped[0])}
                         {func.setTableBody(this.props.overview_extra_stat.overviewextra.natural_nothelped)}
                       </Table>
-                      <Explanation text="this is some text here which belongs here" />
+                      <Explanation text={explanation.natural_supplements.not_helped} />
                     </div>
                   </div>
                   <div id="extra-extract-part1" className="row">
@@ -353,6 +393,7 @@ export default class Overview extends React.Component {
                         {func.setTableHeader(this.props.overview_extra_stat.overviewextra_last_info.genetic_person[0])}
                         {func.setTableBody(this.props.overview_extra_stat.overviewextra_last_info.genetic_person)}
                       </Table>
+                      <Explanation text={explanation.extra_info.genetics} />
                     </div>
                   </div>
                   <div id="extra-extract-part3" className="row margin-top-30">
@@ -361,18 +402,21 @@ export default class Overview extends React.Component {
                         {func.setTableHeader(this.props.overview_extra_stat.overviewextra_last_info.anxiety_person[0])}
                         {func.setTableBody(this.props.overview_extra_stat.overviewextra_last_info.anxiety_person)}
                       </Table>
+                      <Explanation text={explanation.extra_info.anxiety} />
                     </div>
                     <div className="col-sm-3">
                       <Table>
                         {func.setTableHeader(this.props.overview_extra_stat.overviewextra_last_info.substitute_person[0])}
                         {func.setTableBody(this.props.overview_extra_stat.overviewextra_last_info.substitute_person)}
                       </Table>
+                      <Explanation text={explanation.extra_info.substitute} />
                     </div>
                     <div className="col-sm-3">
                       <Table>
                         {func.setTableHeader(this.props.overview_extra_stat.overviewextra_last_info.off_drug_person[0])}
                         {func.setTableBody(this.props.overview_extra_stat.overviewextra_last_info.off_drug_person)}
                       </Table>
+                      <Explanation text={explanation.extra_info.quit} />
                     </div>
                     <div className="col-sm-3">
                       <Table>
@@ -386,6 +430,7 @@ export default class Overview extends React.Component {
                       {func.setTableHeader(this.props.overview_extra_stat.overviewextra_last_info.overall_experience_person[0])}
                       {func.setTableBody(this.props.overview_extra_stat.overviewextra_last_info.overall_experience_person)}
                     </Table>
+                    <Explanation text={explanation.extra_info.last} />
                   </div>
                 </div>
               </Tab>
