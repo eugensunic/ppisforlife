@@ -19,14 +19,11 @@ export default class Ppistarter extends React.Component {
     return (
       <div className="container">
         <Navbar />
-
         <General />
         <Comments />
         <Otherdrugs />
         <Allnatural />
-        <Rest />
         <Social shown={false} />
-
         <Navfooter />
       </div>
     );
