@@ -5,6 +5,7 @@ import * as func from './Function.js';
 import axios from 'axios';
 
 import TableTitle from './Tabletitle.js';
+import InternalNavigation from './Internalnavigation.js';
 import Navfooter from '../Navfooter.js';
 import Navbar from '../Navbar.js';
 import Explanation from './Explanation.js';
@@ -20,7 +21,8 @@ const styles = {
     paddingTop: 16,
     fontWeight: 400,
     textAlign: 'center',
-    color: '#5a51510'
+    color: '#5a51510',
+    marginBottom: 20
   }
 };
 
@@ -34,7 +36,16 @@ export default class Overview extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      value: 'b'
+      value: 'b',
+      clicked_basic: false,
+      clicked_disease: false,
+      clicked_drugs: false,
+      clicked_sides1: false,
+      clicked_sides2: false,
+      clicked_other_drugs: false,
+      clicked_nutrient: false,
+      clicked_natural: false,
+      clicked_extra: false
     };
   }
 
@@ -61,6 +72,30 @@ export default class Overview extends React.Component {
       this.props.dispatch(user.asyncAll(urlData_1.url, urlData_1.dispatchType));
       this.props.dispatch(user.asyncAll(urlData_2.url, urlData_2.dispatchType));
       this.props.dispatch(user.asyncAll(urlData_3.url, urlData_3.dispatchType));
+    }
+  }
+
+  closeAllDivs() {
+    return this.setState({
+      clicked_basic: false,
+      clicked_disease: false,
+      clicked_drugs: false,
+      clicked_sides1: false,
+      clicked_sides2: false,
+      clicked_other_drugs: false,
+      clicked_nutrient: false,
+      clicked_natural: false,
+      clicked_extra: false
+    });
+  }
+  loopStateOjbect() {
+    for (var key in this.state) {
+      // first property excluded from class state object
+      if (key !== 'value') {
+        if (this.state[key]) {
+          return true;
+        }
+      }
     }
   }
 
@@ -106,9 +141,6 @@ export default class Overview extends React.Component {
       }
     };
     if (this.props.overviewstat.overview && this.props.overview_extra_stat.overviewextra && this.props.overview_extra_stat.overviewextra_last_info) {
-      {
-        console.log(this.props.overview_extra_stat.overviewextra);
-      }
       return (
         <div className="container-fluid">
           <div className="container margin-bottom-10">
@@ -118,79 +150,161 @@ export default class Overview extends React.Component {
             <Tabs value={this.state.value} onChange={this.handleChange.bind(this)}>
               <Tab label="Input Proof" value="a">
                 <div>
-                  <div>Amount of total records: </div>
+                  <div className="records_text">Amount of total records: </div>{' '}
+                  <span className="records_value">{this.props.overviewstat.overview.basic_info.length}</span>
                   <h2 style={styles.headline}>Proof od data entry</h2>
+                  {this.state.value === 'a' && this.loopStateOjbect.call(this) ? (
+                    <div className="close_all_divs" onClick={() => this.closeAllDivs()}>
+                      Close all
+                    </div>
+                  ) : (
+                    ''
+                  )}
                   <div id="basic-info">
-                    <TableTitle backColor="#eaeaea" title="Person basic info" />
-                    <Table>
-                      {func.setTableHeader(this.props.overviewstat.overview.basic_info[0])}
-                      {func.setTableBody(this.props.overviewstat.overview.basic_info)}
-                    </Table>
+                    <TableTitle tabValue="a" backColor="#eaeaea" title="Person basic info" onClick={() => this.setState({ clicked_basic: !this.state.clicked_basic })} />
+
+                    {this.state.clicked_basic ? (
+                      <Table>
+                        {func.setTableHeader(this.props.overviewstat.overview.basic_info[0])}
+                        {func.setTableBody(this.props.overviewstat.overview.basic_info)}
+                      </Table>
+                    ) : (
+                      ''
+                    )}
                   </div>
                   <div id="disease" className="container">
-                    <TableTitle backColor="#f0e4e4" title="Condition/Disease" />
-                    <Table>
-                      {func.setTableHeader(this.props.overviewstat.overview.condition_overview[0])}
-                      {func.setTableBody(func.checkWhenNumberChange(this.props.overviewstat.overview.condition_overview))}
-                    </Table>
+                    <TableTitle
+                      tabValue="a"
+                      backColor="#f0e4e4"
+                      title="Condition/Disease"
+                      onClick={() => this.setState({ clicked_disease: !this.state.clicked_disease })}
+                    />
+                    {this.state.clicked_disease ? (
+                      <Table>
+                        {func.setTableHeader(this.props.overviewstat.overview.condition_overview[0])}
+                        {func.setTableBody(func.checkWhenNumberChange(this.props.overviewstat.overview.condition_overview))}
+                      </Table>
+                    ) : (
+                      ''
+                    )}
                   </div>
                   <div id="drugs" className="container">
-                    <TableTitle backColor="#d3e6f2" title="PPI drugs" />
-                    <Table>
-                      {func.setTableHeader(this.props.overviewstat.overview.ppi_overview[0])}
-                      {func.setTableBody(this.props.overviewstat.overview.ppi_overview)}
-                    </Table>
+                    <TableTitle tabValue="a" backColor="#d3e6f2" title="PPI drugs" onClick={() => this.setState({ clicked_drugs: !this.state.clicked_drugs })} />
+                    {this.state.clicked_drugs ? (
+                      <Table>
+                        {func.setTableHeader(this.props.overviewstat.overview.ppi_overview[0])}
+                        {func.setTableBody(this.props.overviewstat.overview.ppi_overview)}
+                      </Table>
+                    ) : (
+                      ''
+                    )}
                   </div>
                   <div id="drugs-sides" className="container">
-                    <TableTitle backColor="#f8e3c4" title="PPIs side effects" />
-                    <Table>
-                      {func.setTableHeaderDrugSides(this.props.overviewstat.overview.side_drug[0])}
-                      {func.setTableBodyDrugSides(func.checkWhenNumberChangeDrugSides(this.props.overviewstat.overview.side_drug))}
-                    </Table>
+                    <TableTitle
+                      tabValue="a"
+                      backColor="#f8e3c4"
+                      title="PPIs side effects"
+                      onClick={() => this.setState({ clicked_sides1: !this.state.clicked_sides1 })}
+                    />
+                    {this.state.clicked_sides1 ? (
+                      <Table>
+                        {func.setTableHeaderDrugSides(this.props.overviewstat.overview.side_drug[0])}
+                        {func.setTableBodyDrugSides(func.checkWhenNumberChangeDrugSides(this.props.overviewstat.overview.side_drug))}
+                      </Table>
+                    ) : (
+                      ''
+                    )}
                   </div>
                   <div id="sides-general" className="container">
-                    <TableTitle backColor="#f8e3c4" title="General side effects" />
-                    <Table>
-                      {func.setTableHeader(this.props.overviewstat.overview.side_general[0])}
-                      {func.setTableBody(func.checkWhenNumberChangeSideGeneral(this.props.overviewstat.overview.side_general))}
-                    </Table>
+                    <TableTitle
+                      tabValue="a"
+                      backColor="#f8e3c4"
+                      title="General side effects"
+                      onClick={() => this.setState({ clicked_sides2: !this.state.clicked_sides2 })}
+                    />
+                    {this.state.clicked_sides2 ? (
+                      <Table>
+                        {func.setTableHeader(this.props.overviewstat.overview.side_general[0])}
+                        {func.setTableBody(func.checkWhenNumberChangeSideGeneral(this.props.overviewstat.overview.side_general))}
+                      </Table>
+                    ) : (
+                      ''
+                    )}
                   </div>
                   <div id="other-drugs" className="container">
-                    <TableTitle backColor="#f2f3f4" title="Other drugs taken (not PPIs)" />
-                    <Table>
-                      {func.setTableHeader(this.props.overviewstat.overview.other_drug[0])}
-                      {func.setTableBody(func.checkWhenNumberChangeOtherDrugs(this.props.overviewstat.overview.other_drug))}
-                    </Table>
+                    <TableTitle
+                      tabValue="a"
+                      backColor="#f2f3f4"
+                      title="Other drugs taken (not PPIs)"
+                      onClick={() => this.setState({ clicked_other_drugs: !this.state.clicked_other_drugs })}
+                    />
+                    {this.state.clicked_other_drugs ? (
+                      <Table>
+                        {func.setTableHeader(this.props.overviewstat.overview.other_drug[0])}
+                        {func.setTableBody(func.checkWhenNumberChangeOtherDrugs(this.props.overviewstat.overview.other_drug))}
+                      </Table>
+                    ) : (
+                      ''
+                    )}
                   </div>
                   <div id="nutrient-data" className="container">
-                    <TableTitle backColor="#c4ecc4" title="Nutrient deficiency" />
-                    <Table>
-                      {func.setTableHeader(this.props.overviewstat.overview.nutrient[0])}
-                      {func.setTableBody(func.checkWhenNumberChangeNutrient(this.props.overviewstat.overview.nutrient))}
-                    </Table>
+                    <TableTitle
+                      tabValue="a"
+                      backColor="#c4ecc4"
+                      title="Nutrient deficiency"
+                      onClick={() => this.setState({ clicked_nutrient: !this.state.clicked_nutrient })}
+                    />
+                    {this.state.clicked_nutrient ? (
+                      <Table>
+                        {func.setTableHeader(this.props.overviewstat.overview.nutrient[0])}
+                        {func.setTableBody(func.checkWhenNumberChangeNutrient(this.props.overviewstat.overview.nutrient))}
+                      </Table>
+                    ) : (
+                      ''
+                    )}
                   </div>
                   <div id="natural-data" className="container">
-                    <TableTitle backColor="#b5e0b5" title="Natural supplements" />
-                    <Table>
-                      {func.setTableHeader(this.props.overviewstat.overview.natural[0])}
-                      {func.setTableBody(func.checkWhenNumberChangeNatural(this.props.overviewstat.overview.natural))}
-                    </Table>
+                    <TableTitle
+                      tabValue="a"
+                      backColor="#b5e0b5"
+                      title="Natural supplements"
+                      onClick={() => this.setState({ clicked_natural: !this.state.clicked_natural })}
+                    />
+                    {this.state.clicked_natural ? (
+                      <Table>
+                        {func.setTableHeader(this.props.overviewstat.overview.natural[0])}
+                        {func.setTableBody(func.checkWhenNumberChangeNatural(this.props.overviewstat.overview.natural))}
+                      </Table>
+                    ) : (
+                      ''
+                    )}
                   </div>
                   <div id="other-data">
-                    <TableTitle backColor="#eaeaea" title="Other person information" />
-                    <Table>
-                      {func.setTableHeader(this.props.overviewstat.overview.other_data[0])}
-                      {func.setTableBody(this.props.overviewstat.overview.other_data)}
-                    </Table>
+                    <TableTitle
+                      tabValue="a"
+                      backColor="#eaeaea"
+                      title="Other person information"
+                      onClick={() => this.setState({ clicked_extra: !this.state.clicked_extra })}
+                    />
+                    {this.state.clicked_extra ? (
+                      <Table>
+                        {func.setTableHeader(this.props.overviewstat.overview.other_data[0])}
+                        {func.setTableBody(this.props.overviewstat.overview.other_data)}
+                      </Table>
+                    ) : (
+                      ''
+                    )}
                   </div>
                 </div>
               </Tab>
               <Tab label="Extra stats" value="b">
                 <div>
-                  <div>Amount of total records: </div>
-                  <h2 style={styles.headline}>Additional statistical data</h2>
+                  <div className="records_text">Amount of total records: </div>{' '}
+                  <span className="records_value">{this.props.overviewstat.overview.basic_info.length}</span>
+                  <h2 style={styles.headline}>Additional statistics data</h2>
                   <div id="basic-extract" className="row">
-                    <TableTitle backColor="#eaeaea" title="Person basic info" overwrite="overwrite_title" />
+                    <InternalNavigation />
+                    <TableTitle tabValue="b" backColor="#eaeaea" title="Person basic info" overwrite="overwrite_title" />
                     <div className="col-sm-4">
                       <Table>
                         {func.setTableHeader(this.props.overview_extra_stat.overviewextra.age_person[0])}
@@ -214,7 +328,7 @@ export default class Overview extends React.Component {
                     </div>
                   </div>
                   <div id="condition-extract" className="row">
-                    <TableTitle backColor="#f0e4e4" title="Condition/Disease" overwrite="overwrite_title" />
+                    <TableTitle tabValue="b" backColor="#f0e4e4" title="Condition/Disease" overwrite="overwrite_title" />
                     <div className="col-sm-4">
                       <Table>
                         {func.setTableHeader(this.props.overview_extra_stat.overviewextra.gastro_person[0])}
@@ -238,7 +352,7 @@ export default class Overview extends React.Component {
                     </div>
                   </div>
                   <div id="drugs-extract-part1" className="row">
-                    <TableTitle backColor="#d3e6f2" title="PPI drugs" overwrite="overwrite_title" />
+                    <TableTitle tabValue="b" backColor="#d3e6f2" title="PPI drugs" overwrite="overwrite_title" />
                     <div className="col-sm-4">
                       <Table>
                         {func.setTableHeader(this.props.overview_extra_stat.overviewextra.generic_person[0])}
@@ -278,7 +392,7 @@ export default class Overview extends React.Component {
                     </div>
                   </div>
                   <div id="sides-extract-part1" className="row">
-                    <TableTitle backColor="#f8e3c4" title="PPIs side effects" overwrite="overwrite_title" />
+                    <TableTitle tabValue="b" backColor="#f8e3c4" title="PPIs side effects" overwrite="overwrite_title" />
                     <div className="col-sm-6">
                       <Table>
                         {func.setTableHeader(this.props.overview_extra_stat.overviewextra.sides_person[0])}
@@ -311,7 +425,7 @@ export default class Overview extends React.Component {
                     </div>
                   </div>
                   <div id="other-nutrient-extract" className="row">
-                    <TableTitle backColor="#fafafa" title="Other drugs taken (not PPIs) & Nutrient deficiency" overwrite="overwrite_title" />
+                    <TableTitle tabValue="b" backColor="#fafafa" title="Other drugs taken (not PPIs) & Nutrient deficiency" overwrite="overwrite_title" />
                     <div className="col-sm-6">
                       <Table>
                         {func.setTableHeader(this.props.overview_extra_stat.overviewextra.other_drug[0])}
@@ -328,7 +442,7 @@ export default class Overview extends React.Component {
                     </div>
                   </div>
                   <div id="natural-extract" className="row">
-                    <TableTitle backColor="#b5e0b5" title="Natural supplements" overwrite="overwrite_title" />
+                    <TableTitle tabValue="b" backColor="#b5e0b5" title="Natural supplements" overwrite="overwrite_title" />
                     <div className="col-sm-6">
                       <Table>
                         {func.setTableHeader(this.props.overview_extra_stat.overviewextra.natural_helped[0])}
@@ -345,7 +459,7 @@ export default class Overview extends React.Component {
                     </div>
                   </div>
                   <div id="extra-extract-part1" className="row">
-                    <TableTitle backColor="#eaeaea" title="Other person information" overwrite="overwrite_title" />
+                    <TableTitle tabValue="b" backColor="#eaeaea" title="Other person information" overwrite="overwrite_title" />
                     <div className="col-sm-3">
                       <Table>
                         {func.setTableHeader(this.props.overview_extra_stat.overviewextra_last_info.hpylori_person[0])}
