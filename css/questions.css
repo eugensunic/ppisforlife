@@ -197,6 +197,8 @@
   color: #288733;
   border-radius: 2px;
   border: 1px solid #cec5c5;
+  padding-left: 2px;
+  padding-right: 2px;
 }
 .spelling_left {
   margin-left: 4px;

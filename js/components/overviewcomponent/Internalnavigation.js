@@ -9,7 +9,7 @@ export default class InternalNavigation extends React.Component {
 
   render() {
     return (
-      <div style={{ marginLeft: '15' }}>
+      <div style={{ marginLeft: 15 }}>
         <span
           className="internal_navigation"
           style={{ backgroundColor: '#eaeaea' }}
