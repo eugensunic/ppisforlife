@@ -27,7 +27,8 @@ export default class Patientpost extends React.Component {
     this.state = {
       radio1: true,
       radio2: false,
-      first_check: false
+      first_check: false,
+      has_loaded: false
     };
     history.replaceState(null, null, null);
   }
@@ -38,7 +39,18 @@ export default class Patientpost extends React.Component {
       this.props.dispatch(user.asyncAll('http://projectsgono.com/medsforlife/appcall/get_tag2.php', 'tag2', ''));
       this.props.dispatch(user.asyncAll('http://projectsgono.com/medsforlife/appcall/getheaderpost.php', 'header', ''));
     }
+    setTimeout(() => {
+      if (localStorage.getItem('reload')) {
+        alert('Refresh te page or come back later');
+      } else if (!this.state.has_loaded) {
+        localStorage.setItem('reload', 'true');
+        location.reload();
+      }
+    }, 5000);
     this.props.dispatch(user.changeNavigationColor('post-nav', [true, false, false]));
+  }
+  componentDidMount() {
+    this.setState({ has_loaded: true });
   }
 
   componentDidUpdate() {

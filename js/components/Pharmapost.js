@@ -16,14 +16,25 @@ import * as user from '../actions/asyncCAll.js';
 export default class Pharmapost extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { first_check: false };
+    this.state = { first_check: false, has_loaded: false };
     history.replaceState(null, null, null);
   }
   componentWillMount() {
     if (this.props.pharma_call.first == undefined) {
       this.props.dispatch(user.asyncAll('http://projectsgono.com/medsforlife/appcall_pharma/get_all_columns_pharmacist.php', 'pharma_call_all'));
     }
+    setTimeout(() => {
+      if (localStorage.getItem('reload')) {
+        alert('Refresh te page or come back later');
+      } else if (!this.state.has_loaded) {
+        localStorage.setItem('reload', 'true');
+        location.reload();
+      }
+    }, 5000);
     this.props.dispatch(user.changeNavigationColor('post-nav', [false, false, true]));
+  }
+  componentDidMount() {
+    this.setState({ has_loaded: true });
   }
   componentDidUpdate() {
     // if (this.props.bar_change.clicked_pharma) {

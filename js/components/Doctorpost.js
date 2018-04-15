@@ -18,7 +18,7 @@ import * as user from '../actions/asyncCAll.js';
 export default class Doctorpost extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { first_check: false };
+    this.state = { first_check: false, has_loaded: false };
     history.replaceState(null, null, null);
   }
 
@@ -26,10 +26,21 @@ export default class Doctorpost extends React.Component {
     if (this.props.dr_call.first == undefined) {
       this.props.dispatch(user.asyncAll('http://projectsgono.com/medsforlife/appcall_doctor/get_all_columns_doctor.php', 'doctor_call_all'));
     }
+    setTimeout(() => {
+      if (localStorage.getItem('reload')) {
+        alert('Refresh te page or come back later');
+      } else if (!this.state.has_loaded) {
+        localStorage.setItem('reload', 'true');
+        location.reload();
+      }
+    }, 5000);
     this.props.dispatch(user.changeNavigationColor('post-nav', [false, true, false]));
   }
 
   componentDidUpdate() {}
+  componentDidMount() {
+    this.setState({ has_loaded: true });
+  }
 
   aboutWritting() {
     return (
