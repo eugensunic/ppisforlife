@@ -10,8 +10,8 @@ export default class Headermain extends React.Component {
       <div>
         <p className="study_name">Study name:</p> <span className="study_name_val">{this.props.heading}</span>
         <div className="research_info_box">
-          <img className="research_main_image" src={this.props.image} style={{ width: 60, float: 'left', marginRight: 5 }} />
-          <div dangerouslySetInnerHTML={{ __html: this.props.info_content }} />
+          <img className="research_main_image" src={this.props.image} style={{ width: 62, float: 'left', marginRight: 10 }} />
+          <div className="font-15" dangerouslySetInnerHTML={{ __html: this.props.info_content }} />
         </div>
       </div>
     );

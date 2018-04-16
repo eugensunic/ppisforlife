@@ -77,6 +77,9 @@ th {
 .margin-top-3 {
   margin-top: 3px;
 }
+.font-15 {
+  font-size: 15px;
+}
 .center_div {
   width: 50%;
   margin: 0 auto;
