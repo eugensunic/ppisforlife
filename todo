@@ -7,19 +7,15 @@ IF THE CSS BREAKS THAT'S BECAUSE OF EXTRA FORWARD SLASH APPEARING
   - test everything before proceeding to final page
 
 
-  OVERVIEW page
-  -------------
-  - navigate to upper section component
-
-
   TODO
   ----
-  1. Home page adjustment (today basic)
+  1. Fill research data
   2. Fill info with doctors from Medscape articles on PPIs (add more values)
-  3. research page just put links and icon (today basic-design only)
-  4. Remove acid reflux just keep GERD, do this in select on database
-  5. rewrite PHP calls for stats page to prepared statement
-  6. rewrite everything to prepared statement
+  3. Remove acid reflux just keep GERD, do this in select on database
+  4. rewrite PHP calls for stats page to prepared statement
+  5. rewrite everything to prepared statement
+  6. Go through text spelling
+  7. Put about
 
 
 
@@ -49,6 +45,9 @@ IF THE CSS BREAKS THAT'S BECAUSE OF EXTRA FORWARD SLASH APPEARING
 
   DONE
   ----
+   - navigate to upper section component
+   - research page just put links and icon (today basic-design only)
+   - Home page adjustment (today basic)
    - Reload page after if loading more than 5 seconds if again then tell to come back later
    - Calculation of Barrett's oesophagus occurrence (removed)
    - Remove <p> inside div card block on FAQ, it breaks increase in font
