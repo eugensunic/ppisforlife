@@ -1,6 +1,7 @@
 import React from 'react';
 import { Switch, Route, Router } from 'react-router-dom';
 
+import Home from './components/Home.js';
 import Layout from './components/Layout.js';
 import Statistic from './components/statisticscomponent/Statistic.js';
 import Research from './components/researchcomponent/Research.js';
@@ -16,7 +17,7 @@ import Overview from './components/overviewcomponent/Overview.js';
 
 export const Routing = () => (
   <Switch>
-    <Route exact path="/" component={Notfound} />
+    <Route exact path="/" component={Home} />
     <Route path="/posts" component={Layout} />
     <Route path="/statistics" component={Statistic} />
     <Route path="/research" component={Research} />

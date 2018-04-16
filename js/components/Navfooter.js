@@ -6,6 +6,10 @@ export default class Navfooter extends React.Component {
   }
   componentWillMount() {}
   render() {
-    return <div className="footer">© 2017 Info page</div>;
+    return (
+      <div className="footer" style={{ position: this.props.position }}>
+        © 2017 Info page
+      </div>
+    );
   }
 }

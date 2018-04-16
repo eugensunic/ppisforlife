@@ -63,6 +63,9 @@
   background: #e6e6e6;
   margin-right: 5px;
   padding: 2px;
-  cursor: pointer;
   display: inline-block;
+}
+.internal_navigation:hover {
+  opacity: 0.9;
+  cursor: pointer;
 }

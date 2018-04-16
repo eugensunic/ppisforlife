@@ -1,6 +1,11 @@
 import React from 'react';
-export default class Faq extends React.Component {
+
+export default class NotFound extends React.Component {
   render() {
-    return <div />;
+    return (
+      <div className="center" style={{ fontSize: 30 }}>
+        Page not found
+      </div>
+    );
   }
 }
