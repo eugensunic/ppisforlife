@@ -224,7 +224,7 @@ export default class Ohterstats extends React.Component {
               <p className="inline">Patients with Hiatal Hernia</p>
               <span className="inline">{this.props.gerd_barrett_hiatal[1].amount}</span>
               <br />
-              <p className="inline">Patients with Barrett's</p>
+              <p className="inline">Patients with Barrett&#39;s</p>
               <span className="inline">{this.props.gerd_barrett_hiatal[2].amount}</span>
               <p />
             </div>
@@ -232,10 +232,10 @@ export default class Ohterstats extends React.Component {
               <p className="inline">Patients with GERD and Hiatal hernia</p>
               <span className="inline">{this.props.gerd_barrett_hiatal_and[0].amount}</span>
               <br />
-              <p className="inline">Patients with GERD and Barrett's</p>
+              <p className="inline">Patients with GERD and Barrett&#39;s</p>
               <span className="inline">{this.props.gerd_barrett_hiatal_and[1].amount}</span>
               <br />
-              <p className="inline last_graph_bottom">Patients with Barrett's and Hiatal hernia</p>
+              <p className="inline last_graph_bottom">Patients with Barrett&#39;s and Hiatal hernia</p>
               <span className="inline">{this.props.gerd_barrett_hiatal_and[2].amount}</span>
             </div>
           </div>

@@ -204,7 +204,7 @@ export default class Headerbarpatient extends React.Component {
           defaultValue="">
           <option value="" style={{ display: 'none' }} defaultValue="selected" label="choose condition" />
           <option value="gerd">GERD</option>
-          <option value="be">Barrett's</option>
+          <option value="be">Barrett&#39;s</option>
           <option value="ulcer">Ulcer</option>
           <option value="esophagitis">Esophagitis</option>
           <option value="gastritis">Gastritis</option>

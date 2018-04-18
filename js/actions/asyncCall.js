@@ -57,7 +57,7 @@ export function changeNavigationColor(type, value) {
     });
   };
 }
-// refactor this to one method, no need for 3!!
+// refactor this to one method!
 export function sendBarDataPatient(type, array0, next0, selected0, stop_location) {
   return function(dispatch) {
     dispatch({
