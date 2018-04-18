@@ -55,7 +55,9 @@ export default class Inputform extends React.Component {
       proceed_main_clicked: false,
       mgcondition: { marginTop: 0 },
       ajax_call: true,
-      data_in_database: false
+      data_in_database: false,
+      required_data1: false,
+      required_data2: false
     };
   }
 
@@ -128,52 +130,52 @@ export default class Inputform extends React.Component {
                   this.props.drug.daily4 !== undefined
                 ) {
                   if (this.state.add_drug_three || this.state.add_drug_four) {
-                    this.setState({ new_success: true, success: false, warning_clicked: false, clicked: true });
+                    this.setState({ required_data1: false, new_success: true, success: false, warning_clicked: false, clicked: true });
                   } else {
-                    this.setState({ success: true, clicked: true });
+                    this.setState({ required_data1: false, success: true, clicked: true });
                   }
 
                   console.log('fourth row success');
                 } else {
                   console.log('fourth row fail');
-                  this.setState({ clicked: true });
+                  this.setState({ required_data1: true, clicked: true });
                 }
               } else {
                 if (this.state.add_drug_three || this.state.add_drug_four) {
-                  this.setState({ new_success: true, success: false, warning_clicked: false, clicked: true });
+                  this.setState({ required_data1: false, new_success: true, success: false, warning_clicked: false, clicked: true });
                 } else {
-                  this.setState({ success: true, clicked: true });
+                  this.setState({ required_data1: false, success: true, clicked: true });
                 }
                 console.log('third row success');
               }
             } else {
               console.log('third row fail');
-              this.setState({ clicked: true });
+              this.setState({ required_data1: true, clicked: true });
             }
           } else {
             if (this.state.add_drug_three || this.state.add_drug_four) {
-              this.setState({ new_success: true, success: false, warning_clicked: false, clicked: true });
+              this.setState({ required_data1: false, new_success: true, success: false, warning_clicked: false, clicked: true });
             } else {
-              this.setState({ success: true, clicked: true });
+              this.setState({ required_data1: false, success: true, clicked: true });
             }
             console.log('second row success');
             //success first row
           }
         } else {
           console.log('second row fail');
-          this.setState({ clicked: true });
+          this.setState({ required_data1: true, clicked: true });
         }
       } else {
         if (this.state.add_drug_three || this.state.add_drug_four) {
-          this.setState({ new_success: true, success: false, warning_clicked: false, clicked: true });
+          this.setState({ required_data1: false, new_success: true, success: false, warning_clicked: false, clicked: true });
         } else {
-          this.setState({ success: true, clicked: true });
+          this.setState({ required_data1: false, success: true, clicked: true });
         }
         console.log('first row success');
         //success first row
       }
     } else {
-      this.setState({ clicked: true });
+      this.setState({ required_data1: true, clicked: true });
       console.log('failed something up to first row');
       console.log('gastro value: ' + this.props.condition.gastro);
       console.log('other value: ' + this.props.condition.other);
@@ -279,7 +281,6 @@ export default class Inputform extends React.Component {
               conversion.raceValue(this.props.basic.race)
             )
             .then(() => {
-              // this.setState({final_success:false, new_success:false});
               user
                 .postRequest(
                   'http://projectsgono.com/medsforlife/ppi_input/all_other.php',
@@ -334,8 +335,6 @@ export default class Inputform extends React.Component {
                   conversion.extraOverall(this.props.extra.overall)
                 )
                 .then(() => {
-                  // 3 is the array amount which you will calculate on the frontend side...
-                  // this.setState({final_success:false, new_success:false});
                   user
                     .postRequest(
                       'http://projectsgono.com/medsforlife/ppi_input/side_effect_ppi_drug.php',
@@ -633,7 +632,7 @@ export default class Inputform extends React.Component {
               <button
                 type="button"
                 className="btn btn-success btn_modal_success"
-                onClick={() => this.setState({ new_success: true, success: false, warning_clicked: false, proceed_main_clicked: true })}>
+                onClick={() => this.setState({ required_data1: false, new_success: true, success: false, warning_clicked: false, proceed_main_clicked: true })}>
                 Proceed
               </button>
               <button type="button" className="btn btn-danger" onClick={() => this.setState({ success: false })}>
@@ -657,7 +656,6 @@ export default class Inputform extends React.Component {
       <div className="modal_main">
         <div className="modal_sub_pop">
           <p className="center submit_database_modal">Thank you for submiting your data!</p>
-          // <div className="center_div loader" />
         </div>
       </div>
     );
@@ -743,6 +741,13 @@ export default class Inputform extends React.Component {
           arebound={(this.props.extra.good == undefined || this.props.extra.good.length == 0) && this.state.clicked2 ? '' : ''}
           pylori={(this.props.extra.pylori == undefined || this.props.extra.pylori.length == 0) && this.state.clicked2 ? ' redness_radio' : ''}
         />
+        {this.state.required_data2 ? (
+          <div className="center error-message-confirm">
+            <span>Fill all the required data above</span>
+          </div>
+        ) : (
+          ''
+        )}
         <Success class="btn-success mg_top maxpercent" val="Submit" style="width:100%" onClick={this.finalConfirm.bind(this)} />
       </div>
     );
@@ -893,8 +898,26 @@ export default class Inputform extends React.Component {
           )}
           <p>{this.state.add_drug_four ? 'Maximum reached' : ''}</p>
           <div className="row">
-            <Button class="btn-default " val="+" onClick={this.addComponent.bind(this)} />
-            {this.state.add_drug_one ? <Button class="btn-default extra_margin_minus_add" val="-" onClick={this.removeComponent.bind(this)} /> : <span />}
+            <Button class="btn-default " val="+" onClick={() => this.addComponent()} />
+            {this.state.add_drug_one ? (
+              <Button
+                class="btn-default extra_margin_minus_add"
+                val="-"
+                onClick={() => {
+                  this.removeComponent();
+                  this.setState({ required_data1: false });
+                }}
+              />
+            ) : (
+              <span />
+            )}
+            {this.state.required_data1 ? (
+              <div className="center error-message-confirm">
+                <span>Fill all the required data above</span>
+              </div>
+            ) : (
+              ''
+            )}
 
             <Success
               class="btn-primary mg_top maxpercent confirm_button"

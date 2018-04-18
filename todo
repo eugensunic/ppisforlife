@@ -10,6 +10,8 @@ YOU SHOULD MAYBE DELETE HEADER ACCES ORIGIN IN PHP
 
   TODO
   ----
+  0. put a message when user clicks on submit that he' has not entered all the required data
+  put a notice below the bar for him to check the red fields above, put that on proceed too
   1. Fill research data
   3. rewrite PHP calls for stats page to prepared statement
   4. rewrite everything to prepared statement
