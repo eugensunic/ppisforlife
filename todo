@@ -1,5 +1,5 @@
 IF THE CSS BREAKS THAT'S BECAUSE OF EXTRA FORWARD SLASH APPEARING
-
+YOU HAVE TO HANDLE UTF8 for data coming from the DB
 
   IMPORTANT
   ---------
@@ -14,13 +14,14 @@ IF THE CSS BREAKS THAT'S BECAUSE OF EXTRA FORWARD SLASH APPEARING
   3. Remove acid reflux just keep GERD, do this in select on database
   4. rewrite PHP calls for stats page to prepared statement
   5. rewrite everything to prepared statement
-  6. Go through text spelling
   7. Put about
+  8. Put position absolute toogle on input form
 
 
 
   REFACTORING
   -----------
+
   - Fix on link provide through URL,--> apparently this is done, but cannot fully test due to css not appearing dont' do that on release
   - refactor on bar functions and async functions, see comments
   - make relative links once in production
@@ -45,6 +46,7 @@ IF THE CSS BREAKS THAT'S BECAUSE OF EXTRA FORWARD SLASH APPEARING
 
   DONE
   ----
+   - Go through text spelling
    - navigate to upper section component
    - research page just put links and icon (today basic-design only)
    - Home page adjustment (today basic)

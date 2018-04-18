@@ -122,15 +122,15 @@ export default class Overview extends React.Component {
         side_person: `Ordered by the side effect which most people have in common to the least one `,
         treatment_duration_person: `Ordered by treatment duration time in years that has the most side effects to it. Trying to see if side effects increase with number of years being on the drug or does the body adapt therefore exhibiting less side effects`,
         generic_person: `Generic PPI drug related to most/least side-effects. Trying to see if there is the 'best-> low side effects amount', 'worst-> high side effects amount' drug when it comes to side effects`,
-        brand_person: `Brand PPI drug related to most/least side-effects. Trying to see if there is the 'best- low side effects amount', 'worst-high side effects amount' drug when it comes to side effects`
+        brand_person: `Brand PPI drug related to most/least side-effects. Trying to see if there is the 'best-> low side effects amount', 'worst-high side effects amount' drug when it comes to side effects`
       },
       other_nutrient: {
         name_person_other: `Starting from the highest to the lowest number of people who take/took other drugs along with PPIs (PPIs should be excluded in this section)`,
         name_person_nutrient: `Starting from the highest to the lowest amount of people who think they experience/experienced deficiencies due to PPI usage`
       },
       natural_supplements: {
-        helped: `Starting from the highest to the lowest number of people who specified which natural supplements has helped them with their gastro problem. Trying to suggest best natural supplements, diets to help with acid reflux disease`,
-        not_helped: `Starting from the highest to the lowest number of people who specified which natural supplements hasn't helped or poorly helped with their condition`
+        helped: `Starting from the highest to the lowest number of people who specified which natural supplement has helped them with their gastro problem. Trying to suggest best natural supplements, diets to help with acid reflux disease`,
+        not_helped: `Starting from the highest to the lowest number of people who specified which natural supplement hasn't helped or poorly helped with their condition`
       },
       extra_info: {
         last: `The 'Other person information' tables represent data grouped by a specific parameter like: smoking, alcohol use, exercise, H.pylori bacteria etc. All of the parameters have frequency value associated to them (yes, no, rarely, sometimes, never etc.). In other words, we are trying to find a connection with gastro conditions and certain habits like smoking, exercise etc. Tables are pretty much self-explanatory. Last table indicates the overall satisfaction concerning the PPI drug, wether or not users are pleased with it in terms of symptoms alleviation and side effects balance. Person number related to the parameters goes from top to bottom `,

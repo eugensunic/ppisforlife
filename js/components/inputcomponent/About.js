@@ -28,7 +28,7 @@ export default class About extends React.Component {
 
         <p>
           Don’t worry, we are not collecting any sensitive info from your side (as you can see from the app). Your post will stand by a randomly generated id{' '}
-          <span className="bold">without any of your personal information</span>: first name, last name, card id, IP address, location etc.
+          <span className="bold">without any of your personal information disclosed</span>: first name, last name, card id, IP address, location etc.
         </p>
 
         <p>

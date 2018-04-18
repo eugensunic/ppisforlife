@@ -25,8 +25,8 @@ export const Htmlstring = `<div class="container">
     <p>&nbsp;&nbsp;&nbsp;On this page you can find almost
       <b>"all"</b> the questions you have asked yourself about PPIs. Answers were collected from trusted websites and are
       <b>very accurate</b>. The majority of answers are linked to their original source (some answers have multiple sources),
-      the other answers are given from
-      <a class="eugen_sunic" href="#">Eugen Sunic</a> and are based on his information gathering for the last 3 years about the PPIs. Some questions
+      the other answers are given by the author of the app
+      and are based on his information gathering for the last 3 years about the PPIs. Some questions
       do not have answers because they haven’t been found anywhere on the Internet. Remember, the vast majority of answers
       are accurate and those who do not have or have little knowledge about their condition and this drug or would like
       to learn more should learn from them.</p>
@@ -44,7 +44,7 @@ export const Htmlstring = `<div class="container">
     <hr/>
     <div id="hide_show_second">hide</div>
     <span class="opinion_copy" style="display:inline-block">my opinion</span>
-    <p style="display:inline-block">The given answer to the question is based on my research on the web and does not have an url pointing to an answer
+    <p style="display:inline-block">The given answer to the question is based on the author's research on the web and does not have an url pointing to an answer
       location
     </p>
     </br>
@@ -3382,21 +3382,15 @@ export const Htmlstring = `<div class="container">
 
           <ol>
             <li>
-              <a title="Genetic Disposition for Anxiety " href="http://psychcentral.com/news/2008/03/04/genetic-disposition-for-anxiety/1997.html"
-                target="_blank" rel="noopener noreferrer">Genetics</a> can contribute to anxiety, and sometimes anxiety runs in families.</li>
-            <li>Someone’s environment (
-              <a title="The Different Kinds of Stress" href="http://www.healthyplace.com/anxiety-panic/articles/different-kinds-of-stress/"
-                target="_blank" rel="noopener noreferrer">stress level</a>, lifestyle, etc.) can contribute to anxiety.</li>
+              Genetic Disposition for Anxiety</li>
+            <li>Someone’s environment stress level, lifestyle, etc. can contribute to anxiety.</li>
             <li>Neurology, things happening in
-              <a title="Anxiety: It's in Your Head (Your Brain)" href="http://www.healthyplace.com/blogs/anxiety-schmanxiety/2014/02/anxiety-its-in-your-head-your-brain/"
-                target="_blank" rel="noopener noreferrer">the brain</a>, play a role.</li>
+              the brain, play a role.</li>
             <li>Learned behaviors can make someone anxious (For example, if a parent responds to the world in an anxious
               fashion, a child can learn anxious patterns. This does not mean, though, that parents cause anxiety in
               their kids. Modeling a behavior might be a contributing factor in anxiety’s development, but it’s not a
               single-handed cause.)</li>
-            <li>Psychological factors can increase anxiety, particularly
-              <a title="8 Negative Thought Patterns that Manipulate Your Mind " href="http://www.healthyplace.com/blogs/buildingselfesteem/2013/11/8-tricky-thoughts-that-manipulate-your-mind/"
-                target="_blank" rel="noopener noreferrer">unhealthy thought patterns.</a>
+            <li>Psychological factors can increase anxiety, particularly unhealthy thought patterns
             </li>
           </ol>
            <p></p>
@@ -3475,7 +3469,7 @@ export const Htmlstring = `<div class="container">
           It doesn't hurt but it is uncomfortable. Some patients find it tough and some have no problems with it. In general, it is
           not a pleasant procedure but as long as you keep calm and breathe it will be ok.
           <p></p>
-          The endoscopy procedure lasts 5-15 minutes in general (based on my experience have had 6 endoscopies). Keep in mind that
+          The endoscopy procedure lasts 5-15 minutes in general (based on my experience). Keep in mind that
           5 minutes is more than enough for a skilled specialist to examine your oesophagus, stomach and duodenum.
           <p></p>
           If you go on for an endoscopy procedure several times you get used to it and in general it becomes a normal procedure.
@@ -3876,33 +3870,34 @@ export const Htmlstring = `<div class="container">
         </div>
         <div class="card-block">
           TIF procedure:</strong>
-          </p>
+
           <ul>
             <li>No scars, due to incisionless approach</li>
             <li>Faster recovery, since there is no internal cutting of the natural anatomy</li>
             <li>Fewer adverse events and complications than conventional surgery</li>
             <li>Can be revised if required</li>
           </ul>
+          <p></p>
+          The
+            <strong> TIF</strong> procedure is performed through the mouth without incisions. A surgeon utilizes the EsophyX device
+            to reconstruct the valve between the esophagus and the stomach and restore the body’s natural protection against
+            reflux.
+          <p></p>
+          TIF is an acronym:
+          <p></p>
+          <ul>
+            <li>
+              <em>Transoral</em> – The procedure is performed from within the GI tract, through the patient’s mouth</li>
+            <li>
+              <em>Incisionless</em> – There are no incisions, resulting in reduced risk and discomfort, faster recovery, and
+              no scars</li>
+            <li>
+              <em>Fundoplication</em> – The antireflux valve is reconstructed by wrapping the upper portion of the stomach
+              (fundus) around the esophagus</li>
+          </ul>
         </div>
-        <p></p>
-        The
-          <strong> TIF</strong> procedure is performed through the mouth without incisions. A surgeon utilizes the EsophyX device
-          to reconstruct the valve between the esophagus and the stomach and restore the body’s natural protection against
-          reflux.
-        <p></p>
-        TIF is an acronym:
-        <p></p>
-        <ul>
-          <li>
-            <em>Transoral</em> – The procedure is performed from within the GI tract, through the patient’s mouth</li>
-          <li>
-            <em>Incisionless</em> – There are no incisions, resulting in reduced risk and discomfort, faster recovery, and
-            no scars</li>
-          <li>
-            <em>Fundoplication</em> – The antireflux valve is reconstructed by wrapping the upper portion of the stomach
-            (fundus) around the esophagus</li>
-        </ul>
-        <p>
+
+
 
       </div>
     </div>

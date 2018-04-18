@@ -11,7 +11,7 @@ export default class Comments extends React.Component {
     return (
       <div className="my_comments_section_starter">
         <h4 className="overwrite_h4">
-          Conclusion of posts, stories, comments, discussions <span className="little-font">(after at least 1000+ of them read)</span>{' '}
+          Conclusion of posts, stories, comments, discussion <span className="little-font">(after at least 1000+ of them read)</span>{' '}
         </h4>
         <ul>
           <li>
@@ -19,7 +19,7 @@ export default class Comments extends React.Component {
             first they are immediately given or seek PPIs
           </li>
           <li>
-            Many people take other medications along with PPIs, other medications are (the most common ones used: blood pressure, NSAIDS, diabetes, cholesterol, anxiety
+            Many people take other medication along with PPIs, other medication are (the most common ones used: blood pressure, NSAIDS, diabetes, cholesterol, anxiety
             drugs etc.)
           </li>
           <li>Many people complain about weight gain due to PPIs</li>
@@ -29,7 +29,7 @@ export default class Comments extends React.Component {
           </li>
           <li>
             People who have been on this drug continously (daily) for a long long time (10+ years) do get side effects but most of them get minor side effects rather than
-            horror stories sides (CKD, nephritis, osteoporosis, dementia, heart problems etc.). Basically they have side effects which aren&#39;t life threatning.
+            horror stories sides (CKD, nephritis, osteoporosis, dementia, heart problems etc.). Basically they have side effects which aren&#39;t life threatening.
           </li>
           <li>People have a lot of side effects from omeprazole, they are complaining about it, especcialy the users who&#39;ve been on it short-term</li>
           <li>Some people are alergic to this drugs</li>
@@ -52,7 +52,7 @@ export default class Comments extends React.Component {
             off the drug immediately
           </li>
           <li>
-            People are more and more worried because of the increasing media reports that PPIs cause life threatning diseases (CKD, dementia, osteoporosis, heart
+            People are more and more worried because of the increasing media reports that PPIs cause life threatening diseases (CKD, dementia, osteoporosis, heart
             problems, premature death, cancer etc.)
           </li>
           <li>

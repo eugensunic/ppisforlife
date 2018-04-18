@@ -47,8 +47,7 @@
   border: 1px solid grey;
   border-radius: 2px;
   box-shadow: 1px 1px 0px 0px #fff5f5;
-  padding-right: 1px;
-  padding-left: 1px;
+  padding: 3px;
 }
 .knowledge {
   font-size: 13px;
@@ -58,10 +57,9 @@
   border: 1px solid grey;
   border-radius: 2px;
   box-shadow: 1px 1px 0px 0px #fff5f5;
-  padding-right: 1px;
-  padding-left: 1px;
   display: inline-block;
   margin-left: 3px;
+  padding: 3px;
 }
 .interesting {
   font-size: 13px;
@@ -71,9 +69,8 @@
   border: 1px solid grey;
   border-radius: 2px;
   box-shadow: 1px 1px 0px 0px #fff5f5;
-  padding-right: 1px;
-  padding-left: 1px;
   margin-left: 12px;
+  padding: 3px;
 }
 .noanswer {
   font-size: 13px;
@@ -83,9 +80,8 @@
   border: 1px solid grey;
   border-radius: 2px;
   box-shadow: 1px 1px 0px 0px #fff5f5;
-  padding-right: 1px;
-  padding-left: 1px;
   margin-left: 12px;
+  padding: 3px;
 }
 .opinion_copy {
   font-size: 13px;

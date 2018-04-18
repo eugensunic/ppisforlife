@@ -398,7 +398,7 @@ export default class Statistic extends React.Component {
             </div>
             <div className="col-sm-4">
               <Listbox
-                name="Nutrients defficiency"
+                name="Nutrients deficiency"
                 order={this.addColumnId(nutrient_arr)}
                 data={nutrient_arr}
                 count={this.state.radio7 ? nutrient_count_arr : this.valuesToPercentageArray(nutrient_count_arr)}
@@ -569,7 +569,7 @@ export default class Statistic extends React.Component {
                   sending_array_count: nutrient_count_arr
                 })
               }>
-              nutrient defficiency
+              nutrient deficiency
             </span>
             <span
               className={'label label-default inlineblock border_label_span' + (this.state.button9 ? ' highlight_it' : '')}

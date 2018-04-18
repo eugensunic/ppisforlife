@@ -27,7 +27,7 @@ export default class Doctor extends React.Component {
     var conclusion2 =
       'Doctor thoughts is a section which represents the doctors opinion about this drug. The majority of them believe that the drug is not harmful when taken long-term, However there is a good amount of doctors who are skeptical (some of them explicitly say that PPIs aren’t good drugs) about the safety of PPIs when taken long-term';
     var conclusion3 =
-      'The table shows the list of Dr. comments starting from the website where most users expressed their Dr. opinion to the website where users barely talked about their doctors.';
+      'The table shows the list of Dr. comments starting from the website where most users expressed their Dr. opinion to the website where users barely talked about their doctors';
     PieChart = require('react-chartjs').Pie;
     const canStyle = {
       marginTop: 30
@@ -76,9 +76,9 @@ export default class Doctor extends React.Component {
               <h5 className="conclusion">Conclusion:</h5>
               <div className="conclusion_div">
                 <span className="conclusion_color">
-                  The table represents the total amount of doctor’s comments in the database via users posts and doctors who have posted on behalf of themselves. Explicit
+                  The table represents the total amount of doctors comments in the database via users posts and doctors who have posted on behalf of themselves. Explicit
                   Dr. are comments from doctors themselves, whereas user associated comments are comments of users posting what their doctors told them about the drug.
-                  Much more user comments about their doctors are found then dr. explicitly posting their thoughts.
+                  Much more user comments about their doctors are found then dr. explicitly posting their thoughts
                 </span>
               </div>
             </div>

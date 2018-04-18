@@ -29,28 +29,28 @@ export default class Statistic extends React.Component {
         <div>
           <span className="dr_heading">What is this?</span>
           <p>
-            Forum/discussion posts parameters were extracted (by myself) and therefore this statistics was created. The parameters (age, condition, side effects, duration
-            of treatment, daily usage, drug generic, drug brand, nutrient def. etc.) extraction was accurate.
+            Forum/discussion posts parameters were extracted (by the author) and therefore the statistics was created. The parameters (age, condition, side effects,
+            duration of treatment, daily usage, drug generic, drug brand, nutrient def. etc.) extraction was accurate.
           </p>
 
-          <span className="inline">Unknown: Data wasnt found in the forum post</span>
+          <span className="inline">Unknown: data wasn&#39;t found in the forum post</span>
           <br />
           <span className="inline">
             explicit-none: <span className="">user reported explicitly having NO side effects</span>
           </span>
           <br />
-          <span className="inline">Used drugs: refferes to PPI drug only which were taken before or after the PPI talked in the post</span>
+          <span className="inline">Used drugs: refers to PPI drug only which were taken before or after the PPI talked in the post</span>
           <br />
           <span className="inline">Condition initial: forum poster condition because of which he is taking PPIs + other condition (disease) which he has</span>
           <br />
-          <span className="inline">Condition PPI: forum poster believes that this drug caused this condition/disease</span>
+          <span className="inline">Condition PPI: forum poster believes that the drug caused the condition/disease</span>
           <br />
           <span className="inline">
-            In post collection the following was assumed: <span className="heartburn_gerd_reflux">longterm-heartburn=GERD=acid-reflux</span>
+            In post collection the following was assumed: <span className="heartburn_gerd_reflux">long-term-heartburn = GERD = acid-reflux</span>
           </span>
           <br />
           <p className="inline">
-            Total <a href="">forum posts</a>: >1200
+            Total <span style={{ color: '#3f3f8e' }}>forum posts</span>: >1200
           </p>
           <br />
         </div>
@@ -62,13 +62,13 @@ export default class Statistic extends React.Component {
         <div>
           <span className="dr_heading">What is this?</span>
           <p>
-            Forum/discussion posts were extracted (by myself) when a patient talked about what his doctor told him about PPIs. In other words, if a patient complained or
-            just wrote his comment on the Internet about his doctor opinion on this drugs, the doctor’s comment was pulled out and saved into a database.
+            Forum/discussion posts were extracted (by the author) when a patient talked about what his doctor told him about PPIs. In other words, if a patient complained
+            or just wrote his comment on the Internet about his doctor opinion on the drugs, the doctor’s comment was pulled out and saved into a database.
           </p>
 
           <p>
             There are a lot of comments from patients on the Internet who express their doctors (MD, specialist) thoughts and therefore share them with other discussion
-            participants. This information was used in order to represent the statistics of Dr. opinions.
+            participants. The information was used in order to represent the statistics of Dr. opinions.
           </p>
 
           <span className="inline">Unknown: The extracted doctor comment is either neutral about the PPI drug or does not clearly state his opinion on the drug</span>
@@ -81,13 +81,13 @@ export default class Statistic extends React.Component {
         <div>
           <span className="dr_heading">What is this?</span>
           <p>
-            Forum/discussion posts were extracted (by myself) when a patient talked about what his pharmacist told him about PPIs. In other words, if a patient complained
-            or just wrote his comment on the Internet about his pharmacist opinion on this drugs, pharmacist comment was pulled out and saved into a database.
+            Forum/discussion posts were extracted (by the author) when a patient talked about what his pharmacist told him about PPIs. In other words, if a patient
+            complained or just wrote his comment on the Internet about his pharmacist opinion on these drugs, pharmacist comment was pulled out and saved into a database.
           </p>
 
           <p>
             There are a lot of comments from patients on the Internet who express their pharmacist thoughts and therefore share them with other discussion participants.
-            This information was used in order to represent the statistics of Ph. opinions.
+            The information was used in order to represent the statistics of Ph. opinions.
           </p>
 
           <span className="inline">Unknown: The extracted pharmacist comment is either neutral about the PPI drug or does not clearly state his opinion on the drug</span>

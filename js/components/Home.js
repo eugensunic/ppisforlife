@@ -77,7 +77,7 @@ export default class HomeComponent extends React.Component {
             render={({ history }) => (
               <div className="col-sm-4 click_me form-group center" onClick={() => history.push('/faq')}>
                 FAQ
-                <div className="small-txt-below">usefull information for education</div>
+                <div className="small-txt-below">useful information for education</div>
               </div>
             )}
           />

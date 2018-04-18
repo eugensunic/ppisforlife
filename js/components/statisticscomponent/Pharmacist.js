@@ -25,9 +25,9 @@ export default class Pharmacist extends React.Component {
   }
   showDoctorMethod() {
     var PieChart;
-    var conclusion2 = 'Pharmacist thoughts is a section which represents the pharmaceutical opinion about this drug.';
+    var conclusion2 = 'Pharmacist thoughts is a section which represents the pharmaceutical opinion about this drug';
     var conclusion3 =
-      'The table shows the list of Pharmacist comments starting from the website where most users expressed their Pharmacist opinion to the website where users barely talked about their Pharmacist.';
+      'The table shows the list of Pharmacist comments starting from the website where most users expressed their Pharmacist opinion to the website where users barely talked about their Pharmacist';
     PieChart = require('react-chartjs').Pie;
     const canStyle = {
       marginTop: 30
@@ -78,7 +78,7 @@ export default class Pharmacist extends React.Component {
                 <span className="conclusion_color">
                   The table represents the total amount of pharmacists comments in the database via users posts and pharmacists who have posted on behalf of themselves.
                   Explicit Pharma are comments from pharmacists themselves, whereas user associated comments are comments of users posting what their pharmacists told
-                  them about the drug.
+                  them about the drug
                 </span>
               </div>
             </div>

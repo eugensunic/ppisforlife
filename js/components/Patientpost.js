@@ -73,13 +73,13 @@ export default class Patientpost extends React.Component {
         </p>{' '}
         <p>
           {' '}
-          Comments have been edited / corrected but only to shorten them out and to provide the most important information out it.There hasn’ t been any editing in terms
-          of comment context modification.{' '}
+          Comments have been edited / corrected but only to shorten them out and to provide the most important information out of them. There hasn’t been any editing in
+          terms of comment context modification.{' '}
         </p>{' '}
         <p>
           {' '}
-          The section bellow the comments represents the data extracted out of every comment.Rarely, you’ ll find some tag which isn’ t to be found in the comment but it
-          actually does belong to it but hasn’ t been added from the entire source comment.{' '}
+          The section bellow the comments represents the data extracted out of every comment. Rarely, you’ll find some tag which isn’t to be found in the comment but it
+          actually does belong to it but hasn’t been added from the entire source comment.{' '}
         </p>
       </div>
     );
