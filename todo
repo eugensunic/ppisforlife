@@ -1,5 +1,6 @@
 IF THE CSS BREAKS THAT'S BECAUSE OF EXTRA FORWARD SLASH APPEARING
 YOU HAVE TO HANDLE UTF8 for data coming from the DB
+YOU SHOULD MAYBE DELETE HEADER ACCES ORIGIN IN PHP
 
   IMPORTANT
   ---------
@@ -10,12 +11,9 @@ YOU HAVE TO HANDLE UTF8 for data coming from the DB
   TODO
   ----
   1. Fill research data
-  2. Fill info with doctors from Medscape articles on PPIs (add more values)
-  3. Remove acid reflux just keep GERD, do this in select on database
-  4. rewrite PHP calls for stats page to prepared statement
-  5. rewrite everything to prepared statement
-  7. Put about
-  8. Put position absolute toogle on input form
+  3. rewrite PHP calls for stats page to prepared statement
+  4. rewrite everything to prepared statement
+  5. Put about
 
 
 
@@ -46,6 +44,9 @@ YOU HAVE TO HANDLE UTF8 for data coming from the DB
 
   DONE
   ----
+   - Put position absolute toogle on input form (don't have to do that)
+   - Fill info with doctors from Medscape articles on PPIs (add more values) (decided not to do it)
+   - Remove acid reflux just keep GERD, do this in select on database
    - Go through text spelling
    - navigate to upper section component
    - research page just put links and icon (today basic-design only)
