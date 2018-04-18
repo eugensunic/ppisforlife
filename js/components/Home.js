@@ -5,27 +5,11 @@ import { withRouter, Route, Router, Link } from 'react-router-dom';
 export default class HomeComponent extends React.Component {
   constructor(props) {
     super(props);
-    this.updateDimensions = this.updateDimensions.bind(this);
-    this.state = {
-      position: 'absolute'
-    };
-  }
-  updateDimensions() {
-    if (window.innerWidth < 768) {
-      this.setState({ position: 'relative' });
-    } else {
-      this.setState({ position: 'absolute' });
-    }
   }
 
-  componentDidMount() {
-    window.addEventListener('resize', this.updateDimensions);
-    this.updateDimensions();
-  }
+  componentDidMount() {}
 
-  componentWillUnmount() {
-    window.removeEventListener('resize', this.updateDimensions);
-  }
+  componentWillUnmount() {}
 
   render() {
     return (
@@ -96,7 +80,7 @@ export default class HomeComponent extends React.Component {
             </div>
           )}
         />
-        <Navfooter position={this.state.position} />
+        <Navfooter />
       </div>
     );
   }
