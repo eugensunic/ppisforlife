@@ -2867,7 +2867,7 @@ export const Htmlstring = `<div class="container">
 
         </div>
         <div class="card-block">
-          If you are taking a PPIs then you should definitely find a way how to reduce your smoking passion. Smoking not only increases
+          If you are taking a PPI then you should definitely find a way how to reduce your smoking passion. Smoking not only increases
           stomach acid but also relaxes the valve (sphincter) because of the nicotine substance which closes after the
           food enters your stomach and therefore prevents reflux. The opening/closing sphincter is actually the main
           culprit for GERD. If it is really hard for you to stop smoking then at least stop smoking during the ongoing
@@ -3091,7 +3091,7 @@ export const Htmlstring = `<div class="container">
 
         </div>
         <div class="card-block">
-          For most of the patients PPIs will help heal their condition no matter what. If you smoke, drink, eat unhealthy PPIs will
+          For most patients PPIs will help heal their condition no matter what. If you smoke, drink, eat unhealthy PPIs will
           improve your condition despite your bad habits. The problem is that once your tapper off the medication, there
           is a big chance that your condition will return. The best thing to do is to go on a diet to get the maximum
           effective and rapid healing process. The key is to find the trigger foods. You will find these by eating and
@@ -3229,7 +3229,7 @@ export const Htmlstring = `<div class="container">
           be the mechanism of PPIs which would cause an impact on kidneys or whether PPIs really do some damage on them.
           <p></p>
           Nevertheless, PPIs are one of the drugs which are being heavily discussed in the media because of 2 things. They are used
-          by millions and millions people throughout the globe and there is a negative trend in terms of developing GERD
+          by millions throughout the globe and there is a negative trend in terms of developing GERD
           and stomach problems which shows that there will be more and more people who will develop gastroesophageal
           diseases in the upcoming future not to mention that the media anxiously waits for “bad news” to write sensation
           articles.
@@ -3361,7 +3361,7 @@ export const Htmlstring = `<div class="container">
         <h5 class="mb-0">
           <a data-toggle="collapse" class="heading_link_size" data-parent="#accordion" href="#collapse006" aria-expanded="false" aria-controls="collapse006">
             <span class="increment_number"></span> Is anxiety related gastritis my fault?
-            <span class="opinion">my opinion</span>
+
           </a>
         </h5>
       </div>
@@ -3648,7 +3648,7 @@ export const Htmlstring = `<div class="container">
         </div>
         <div class="card-block">
           It is safe to eat after the procedure. However, go with something light for the beginning. I went for an endoscopy
-            6 times and after an hour/hour and half I started with some liquid then a bit later proceeded with some food.
+            and after an hour/hour and half I started with some liquid then a bit later proceeded with some food.
             Do not overeat!
             <p></p>
           The next day, you can eat normally.

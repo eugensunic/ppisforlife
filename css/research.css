@@ -17,7 +17,7 @@
 }
 .number_in_left {
   position: relative;
-  top: 0px;
+  top: -1px;
   color: #353636;
   border: 1px solid #c5c5c5;
   border-left: 0px;

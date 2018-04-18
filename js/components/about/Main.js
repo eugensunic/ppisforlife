@@ -25,7 +25,7 @@ export default class Main extends React.Component {
             <h4 className="overwrite_h4">Introduction</h4>
             <p>
               I’m Eugen Sunic (26) the creator of the application. I created the whole idea from scratch and then translated it into code (database, server code, browser
-              rendering). If you are interested in technologies and programming languages used to build this app then check the last section on the page.
+              rendering, design). If you are interested in technologies and programming languages used to build this app then check the last section on the page.
             </p>
             <p>I was on the drugs (PPIs) for a short time some 6 years ago because of gastritis. The condition has resolved.</p>
             <p>
@@ -62,28 +62,25 @@ export default class Main extends React.Component {
               As you could already see, the main purpose of this site is to collect Internet posts where people/patients express their thoughts about PPIs.
               <strong> The main Criteria</strong> where the decision is made whether to collect the post or not was the{' '}
               <strong>time spent on the drug (duration of treatment)</strong>. In other words, if the post did not specify the treatment duration then the post was
-              rejected and not collected. If the duration was specified then the post was collected and displayed on this
+              rejected and not collected. If the duration was specified then the post was collected and displayed on the web
               <span
                 className="change_cursor"
                 onClick={() => {
                   this.props.dispatch({ type: 'home_element', payload: 'home' });
                 }}>
                 {' '}
-                <strong>website</strong>
               </span>.
             </p>
             <p>
               On the other hand, comments were extracted if people/patients talked about their doctors opinion on this drug, what doctors told them and how are they
               behaving when prescribing this drugs for a longer period of time. Also, comments from doctors who have posted on their behalf were also gathered and
-              displayed. More info on this section can be found{' '}
+              displayed. More info on this section
               <span
                 className="change_cursor"
                 onClick={() => {
                   this.props.dispatch({ type: 'home_element', payload: 'home' });
-                }}>
-                {' '}
-                <strong>here</strong>
-              </span>.
+                }}
+              />.
             </p>
             <p>
               All of this stories can be filtered based on your wishes. For example, if you want to see stories from people who were on this drugs for 20+ years every day
@@ -93,45 +90,38 @@ export default class Main extends React.Component {
             </p>
             <p>
               Not only are the posts across the Internet included. The statistics has been generated out of them to see how conditions, drugs, side effects, nutrient
-              deficiency, brands rank from the most prevalent, worse, best etc. The statistic page and further explanation can be found{' '}
+              deficiency, brands rank from the most prevalent, worse, best etc.
               <span
                 className="change_cursor"
                 onClick={() => {
                   this.props.dispatch({ type: 'stats_element', payload: 'stats' });
-                }}>
-                <strong> here</strong>
-              </span>.
+                }}
+              />.
             </p>
             <p>
               Apart from this, a unique question and answer pages were created in order for patients to inform themselves about this drug and their condition and to try
-              and minimize the side effects, dosage and to improve their quality of life with or without drugs. The pages can be found{' '}
+              and minimize the side effects, dosage and to improve their quality of life with or without drugs.
               <span
                 className="change_cursor"
                 onClick={() => {
                   this.props.dispatch({ type: 'starter_element', payload: 'starter' });
-                }}>
-                {' '}
-                <strong>here</strong>
-              </span>{' '}
-              and{' '}
+                }}
+              />{' '}
               <span
                 className="change_cursor"
                 onClick={() => {
                   this.props.dispatch({ type: 'home_element', payload: 'home' });
-                }}>
-                <strong>here</strong>
-              </span>.
+                }}
+              />
             </p>
             <p>
-              There is also a valuable page for all patients where they can follow the ongoing research which is being done. The research section can be found{' '}
+              There is also a valuable page for all patients where they can follow the ongoing research which is being done.
               <span
                 className="change_cursor"
                 onClick={() => {
                   this.props.dispatch({ type: 'research_element', payload: 'research' });
-                }}>
-                {' '}
-                <strong>here</strong>
-              </span>.
+                }}
+              />
             </p>
             <p>
               The reason of collecting such posts is the huge media reporting about the PPIs side effects. If you search for PPIs dangers, side effects, long-term
