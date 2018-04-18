@@ -266,7 +266,7 @@ export default class Inputform extends React.Component {
       this.props
         .dispatch(user.getRequest('http://www.projectsgono.com/medsforlife/ppi_input/get_last_id.php', 'get-max-id'))
         .then(() => {
-          this.setState({ final_success: false, ajax_call: false });
+          this.setState({ required_data1: false, final_success: false, ajax_call: false });
           let FK_id = this.props.getId.getLastId;
           user
             .postRequest(
@@ -460,31 +460,36 @@ export default class Inputform extends React.Component {
                     if (this.props.nutrient.nutrient != undefined && this.props.nutrient.nutrient != '') {
                       if (this.extraReturnTrue.call(this)) {
                         console.log('SUCCESS FINAL first one');
-                        this.setState({ final_success: true });
+                        this.setState({ required_data1: false, required_data2: false, final_success: true });
                       } else {
                         console.log('failed extra');
+                        this.setState({ required_data1: false, required_data2: true });
                         // failed extra
                       }
                     } else {
                       console.log('failed inner nutrient');
+                      this.setState({ required_data1: false, required_data2: true });
                       //failed inner nutrient
                     }
                   } else {
                     //radio nutrient is unknown or false, continue to Extra
                     if (this.extraReturnTrue.call(this)) {
                       console.log('SUCCESS FINAL second one');
-                      this.setState({ final_success: true });
+                      this.setState({ required_data1: false, required_data2: false, final_success: true });
                     } else {
                       console.log('failed extra');
+                      this.setState({ required_data1: false, required_data2: true });
                       //failed extra
                     }
                   }
                 } else {
                   console.log('failed nutrient radio nutrient');
+                  this.setState({ required_data1: false, required_data2: true });
                   //failed nutrient radio_nutrient
                 }
               } else {
                 console.log('failed inner other');
+                this.setState({ required_data1: false, required_data2: true });
                 //failed inner other
               }
             } else {
@@ -494,36 +499,42 @@ export default class Inputform extends React.Component {
                   if (this.props.nutrient.nutrient != undefined && this.props.nutrient.nutrient != '') {
                     if (this.extraReturnTrue.call(this)) {
                       console.log('SUCCESS FINAL');
-                      this.setState({ final_success: true });
+                      this.setState({ required_data1: false, required_data2: false, final_success: true });
                     } else {
                       console.log('failed extra');
+                      this.setState({ required_data1: false, required_data2: true });
                       // failed extra
                     }
                   } else {
                     console.log('failed inner nutrient');
+                    this.setState({ required_data1: false, required_data2: true });
                     //failed inner nutrient
                   }
                 } else {
                   //radio nutrient is unknown or false, continue to Extra
                   if (this.extraReturnTrue.call(this)) {
                     console.log('SUCCESS FINAL');
-                    this.setState({ final_success: true });
+                    this.setState({ required_data1: false, required_data2: false, final_success: true });
                   } else {
                     console.log('failed extra');
+                    this.setState({ required_data1: false, required_data2: true });
                     //failed extra
                   }
                 }
               } else {
                 console.log('failed nutrient radio_nutrient');
+                this.setState({ required_data1: false, required_data2: true });
                 //failed nutrient radio_nutrient end
               }
             }
           } else {
             console.log('failed other radio_other');
+            this.setState({ required_data1: false, required_data2: true });
             //failed other radio_other
           }
         } else {
           console.log('failed inner sides');
+          this.setState({ required_data1: false, required_data2: true });
           //failed inner sides
         }
       } else {
@@ -536,31 +547,36 @@ export default class Inputform extends React.Component {
                   if (this.props.nutrient.nutrient != undefined && this.props.nutrient.nutrient != '') {
                     if (this.extraReturnTrue.call(this)) {
                       console.log('SUCCESS FINAL');
-                      this.setState({ final_success: true });
+                      this.setState({ required_data1: false, required_data2: false, final_success: true });
                     } else {
                       console.log('failed extra');
+                      this.setState({ required_data1: false, required_data2: true });
                       // failed extra
                     }
                   } else {
                     console.log('failed inner nutrient');
+                    this.setState({ required_data1: false, required_data2: true });
                     //failed inner nutrient
                   }
                 } else {
                   //radio nutrient is unknown or false, continue to Extra
                   if (this.extraReturnTrue.call(this)) {
                     console.log('SUCCESS FINAL');
-                    this.setState({ final_success: true });
+                    this.setState({ required_data1: false, required_data2: false, final_success: true });
                   } else {
                     console.log('failed extra');
+                    this.setState({ required_data1: false, required_data2: true });
                     //failed extra
                   }
                 }
               } else {
                 console.log('failed nutrient radio nutrient');
+                this.setState({ required_data1: false, required_data2: true });
                 //failed nutrient radio_nutrient
               }
             } else {
               console.log('failed inner other');
+              this.setState({ required_data1: false, required_data2: true });
               //failed inner other
             }
           } else {
@@ -570,20 +586,22 @@ export default class Inputform extends React.Component {
                 if (this.props.nutrient.nutrient != undefined && this.props.nutrient.nutrient != '') {
                   if (this.extraReturnTrue.call(this)) {
                     console.log('SUCCESS FINAL');
-                    this.setState({ final_success: true });
+                    this.setState({ required_data1: false, required_data2: false, final_success: true });
                   } else {
                     console.log('failed extra');
+                    this.setState({ required_data1: false, required_data2: true });
                     // failed extra
                   }
                 } else {
                   console.log('failed inner nutrient');
+                  this.setState({ required_data1: false, required_data2: true });
                   //failed inner nutrient
                 }
               } else {
                 //radio nutrient is unknown or false, continue to Extra DONE!!!
                 if (this.extraReturnTrue.call(this)) {
                   console.log('SUCCESS FINAL');
-                  this.setState({ final_success: true });
+                  this.setState({ required_data1: false, required_data2: false, final_success: true });
                 } else {
                   console.log('failed extra');
                   console.log('exercise: ' + this.props.extra.exercise);
@@ -600,20 +618,24 @@ export default class Inputform extends React.Component {
                   console.log('overall: ' + this.props.extra.overall);
                   console.log('good: ' + this.props.extra.good);
                   console.log('pylori: ' + this.props.extra.pylori);
+                  this.setState({ required_data1: false, required_data2: true });
                 }
               }
             } else {
               console.log('failed nutrient radio nutrient');
+              this.setState({ required_data1: false, required_data2: true });
               //failed nutrient radio_nutrient end
             }
           }
         } else {
           console.log('failed other radio_other');
+          this.setState({ required_data1: false, required_data2: true });
           //failed other radio_other
         }
       }
     } else {
       console.log('failed radio_side');
+      this.setState({ required_data1: false, required_data2: true });
       //fail sides radio_side
     }
   }
@@ -632,7 +654,9 @@ export default class Inputform extends React.Component {
               <button
                 type="button"
                 className="btn btn-success btn_modal_success"
-                onClick={() => this.setState({ required_data1: false, new_success: true, success: false, warning_clicked: false, proceed_main_clicked: true })}>
+                onClick={() =>
+                  this.setState({ required_data1: false, required_data1: false, new_success: true, success: false, warning_clicked: false, proceed_main_clicked: true })
+                }>
                 Proceed
               </button>
               <button type="button" className="btn btn-danger" onClick={() => this.setState({ success: false })}>
@@ -655,7 +679,8 @@ export default class Inputform extends React.Component {
     return (
       <div className="modal_main">
         <div className="modal_sub_pop">
-          <p className="center submit_database_modal">Thank you for submiting your data!</p>
+          <p className="center submit_database_modal">Thank you for submitting your data!</p>
+          <div className="center_div loader" />
         </div>
       </div>
     );
@@ -673,7 +698,7 @@ export default class Inputform extends React.Component {
             <button
               type="button"
               className="btn btn-success btn_modal_success"
-              onClick={() => this.setState({ new_success: false, warning_clicked: true, proceed_main_clicked: false })}>
+              onClick={() => this.setState({ required_data1: false, new_success: false, warning_clicked: true, proceed_main_clicked: false })}>
               YES
             </button>
             <button type="button" className="btn btn-danger" onClick={() => this.setState({ warning_clicked: false })}>
