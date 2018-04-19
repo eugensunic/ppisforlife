@@ -15,6 +15,8 @@ export default class Postfooter extends React.Component {
     });
   }
   render() {
+    console.log('duration is: ' + this.props.duration);
+    console.log('time is: ' + this.props.time);
     return (
       <div className="post_footer_div">
         <div
@@ -35,7 +37,7 @@ export default class Postfooter extends React.Component {
             <br />
 
             <p className="post_tag">duration:</p>
-            <p className="post_tagvalue_durdosdaily">{this.props.duration + this.props.time}</p>
+            <p className="post_tagvalue_durdosdaily">{(!this.props.duration ? '' : this.props.duration) + (!this.props.time ? 'none' : this.props.time)}</p>
 
             <br />
 
