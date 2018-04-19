@@ -10,7 +10,6 @@ YOU SHOULD MAYBE DELETE HEADER ACCES ORIGIN IN PHP
   TODO
   ----
   1. Fill research data
-  3. rewrite PHP calls for stats page to prepared statement
   6. Put minds as social, Facebook, remove others
   9. make relative links once in production
 
@@ -40,6 +39,7 @@ YOU SHOULD MAYBE DELETE HEADER ACCES ORIGIN IN PHP
 
   DONE
   ----
+   - rewrite PHP calls for stats page to prepared statement
    - Put about
    - make footer stick to bottom every time (on resize screen)
    - put a message when user clicks on submit that he' has not entered all the required data
