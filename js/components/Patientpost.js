@@ -268,6 +268,9 @@ export default class Patientpost extends React.Component {
 
       return (
         <div className="">
+          <button style={{ marginTop: 5, backgroundColor: '#f9f9f9' }} onClick={() => location.reload()}>
+            Default
+          </button>
           <div className="checkbox_holder_about" id="target_div">
             <input
               className="inline"
