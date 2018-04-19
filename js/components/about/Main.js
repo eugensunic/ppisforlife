@@ -83,10 +83,10 @@ export default class Main extends React.Component {
               />.
             </p>
             <p>
-              All of this stories can be filtered based on your wishes. For example, if you want to see stories from people who were on this drugs for 20+ years every day
-              you can just click on a button which will filter those specific stories. If you want to display stories where patients are on high doses and see their side
-              effects or maybe see posts of patients who are just on omeprazole, nexium, pantoprazole or some other PPI generic/brand you can also do that. There are a
-              lot of combinations, which will filter the posts based on your needs and interest.
+              All of these stories can be filtered based on your wishes. For example, if you want to see stories from people who were on this drugs for 20+ years every
+              day you can just click on a button which will filter those specific stories. If you want to display stories where patients are on high doses and see their
+              side effects or maybe see posts of patients who are just on omeprazole, nexium, pantoprazole or some other PPI generic/brand you can also do that. There are
+              a lot of combinations, which will filter the posts based on your needs and interest.
             </p>
             <p>
               Not only are the posts across the Internet included. The statistics has been generated out of them to see how conditions, drugs, side effects, nutrient
@@ -135,10 +135,10 @@ export default class Main extends React.Component {
             <h4 className="overwrite_h4">Research & Vision</h4>
             <p>
               Numerous researches have been done which point that PPIs could be the culprit for kidney, heart, brain problems. The ongoing researches are focused on
-              kidneys which relate this drugs to nephritis, chronic kidney disease and kidney failure.
+              kidneys which relate these drugs to nephritis, chronic kidney disease and kidney failure.
             </p>
             <p>
-              There isn’t evidence for all the above mentioned, only correlation to them. Which doesn’t prove that PPIs really cause them. Remember,
+              There isn’t evidence for all the above mentioned, only correlation to them which doesn’t prove that PPIs really cause them. Remember,
               <strong> correlation&ne;causation</strong>. However, patients should all be aware of those researches and check their vital organs from time to time to
               avoid any possible complications.
             </p>
@@ -158,7 +158,7 @@ export default class Main extends React.Component {
             <p>
               I’m not a supporter of PPIs and do not work for any drug related company. I have spent an entire year in order to make this work. No one wanted to
               participate in this project, therefore I had to do it on my own. If there is a programmer, doctor, pharmacist or anyone else who thinks that he or she can
-              contribute to this project then please contact me at <i className="mail_address">eugen.sunic@gmail.com</i>.
+              contribute to it then please contact me at <i className="mail_address">eugen.sunic@gmail.com</i>.
             </p>
           </div>
           <div className="col-sm-6 center">
