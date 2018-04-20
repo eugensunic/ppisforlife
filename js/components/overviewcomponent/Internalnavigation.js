@@ -14,7 +14,7 @@ export default class InternalNavigation extends React.Component {
           className="internal_navigation"
           style={{ backgroundColor: '#eaeaea' }}
           onClick={() => {
-            location.href = '#basic-extract ';
+            location.href = '#basic-extract';
           }}>
           Person basic info
         </span>
@@ -22,7 +22,7 @@ export default class InternalNavigation extends React.Component {
           className="internal_navigation"
           style={{ backgroundColor: '#f0e4e4' }}
           onClick={() => {
-            location.href = '#condition-extract ';
+            location.href = '#condition-extract';
           }}>
           Disease
         </span>
@@ -30,7 +30,7 @@ export default class InternalNavigation extends React.Component {
           className="internal_navigation"
           style={{ backgroundColor: '#d3e6f2' }}
           onClick={() => {
-            location.href = '#drugs-extract-part1 ';
+            location.href = '#drugs-extract-part1';
           }}>
           PPI Drugs
         </span>
@@ -38,7 +38,7 @@ export default class InternalNavigation extends React.Component {
           className="internal_navigation"
           style={{ backgroundColor: '#f8e3c4' }}
           onClick={() => {
-            location.href = '#sides-extract-part1 ';
+            location.href = '#sides-extract-part1';
           }}>
           Side effects
         </span>
@@ -46,7 +46,7 @@ export default class InternalNavigation extends React.Component {
           className="internal_navigation"
           style={{ backgroundColor: '#fafafa' }}
           onClick={() => {
-            location.href = '#other-nutrient-extract ';
+            location.href = '#other-nutrient-extract';
           }}>
           Other drugs & Nutrient
         </span>
@@ -54,7 +54,7 @@ export default class InternalNavigation extends React.Component {
           className="internal_navigation"
           style={{ backgroundColor: '#b5e0b5' }}
           onClick={() => {
-            location.href = '#natural-extract ';
+            location.href = '#natural-extract';
           }}>
           Natural supplements
         </span>

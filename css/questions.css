@@ -131,7 +131,9 @@
   padding-left: 1px;
   margin-left: 12px;
 }
-
+.change_header {
+  padding: 5px;
+}
 #word:hover,
 #pdf:hover,
 #xml:hover,
