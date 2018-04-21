@@ -62,7 +62,7 @@ export default class InternalNavigation extends React.Component {
           className="internal_navigation"
           style={{ backgroundColor: '#eaeaea' }}
           onClick={() => {
-            location.href = '#extra-extract-part1 ';
+            location.href = '#extra-extract-part1';
           }}>
           Extra info
         </span>
