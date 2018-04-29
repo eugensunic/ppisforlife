@@ -62,7 +62,7 @@ export default class Main extends React.Component {
               As you could already see, the main purpose of this site is to collect Internet posts where people/patients express their thoughts about PPIs.
               <strong> The main Criteria</strong> where the decision is made whether to collect the post or not was the{' '}
               <strong>time spent on the drug (duration of treatment)</strong>. In other words, if the post did not specify the treatment duration then the post was
-              rejected and not collected. If the duration was specified then the post was collected and displayed on the web
+              rejected hence not collected. If the duration was specified then the post was collected and displayed on the web
               <span
                 className="change_cursor"
                 onClick={() => {
@@ -72,18 +72,12 @@ export default class Main extends React.Component {
               </span>.
             </p>
             <p>
-              On the other hand, comments were extracted if people/patients talked about their doctors opinion on this drug, what doctors told them and how are they
-              behaving when prescribing this drugs for a longer period of time. Also, comments from doctors who have posted on their behalf were also gathered and
-              displayed. More info on this section
-              <span
-                className="change_cursor"
-                onClick={() => {
-                  this.props.dispatch({ type: 'home_element', payload: 'home' });
-                }}
-              />.
+              On the other hand, comments were extracted if people/patients talked about their doctors opinion on the drug, what doctors told them and how are they
+              behaving when prescribing these drugs for a longer period of time. Also, comments from doctors who have posted on their behalf were also gathered and
+              displayed.
             </p>
             <p>
-              All of these stories can be filtered based on your wishes. For example, if you want to see stories from people who were on this drugs for 20+ years every
+              All of these stories can be filtered based on your wishes. For example, if you want to see stories from people who were on these drugs for 20+ years every
               day you can just click on a button which will filter those specific stories. If you want to display stories where patients are on high doses and see their
               side effects or maybe see posts of patients who are just on omeprazole, nexium, pantoprazole or some other PPI generic/brand you can also do that. There are
               a lot of combinations, which will filter the posts based on your needs and interest.
@@ -91,38 +85,12 @@ export default class Main extends React.Component {
             <p>
               Not only are the posts across the Internet included. The statistics has been generated out of them to see how conditions, drugs, side effects, nutrient
               deficiency, brands rank from the most prevalent, worse, best etc.
-              <span
-                className="change_cursor"
-                onClick={() => {
-                  this.props.dispatch({ type: 'stats_element', payload: 'stats' });
-                }}
-              />.
             </p>
             <p>
-              Apart from this, a unique question and answer pages were created in order for patients to inform themselves about this drug and their condition and to try
+              Apart from this, a unique question and answer pages were created in order for patients to inform themselves about the drug and their condition and to try
               and minimize the side effects, dosage and to improve their quality of life with or without drugs.
-              <span
-                className="change_cursor"
-                onClick={() => {
-                  this.props.dispatch({ type: 'starter_element', payload: 'starter' });
-                }}
-              />{' '}
-              <span
-                className="change_cursor"
-                onClick={() => {
-                  this.props.dispatch({ type: 'home_element', payload: 'home' });
-                }}
-              />
             </p>
-            <p>
-              There is also a valuable page for all patients where they can follow the ongoing research which is being done.
-              <span
-                className="change_cursor"
-                onClick={() => {
-                  this.props.dispatch({ type: 'research_element', payload: 'research' });
-                }}
-              />
-            </p>
+            <p>There is also a valuable page for all patients where they can follow the ongoing research which is being done.</p>
             <p>
               The reason of collecting such posts is the huge media reporting about the PPIs side effects. If you search for PPIs dangers, side effects, long-term
               consequences etc. you will see how much information has been posted recently about them. I can definitely say that they have become the most talked topic in
@@ -139,8 +107,8 @@ export default class Main extends React.Component {
             </p>
             <p>
               There isn’t evidence for all the above mentioned, only correlation to them which doesn’t prove that PPIs really cause them. Remember,
-              <strong> correlation&ne;causation</strong>. However, patients should all be aware of those researches and check their vital organs from time to time to
-              avoid any possible complications.
+              <strong> correlation&ne;causation</strong>. However, patients should be aware of those researches and check their vital organs from time to time to avoid
+              any possible complications.
             </p>
             <p>
               The vision of this application is to form a platform which will improve the usage of this drugs especially for patients who are on them for a long time. The

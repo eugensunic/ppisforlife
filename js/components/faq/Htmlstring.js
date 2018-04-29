@@ -38,7 +38,7 @@ export const Htmlstring = `<div class="container">
     </p>
     <p>
       &nbsp;&nbsp;&nbsp;Knowledge allows us to talk more efficiently with doctors (GPs, specialist) and ask the most important
-      questions that we still don’t know, also we can participate in a much better way on forums/discussion groups and
+      questions that we still don’t know, likewise we can participate in a much better way on forums/discussion groups and
       ask more concise questions.
     </p>
     <hr/>
