@@ -6,6 +6,6 @@ export default class Navfooter extends React.Component {
   }
   componentWillMount() {}
   render() {
-    return <div className="footer">© 2017 Info page</div>;
+    return <div className="footer">© {new Date().getFullYear()} Info page</div>;
   }
 }
