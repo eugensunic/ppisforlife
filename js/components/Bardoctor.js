@@ -15,7 +15,6 @@ export default class Bardoctor extends React.Component {
     window.onpopstate = () => {
       if (this._isMounted) {
         if (history.state == null || history.state.num == '1') {
-          
           // //
           // 0
           //0,1   1
@@ -26,34 +25,23 @@ export default class Bardoctor extends React.Component {
           //4,6
           this.callButtonData(0, 1, 'stop');
         } else if (history.state.num == '2') {
-          
           this.callButtonData(1, 2, 'stop');
         } else if (history.state.num == '3') {
-          
-
           this.callButtonData(2, 3, 'stop');
         } else if (history.state.num == '4') {
-          
-          
           this.callButtonData(3, 4, 'stop');
         } else if (user.checkNumber(history.state.num, 5, 1300)) {
           // The rest
           //------------------------------------------
 
-          
           this.callButtonData(0, 1, 'stop');
         } else if (user.checkNumber(history.state.num, 6, 1300)) {
-          
           this.callButtonData(1, 2, 'stop');
         } else if (user.checkNumber(history.state.num, 7, 1300)) {
-          
           this.callButtonData(2, 3, 'stop');
         } else if (user.checkNumber(history.state.num, 8, 1300)) {
-          
-          
           this.callButtonData(3, 4, 'stop');
         } else if (user.checkNumber(history.state.num, 9, 1300)) {
-          
           user.barChange(
             this.props.bar_change.array_doctor[5],
             this.props.bar_change.array_doctor,

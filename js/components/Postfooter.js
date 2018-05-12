@@ -15,8 +15,6 @@ export default class Postfooter extends React.Component {
     });
   }
   render() {
-    
-    
     return (
       <div className="post_footer_div">
         <div

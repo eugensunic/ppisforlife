@@ -66,8 +66,6 @@ export default function reducer(
     };
     window.scrollTo(0, 0);
     if (state.stop_navigation != 'stop') {
-      
-
       window.history.pushState(
         {
           num: state.selected_patient

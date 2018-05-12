@@ -13,9 +13,9 @@ export default function reducer(state = { filter1: false, filter2: false, filter
 
     state = { ...state, rest_array: action.payload, filter3: true };
   } else {
-    // 
-    // 
-    // 
+    //
+    //
+    //
   }
   return state;
 }

@@ -54,15 +54,6 @@ export default class Statistic extends React.Component {
   }
 
   componentWillMount() {
-    
-    
-    
-    
-    
-    
-    
-    
-    
     if (
       this.props.conditionstat.first_stat == undefined &&
       this.props.conditionppistat.second_stat == undefined &&
@@ -157,14 +148,13 @@ export default class Statistic extends React.Component {
   valuesToPercentageArray(value_array) {
     var newarr = [];
     var total = this.getSumOfValues(value_array);
-    
-    
+
     for (var i = 0; i < value_array.length; i++) {
       var percent = (parseInt(value_array[i]) / parseFloat(total) * 100).toFixed(1);
-      
+
       newarr.push(percent);
     }
-    
+
     return newarr;
   }
   addColumnId(arr) {
@@ -192,7 +182,6 @@ export default class Statistic extends React.Component {
     return newarr;
   }
   showOtherMethod() {
-    
     if (
       this.props.everything.first_other &&
       this.props.everything.second_other &&

@@ -132,7 +132,6 @@ export default class Patientpost extends React.Component {
       }
     }
 
-    
     return obj_arr;
   }
 

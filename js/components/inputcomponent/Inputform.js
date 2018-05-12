@@ -134,10 +134,7 @@ export default class Inputform extends React.Component {
                   } else {
                     this.setState({ required_data1: false, success: true, clicked: true });
                   }
-
-                  
                 } else {
-                  
                   this.setState({ required_data1: true, clicked: true });
                 }
               } else {
@@ -146,10 +143,8 @@ export default class Inputform extends React.Component {
                 } else {
                   this.setState({ required_data1: false, success: true, clicked: true });
                 }
-                
               }
             } else {
-              
               this.setState({ required_data1: true, clicked: true });
             }
           } else {
@@ -158,11 +153,10 @@ export default class Inputform extends React.Component {
             } else {
               this.setState({ required_data1: false, success: true, clicked: true });
             }
-            
+
             //success first row
           }
         } else {
-          
           this.setState({ required_data1: true, clicked: true });
         }
       } else {
@@ -171,15 +165,11 @@ export default class Inputform extends React.Component {
         } else {
           this.setState({ required_data1: false, success: true, clicked: true });
         }
-        
+
         //success first row
       }
     } else {
       this.setState({ required_data1: true, clicked: true });
-      
-      
-      
-      
 
       //fail first row
     }
@@ -200,7 +190,6 @@ export default class Inputform extends React.Component {
       counter++;
     }
     if (counter === 1) {
-      
       if (this.props.sides.effect1 != undefined && this.props.sides.effect1 != '') {
         return true;
       } else {
@@ -260,7 +249,6 @@ export default class Inputform extends React.Component {
   }
   //daj ove checkboxe resetaj obavezno na onclick nemoj da mi se tam vrijednsoti pojavljuju
   sendDataToDatabase() {
-    
     // you have to send only appropriate data to database so do proper inline validation
     if (typeof this.props.getId.getLastId === 'undefined') {
       this.props
@@ -345,107 +333,16 @@ export default class Inputform extends React.Component {
                       user.removeArrayValues(conversion.radioSideEffects(this.props.sides.radio_side), user.toNativeArray(this.props.sides.effect4))
                     )
                     .then(() => {
-                      
                       this.setState({ data_in_database: true });
                     })
-                    .catch(err => {
-                      
-                    });
+                    .catch(err => {});
                 })
-                .catch(err => {
-                  
-                });
+                .catch(err => {});
             })
-            .catch(err => {
-              
-            });
+            .catch(err => {});
         })
-        .catch(err => {
-          
-        });
+        .catch(err => {});
     }
-
-    //display data from first section
-    //basic
-    //  
-    //  
-    // 
-    // 
-    // 
-    // 
-    // 
-    // 
-    // 
-    //
-    // //condition
-    //  
-    //  
-    // 
-    // for(var key in this.props.condition.gastro) {
-    //   
-    // }
-    // 
-    // 
-    //
-    // //drugs
-    // // you will have to put this into an array, don't send evetything
-    // // to the backend just stuff that you need to send. send array anyways no matter if just
-    // // one element is inside
-    //   
-    //   
-    //  
-    //  
-    //  
-    //  
-    //  
-    //  
-    //  //display data from second section
-    //  //sides
-    //  
-    //  
-    // 
-    // 
-    // 
-    // 
-    // 
-    // 
-    // //other
-    //  
-    //  
-    //
-    // 
-    // 
-    // //nutrient
-    //  
-    //  
-    // 
-    // 
-    // //natural
-    //  
-    //  
-    // 
-    // 
-    // //extra
-    //
-    //
-    // //-----------------------------------------------------------
-    // // POST SEND PARAMS
-    // //-----------------------------------------------------------
-    //    
-    //    
-    //    
-    //    
-    //    
-    //    
-    //    
-    //    
-    //    
-    //    
-    //    
-    //    
-    //    
-    //    
-    //    
   }
   finalConfirm() {
     this.setState({ clicked2: true });
@@ -459,36 +356,29 @@ export default class Inputform extends React.Component {
                   if (this.props.nutrient.radio_nutrient[0]) {
                     if (this.props.nutrient.nutrient != undefined && this.props.nutrient.nutrient != '') {
                       if (this.extraReturnTrue.call(this)) {
-                        
                         this.setState({ required_data1: false, required_data2: false, final_success: true });
                       } else {
-                        
                         this.setState({ required_data1: false, required_data2: true });
                         // failed extra
                       }
                     } else {
-                      
                       this.setState({ required_data1: false, required_data2: true });
                       //failed inner nutrient
                     }
                   } else {
                     //radio nutrient is unknown or false, continue to Extra
                     if (this.extraReturnTrue.call(this)) {
-                      
                       this.setState({ required_data1: false, required_data2: false, final_success: true });
                     } else {
-                      
                       this.setState({ required_data1: false, required_data2: true });
                       //failed extra
                     }
                   }
                 } else {
-                  
                   this.setState({ required_data1: false, required_data2: true });
                   //failed nutrient radio_nutrient
                 }
               } else {
-                
                 this.setState({ required_data1: false, required_data2: true });
                 //failed inner other
               }
@@ -498,42 +388,34 @@ export default class Inputform extends React.Component {
                 if (this.props.nutrient.radio_nutrient[0]) {
                   if (this.props.nutrient.nutrient != undefined && this.props.nutrient.nutrient != '') {
                     if (this.extraReturnTrue.call(this)) {
-                      
                       this.setState({ required_data1: false, required_data2: false, final_success: true });
                     } else {
-                      
                       this.setState({ required_data1: false, required_data2: true });
                       // failed extra
                     }
                   } else {
-                    
                     this.setState({ required_data1: false, required_data2: true });
                     //failed inner nutrient
                   }
                 } else {
                   //radio nutrient is unknown or false, continue to Extra
                   if (this.extraReturnTrue.call(this)) {
-                    
                     this.setState({ required_data1: false, required_data2: false, final_success: true });
                   } else {
-                    
                     this.setState({ required_data1: false, required_data2: true });
                     //failed extra
                   }
                 }
               } else {
-                
                 this.setState({ required_data1: false, required_data2: true });
                 //failed nutrient radio_nutrient end
               }
             }
           } else {
-            
             this.setState({ required_data1: false, required_data2: true });
             //failed other radio_other
           }
         } else {
-          
           this.setState({ required_data1: false, required_data2: true });
           //failed inner sides
         }
@@ -546,36 +428,29 @@ export default class Inputform extends React.Component {
                 if (this.props.nutrient.radio_nutrient[0]) {
                   if (this.props.nutrient.nutrient != undefined && this.props.nutrient.nutrient != '') {
                     if (this.extraReturnTrue.call(this)) {
-                      
                       this.setState({ required_data1: false, required_data2: false, final_success: true });
                     } else {
-                      
                       this.setState({ required_data1: false, required_data2: true });
                       // failed extra
                     }
                   } else {
-                    
                     this.setState({ required_data1: false, required_data2: true });
                     //failed inner nutrient
                   }
                 } else {
                   //radio nutrient is unknown or false, continue to Extra
                   if (this.extraReturnTrue.call(this)) {
-                    
                     this.setState({ required_data1: false, required_data2: false, final_success: true });
                   } else {
-                    
                     this.setState({ required_data1: false, required_data2: true });
                     //failed extra
                   }
                 }
               } else {
-                
                 this.setState({ required_data1: false, required_data2: true });
                 //failed nutrient radio_nutrient
               }
             } else {
-              
               this.setState({ required_data1: false, required_data2: true });
               //failed inner other
             }
@@ -585,56 +460,34 @@ export default class Inputform extends React.Component {
               if (this.props.nutrient.radio_nutrient[0]) {
                 if (this.props.nutrient.nutrient != undefined && this.props.nutrient.nutrient != '') {
                   if (this.extraReturnTrue.call(this)) {
-                    
                     this.setState({ required_data1: false, required_data2: false, final_success: true });
                   } else {
-                    
                     this.setState({ required_data1: false, required_data2: true });
                     // failed extra
                   }
                 } else {
-                  
                   this.setState({ required_data1: false, required_data2: true });
                   //failed inner nutrient
                 }
               } else {
                 //radio nutrient is unknown or false, continue to Extra DONE!!!
                 if (this.extraReturnTrue.call(this)) {
-                  
                   this.setState({ required_data1: false, required_data2: false, final_success: true });
                 } else {
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
                   this.setState({ required_data1: false, required_data2: true });
                 }
               }
             } else {
-              
               this.setState({ required_data1: false, required_data2: true });
               //failed nutrient radio_nutrient end
             }
           }
         } else {
-          
           this.setState({ required_data1: false, required_data2: true });
           //failed other radio_other
         }
       }
     } else {
-      
       this.setState({ required_data1: false, required_data2: true });
       //fail sides radio_side
     }
@@ -686,7 +539,6 @@ export default class Inputform extends React.Component {
     );
   }
   reverseToPrevious() {
-    
     return (
       <div className="modal_main">
         <div className="modal_sub_pop">
@@ -710,7 +562,6 @@ export default class Inputform extends React.Component {
     );
   }
   successAdd() {
-    
     return (
       <div className="bordering" id="target_row">
         {this.state.warning_clicked ? this.reverseToPrevious.call(this) : ''}

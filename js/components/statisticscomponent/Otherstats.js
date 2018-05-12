@@ -12,9 +12,7 @@ export default class Ohterstats extends React.Component {
       location.href = '#first_row_target';
     }
   }
-  goToLocation() {
-    
-  }
+  goToLocation() {}
   getOnlyOneValue(arr) {
     return <span>{arr[0].amount}</span>;
   }

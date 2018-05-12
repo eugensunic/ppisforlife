@@ -15,10 +15,8 @@ export default class Barpatient extends React.Component {
     // BACK AND FORWARD BUTTON NAVIGATION EVENT
     //-----------------------------------------
     window.onpopstate = () => {
-      
       if (this._isMounted) {
         if (history.state == null || history.state.num == '1') {
-          
           // //
           // 0
           //0,1   1
@@ -37,7 +35,7 @@ export default class Barpatient extends React.Component {
           this.callButtonData(2, 3, 'stop');
         } else if (history.state.num == '4') {
           //
-          
+
           this.callButtonData(3, 4, 'stop');
         } else if (user.checkNumber(history.state.num, 5, 1300)) {
           // The rest
@@ -53,7 +51,7 @@ export default class Barpatient extends React.Component {
           this.callButtonData(2, 3, 'stop');
         } else if (user.checkNumber(history.state.num, 8, 1300)) {
           //
-          
+
           this.callButtonData(3, 4, 'stop');
         } else if (user.checkNumber(history.state.num, 9, 1300)) {
           //

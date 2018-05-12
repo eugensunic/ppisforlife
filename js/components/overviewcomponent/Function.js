@@ -10,7 +10,6 @@ function setTableHeaderColumn(obj) {
   // adjust key name on backend
   if (obj != null || obj != undefined) {
     return Object.keys(obj).map((key, i) => {
-      
       return <TableHeaderColumn>{key}</TableHeaderColumn>;
     });
   }
@@ -560,9 +559,6 @@ export function checkWhenNumberChangeNatural(array) {
 }
 // testing purpose only
 function printArray(array) {
-  
   for (let i in array) {
-    
   }
-  
 }
