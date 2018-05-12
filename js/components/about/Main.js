@@ -52,7 +52,7 @@ export default class Main extends React.Component {
         </div>
         <div className="row">
           <div className="col-sm-6 center" style={{ marginTop: 110 }}>
-            <a href="/es38cnawc32ucb29c82i29cniencqkojwqecneifi3c3290/" target="_blank" className="center linking_app">
+            <a href="/medsforlife/post-collector/" target="_blank" className="center linking_app">
               Application used for collecting comments
             </a>
           </div>
