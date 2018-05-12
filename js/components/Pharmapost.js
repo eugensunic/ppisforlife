@@ -21,7 +21,7 @@ export default class Pharmapost extends React.Component {
   }
   componentWillMount() {
     if (this.props.pharma_call.first == undefined) {
-      this.props.dispatch(user.asyncAll('http://projectsgono.com/medsforlife/appcall_pharma/get_all_columns_pharmacist.php', 'pharma_call_all'));
+      this.props.dispatch(user.asyncAll('/medsforlife/appcall_pharma/get_all_columns_pharmacist.php', 'pharma_call_all'));
     }
     setTimeout(() => {
       if (localStorage.getItem('reload')) {

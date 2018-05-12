@@ -74,15 +74,15 @@ export default class Statistic extends React.Component {
       this.props.nutrientstat.eight_stat == undefined &&
       this.props.naturalstat.nineth_stat == undefined
     ) {
-      this.props.dispatch(user.asyncAll('http://projectsgono.com/medsforlife/statscall/condition_gastro.php', 'condition_stat', ''));
-      this.props.dispatch(user.asyncAll('http://projectsgono.com/medsforlife/statscall/condition_ppi.php', 'conditionppi_stat', ''));
-      this.props.dispatch(user.asyncAll('http://projectsgono.com/medsforlife/statscall/sides.php', 'side_stat', ''));
-      this.props.dispatch(user.asyncAll('http://projectsgono.com/medsforlife/statscall/generic.php', 'generic_stat', ''));
-      this.props.dispatch(user.asyncAll('http://projectsgono.com/medsforlife/statscall/brand.php', 'brand_stat', ''));
-      this.props.dispatch(user.asyncAll('http://projectsgono.com/medsforlife/statscall/other.php', 'other_stat', ''));
-      this.props.dispatch(user.asyncAll('http://projectsgono.com/medsforlife/statscall/used.php', 'used_stat', ''));
-      this.props.dispatch(user.asyncAll('http://projectsgono.com/medsforlife/statscall/nutrient.php', 'nutrient_stat', ''));
-      this.props.dispatch(user.asyncAll('http://projectsgono.com/medsforlife/statscall/natural.php', 'natural_stat', ''));
+      this.props.dispatch(user.asyncAll('/medsforlife/statscall/condition_gastro.php', 'condition_stat', ''));
+      this.props.dispatch(user.asyncAll('/medsforlife/statscall/condition_ppi.php', 'conditionppi_stat', ''));
+      this.props.dispatch(user.asyncAll('/medsforlife/statscall/sides.php', 'side_stat', ''));
+      this.props.dispatch(user.asyncAll('/medsforlife/statscall/generic.php', 'generic_stat', ''));
+      this.props.dispatch(user.asyncAll('/medsforlife/statscall/brand.php', 'brand_stat', ''));
+      this.props.dispatch(user.asyncAll('/medsforlife/statscall/other.php', 'other_stat', ''));
+      this.props.dispatch(user.asyncAll('/medsforlife/statscall/used.php', 'used_stat', ''));
+      this.props.dispatch(user.asyncAll('/medsforlife/statscall/nutrient.php', 'nutrient_stat', ''));
+      this.props.dispatch(user.asyncAll('/medsforlife/statscall/natural.php', 'natural_stat', ''));
     }
 
     this.props.dispatch(user.changeNavigationColor('stat-nav', [true, false, false]));
@@ -120,29 +120,29 @@ export default class Statistic extends React.Component {
   getStatsOtherData() {
     //samo ako nisu undefined
     if (this.showPositive()) {
-      this.props.dispatch(user.asyncAll('http://projectsgono.com/medsforlife/othercall/dosage_to_sides.php', 'dosage_to_sides', ''));
-      this.props.dispatch(user.asyncAll('http://projectsgono.com/medsforlife/othercall/drug_years.php', 'drug_years', ''));
-      this.props.dispatch(user.asyncAll('http://projectsgono.com/medsforlife/othercall/drugs_to_anxiety.php', 'drugs_to_anxiety', ''));
-      this.props.dispatch(user.asyncAll('http://projectsgono.com/medsforlife/othercall/drugs_to_explicitnone.php', 'drugs_to_explicitnone', ''));
-      this.props.dispatch(user.asyncAll('http://projectsgono.com/medsforlife/othercall/drugs_to_magnesium.php', 'drugs_to_magnesium', ''));
-      this.props.dispatch(user.asyncAll('http://projectsgono.com/medsforlife/othercall/drugs_to_stomach_polyps.php', 'drugs_to_stomach_polyps', ''));
-      this.props.dispatch(user.asyncAll('http://projectsgono.com/medsforlife/othercall/duration_to_sides.php', 'duration_to_sides', ''));
-      this.props.dispatch(user.asyncAll('http://projectsgono.com/medsforlife/othercall/natural_remedies_helped.php', 'natural_remedies_helped', ''));
-      this.props.dispatch(user.asyncAll('http://projectsgono.com/medsforlife/othercall/patients_on_daily.php', 'patients_on_daily', ''));
-      this.props.dispatch(user.asyncAll('http://projectsgono.com/medsforlife/othercall/patients_on_dosage.php', 'patients_on_dosage', ''));
-      this.props.dispatch(user.asyncAll('http://projectsgono.com/medsforlife/othercall/post_with_sides3.php', 'post_with_sides3', ''));
-      this.props.dispatch(user.asyncAll('http://projectsgono.com/medsforlife/othercall/post_with_sides_greater3.php', 'post_with_sides_greater3', ''));
-      this.props.dispatch(user.asyncAll('http://projectsgono.com/medsforlife/othercall/post_with_sides_lower3.php', 'post_with_sides_lower3', ''));
-      this.props.dispatch(user.asyncAll('http://projectsgono.com/medsforlife/othercall/side_effects_generic.php', 'side_effects_generic', ''));
+      this.props.dispatch(user.asyncAll('/medsforlife/othercall/dosage_to_sides.php', 'dosage_to_sides', ''));
+      this.props.dispatch(user.asyncAll('/medsforlife/othercall/drug_years.php', 'drug_years', ''));
+      this.props.dispatch(user.asyncAll('/medsforlife/othercall/drugs_to_anxiety.php', 'drugs_to_anxiety', ''));
+      this.props.dispatch(user.asyncAll('/medsforlife/othercall/drugs_to_explicitnone.php', 'drugs_to_explicitnone', ''));
+      this.props.dispatch(user.asyncAll('/medsforlife/othercall/drugs_to_magnesium.php', 'drugs_to_magnesium', ''));
+      this.props.dispatch(user.asyncAll('/medsforlife/othercall/drugs_to_stomach_polyps.php', 'drugs_to_stomach_polyps', ''));
+      this.props.dispatch(user.asyncAll('/medsforlife/othercall/duration_to_sides.php', 'duration_to_sides', ''));
+      this.props.dispatch(user.asyncAll('/medsforlife/othercall/natural_remedies_helped.php', 'natural_remedies_helped', ''));
+      this.props.dispatch(user.asyncAll('/medsforlife/othercall/patients_on_daily.php', 'patients_on_daily', ''));
+      this.props.dispatch(user.asyncAll('/medsforlife/othercall/patients_on_dosage.php', 'patients_on_dosage', ''));
+      this.props.dispatch(user.asyncAll('/medsforlife/othercall/post_with_sides3.php', 'post_with_sides3', ''));
+      this.props.dispatch(user.asyncAll('/medsforlife/othercall/post_with_sides_greater3.php', 'post_with_sides_greater3', ''));
+      this.props.dispatch(user.asyncAll('/medsforlife/othercall/post_with_sides_lower3.php', 'post_with_sides_lower3', ''));
+      this.props.dispatch(user.asyncAll('/medsforlife/othercall/side_effects_generic.php', 'side_effects_generic', ''));
 
-      this.props.dispatch(user.asyncAll('http://projectsgono.com/medsforlife/othercall/drugs_to_kidney.php', 'drugs_to_kidney', ''));
-      this.props.dispatch(user.asyncAll('http://projectsgono.com/medsforlife/othercall/drugs_to_dementia.php', 'drugs_to_dementia', ''));
-      this.props.dispatch(user.asyncAll('http://projectsgono.com/medsforlife/othercall/drugs_to_osteo.php', 'drugs_to_osteo', ''));
-      this.props.dispatch(user.asyncAll('http://projectsgono.com/medsforlife/othercall/drugs_to_calcium.php', 'drugs_to_calcium', ''));
-      this.props.dispatch(user.asyncAll('http://projectsgono.com/medsforlife/othercall/drugs_to_b12.php', 'drugs_to_b12', ''));
+      this.props.dispatch(user.asyncAll('/medsforlife/othercall/drugs_to_kidney.php', 'drugs_to_kidney', ''));
+      this.props.dispatch(user.asyncAll('/medsforlife/othercall/drugs_to_dementia.php', 'drugs_to_dementia', ''));
+      this.props.dispatch(user.asyncAll('/medsforlife/othercall/drugs_to_osteo.php', 'drugs_to_osteo', ''));
+      this.props.dispatch(user.asyncAll('/medsforlife/othercall/drugs_to_calcium.php', 'drugs_to_calcium', ''));
+      this.props.dispatch(user.asyncAll('/medsforlife/othercall/drugs_to_b12.php', 'drugs_to_b12', ''));
 
-      this.props.dispatch(user.asyncAll('http://projectsgono.com/medsforlife/othercall/gerd_barrett_hiatal.php', 'gerd_barrett_hiatal', ''));
-      this.props.dispatch(user.asyncAll('http://projectsgono.com/medsforlife/othercall/gerd_barrett_hiatal_and.php', 'gerd_barrett_hiatal_and', ''));
+      this.props.dispatch(user.asyncAll('/medsforlife/othercall/gerd_barrett_hiatal.php', 'gerd_barrett_hiatal', ''));
+      this.props.dispatch(user.asyncAll('/medsforlife/othercall/gerd_barrett_hiatal_and.php', 'gerd_barrett_hiatal_and', ''));
     } else {
       //hajdaj kasnije
     }

@@ -19,7 +19,7 @@ export default class Faq extends React.Component {
   }
 
   componentWillMount() {
-    this.callExternalScript('http://projectsgono.com/adding.js');
+    this.callExternalScript('/medsforlife/adding.js');
   }
 
   render() {

@@ -30,7 +30,7 @@ export default class Headerbardoctor extends React.Component {
         <span
           className="header_border_tag"
           onClick={() => {
-            this.callDoctorAll('http://projectsgono.com/medsforlife/appcall_doctor/user_or_doctor.php', 1);
+            this.callDoctorAll('/medsforlife/appcall_doctor/user_or_doctor.php', 1);
             this.setState({ criteria_value: 'Personal doctor opinion' });
           }}>
           doctor explicit
@@ -38,7 +38,7 @@ export default class Headerbardoctor extends React.Component {
         <span
           className="header_border_tag"
           onClick={() => {
-            this.callDoctorAll('http://projectsgono.com/medsforlife/appcall_doctor/user_or_doctor.php', 0);
+            this.callDoctorAll('/medsforlife/appcall_doctor/user_or_doctor.php', 0);
             this.setState({ criteria_value: 'Doctor opinion expressed by patient' });
           }}>
           user associated
@@ -49,7 +49,7 @@ export default class Headerbardoctor extends React.Component {
         <span
           className="header_border_tag"
           onClick={() => {
-            this.callDoctorAll('http://projectsgono.com/medsforlife/appcall_doctor/get_opinion.php', 'good');
+            this.callDoctorAll('/medsforlife/appcall_doctor/get_opinion.php', 'good');
             this.setState({ criteria_value: 'Positive opinion' });
           }}>
           good
@@ -57,7 +57,7 @@ export default class Headerbardoctor extends React.Component {
         <span
           className="header_border_tag"
           onClick={() => {
-            this.callDoctorAll('http://projectsgono.com/medsforlife/appcall_doctor/get_opinion.php', 'good(shortterm)');
+            this.callDoctorAll('/medsforlife/appcall_doctor/get_opinion.php', 'good(shortterm)');
             this.setState({ criteria_value: 'Positive opinion(short-term drug usage)' });
           }}>
           good (short-term)
@@ -65,7 +65,7 @@ export default class Headerbardoctor extends React.Component {
         <span
           className="header_border_tag"
           onClick={() => {
-            this.callDoctorAll('http://projectsgono.com/medsforlife/appcall_doctor/get_opinion.php', 'good(longterm)');
+            this.callDoctorAll('/medsforlife/appcall_doctor/get_opinion.php', 'good(longterm)');
             this.setState({ criteria_value: 'Positive opinion(long-term drug usage)' });
           }}>
           good (long-term)
@@ -73,7 +73,7 @@ export default class Headerbardoctor extends React.Component {
         <span
           className="header_border_tag"
           onClick={() => {
-            this.callDoctorAll('http://projectsgono.com/medsforlife/appcall_doctor/get_opinion.php', 'notgood');
+            this.callDoctorAll('/medsforlife/appcall_doctor/get_opinion.php', 'notgood');
             this.setState({ criteria_value: 'Negative opinion(drug usage)' });
           }}>
           not good
@@ -81,7 +81,7 @@ export default class Headerbardoctor extends React.Component {
         <span
           className="header_border_tag"
           onClick={() => {
-            this.callDoctorAll('http://projectsgono.com/medsforlife/appcall_doctor/get_opinion.php', 'notgood(longterm)');
+            this.callDoctorAll('/medsforlife/appcall_doctor/get_opinion.php', 'notgood(longterm)');
             this.setState({ criteria_value: 'Negative opinion(long-term drug usage)' });
           }}>
           not good (long-term)
@@ -89,7 +89,7 @@ export default class Headerbardoctor extends React.Component {
         <span
           className="header_border_tag"
           onClick={() => {
-            this.callDoctorAll('http://projectsgono.com/medsforlife/appcall_doctor/get_opinion.php', 'unknown');
+            this.callDoctorAll('/medsforlife/appcall_doctor/get_opinion.php', 'unknown');
             this.setState({ criteria_value: 'Unknown opinion(short-term drug usage)' });
           }}>
           unknown
@@ -106,7 +106,7 @@ export default class Headerbardoctor extends React.Component {
           className={''}
           onChange={e => {
             let param = e.nativeEvent.target[e.nativeEvent.target.selectedIndex].text.trim();
-            this.callDoctorAll('http://projectsgono.com/medsforlife/appcall_doctor/url_name.php', param);
+            this.callDoctorAll('/medsforlife/appcall_doctor/url_name.php', param);
             this.setState({ criteria_value: param });
           }}
           defaultValue="">

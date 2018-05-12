@@ -16,9 +16,9 @@ export default class Doctor extends React.Component {
   }
   componentWillMount() {
     if (this.props.dr.name1 == undefined && this.props.dr.name2 == undefined && this.props.dr.name3 == undefined) {
-      this.props.dispatch(user.asyncAll('http://projectsgono.com/medsforlife/othercall/doc_call/doctors_url_fetched.php', 'doctors_url_fetched', ''));
-      this.props.dispatch(user.asyncAll('http://projectsgono.com/medsforlife/othercall/doc_call/flag_grouping.php', 'flag_grouping', ''));
-      this.props.dispatch(user.asyncAll('http://projectsgono.com/medsforlife/othercall/doc_call/number_of_posts.php', 'number_of_posts', ''));
+      this.props.dispatch(user.asyncAll('/medsforlife/othercall/doc_call/doctors_url_fetched.php', 'doctors_url_fetched', ''));
+      this.props.dispatch(user.asyncAll('/medsforlife/othercall/doc_call/flag_grouping.php', 'flag_grouping', ''));
+      this.props.dispatch(user.asyncAll('/medsforlife/othercall/doc_call/number_of_posts.php', 'number_of_posts', ''));
     }
     this.props.dispatch(user.changeNavigationColor('stat-nav', [false, true, false]));
   }

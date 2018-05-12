@@ -17,9 +17,9 @@ export default class Pharmacist extends React.Component {
   }
   componentWillMount() {
     if (this.props.ph.name4 == undefined && this.props.ph.name5 == undefined && this.props.ph.name6 == undefined) {
-      this.props.dispatch(user.asyncAll('http://projectsgono.com/medsforlife/othercall/pharma_call/pharmacist_url_fetched.php', 'pharmacist_url_fetched', ''));
-      this.props.dispatch(user.asyncAll('http://projectsgono.com/medsforlife/othercall/pharma_call/flag_grouping.php', 'flag_grouping_pharma', ''));
-      this.props.dispatch(user.asyncAll('http://projectsgono.com/medsforlife/othercall/pharma_call/number_of_posts.php', 'number_of_posts_pharma', ''));
+      this.props.dispatch(user.asyncAll('/medsforlife/othercall/pharma_call/pharmacist_url_fetched.php', 'pharmacist_url_fetched', ''));
+      this.props.dispatch(user.asyncAll('/medsforlife/othercall/pharma_call/flag_grouping.php', 'flag_grouping_pharma', ''));
+      this.props.dispatch(user.asyncAll('/medsforlife/othercall/pharma_call/number_of_posts.php', 'number_of_posts_pharma', ''));
     }
     this.props.dispatch(user.changeNavigationColor('stat-nav', [false, false, true]));
   }

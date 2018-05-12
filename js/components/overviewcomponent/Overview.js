@@ -57,15 +57,15 @@ export default class Overview extends React.Component {
 
   componentDidMount() {
     let urlData_1 = {
-      url: 'http://projectsgono.com/medsforlife/ppi_input/ppi_input_fe/fecall.php',
+      url: '/medsforlife/ppi_input/ppi_input_fe/fecall.php',
       dispatchType: 'fetch_overview_stats'
     };
     let urlData_2 = {
-      url: 'http://projectsgono.com/medsforlife/ppi_input/ppi_input_fe/interesting.php',
+      url: '/medsforlife/ppi_input/ppi_input_fe/interesting.php',
       dispatchType: 'fetch_overview_extra_stats'
     };
     let urlData_3 = {
-      url: 'http://projectsgono.com/medsforlife/ppi_input/ppi_input_fe/extra_info.php',
+      url: '/medsforlife/ppi_input/ppi_input_fe/extra_info.php',
       dispatchType: 'fetch_overview_extra_stats_added_info'
     };
     if (!this.props.overviewstat.overview && !this.props.overview_extra_stat.overviewextra && !this.props.overview_extra_stat.overviewextra_last_info) {

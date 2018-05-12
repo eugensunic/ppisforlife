@@ -32,7 +32,7 @@ export default class Headerbarpharma extends React.Component {
         <span
           className="header_border_tag"
           onClick={() => {
-            this.callPharmaAll('http://projectsgono.com/medsforlife/appcall_pharma/user_or_pharmacist.php', 1);
+            this.callPharmaAll('/medsforlife/appcall_pharma/user_or_pharmacist.php', 1);
             this.setState({ criteria_value: 'Personal pharmacist opinion' });
           }}>
           explicit
@@ -40,7 +40,7 @@ export default class Headerbarpharma extends React.Component {
         <span
           className="header_border_tag"
           onClick={() => {
-            this.callPharmaAll('http://projectsgono.com/medsforlife/appcall_pharma/user_or_pharmacist.php', 0);
+            this.callPharmaAll('/medsforlife/appcall_pharma/user_or_pharmacist.php', 0);
             this.setState({ criteria_value: 'Pharmacist opinion expressed by patient' });
           }}>
           user associated
@@ -53,7 +53,7 @@ export default class Headerbarpharma extends React.Component {
         <span
           className="header_border_tag"
           onClick={() => {
-            this.callPharmaAll('http://projectsgono.com/medsforlife/appcall_pharma/get_opinion.php', 'good');
+            this.callPharmaAll('/medsforlife/appcall_pharma/get_opinion.php', 'good');
             this.setState({ criteria_value: 'Positive opinion' });
           }}>
           good
@@ -61,7 +61,7 @@ export default class Headerbarpharma extends React.Component {
         <span
           className="header_border_tag"
           onClick={() => {
-            this.callPharmaAll('http://projectsgono.com/medsforlife/appcall_pharma/get_opinion.php', 'good(shortterm)');
+            this.callPharmaAll('/medsforlife/appcall_pharma/get_opinion.php', 'good(shortterm)');
             this.setState({ criteria_value: 'Positive opinion(short-term drug usage)' });
           }}>
           good (short-term)
@@ -69,7 +69,7 @@ export default class Headerbarpharma extends React.Component {
         <span
           className="header_border_tag"
           onClick={() => {
-            this.callPharmaAll('http://projectsgono.com/medsforlife/appcall_pharma/get_opinion.php', 'good(longterm)');
+            this.callPharmaAll('/medsforlife/appcall_pharma/get_opinion.php', 'good(longterm)');
             this.setState({ criteria_value: 'Positive opinion(long-term drug usage)' });
           }}>
           good (long-term)
@@ -77,7 +77,7 @@ export default class Headerbarpharma extends React.Component {
         <span
           className="header_border_tag"
           onClick={() => {
-            this.callPharmaAll('http://projectsgono.com/medsforlife/appcall_pharma/get_opinion.php', 'notgood');
+            this.callPharmaAll('/medsforlife/appcall_pharma/get_opinion.php', 'notgood');
             this.setState({ criteria_value: 'Negative opinion' });
           }}>
           not good
@@ -85,7 +85,7 @@ export default class Headerbarpharma extends React.Component {
         <span
           className="header_border_tag"
           onClick={() => {
-            this.callPharmaAll('http://projectsgono.com/medsforlife/appcall_pharma/get_opinion.php', 'notgood(longterm)');
+            this.callPharmaAll('/medsforlife/appcall_pharma/get_opinion.php', 'notgood(longterm)');
             this.setState({ criteria_value: 'Negative opinion(long-term drug usage)' });
           }}>
           not good (long-term)
@@ -93,7 +93,7 @@ export default class Headerbarpharma extends React.Component {
         <span
           className="header_border_tag"
           onClick={() => {
-            this.callPharmaAll('http://projectsgono.com/medsforlife/appcall_pharma/get_opinion.php', 'unknown');
+            this.callPharmaAll('/medsforlife/appcall_pharma/get_opinion.php', 'unknown');
             this.setState({ criteria_value: 'Unknown opinion' });
           }}>
           unknown
@@ -109,7 +109,7 @@ export default class Headerbarpharma extends React.Component {
           className={''}
           onChange={e => {
             let param = e.nativeEvent.target[e.nativeEvent.target.selectedIndex].text.trim();
-            this.callPharmaAll('http://projectsgono.com/medsforlife/appcall_pharma/url_name.php', param);
+            this.callPharmaAll('/medsforlife/appcall_pharma/url_name.php', param);
             this.setState({ criteria_value: param });
           }}
           defaultValue="">

@@ -270,7 +270,7 @@ export default class Inputform extends React.Component {
           let FK_id = this.props.getId.getLastId;
           user
             .postRequest(
-              'http://projectsgono.com/medsforlife/ppi_input/basic.php',
+              '/medsforlife/ppi_input/basic.php',
               FK_id,
               this.props.basic.age,
               this.props.basic.weight,
@@ -283,7 +283,7 @@ export default class Inputform extends React.Component {
             .then(() => {
               user
                 .postRequest(
-                  'http://projectsgono.com/medsforlife/ppi_input/all_other.php',
+                  '/medsforlife/ppi_input/all_other.php',
                   user.toNativeArray(this.props.condition.gastro),
                   user.toNativeArray(this.props.condition.other),
                   user.toNativeArray(this.props.condition.ppi),
@@ -337,7 +337,7 @@ export default class Inputform extends React.Component {
                 .then(() => {
                   user
                     .postRequest(
-                      'http://projectsgono.com/medsforlife/ppi_input/side_effect_ppi_drug.php',
+                      '/medsforlife/ppi_input/side_effect_ppi_drug.php',
                       user.createArray(this.props.drug.generic1, this.props.drug.generic2, this.props.drug.generic3, this.props.drug.generic4).length,
                       user.removeArrayValues(conversion.radioSideEffects(this.props.sides.radio_side), user.toNativeArray(this.props.sides.effect1)),
                       user.removeArrayValues(conversion.radioSideEffects(this.props.sides.radio_side), user.toNativeArray(this.props.sides.effect2)),
