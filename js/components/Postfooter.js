@@ -15,8 +15,8 @@ export default class Postfooter extends React.Component {
     });
   }
   render() {
-    console.log('duration is: ' + this.props.duration);
-    console.log('time is: ' + this.props.time);
+    
+    
     return (
       <div className="post_footer_div">
         <div

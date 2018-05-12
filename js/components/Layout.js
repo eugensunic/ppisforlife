@@ -29,7 +29,7 @@ export default class Layout extends React.Component {
     super(props);
   }
   componentDidMount() {
-    console.log(this.props.color_navigation.post_navigation);
+    
   }
 
   render() {

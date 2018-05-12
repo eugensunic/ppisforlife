@@ -21,7 +21,7 @@ export default function reducer(state = {}, action) {
     state = { ...state, race: action.payload };
   } else {
     // when in production then error
-    // console.log("There was an error in header async ");
+    // 
   }
   return state;
 }

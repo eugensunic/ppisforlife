@@ -3,7 +3,7 @@ export default function reducer(state = { name: {} }, action) {
     state = { ...state, name: action.payload, data_rec: true };
   } else {
     // when in production then error
-    // console.log("There was an error in header async ");
+    // 
   }
   return state;
 }

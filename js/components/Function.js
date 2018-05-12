@@ -55,9 +55,9 @@ export function barChange(arg0, prop_arr, prop_next, string_change, string_send,
     }
   }
 
-  // console.log('temp array: ' + temp_arr);
-  // console.log('flag_it:' + flag_it);
-  // console.log('arg0:' + arg0);
+  // 
+  // 
+  // 
   store.dispatch(user.changeBarNum(arg0, string_change));
   if (string_change === 'bar_change_patient') {
     store.dispatch(user.sendBarDataPatient(string_send, temp_arr, flag_it, arg0, stop_location));

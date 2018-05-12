@@ -10,9 +10,6 @@ YOU SHOULD MAYBE DELETE HEADER ACCES ORIGIN IN PHP
   TODO
   ----
   1. Fill research data
-  9. make relative links once in production
-
-
 
   REFACTORING
   -----------
@@ -38,6 +35,7 @@ YOU SHOULD MAYBE DELETE HEADER ACCES ORIGIN IN PHP
 
   DONE
   ----
+   - make relative links once in production
    - Anchor navigation doesn't work in safari
    - Default button goes away after you select a filter data
    - rewrite PHP calls for stats page to prepared statement

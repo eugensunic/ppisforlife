@@ -132,7 +132,7 @@ export default class Patientpost extends React.Component {
       }
     }
 
-    console.log('COUNTER VALUE: ' + cnt);
+    
     return obj_arr;
   }
 
@@ -154,7 +154,7 @@ export default class Patientpost extends React.Component {
     for (var i = id - 1; i < arr.length; i++) {
       //if (temp!=arr[i][id_name] && temp!=undefined){break;}
       if (arr[i][id_name] == id) {
-        //console.log("mutliple value:"+ arr[i][id_name]);
+        //
         temp = arr[i][id_name];
         newarr.push(arr[i][name] + ' ');
       }

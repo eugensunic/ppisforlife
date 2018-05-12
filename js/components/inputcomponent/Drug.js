@@ -190,7 +190,7 @@ export default class Drug extends React.Component {
   }
 
   setArrayRadio(arr, id, type0) {
-    console.log(arr + ' ' + id);
+    
     if (id === 'first') {
       this.props.dispatch({ type: type0, payload1: this.props.id, payload2: arr });
     }

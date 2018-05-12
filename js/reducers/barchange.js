@@ -66,7 +66,7 @@ export default function reducer(
     };
     window.scrollTo(0, 0);
     if (state.stop_navigation != 'stop') {
-      console.log('should not go here');
+      
 
       window.history.pushState(
         {

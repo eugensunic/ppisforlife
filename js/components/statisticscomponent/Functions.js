@@ -71,7 +71,7 @@ export function graphPieChartAmount(arr, pharma_doc) {
   if (pharma_doc === 'pharma') {
     label_arr = ['', 'Explicit Pharma.', 'User associated'];
   }
-  console.log('what is' + arr[1].every);
+  
   for (var i = 1; i < arr.length; i++) {
     data_pie.push({
       label: label_arr[i],

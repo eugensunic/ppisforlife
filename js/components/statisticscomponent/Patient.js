@@ -54,15 +54,15 @@ export default class Statistic extends React.Component {
   }
 
   componentWillMount() {
-    console.log('first' + this.props.conditionstat.first_stat);
-    console.log('second' + this.props.conditionppistat.second_stat);
-    console.log('third' + this.props.sidestat.third_stat);
-    console.log('fourth' + this.props.genericstat.fourth_stat);
-    console.log('fifth' + this.props.brandstat.fifth_stat);
-    console.log('sixth' + this.props.otherstat.sixth_stat);
-    console.log('seventh' + this.props.usedstat.seventh_stat);
-    console.log('eight' + this.props.nutrientstat.eight_stat);
-    console.log('nineth' + this.props.naturalstat.nineth_stat);
+    
+    
+    
+    
+    
+    
+    
+    
+    
     if (
       this.props.conditionstat.first_stat == undefined &&
       this.props.conditionppistat.second_stat == undefined &&
@@ -157,14 +157,14 @@ export default class Statistic extends React.Component {
   valuesToPercentageArray(value_array) {
     var newarr = [];
     var total = this.getSumOfValues(value_array);
-    console.log(total);
-    console.log(value_array);
+    
+    
     for (var i = 0; i < value_array.length; i++) {
       var percent = (parseInt(value_array[i]) / parseFloat(total) * 100).toFixed(1);
-      console.log(percent);
+      
       newarr.push(percent);
     }
-    console.log('I need this:' + newarr);
+    
     return newarr;
   }
   addColumnId(arr) {
@@ -192,7 +192,7 @@ export default class Statistic extends React.Component {
     return newarr;
   }
   showOtherMethod() {
-    console.log('in other' + this.props.everything.first_other);
+    
     if (
       this.props.everything.first_other &&
       this.props.everything.second_other &&

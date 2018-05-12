@@ -13,7 +13,7 @@ export default class Ohterstats extends React.Component {
     }
   }
   goToLocation() {
-    console.log('entered method');
+    
   }
   getOnlyOneValue(arr) {
     return <span>{arr[0].amount}</span>;
