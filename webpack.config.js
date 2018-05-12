@@ -26,10 +26,18 @@ module.exports = {
     path: __dirname + '/js',
     filename: 'scripts.min.js'
   },
+
   devServer: {
     historyApiFallback: true,
     contentBase: './',
-    hot: true
+    hot: true,
+    proxy: {
+      '/medsforlife/*': {
+        target: 'http://projectsgono.com',
+        secure: false,
+        changeOrigin: true
+      }
+    }
   },
   plugins: debug
     ? []

@@ -8,19 +8,24 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 function setTableHeaderColumn(obj) {
   // adjust key name on backend
-  return Object.keys(obj).map((key, i) => {
-    return <TableHeaderColumn>{key}</TableHeaderColumn>;
-  });
+  if (obj != null || obj != undefined) {
+    return Object.keys(obj).map((key, i) => {
+      console.log('key: ' + key);
+      return <TableHeaderColumn>{key}</TableHeaderColumn>;
+    });
+  }
 }
 
 function setTableHeaderColumnDrugSides(obj) {
   // adjust key name on backend
-  return Object.keys(obj).map((key, i) => {
-    if (key !== 'ppi_drugID') {
-      return <TableHeaderColumn>{key}</TableHeaderColumn>;
-    }
-    return '';
-  });
+  if (obj != null || obj != undefined) {
+    return Object.keys(obj).map((key, i) => {
+      if (key !== 'ppi_drugID') {
+        return <TableHeaderColumn>{key}</TableHeaderColumn>;
+      }
+      return '';
+    });
+  }
 }
 function ulItemList(array) {
   return (
@@ -106,18 +111,22 @@ export function setTableBodyColumnDrugSides(array) {
 }
 
 export function setTableHeader(obj) {
-  return (
-    <TableHeader displaySelectAll={false}>
-      <TableRow>{setTableHeaderColumn(obj)}</TableRow>
-    </TableHeader>
-  );
+  if (obj != null || obj != undefined) {
+    return (
+      <TableHeader displaySelectAll={false}>
+        <TableRow>{setTableHeaderColumn(obj)}</TableRow>
+      </TableHeader>
+    );
+  }
 }
 export function setTableHeaderDrugSides(obj) {
-  return (
-    <TableHeader displaySelectAll={false}>
-      <TableRow>{setTableHeaderColumnDrugSides(obj)}</TableRow>
-    </TableHeader>
-  );
+  if (obj != null || obj != undefined) {
+    return (
+      <TableHeader displaySelectAll={false}>
+        <TableRow>{setTableHeaderColumnDrugSides(obj)}</TableRow>
+      </TableHeader>
+    );
+  }
 }
 
 export function setTableBody(arr) {

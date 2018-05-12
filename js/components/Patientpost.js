@@ -35,9 +35,9 @@ export default class Patientpost extends React.Component {
 
   componentWillMount() {
     if (this.props.header.first == undefined && this.props.tag1.second == undefined && this.props.tag2.third == undefined) {
-      this.props.dispatch(user.asyncAll('http://projectsgono.com/medsforlife/appcall/get_tag1.php', 'tag1', ''));
-      this.props.dispatch(user.asyncAll('http://projectsgono.com/medsforlife/appcall/get_tag2.php', 'tag2', ''));
-      this.props.dispatch(user.asyncAll('http://projectsgono.com/medsforlife/appcall/getheaderpost.php', 'header', ''));
+      this.props.dispatch(user.asyncAll('/medsforlife/appcall/get_tag1.php', 'tag1', ''));
+      this.props.dispatch(user.asyncAll('/medsforlife/appcall/get_tag2.php', 'tag2', ''));
+      this.props.dispatch(user.asyncAll('/medsforlife/appcall/getheaderpost.php', 'header', ''));
     }
     setTimeout(() => {
       if (localStorage.getItem('reload')) {

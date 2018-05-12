@@ -24,7 +24,7 @@ export default class Main extends React.Component {
           <div className="col-sm-6 about_first ">
             <h4 className="overwrite_h4">Introduction</h4>
             <p>
-              I’m Eugen Sunic (26) the creator of the application. I created the whole idea from scratch and then translated it into code (database, server code, browser
+              I’m Eugen Sunic (26) creator of the application. I created the whole idea from scratch and then translated it into code (database, server code, browser
               rendering, design). If you are interested in technologies and programming languages used to build this app then check the last section on the page.
             </p>
             <p>I was on the drugs (PPIs) for a short time some 6 years ago because of gastritis. The condition has resolved.</p>

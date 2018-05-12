@@ -9,10 +9,7 @@ YOU SHOULD MAYBE DELETE HEADER ACCES ORIGIN IN PHP
 
   TODO
   ----
-  0. Default button goes away after you select a filter data
-  2. Anchor navigation doesn't work in safari
   1. Fill research data
-  2. you should put default button for patient, doctor, pharma
   9. make relative links once in production
 
 
@@ -41,6 +38,8 @@ YOU SHOULD MAYBE DELETE HEADER ACCES ORIGIN IN PHP
 
   DONE
   ----
+   - Anchor navigation doesn't work in safari
+   - Default button goes away after you select a filter data
    - rewrite PHP calls for stats page to prepared statement
    - Put about
    - make footer stick to bottom every time (on resize screen)
