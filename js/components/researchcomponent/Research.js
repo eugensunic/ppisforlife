@@ -28,40 +28,80 @@ export default class Research extends React.Component {
         <Navbar />
         <Quickstats />
         <p className="title_research">Published research</p>
-
         <div className="row">
           <div className="col-sm-6">
             <div className="research_wrapper">
-              <Headerfirst id="1" date={content.date1} url={content.url1} show_pdf={false} />
+              <Headerfirst id="1" date={content.date0} url={content.url0} show_pdf={false} />
+              <Headermain heading={content.heading0} image={content.image0} info_content={content.info_content0} />
+            </div>
+          </div>
+          <div className="col-sm-6">
+            <div className="research_wrapper">
+              <Headerfirst id="2" date={content.date1} url={content.url1} show_pdf={false} />
               <Headermain heading={content.heading1} image={content.image1} info_content={content.info_content1} />
             </div>
           </div>
-          <div className="col-sm-6">
-            <div className="research_wrapper">
-              <Headerfirst id="1" date={content.date2} url={content.url2} show_pdf={false} />
-              <Headermain heading={content.heading2} image={content.image2} info_content={content.info_content2} />
-            </div>
-          </div>
         </div>
+
         <div className="row">
           <div className="col-sm-6">
             <div className="research_wrapper">
-              <Headerfirst id="3" date="27.02.2011." url="" />
-              <Headermain
-                heading={'Kidney disease'}
-                image={'../../pics/organs/kidney.jpg'}
-                info_content=" laksjflkasjf aklsfj alfkajfl kasjflakf jalkfj alkaj flkas faklčsfj alksfjalskfjasl čfajslkf aslkfasj flakj faklfj alfkaj flkas fjlakakljfdkla flasjf askfjdsal kfjafklč ajkčajs flkčsjf aklsčfajs fkaf asdlkčfj asflčkajsflčksdajfas čfjka asklčfajsfkl čafjsl čkasfjalčkfjdlčkfj aflčkajsf alčskfj asslčfkajs flksajflakčs fjakdsfj ads "
-              />
+              <Headerfirst id="3" date={content.date2} url={content.url2} show_pdf={false} />
+              <Headermain heading={content.heading2} image={content.image2} info_content={content.info_content2} />
             </div>
           </div>
           <div className="col-sm-6">
             <div className="research_wrapper">
-              <Headerfirst id="4" date="27.02.2011." url="" />
-              <Headermain heading={'Heart disease'} image={'../../pics/organs/heart.png'} info_content="" />
+              <Headerfirst id="4" date={content.date3} url={content.url3} show_pdf={false} />
+              <Headermain heading={content.heading3} image={content.image3} info_content={content.info_content3} />
             </div>
           </div>
         </div>
 
+        <div className="row">
+          <div className="col-sm-6">
+            <div className="research_wrapper">
+              <Headerfirst id="5" date={content.date4} url={content.url4} show_pdf={false} />
+              <Headermain heading={content.heading4} image={content.image4} info_content={content.info_content4} />
+            </div>
+          </div>
+          <div className="col-sm-6">
+            <div className="research_wrapper">
+              <Headerfirst id="6" date={content.date5} url={content.url5} show_pdf={false} />
+              <Headermain heading={content.heading5} image={content.image5} info_content={content.info_content5} />
+            </div>
+          </div>
+        </div>
+
+        <div className="row">
+          <div className="col-sm-6">
+            <div className="research_wrapper">
+              <Headerfirst id="7" date={content.date6} url={content.url6} show_pdf={false} />
+              <Headermain heading={content.heading6} image={content.image6} info_content={content.info_content6} />
+            </div>
+          </div>
+          <div className="col-sm-6">
+            <div className="research_wrapper">
+              <Headerfirst id="8" date={content.date7} url={content.url7} show_pdf={false} />
+              <Headermain heading={content.heading7} image={content.image7} info_content={content.info_content7} />
+            </div>
+          </div>
+        </div>
+
+        <div className="row">
+          <div className="col-sm-6">
+            <div className="research_wrapper">
+              <Headerfirst id="9" date={content.date8} url={content.url8} show_pdf={false} />
+              <Headermain heading={content.heading8} image={content.image8} info_content={content.info_content8} />
+            </div>
+          </div>
+          <div className="col-sm-6">
+            <div className="research_wrapper">
+              <Headerfirst id="10" date={content.date9} url={content.url9} show_pdf={false} />
+              <Headermain heading={content.heading9} image={content.image9} info_content={content.info_content9} />
+            </div>
+          </div>
+        </div>
         <Social shown={true} />
         <Navfooter />
       </div>

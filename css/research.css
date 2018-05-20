@@ -56,13 +56,15 @@
   padding-bottom: 3px;
 }
 .study_name {
-  margin-left: 50px;
+  margin-left: 20px;
   margin-top: 10px;
   display: inline-block;
 }
 .study_name_val {
   display: inline-block;
   margin-left: 5px;
+  margin-bottom: 15px;
+  text-decoration: underline;
 }
 /*-----------------------------------------------------
 stats
