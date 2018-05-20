@@ -174,6 +174,34 @@ export default class Drug extends React.Component {
       return this.props.drug.generic4;
     }
   }
+  findAppropriateDosageValue(val) {
+    if (val === 'first') {
+      return this.props.drug.dosage1;
+    }
+    if (val === 'second') {
+      return this.props.drug.dosage2;
+    }
+    if (val === 'third') {
+      return this.props.drug.dosage3;
+    }
+    if (val === 'fourth') {
+      return this.props.drug.dosage4;
+    }
+  }
+  findAppropriateDurationValue(val) {
+    if (val === 'first') {
+      return this.props.drug.duration1;
+    }
+    if (val === 'second') {
+      return this.props.drug.duration2;
+    }
+    if (val === 'third') {
+      return this.props.drug.duration3;
+    }
+    if (val === 'fourth') {
+      return this.props.drug.duration4;
+    }
+  }
   findRightIndex(val) {
     if (val === 'first') {
       return 0;
@@ -328,6 +356,7 @@ export default class Drug extends React.Component {
               <select
                 name="dosage"
                 className={this.findAppropriateClassDosage(this.props.id)}
+                defaultValue={this.findAppropriateDosageValue(this.props.id) || ''}
                 onChange={e => {
                   if (this.props.id == 'first' || this.props.id == 'second' || this.props.id == 'third' || this.props.id == 'fourth') {
                     this.props.dispatch({ type: 'dosage', payload1: this.props.id, payload2: e.target.value });
@@ -353,7 +382,7 @@ export default class Drug extends React.Component {
                 className={this.props.validation + this.findAppropriateClassDuration(this.props.id)}
                 style={{ marginBottom: 7, width: 40 }}
                 type="text"
-                defaultValue=""
+                defaultValue={this.findAppropriateDurationValue(this.props.id) || ''}
                 onChange={e => {
                   if (this.props.id == 'first' || this.props.id == 'second' || this.props.id == 'third' || this.props.id == 'fourth') {
                     this.props.dispatch({ type: 'duration', payload1: this.props.id, payload2: e.target.value });

@@ -11,6 +11,7 @@ YOU SHOULD MAYBE DELETE HEADER ACCES ORIGIN IN PHP
   ----
    1. display already existing data to the page if user comes back to that page
    2. document.body.style.pointerEvents='none' immediately after click
+   3. bug input on duration when writing 300+ number but ok when writing character
 
   REFACTORING
   -----------
