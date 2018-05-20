@@ -9,7 +9,8 @@ YOU SHOULD MAYBE DELETE HEADER ACCES ORIGIN IN PHP
 
   TODO
   ----
-  1. Fill research data
+   1. display already existing data to the page if user comes back to that page
+   2. document.body.style.pointerEvents='none' immediately after click
 
   REFACTORING
   -----------

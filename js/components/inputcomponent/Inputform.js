@@ -247,12 +247,12 @@ export default class Inputform extends React.Component {
       return false;
     }
   }
-  //daj ove checkboxe resetaj obavezno na onclick nemoj da mi se tam vrijednsoti pojavljuju
+
   sendDataToDatabase() {
     // you have to send only appropriate data to database so do proper inline validation
     if (typeof this.props.getId.getLastId === 'undefined') {
       this.props
-        .dispatch(user.getRequest('http://www.projectsgono.com/medsforlife/ppi_input/get_last_id.php', 'get-max-id'))
+        .dispatch(user.getRequest('/medsforlife/ppi_input/get_last_id.php', 'get-max-id'))
         .then(() => {
           this.setState({ required_data1: false, final_success: false, ajax_call: false });
           let FK_id = this.props.getId.getLastId;
@@ -333,6 +333,7 @@ export default class Inputform extends React.Component {
                       user.removeArrayValues(conversion.radioSideEffects(this.props.sides.radio_side), user.toNativeArray(this.props.sides.effect4))
                     )
                     .then(() => {
+                      document.body.style.pointerEvents = 'none';
                       this.setState({ data_in_database: true });
                     })
                     .catch(err => {});
@@ -527,7 +528,7 @@ export default class Inputform extends React.Component {
         this.setState({ data_in_database: false });
         location.reload();
       }.bind(this),
-      1400
+      1600
     );
     return (
       <div className="modal_main">
