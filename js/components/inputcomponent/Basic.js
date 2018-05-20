@@ -38,7 +38,7 @@ export default class Basic extends React.Component {
         <input
           className={this.props.age + this.props.error_age_input + ' number'}
           type="text"
-          defaultValue=""
+          defaultValue={this.props.basic.age || ''}
           onChange={(e, val) => {
             this.props.dispatch({ type: 'age', payload: e.target.value });
           }}
@@ -48,7 +48,7 @@ export default class Basic extends React.Component {
         <input
           className={this.props.height + this.props.error_height_input + ' number'}
           type="text"
-          defaultValue=""
+          defaultValue={this.props.basic.height || ''}
           onChange={(e, val) => {
             this.props.dispatch({ type: 'height', payload: e.target.value });
           }}
@@ -60,7 +60,7 @@ export default class Basic extends React.Component {
           onChange={e => {
             this.props.dispatch({ type: 'height_si', payload: e.target.value });
           }}
-          defaultValue="">
+          defaultValue={this.props.basic.height_select || ''}>
           <option value="" style={{ display: 'none' }} defaultValue="selected" label="unit" />
           <option value="cm">cm</option>
           <option value="in">inch</option>
@@ -72,7 +72,7 @@ export default class Basic extends React.Component {
         <input
           className={this.props.weight + this.props.error_weight_input + ' number'}
           type="text"
-          defaultValue=""
+          defaultValue={this.props.basic.weight || ''}
           onChange={(e, val) => {
             this.props.dispatch({ type: 'weight', payload: e.target.value });
           }}
@@ -84,7 +84,7 @@ export default class Basic extends React.Component {
           onChange={e => {
             this.props.dispatch({ type: 'weight_si', payload: e.target.value });
           }}
-          defaultValue="">
+          defaultValue={this.props.basic.weight_select || ''}>
           <option value="" style={{ display: 'none' }} defaultValue="selected" label="unit" />
           <option value="kg">kg</option>
           <option value="pd">pounds</option>
