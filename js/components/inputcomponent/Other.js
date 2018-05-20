@@ -65,7 +65,7 @@ export default class Other extends React.Component {
       'Pepcid',
       'Antibiotic',
       'NSAIDs',
-      'Caclcium carbonate',
+      'Calcium carbonate',
       'Tums',
       'Statin',
       'Paracetomol',
@@ -265,7 +265,7 @@ export default class Other extends React.Component {
           </div>
         </div>
         {this.props.other.radio_other != undefined
-          ? this.props.other.radio_other[0] === true ? this.displayOther.call(this, user.pushToObject(other_array.sort())) : ''
+          ? this.props.other.radio_other[0] === true ? this.displayOther.call(this, user.pushToObject(user.removeDuplicates(other_array.sort()))) : ''
           : ''}
       </div>
     );

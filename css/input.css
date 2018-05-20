@@ -74,6 +74,8 @@
 }
 .confirm_button_alternative {
   height: 33px;
+  position: relative;
+  top: -2px;
 }
 .input_expand {
   height: 34px;
@@ -184,4 +186,9 @@
   font-size: 16px;
   padding-top: 3px;
   box-shadow: 1px 1px 1px #000000;
+}
+.ok_button {
+  height: 28px;
+  position: relative;
+  top: -1px;
 }

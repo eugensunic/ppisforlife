@@ -243,6 +243,7 @@ export default class Condition extends React.Component {
                 maxLength="60"
               />
               <button
+                className="ok_button"
                 onClick={() => {
                   user.updateSelect(this.props.condition.gastro, 'condition_gastro', this.state.input_first);
                   this.setState({ input_first: '' });
@@ -259,7 +260,7 @@ export default class Condition extends React.Component {
             name="other"
             className={'widing' + this.props.error_other}
             value={this.props.condition.other}
-            options={user.pushToObject(rest.sort())}
+            options={user.pushToObject(user.removeDuplicates(rest.sort()))}
             searchable={true}
             multi={true}
             onChange={e => {
@@ -283,6 +284,7 @@ export default class Condition extends React.Component {
                 maxLength="60"
               />
               <button
+                className="ok_button"
                 onClick={() => {
                   user.updateSelect(this.props.condition.other, 'condition_other', this.state.input_second);
                   this.setState({ input_second: '' });

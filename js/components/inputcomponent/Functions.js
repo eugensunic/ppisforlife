@@ -166,3 +166,14 @@ export function removeArrayValues(radio_value, array) {
   }
   return array;
 }
+export function removeDuplicates(arr) {
+  var obj = {};
+  var newarr = [];
+  for (var i = 0; i < arr.length; i++) {
+    obj[arr[i]] = true;
+  }
+  for (var key in obj) {
+    newarr.push(key);
+  }
+  return newarr;
+}
