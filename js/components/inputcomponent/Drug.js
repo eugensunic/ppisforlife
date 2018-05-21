@@ -460,13 +460,31 @@ export default class Drug extends React.Component {
             <div className="col-sm-3 bootstrap_col_modification">
               <p className="inline">Daily usage (using continously for the entered duration)</p>
               <div className={'inline' + this.findAppropriateClassDaily(this.props.id)}>
-                <span className={this.state.daily[0] ? 'radio_clicked_input' : 'radio_normal_input'} onClick={() => this.onRadio('daily_first')}>
+                <span
+                  className={
+                    this.findAppropriateDailyUsageValue(this.props.id)
+                      ? this.findAppropriateDailyUsageValue(this.props.id)[0] ? 'radio_clicked_input' : 'radio_normal_input'
+                      : 'radio_normal_input'
+                  }
+                  onClick={() => this.onRadio('daily_first')}>
                   YES
                 </span>
-                <span className={this.state.daily[1] ? 'radio_clicked_input' : 'radio_normal_input'} onClick={() => this.onRadio('daily_second')}>
+                <span
+                  className={
+                    this.findAppropriateDailyUsageValue(this.props.id)
+                      ? this.findAppropriateDailyUsageValue(this.props.id)[1] ? 'radio_clicked_input' : 'radio_normal_input'
+                      : 'radio_normal_input'
+                  }
+                  onClick={() => this.onRadio('daily_second')}>
                   NO
                 </span>
-                <span className={this.state.daily[2] ? 'radio_clicked_input' : 'radio_normal_input cancel_margin_last'} onClick={() => this.onRadio('daily_third')}>
+                <span
+                  className={
+                    this.findAppropriateDailyUsageValue(this.props.id)
+                      ? this.findAppropriateDailyUsageValue(this.props.id)[2] ? 'radio_clicked_input' : 'radio_normal_input cancel_margin_last'
+                      : 'radio_normal_input'
+                  }
+                  onClick={() => this.onRadio('daily_third')}>
                   Unknown
                 </span>
               </div>
