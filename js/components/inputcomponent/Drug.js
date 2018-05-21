@@ -202,6 +202,34 @@ export default class Drug extends React.Component {
       return this.props.drug.duration4;
     }
   }
+  findAppropriateGlobaltimeValue(val) {
+    if (val === 'first') {
+      return this.props.drug.globaltime1;
+    }
+    if (val === 'second') {
+      return this.props.drug.globaltime2;
+    }
+    if (val === 'third') {
+      return this.props.drug.globaltime3;
+    }
+    if (val === 'fourth') {
+      return this.props.drug.globaltime4;
+    }
+  }
+  findAppropriateDailyUsageValue(val) {
+    if (val === 'first') {
+      return this.props.drug.daily1;
+    }
+    if (val === 'second') {
+      return this.props.drug.daily2;
+    }
+    if (val === 'third') {
+      return this.props.drug.daily3;
+    }
+    if (val === 'fourth') {
+      return this.props.drug.daily4;
+    }
+  }
   findRightIndex(val) {
     if (val === 'first') {
       return 0;
@@ -391,16 +419,40 @@ export default class Drug extends React.Component {
                 maxLength="4"
               />
               <div className={'inline' + this.findAppropriateClassGlobaltime(this.props.id)}>
-                <span className={this.state.duration[0] ? 'radio_clicked_input' : 'radio_normal_input'} onClick={() => this.onRadio('global_day')}>
+                <span
+                  className={
+                    this.findAppropriateGlobaltimeValue(this.props.id)
+                      ? this.findAppropriateGlobaltimeValue(this.props.id)[0] ? 'radio_clicked_input' : 'radio_normal_input'
+                      : 'radio_normal_input'
+                  }
+                  onClick={() => this.onRadio('global_day')}>
                   Day
                 </span>
-                <span className={this.state.duration[1] ? 'radio_clicked_input' : 'radio_normal_input'} onClick={() => this.onRadio('global_week')}>
+                <span
+                  className={
+                    this.findAppropriateGlobaltimeValue(this.props.id)
+                      ? this.findAppropriateGlobaltimeValue(this.props.id)[1] ? 'radio_clicked_input' : 'radio_normal_input'
+                      : 'radio_normal_input'
+                  }
+                  onClick={() => this.onRadio('global_week')}>
                   Week
                 </span>
-                <span className={this.state.duration[2] ? 'radio_clicked_input' : 'radio_normal_input'} onClick={() => this.onRadio('global_month')}>
+                <span
+                  className={
+                    this.findAppropriateGlobaltimeValue(this.props.id)
+                      ? this.findAppropriateGlobaltimeValue(this.props.id)[2] ? 'radio_clicked_input' : 'radio_normal_input'
+                      : 'radio_normal_input'
+                  }
+                  onClick={() => this.onRadio('global_month')}>
                   Month
                 </span>
-                <span className={this.state.duration[3] ? 'radio_clicked_input' : 'radio_normal_input cancel_margin_last'} onClick={() => this.onRadio('global_year')}>
+                <span
+                  className={
+                    this.findAppropriateGlobaltimeValue(this.props.id)
+                      ? this.findAppropriateGlobaltimeValue(this.props.id)[3] ? 'radio_clicked_input' : 'radio_normal_input'
+                      : 'radio_normal_input'
+                  }
+                  onClick={() => this.onRadio('global_year')}>
                   Year
                 </span>
               </div>
