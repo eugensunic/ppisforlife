@@ -99,7 +99,7 @@ export default class Inputform extends React.Component {
       (this.props.condition.gastro != undefined && this.props.condition.gastro.length != 0) &&
       this.props.drug.generic1 != null &&
       this.props.drug.dosage1 !== undefined &&
-      (this.props.drug.duration1 !== undefined && this.props.drug.duration1 != '' && user.isValidInteger(this.props.drug.duration1, 0, 1000) != 'error_red') &&
+      (this.props.drug.duration1 !== undefined && this.props.drug.duration1 != '' && user.isValidInteger(this.props.drug.duration1, 0, 400) != 'error_red') &&
       this.props.drug.globaltime1 !== undefined &&
       this.props.drug.daily1 !== undefined
     ) {
@@ -107,7 +107,7 @@ export default class Inputform extends React.Component {
         if (
           this.props.drug.generic2 != null &&
           this.props.drug.dosage2 !== undefined &&
-          (this.props.drug.duration2 !== undefined && this.props.drug.duration2 != '' && user.isValidInteger(this.props.drug.duration2, 0, 1000) != 'error_red') &&
+          (this.props.drug.duration2 !== undefined && this.props.drug.duration2 != '' && user.isValidInteger(this.props.drug.duration2, 0, 400) != 'error_red') &&
           this.props.drug.globaltime2 !== undefined &&
           this.props.drug.daily2 !== undefined
         ) {
@@ -115,7 +115,7 @@ export default class Inputform extends React.Component {
             if (
               this.props.drug.generic3 != null &&
               this.props.drug.dosage3 !== undefined &&
-              (this.props.drug.duration3 !== undefined && this.props.drug.duration3 != '' && user.isValidInteger(this.props.drug.duration3, 0, 1000) != 'error_red') &&
+              (this.props.drug.duration3 !== undefined && this.props.drug.duration3 != '' && user.isValidInteger(this.props.drug.duration3, 0, 400) != 'error_red') &&
               this.props.drug.globaltime3 !== undefined &&
               this.props.drug.daily3 !== undefined
             ) {
@@ -123,9 +123,7 @@ export default class Inputform extends React.Component {
                 if (
                   this.props.drug.generic4 != null &&
                   this.props.drug.dosage4 !== undefined &&
-                  (this.props.drug.duration4 !== undefined &&
-                    this.props.drug.duration4 != '' &&
-                    user.isValidInteger(this.props.drug.duration4, 0, 1000) != 'error_red') &&
+                  (this.props.drug.duration4 !== undefined && this.props.drug.duration4 != '' && user.isValidInteger(this.props.drug.duration4, 0, 400) != 'error_red') &&
                   this.props.drug.globaltime4 !== undefined &&
                   this.props.drug.daily4 !== undefined
                 ) {
@@ -715,7 +713,7 @@ export default class Inputform extends React.Component {
           <Drug
             id="first"
             clicked={this.state.success}
-            validation={user.isValidInteger(this.props.drug.duration1, 0, 300)}
+            validation={user.isValidInteger(this.props.drug.duration1, 0, 400)}
             generic1={(this.props.drug.generic1 == undefined || this.props.drug.generic1.length == 0) && this.state.clicked ? ' redness_input' : ''}
             brand1={(this.props.drug.brand1 == undefined || this.props.drug.brand1.length == 0) && this.state.clicked ? '' : ''}
             brand12={(this.props.drug.brand1 == undefined || this.props.drug.brand1.length == 0) && this.state.clicked ? '' : ''}
