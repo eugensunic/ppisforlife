@@ -332,30 +332,32 @@ export default class Inputform extends React.Component {
                       user.removeArrayValues(conversion.radioSideEffects(this.props.sides.radio_side), user.toNativeArray(this.props.sides.effect4))
                     )
                     .then(() => {
-                      document.body.style.pointerEvents = 'none';
-                      this.setState({ text_in_database: true });
+                      this.setState({ data_in_database: true });
+                      setTimeout(() => {
+                        location.reload();
+                      }, 1200);
                     })
                     .catch(err => {
                       alert('data submit did not succeed');
-                      this.setState({ data_in_database: false });
+                      this.setState({ data_in_database: false, clicked2: false, required_data2: false });
                       // cancel loading popup
                     });
                 })
                 .catch(err => {
                   alert('data submit did not succeed');
-                  this.setState({ data_in_database: false });
+                  this.setState({ data_in_database: false, clicked2: false, required_data2: false });
                   // cancel loading popup
                 });
             })
             .catch(err => {
               alert('data submit did not succeed');
-              this.setState({ data_in_database: false });
+              this.setState({ data_in_database: false, clicked2: false, required_data2: false });
               // cancel loading popup
             });
         })
         .catch(err => {
           alert('data submit did not succeed');
-          this.setState({ data_in_database: false });
+          this.setState({ data_in_database: false, clicked2: false, required_data2: false });
           // cancel loading popup
         });
     }
@@ -538,17 +540,14 @@ export default class Inputform extends React.Component {
     }
   }
   submitPopUp() {
-    setTimeout(
-      function() {
-        this.setState({ data_in_database: false });
-        location.reload();
-      }.bind(this),
-      1600
-    );
+    // YOU CANNOT CANCEL A PROMISE
+    // setTimeout(() => {
+    //   this.setState({ required_data2: true, clicked2: false, required_data2: false });
+    // }, 5000);
     return (
       <div className="modal_main">
         <div className="modal_sub_pop">
-          <p className="center submit_database_modal">{this.state.text_in_database ? 'Thank you for submitting your data!' : ''}</p>
+          <p className="center submit_database_modal">{this.state.data_in_database ? 'Data submitted!' : 'In progress...'}</p>
           <div className="center_div loader" />
         </div>
       </div>
@@ -635,11 +634,12 @@ export default class Inputform extends React.Component {
         />
         {this.state.required_data2 ? (
           <div className="center error-message-confirm">
-            <span>Fill all the required data above</span>
+            <span>Fill all the required data above then click Submit</span>
           </div>
         ) : (
           ''
         )}
+        {!this.state.required_data2 && this.state.clicked2 ? this.submitPopUp() : <span />}
         <Success class="btn-success mg_top maxpercent" val="Submit" style="width:100%" onClick={this.finalConfirm.bind(this)} />
       </div>
     );
@@ -805,18 +805,7 @@ export default class Inputform extends React.Component {
             )}
             {this.state.required_data1 ? (
               <div className="center error-message-confirm">
-                <span>Fill all the required data above</span>
-              </div>
-            ) : (
-              ''
-            )}
-
-            {!this.state.required_data2 && this.state.clicked2 ? (
-              <div className="modal_main">
-                <div className="modal_sub_pop">
-                  <p className="center submit_database_modal">{this.state.text_in_database ? 'Thank you for submitting your data!' : ''}</p>
-                  <div className="center_div loader" />
-                </div>
+                <span>Fill all the required data above then click proceed</span>
               </div>
             ) : (
               ''
@@ -835,7 +824,7 @@ export default class Inputform extends React.Component {
         {this.state.new_success ? this.successAdd() : <span />}
         {/* // new_success is for the down section */}
         {this.state.final_success ? this.sendDataToDatabase() : <span />}
-        {this.state.data_in_database ? this.submitPopUp() : <span />}
+
         <Navfooter />
       </div>
     );
