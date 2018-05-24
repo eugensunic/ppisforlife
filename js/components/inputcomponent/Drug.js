@@ -458,7 +458,7 @@ export default class Drug extends React.Component {
               </div>
             </div>
             <div className="col-sm-3 bootstrap_col_modification">
-              <p className="inline">Daily usage (using continously for the entered duration)</p>
+              <p className="inline">Daily usage (using continuously for the entered duration)</p>
               <div className={'inline' + this.findAppropriateClassDaily(this.props.id)}>
                 <span
                   className={

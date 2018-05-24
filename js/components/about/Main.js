@@ -94,7 +94,7 @@ export default class Main extends React.Component {
             <p>
               The reason of collecting such posts is the huge media reporting about the PPIs side effects. If you search for PPIs dangers, side effects, long-term
               consequences etc. you will see how much information has been posted recently about them. I can definitely say that they have become the most talked topic in
-              the world in terms of pharmaceutical drugs.
+              the world in terms of Pharmaceutical drugs.
             </p>
           </div>
         </div>
