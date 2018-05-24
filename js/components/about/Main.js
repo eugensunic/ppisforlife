@@ -51,7 +51,7 @@ export default class Main extends React.Component {
           </div>
         </div>
         <div className="row">
-          <div className="col-sm-6 center" style={{ marginTop: 110 }}>
+          <div className="col-sm-6 center" style={{ marginTop: 110, marginBottom: 50 }}>
             <a href="/medsforlife/post-collector/" target="_blank" className="center linking_app">
               Application used for collecting comments
             </a>
@@ -134,7 +134,7 @@ export default class Main extends React.Component {
           </div>
         </div>
         <div className="row">
-          <div className="my_comments_section_starter">
+          <div className="my_comments_section_starter" style={{ marginBottom: 2 }}>
             <strong>NOTE: </strong>
             <ul>
               <li> Every post collected from another site is referenced, the date as well as the post username are also present</li>
