@@ -119,7 +119,7 @@ export default class Otherdrugs extends React.Component {
             </tr>
             <tr>
               <td className="matrix">
-                <p className="meds_names">Aspirin (used for fever reducing and inflamation)</p>
+                <p className="meds_names">Aspirin (used for fever reduction and inflamation)</p>
               </td>
               <td className="matrix">
                 <p>no significant connection</p>

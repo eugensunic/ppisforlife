@@ -56,6 +56,7 @@ export default class Inputform extends React.Component {
       mgcondition: { marginTop: 0 },
       ajax_call: true,
       data_in_database: false,
+      text_in_database: false,
       required_data1: false,
       required_data2: false
     };
@@ -332,15 +333,31 @@ export default class Inputform extends React.Component {
                     )
                     .then(() => {
                       document.body.style.pointerEvents = 'none';
-                      this.setState({ data_in_database: true });
+                      this.setState({ text_in_database: true });
                     })
-                    .catch(err => {});
+                    .catch(err => {
+                      alert('data submit did not succeed');
+                      this.setState({ data_in_database: false });
+                      // cancel loading popup
+                    });
                 })
-                .catch(err => {});
+                .catch(err => {
+                  alert('data submit did not succeed');
+                  this.setState({ data_in_database: false });
+                  // cancel loading popup
+                });
             })
-            .catch(err => {});
+            .catch(err => {
+              alert('data submit did not succeed');
+              this.setState({ data_in_database: false });
+              // cancel loading popup
+            });
         })
-        .catch(err => {});
+        .catch(err => {
+          alert('data submit did not succeed');
+          this.setState({ data_in_database: false });
+          // cancel loading popup
+        });
     }
   }
   finalConfirm() {
@@ -531,7 +548,7 @@ export default class Inputform extends React.Component {
     return (
       <div className="modal_main">
         <div className="modal_sub_pop">
-          <p className="center submit_database_modal">Thank you for submitting your data!</p>
+          <p className="center submit_database_modal">{this.state.text_in_database ? 'Thank you for submitting your data!' : ''}</p>
           <div className="center_div loader" />
         </div>
       </div>
@@ -789,6 +806,17 @@ export default class Inputform extends React.Component {
             {this.state.required_data1 ? (
               <div className="center error-message-confirm">
                 <span>Fill all the required data above</span>
+              </div>
+            ) : (
+              ''
+            )}
+
+            {!this.state.required_data2 && this.state.clicked2 ? (
+              <div className="modal_main">
+                <div className="modal_sub_pop">
+                  <p className="center submit_database_modal">{this.state.text_in_database ? 'Thank you for submitting your data!' : ''}</p>
+                  <div className="center_div loader" />
+                </div>
               </div>
             ) : (
               ''

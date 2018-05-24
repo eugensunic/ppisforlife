@@ -206,3 +206,12 @@ input[type='checkbox'] {
 .card-header {
   border-bottom: 1px solid #ebe2e2;
 }
+.error_page_center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  font-size: 35px;
+  color: #4e4d4d;
+  margin-top: -10px;
+}

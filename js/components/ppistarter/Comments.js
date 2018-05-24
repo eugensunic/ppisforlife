@@ -24,28 +24,28 @@ export default class Comments extends React.Component {
           </li>
           <li>Many people complain about weight gain due to PPIs</li>
           <li>
-            A good amount of people complain about different brands (side effects), some are definetly better for some people. Patients need to find the right/correct PPI
-            generic/brand. The one, which will cause minimal or no side effects
+            A good amount of people complain about different brands (side effects), some are definitely better for some people. Patients need to find the right/correct
+            PPI generic/brand. The one, which will cause minimal or no side effects
           </li>
           <li>
-            People who have been on this drug continously (daily) for a long long time (10+ years) do get side effects but most of them get minor side effects rather than
+            People who have been on this drug continuously (daily) for a long time (10+ years) do get side effects but most of them get minor side effects rather than
             horror stories sides (CKD, nephritis, osteoporosis, dementia, heart problems etc.). Basically they have side effects which aren&#39;t life threatening.
           </li>
-          <li>People have a lot of side effects from omeprazole, they are complaining about it, especcialy the users who&#39;ve been on it short-term</li>
-          <li>Some people are alergic to this drugs</li>
-          <li>You can see throught the posts that most side effect reports come from people who are adapting to the drug (short term users)</li>
+          <li>People have a lot of side effects from omeprazole, they are complaining about it, especially the users who&#39;ve been on it short-term</li>
+          <li>Some people are alergic to these drugs</li>
+          <li>You can see through the posts that most side effect reports come from people who are adapting to the drug (short term users)</li>
           <li>No one talks about this drugs in terms of PPIs causing cancer</li>
           <li>
-            GERD, Barrett's and stomach problems seem to be inherited. There are many people who's ancestors (parents, grandparents) have/had the same disease. Genetics
-            obviously plays a role in getting the disease for some people
+            GERD, Barrett&#39;s and stomach problems seem to be inherited. There are many people whose ancestors (parents, grandparents) have/had the same disease.
+            Genetics obviously plays a role in getting the disease for some people
           </li>
           <li>People are saying that it is very hard to get off from PPIs once you start taking them</li>
           <li>Many patients are reporting acid rebound effect after stopping their PPI therapy.</li>
           <li>Many of them have weaned off the meds by decreasing the dosage gradually over a period of time</li>
           <li>People are having trouble even with a small hiatal hernia</li>
           <li>
-            Some people just need the meds no matter what. There are a lot of people who have managed their diet are thin-slim eat healty, don't eat gluten, don't drink,
-            don&#39;t smoke but still have reflux because of the disfunctional sphincter or/and the hiatal hernia or other problem
+            Some people just need the meds no matter what. There are a lot of people who have managed their diet are thin-slim eat healthy, don't eat gluten, don't drink,
+            don&#39;t smoke but still have reflux because of the dysfunctional sphincter or/and the hiatal hernia or other problem
           </li>
           <li>
             There are a lot of commentators scaring PPIs users. they aren&#39;t just telling them that PPIs are bad, instead they are scaring them by telling them to get
@@ -56,10 +56,10 @@ export default class Comments extends React.Component {
             problems, premature death, cancer etc.)
           </li>
           <li>
-            A lot of people think that people who are on this meds are those who don&#39;t take care of there lifestyle and this is the reason why they have upper
+            A lot of people think that people who are on this meds are those who don&#39;t take care of their lifestyle and this is the reason why they have upper
             abdominal problems
           </li>
-          <li>Quite a few people with stomach and GERD problems haven&#39;t been drinking or smoking before getting the upper ambdominal issues</li>
+          <li>Quite a few people with stomach and GERD problems haven&#39;t been drinking or smoking before getting the upper abdominal issues</li>
           <li>Maybe 10-15% (subjectively) trust the big pharma</li>
         </ul>
       </div>

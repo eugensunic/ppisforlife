@@ -2,10 +2,6 @@ import React from 'react';
 
 export default class NotFound extends React.Component {
   render() {
-    return (
-      <div className="center" style={{ fontSize: 30, textAlign: 'center', marginTop: '30%' }}>
-        Page not found
-      </div>
-    );
+    return <div className="error_page_center">Page not found</div>;
   }
 }
