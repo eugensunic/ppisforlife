@@ -805,7 +805,7 @@ export default class Inputform extends React.Component {
             )}
             {this.state.required_data1 ? (
               <div className="center error-message-confirm">
-                <span>Fill all the required data above then click proceed</span>
+                <span>Fill all the required data above then click Proceed</span>
               </div>
             ) : (
               ''
