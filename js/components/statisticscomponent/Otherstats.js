@@ -9,7 +9,7 @@ export default class Ohterstats extends React.Component {
 
   componentDidMount() {
     if (this.props.clicked_other_stats) {
-      location.href = '#first_row_target';
+      document.querySelector('#first_row_target').scrollIntoView();
     }
   }
   goToLocation() {}
