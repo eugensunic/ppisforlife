@@ -14,7 +14,7 @@ export default class InternalNavigation extends React.Component {
           className="internal_navigation"
           style={{ backgroundColor: '#eaeaea' }}
           onClick={() => {
-            location.href = '#basic-extract';
+            document.querySelector('#basic-extract').scrollIntoView();
           }}>
           Person basic info
         </span>
@@ -22,7 +22,7 @@ export default class InternalNavigation extends React.Component {
           className="internal_navigation"
           style={{ backgroundColor: '#f0e4e4' }}
           onClick={() => {
-            location.href = '#condition-extract';
+            document.querySelector('#condition-extract').scrollIntoView();
           }}>
           Disease
         </span>
@@ -30,7 +30,7 @@ export default class InternalNavigation extends React.Component {
           className="internal_navigation"
           style={{ backgroundColor: '#d3e6f2' }}
           onClick={() => {
-            location.href = '#drugs-extract-part1';
+            document.querySelector('#drugs-extract-part1').scrollIntoView();
           }}>
           PPI Drugs
         </span>
@@ -38,7 +38,7 @@ export default class InternalNavigation extends React.Component {
           className="internal_navigation"
           style={{ backgroundColor: '#f8e3c4' }}
           onClick={() => {
-            location.href = '#sides-extract-part1';
+            document.querySelector('#sides-extract-part1').scrollIntoView();
           }}>
           Side effects
         </span>
@@ -46,7 +46,7 @@ export default class InternalNavigation extends React.Component {
           className="internal_navigation"
           style={{ backgroundColor: '#fafafa' }}
           onClick={() => {
-            location.href = '#other-nutrient-extract';
+            document.querySelector('#other-nutrient-extract').scrollIntoView();
           }}>
           Other drugs & Nutrient
         </span>
@@ -54,7 +54,7 @@ export default class InternalNavigation extends React.Component {
           className="internal_navigation"
           style={{ backgroundColor: '#b5e0b5' }}
           onClick={() => {
-            location.href = '#natural-extract';
+            document.querySelector('#natural-extract').scrollIntoView();
           }}>
           Natural supplements
         </span>
@@ -62,7 +62,7 @@ export default class InternalNavigation extends React.Component {
           className="internal_navigation"
           style={{ backgroundColor: '#eaeaea' }}
           onClick={() => {
-            location.href = '#extra-extract-part1';
+            document.querySelector('#extra-extract-part1').scrollIntoView();
           }}>
           Extra info
         </span>
