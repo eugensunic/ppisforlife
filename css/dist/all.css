@@ -1,5 +1,429 @@
-.margin-left--1 {
-  margin-left: -1px;
+/**
+ * React Select
+ * ============
+ * Created by Jed Watson and Joss Mackison for KeystoneJS, http://www.keystonejs.com/
+ * https://twitter.com/jedwatson https://twitter.com/jossmackison https://twitter.com/keystonejs
+ * MIT License: https://github.com/JedWatson/react-select
+*/
+.Select {
+  position: relative;
+}
+.Select input::-webkit-contacts-auto-fill-button,
+.Select input::-webkit-credentials-auto-fill-button {
+  display: none !important;
+}
+.Select input::-ms-clear {
+  display: none !important;
+}
+.Select input::-ms-reveal {
+  display: none !important;
+}
+.Select,
+.Select div,
+.Select input,
+.Select span {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.Select.is-disabled .Select-arrow-zone {
+  cursor: default;
+  pointer-events: none;
+  opacity: 0.35;
+}
+.Select.is-disabled > .Select-control {
+  background-color: #f9f9f9;
+}
+.Select.is-disabled > .Select-control:hover {
+  box-shadow: none;
+}
+.Select.is-open > .Select-control {
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  background: #fff;
+  border-color: #b3b3b3 #ccc #d9d9d9;
+}
+.Select.is-open > .Select-control .Select-arrow {
+  top: -2px;
+  border-color: transparent transparent #999;
+  border-width: 0 5px 5px;
+}
+.Select.is-searchable.is-open > .Select-control {
+  cursor: text;
+}
+.Select.is-searchable.is-focused:not(.is-open) > .Select-control {
+  cursor: text;
+}
+.Select.is-focused > .Select-control {
+  background: #fff;
+}
+.Select.is-focused:not(.is-open) > .Select-control {
+  border-color: #007eff;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 0 3px rgba(0, 126, 255, 0.1);
+  background: #fff;
+}
+.Select.has-value.is-clearable.Select--single > .Select-control .Select-value {
+  padding-right: 42px;
+}
+.Select.has-value.Select--single > .Select-control .Select-value .Select-value-label,
+.Select.has-value.is-pseudo-focused.Select--single > .Select-control .Select-value .Select-value-label {
+  color: #333;
+}
+.Select.has-value.Select--single > .Select-control .Select-value a.Select-value-label,
+.Select.has-value.is-pseudo-focused.Select--single > .Select-control .Select-value a.Select-value-label {
+  cursor: pointer;
+  text-decoration: none;
+}
+.Select.has-value.Select--single > .Select-control .Select-value a.Select-value-label:hover,
+.Select.has-value.is-pseudo-focused.Select--single > .Select-control .Select-value a.Select-value-label:hover,
+.Select.has-value.Select--single > .Select-control .Select-value a.Select-value-label:focus,
+.Select.has-value.is-pseudo-focused.Select--single > .Select-control .Select-value a.Select-value-label:focus {
+  color: #007eff;
+  outline: none;
+  text-decoration: underline;
+}
+.Select.has-value.Select--single > .Select-control .Select-value a.Select-value-label:focus,
+.Select.has-value.is-pseudo-focused.Select--single > .Select-control .Select-value a.Select-value-label:focus {
+  background: #fff;
+}
+.Select.has-value.is-pseudo-focused .Select-input {
+  opacity: 0;
+}
+.Select.is-open .Select-arrow,
+.Select .Select-arrow-zone:hover > .Select-arrow {
+  border-top-color: #666;
+}
+.Select.Select--rtl {
+  direction: rtl;
+  text-align: right;
+}
+.Select-control {
+  background-color: #fff;
+  border-color: #d9d9d9 #ccc #b3b3b3;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  color: #333;
+  cursor: default;
+  display: table;
+  border-spacing: 0;
+  border-collapse: separate;
+  height: 36px;
+  outline: none;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+.Select-control:hover {
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.06);
+}
+.Select-control .Select-input:focus {
+  outline: none;
+  background: #fff;
+}
+.Select-placeholder,
+.Select--single > .Select-control .Select-value {
+  bottom: 0;
+  color: #aaa;
+  left: 0;
+  line-height: 34px;
+  padding-left: 10px;
+  padding-right: 10px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.Select-input {
+  height: 34px;
+  padding-left: 10px;
+  padding-right: 10px;
+  vertical-align: middle;
+}
+.Select-input > input {
+  width: 100%;
+  background: none transparent;
+  border: 0 none;
+  box-shadow: none;
+  cursor: default;
+  display: inline-block;
+  font-family: inherit;
+  font-size: inherit;
+  margin: 0;
+  outline: none;
+  line-height: 17px;
+  /* For IE 8 compatibility */
+  padding: 8px 0 12px;
+  /* For IE 8 compatibility */
+  -webkit-appearance: none;
+}
+.is-focused .Select-input > input {
+  cursor: text;
+}
+.has-value.is-pseudo-focused .Select-input {
+  opacity: 0;
+}
+.Select-control:not(.is-searchable) > .Select-input {
+  outline: none;
+}
+.Select-loading-zone {
+  cursor: pointer;
+  display: table-cell;
+  position: relative;
+  text-align: center;
+  vertical-align: middle;
+  width: 16px;
+}
+.Select-loading {
+  -webkit-animation: Select-animation-spin 400ms infinite linear;
+  -o-animation: Select-animation-spin 400ms infinite linear;
+  animation: Select-animation-spin 400ms infinite linear;
+  width: 16px;
+  height: 16px;
+  box-sizing: border-box;
+  border-radius: 50%;
+  border: 2px solid #ccc;
+  border-right-color: #333;
+  display: inline-block;
+  position: relative;
+  vertical-align: middle;
+}
+.Select-clear-zone {
+  -webkit-animation: Select-animation-fadeIn 200ms;
+  -o-animation: Select-animation-fadeIn 200ms;
+  animation: Select-animation-fadeIn 200ms;
+  color: #999;
+  cursor: pointer;
+  display: table-cell;
+  position: relative;
+  text-align: center;
+  vertical-align: middle;
+  width: 17px;
+}
+.Select-clear-zone:hover {
+  color: #d0021b;
+}
+.Select-clear {
+  display: inline-block;
+  font-size: 18px;
+  line-height: 1;
+}
+.Select--multi .Select-clear-zone {
+  width: 17px;
+}
+.Select-arrow-zone {
+  cursor: pointer;
+  display: table-cell;
+  position: relative;
+  text-align: center;
+  vertical-align: middle;
+  width: 25px;
+  padding-right: 5px;
+}
+.Select--rtl .Select-arrow-zone {
+  padding-right: 0;
+  padding-left: 5px;
+}
+.Select-arrow {
+  border-color: #999 transparent transparent;
+  border-style: solid;
+  border-width: 5px 5px 2.5px;
+  display: inline-block;
+  height: 0;
+  width: 0;
+  position: relative;
+}
+.Select-control > *:last-child {
+  padding-right: 5px;
+}
+.Select--multi .Select-multi-value-wrapper {
+  display: inline-block;
+}
+.Select .Select-aria-only {
+  position: absolute;
+  display: inline-block;
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  clip: rect(0, 0, 0, 0);
+  overflow: hidden;
+  float: left;
+}
+@-webkit-keyframes Select-animation-fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes Select-animation-fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.Select-menu-outer {
+  border-bottom-right-radius: 4px;
+  border-bottom-left-radius: 4px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-top-color: #e6e6e6;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.06);
+  box-sizing: border-box;
+  margin-top: -1px;
+  max-height: 200px;
+  position: absolute;
+  left: 0;
+  top: 100%;
+  width: 100%;
+  z-index: 1;
+  -webkit-overflow-scrolling: touch;
+}
+.Select-menu {
+  max-height: 198px;
+  overflow-y: auto;
+}
+.Select-option {
+  box-sizing: border-box;
+  background-color: #fff;
+  color: #666666;
+  cursor: pointer;
+  display: block;
+  padding: 8px 10px;
+}
+.Select-option:last-child {
+  border-bottom-right-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+.Select-option.is-selected {
+  background-color: #f5faff;
+  /* Fallback color for IE 8 */
+  background-color: rgba(0, 126, 255, 0.04);
+  color: #333;
+}
+.Select-option.is-focused {
+  background-color: #ebf5ff;
+  /* Fallback color for IE 8 */
+  background-color: rgba(0, 126, 255, 0.08);
+  color: #333;
+}
+.Select-option.is-disabled {
+  color: #cccccc;
+  cursor: default;
+}
+.Select-noresults {
+  box-sizing: border-box;
+  color: #999999;
+  cursor: default;
+  display: block;
+  padding: 8px 10px;
+}
+.Select--multi .Select-input {
+  vertical-align: middle;
+  margin-left: 10px;
+  padding: 0;
+}
+.Select--multi.Select--rtl .Select-input {
+  margin-left: 0;
+  margin-right: 10px;
+}
+.Select--multi.has-value .Select-input {
+  margin-left: 5px;
+}
+.Select--multi .Select-value {
+  background-color: #ebf5ff;
+  /* Fallback color for IE 8 */
+  background-color: rgba(0, 126, 255, 0.08);
+  border-radius: 2px;
+  border: 1px solid #c2e0ff;
+  /* Fallback color for IE 8 */
+  border: 1px solid rgba(0, 126, 255, 0.24);
+  color: #007eff;
+  display: inline-block;
+  font-size: 0.9em;
+  line-height: 1.4;
+  margin-left: 5px;
+  margin-top: 5px;
+  vertical-align: top;
+}
+.Select--multi .Select-value-icon,
+.Select--multi .Select-value-label {
+  display: inline-block;
+  vertical-align: middle;
+}
+.Select--multi .Select-value-label {
+  border-bottom-right-radius: 2px;
+  border-top-right-radius: 2px;
+  cursor: default;
+  padding: 2px 5px;
+}
+.Select--multi a.Select-value-label {
+  color: #007eff;
+  cursor: pointer;
+  text-decoration: none;
+}
+.Select--multi a.Select-value-label:hover {
+  text-decoration: underline;
+}
+.Select--multi .Select-value-icon {
+  cursor: pointer;
+  border-bottom-left-radius: 2px;
+  border-top-left-radius: 2px;
+  border-right: 1px solid #c2e0ff;
+  /* Fallback color for IE 8 */
+  border-right: 1px solid rgba(0, 126, 255, 0.24);
+  padding: 1px 5px 3px;
+}
+.Select--multi .Select-value-icon:hover,
+.Select--multi .Select-value-icon:focus {
+  background-color: #d8eafd;
+  /* Fallback color for IE 8 */
+  background-color: rgba(0, 113, 230, 0.08);
+  color: #0071e6;
+}
+.Select--multi .Select-value-icon:active {
+  background-color: #c2e0ff;
+  /* Fallback color for IE 8 */
+  background-color: rgba(0, 126, 255, 0.24);
+}
+.Select--multi.Select--rtl .Select-value {
+  margin-left: 0;
+  margin-right: 5px;
+}
+.Select--multi.Select--rtl .Select-value-icon {
+  border-right: none;
+  border-left: 1px solid #c2e0ff;
+  /* Fallback color for IE 8 */
+  border-left: 1px solid rgba(0, 126, 255, 0.24);
+}
+.Select--multi.is-disabled .Select-value {
+  background-color: #fcfcfc;
+  border: 1px solid #e3e3e3;
+  color: #333;
+}
+.Select--multi.is-disabled .Select-value-icon {
+  cursor: not-allowed;
+  border-right: 1px solid #e3e3e3;
+}
+.Select--multi.is-disabled .Select-value-icon:hover,
+.Select--multi.is-disabled .Select-value-icon:focus,
+.Select--multi.is-disabled .Select-value-icon:active {
+  background-color: #fcfcfc;
+}
+@keyframes Select-animation-spin {
+  to {
+    transform: rotate(1turn);
+  }
+}
+@-webkit-keyframes Select-animation-spin {
+  to {
+    -webkit-transform: rotate(1turn);
+  }
 }
 .about_first {
   border: 1px solid #e1dddd;
@@ -10,6 +434,7 @@
   box-shadow: 3px 4px 3px 0px #5c5c5c;
 }
 .about_second {
+  top: -10px;
   border: 1px solid #e1dddd;
   border-radius: 3px;
   padding-left: 5px;
@@ -19,6 +444,7 @@
   box-shadow: 3px 4px 3px 0px #5c5c5c;
 }
 .about_third {
+  top: -10px;
   border: 1px solid #e1dddd;
   border-radius: 3px;
   padding-left: 5px;
@@ -31,8 +457,8 @@
   color: #b44949;
 }
 .about_image {
-  width: 130px;
-  height: 135px;
+  width: 250px;
+  height: 335px;
 }
 .linking_app {
   font-size: 22px;
@@ -207,8 +633,13 @@
   flex: 1 1 auto;
   padding: 1.25rem;
 }
+html {
+  height: 100%;
+}
 body {
+  position: relative;
   background-color: #f4f2f2 !important;
+  min-height: 100%;
 }
 h4 {
   color: #0061b6 !important;
@@ -262,6 +693,9 @@ th {
 .margin-left-3 {
   margin-left: 3px;
 }
+.margin-left--1 {
+  margin-left: -1px;
+}
 .margin-right-3 {
   margin-right: 3px;
 }
@@ -271,8 +705,20 @@ th {
 .margin-top-negative-10 {
   margin-top: -10px;
 }
+.margin-top-10 {
+  margin-top: -10px;
+}
+.margin-bottom-10 {
+  margin-bottom: 10px;
+}
+.margin-top-30 {
+  margin-top: 30px;
+}
 .margin-top-3 {
   margin-top: 3px;
+}
+.font-15 {
+  font-size: 15px;
 }
 .center_div {
   width: 50%;
@@ -343,7 +789,7 @@ button.list-group-item:hover {
   cursor: pointer;
 }
 .footer {
-  margin-top: 80px;
+  margin-bottom: -90px;
   position: absolute;
   right: 0;
   bottom: 0;
@@ -394,6 +840,15 @@ input[type='checkbox'] {
 }
 .card-header {
   border-bottom: 1px solid #ebe2e2;
+}
+.error_page_center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  font-size: 35px;
+  color: #4e4d4d;
+  margin-top: -10px;
 }
 .move_first_num_bar {
   position: relative;
@@ -628,6 +1083,43 @@ Pharma post
   position: relative;
   top: 5px;
 }
+.click_me {
+  border: 1px solid #b7b7c9;
+  height: 200px;
+  border-radius: 1px;
+  opacity: 1;
+  padding-top: 10px;
+  font-size: 25px;
+  color: #4e4c4c;
+  box-shadow: 1px 1px 8px 0px #a2a2a9;
+}
+.click_me:hover {
+  opacity: 0.7;
+  cursor: pointer;
+  background-color: #f1f1f1;
+  border-color: #4f4d49;
+}
+.click_me_row {
+  border: 1px solid #b7b7c9;
+  height: 75px;
+  border-radius: 1px;
+  opacity: 1;
+  padding-top: 15px;
+  font-size: 25px;
+  color: #4e4c4c;
+  box-shadow: 1px 1px 8px 0px #a2a2a9;
+}
+.click_me_row:hover {
+  opacity: 0.7;
+  cursor: pointer;
+  background-color: #f1f1f1;
+  border-color: #4f4d49;
+}
+.small-txt-below {
+  font-size: 18px;
+  margin-top: 40px;
+  color: #997a4d;
+}
 .ppi_only {
   font-size: 15px;
   color: #337ab7;
@@ -704,6 +1196,8 @@ Pharma post
 }
 .confirm_button_alternative {
   height: 33px;
+  position: relative;
+  top: -2px;
 }
 .input_expand {
   height: 34px;
@@ -711,9 +1205,10 @@ Pharma post
 
 /*-------------------------------------------------------------------------------------------------------------*/
 /* The Modal (background) */
+
 .modal_main {
   position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
+  z-index: 100; /* Sit on top */
   padding-top: 100px; /* Location of the box */
   left: 0;
   top: 0;
@@ -763,6 +1258,10 @@ Pharma post
 .btn_modal_success {
   margin-right: 4px;
 }
+.submit_database_modal {
+  color: #454545;
+  font-size: 25px;
+}
 .extra_question {
   color: #617bb7;
   font-weight: 700;
@@ -799,6 +1298,22 @@ Pharma post
   font-size: 17px;
   height: 35px;
 }
+.error-message-confirm {
+  position: relative;
+  top: 25px;
+  height: 30px;
+  border-radius: 2px;
+  background-color: #ffc0cb;
+  color: #3c3737;
+  font-size: 16px;
+  padding-top: 3px;
+  box-shadow: 1px 1px 1px #000000;
+}
+.ok_button {
+  height: 28px;
+  position: relative;
+  top: -1px;
+}
 .nav_center {
   text-align: center;
   width: auto;
@@ -820,6 +1335,76 @@ Pharma post
 .nav_element:hover {
   cursor: pointer;
   opacity: 0.9;
+}
+.overview-title {
+  height: 40px;
+  width: 100%;
+  color: #4e4747;
+  border: 1px solid #d1cdcd;
+  border-radius: 3px;
+  margin-bottom: 10px;
+  margin-top: 30px;
+  padding-left: 8px;
+  padding-top: 5px;
+  font-size: 24px;
+}
+.overwrite_title {
+  width: auto;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+.overview_conclusion {
+  background-color: #f7f9f6;
+  border: 1px solid #ecce98;
+  border-radius: 3px;
+  padding: 5px;
+  margin-top: 10px;
+}
+
+.change_cursor_overview:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+.close_all_divs {
+  border: 1px solid #d6d6db;
+  width: 60px;
+  border-radius: 10px;
+  padding-left: 2px;
+  background: #ffffff;
+  position: fixed;
+  right: 0;
+  margin-right: 3px;
+  margin-top: -10px;
+  z-index: 100;
+}
+.close_all_divs:hover {
+  cursor: pointer;
+  background-color: #f3b6b6;
+}
+.records_text {
+  display: inline;
+  color: #4b4a4a;
+  font-size: 17px;
+  margin-left: 3px;
+}
+.records_value {
+  display: inline;
+  font-size: 18px;
+  margin-top: 10px;
+  color: #4b5adb;
+  font-weight: 600;
+}
+.internal_navigation {
+  border: 1px solid #8e8e8e;
+  border-radius: 3px;
+  background: #e6e6e6;
+  margin-right: 5px;
+  padding: 2px;
+  display: inline-block;
+}
+.internal_navigation:hover {
+  opacity: 0.9;
+  cursor: pointer;
 }
 .overwrite_h4 {
   color: black !important;
@@ -868,7 +1453,7 @@ Pharma post
   margin-bottom: 15px;
   word-wrap: break-word;
 }
-td {
+td.matrix {
   padding: 3px !important;
   border: 1px solid #6b6868;
   word-wrap: break-word;
@@ -942,8 +1527,7 @@ td {
   border: 1px solid grey;
   border-radius: 2px;
   box-shadow: 1px 1px 0px 0px #fff5f5;
-  padding-right: 1px;
-  padding-left: 1px;
+  padding: 3px;
 }
 .knowledge {
   font-size: 13px;
@@ -953,10 +1537,9 @@ td {
   border: 1px solid grey;
   border-radius: 2px;
   box-shadow: 1px 1px 0px 0px #fff5f5;
-  padding-right: 1px;
-  padding-left: 1px;
   display: inline-block;
   margin-left: 3px;
+  padding: 3px;
 }
 .interesting {
   font-size: 13px;
@@ -966,9 +1549,8 @@ td {
   border: 1px solid grey;
   border-radius: 2px;
   box-shadow: 1px 1px 0px 0px #fff5f5;
-  padding-right: 1px;
-  padding-left: 1px;
   margin-left: 12px;
+  padding: 3px;
 }
 .noanswer {
   font-size: 13px;
@@ -978,9 +1560,8 @@ td {
   border: 1px solid grey;
   border-radius: 2px;
   box-shadow: 1px 1px 0px 0px #fff5f5;
-  padding-right: 1px;
-  padding-left: 1px;
   margin-left: 12px;
+  padding: 3px;
 }
 .opinion_copy {
   font-size: 13px;
@@ -1030,7 +1611,9 @@ td {
   padding-left: 1px;
   margin-left: 12px;
 }
-
+.change_header {
+  padding: 5px;
+}
 #word:hover,
 #pdf:hover,
 #xml:hover,
@@ -1092,6 +1675,8 @@ td {
   color: #288733;
   border-radius: 2px;
   border: 1px solid #cec5c5;
+  padding-left: 2px;
+  padding-right: 2px;
 }
 .spelling_left {
   margin-left: 4px;
@@ -1115,11 +1700,13 @@ td {
 }
 .number_in_left {
   position: relative;
-  top: -2px;
+  top: -1px;
   color: #353636;
   border: 1px solid #c5c5c5;
   border-left: 0px;
   border-top: 0px;
+  padding-right: 2px;
+  padding-left: 2px;
   box-shadow: 0px 0px 1px 0 grey;
 }
 .pdf_in_right {
@@ -1144,6 +1731,7 @@ td {
   border-radius: 3px;
   background-color: #fcfcfc;
   margin-top: 20px;
+  padding-bottom: 15px;
 }
 .research_info_box {
   margin-left: 5px;
@@ -1151,13 +1739,15 @@ td {
   padding-bottom: 3px;
 }
 .study_name {
-  margin-left: 50px;
+  margin-left: 20px;
   margin-top: 10px;
   display: inline-block;
 }
 .study_name_val {
   display: inline-block;
   margin-left: 5px;
+  margin-bottom: 15px;
+  text-decoration: underline;
 }
 /*-----------------------------------------------------
 stats
@@ -1275,7 +1865,7 @@ stats
   opacity: 0.7;
   display: inline-block !important;
   margin-left: 10px;
-  color: #273336 !important;
+  color: #151616 !important;
   background-color: #dff0d8 !important;
   font-size: 90% !important;
 }
