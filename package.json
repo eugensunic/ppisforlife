@@ -1,14 +1,14 @@
 {
-  "name": "redux-test",
+  "name": "ppisforlife",
   "version": "1.0.0",
-  "description": "",
+  "description": "proton pump inhibitors",
   "main": "webpack.config.js",
   "scripts": {
-    "dev": "webpack-dev-server --inline --hot",
-    "start": "webpack-dev-server --inline --hot",
+    "dev": "webpack-dev-server",
+    "start": "webpack-dev-server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "eugen sunic",
   "license": "ISC",
   "dependencies": {
     "axios": "^0.17.1",
