@@ -3,13 +3,13 @@ var webpack = require('webpack');
 
 module.exports = {
   context: __dirname,
-  devtool: debug ? 'inline-sourcemap' : null,
+  devtool: false,
   entry: './js/scripts.js',
   module: {
     loaders: [
       {
         test: /\.js$/,
-        exclude: /(node_modules)/,
+        exclude: /node_modules(?!\/webpack-dev-server)/,
         loader: 'babel-loader',
         query: {
           presets: ['es2015'],
@@ -30,7 +30,7 @@ module.exports = {
   devServer: {
     historyApiFallback: true,
     contentBase: './',
-    hot: true,
+    hot: false,
     proxy: {
       '/medsforlife/*': {
         target: 'http://projectsgono.com',
@@ -42,16 +42,12 @@ module.exports = {
   plugins: debug
     ? []
     : [
-        new webpack.optimize.DedupePlugin(),
-        new webpack.optimize.OccurenceOrderPlugin(),
-        new webpack.optimize.UglifyJsPlugin({
-          mangle: false,
-          sourcemap: false
-        }),
-        new webpack.ProvidePlugin({
-          jQuery: 'jquery',
-          $: 'jquery',
-          jquery: 'jquery'
+        new webpack.optimize.OccurrenceOrderPlugin(),
+        new webpack.optimize.UglifyJsPlugin(),
+        new webpack.DefinePlugin({
+          'process.env': {
+            NODE_ENV: JSON.stringify('production')
+          }
         })
       ]
 };
