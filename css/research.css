@@ -44,9 +44,9 @@
 }
 .research_wrapper {
   position: relative;
-  border: 1px solid #000000;
+  border: 1px solid #d6d6d6;
   border-radius: 3px;
-  background-color: #fcfcfc;
+  background-color: #fdfdfd;
   margin-top: 20px;
   padding-bottom: 15px;
 }
