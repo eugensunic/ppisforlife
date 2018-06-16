@@ -1361,6 +1361,7 @@ Pharma post
   border-radius: 3px;
   padding: 5px;
   margin-top: 10px;
+  margin-bottom: 20px;
 }
 
 .change_cursor_overview:hover {
@@ -1403,6 +1404,7 @@ Pharma post
   margin-right: 5px;
   padding: 2px;
   display: inline-block;
+  margin-bottom: 8px;
 }
 .internal_navigation:hover {
   opacity: 0.9;
