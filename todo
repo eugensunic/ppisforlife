@@ -7,6 +7,7 @@ RELEASE COMMENTS
 - see if you need to remove the background a little bit;
 - redux logger on console remove,
 - delete database
+- post-collector typehead in border does not resize on mobile devices
 
 
   IMPORTANT
