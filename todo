@@ -4,12 +4,9 @@ YOU SHOULD MAYBE DELETE HEADER ACCES ORIGIN IN PHP
 RELEASE COMMENTS
 -----------------
 - remove localhost get request, show on console.log();
-- see if you need to remove the background a little bit;
-- redux logger on console remove,
 - delete database
 - post-collector typehead in border does not resize on mobile devices
 - fill the form doesn't work on about page
-- fix word wrap in error before  blue proceed input form
 
   IMPORTANT
   ---------
