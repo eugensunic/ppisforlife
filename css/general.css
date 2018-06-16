@@ -47,6 +47,7 @@ button {
 td,
 th {
   padding: 4px;
+  background: #f7f7f7 !important;
 }
 /*----------------------------------------------------------------------------*/
 .black-color {

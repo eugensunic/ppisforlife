@@ -9,7 +9,6 @@ RELEASE COMMENTS
 - delete database
 - post-collector typehead in border does not resize on mobile devices
 - fill the form doesn't work on about page
-- fix margins on mobile devices for basic input form and navigation forums_active
 - fix word wrap in error before  blue proceed input form
 
   IMPORTANT

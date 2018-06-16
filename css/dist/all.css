@@ -1954,3 +1954,6 @@ stats
 .list-group {
   margin-top: -10px !important;
 }
+th {
+  background: #f7f7f7 !important;
+}
