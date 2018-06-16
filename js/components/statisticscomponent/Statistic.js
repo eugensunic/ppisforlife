@@ -107,9 +107,9 @@ export default class Statistic extends React.Component {
           </span>
         </h3>
         <div style={{ marginTop: 3 }}>
-          <Link to={this.props.match.url}>
+          <Link to={this.props.match.url} replace>
             <span
-              className={this.props.color_navigation.post_navigation[0] ? 'radio_clicked' : 'radio_normal'}
+              className={this.props.color_navigation.post_navigation[0] ? 'radio_clicked disable_upper_container' : 'radio_normal'}
               onClick={() => {
                 this.props.dispatch(user.changeNavigationColor('stat-nav', [true, false, false]));
               }}>
@@ -117,9 +117,9 @@ export default class Statistic extends React.Component {
             </span>
           </Link>
 
-          <Link to={this.props.match.url + '/doctor'}>
+          <Link to={this.props.match.url + '/doctor'} replace>
             <span
-              className={this.props.color_navigation.post_navigation[1] ? 'radio_clicked' : 'radio_normal'}
+              className={this.props.color_navigation.post_navigation[1] ? 'radio_clicked disable_upper_container' : 'radio_normal'}
               onClick={() => {
                 this.props.dispatch(user.changeNavigationColor('stat-nav', [false, true, false]));
               }}>
@@ -127,9 +127,9 @@ export default class Statistic extends React.Component {
             </span>
           </Link>
 
-          <Link to={this.props.match.url + `/pharma`}>
+          <Link to={this.props.match.url + `/pharma`} replace>
             <span
-              className={this.props.color_navigation.post_navigation[2] ? 'radio_clicked' : 'radio_normal'}
+              className={this.props.color_navigation.post_navigation[2] ? 'radio_clicked disable_upper_container' : 'radio_normal'}
               onClick={() => {
                 this.props.dispatch(user.changeNavigationColor('stat-nav', [false, false, true]));
               }}>

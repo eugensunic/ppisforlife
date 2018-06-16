@@ -25,7 +25,7 @@ export default class Sides extends React.Component {
     };
   }
   componentDidMount() {
-    location.href = '#side_effects';
+    document.querySelector('#side_effects').scrollIntoView();
   }
   findAppropriateCheckbox(val) {
     if (val == 'side_effect1') {

@@ -35,9 +35,9 @@ export default class Layout extends React.Component {
       <div className="container">
         <Navbar />
 
-        <Link to={this.props.match.url}>
+        <Link to={this.props.match.url} replace>
           <span
-            className={this.props.color_navigation.post_navigation[0] ? 'radio_clicked' : 'radio_normal'}
+            className={this.props.color_navigation.post_navigation[0] ? 'radio_clicked disable_upper_container' : 'radio_normal'}
             onClick={() => {
               this.props.dispatch(user2.changeNavigationColor('post-nav', [true, false, false]));
             }}>
@@ -45,19 +45,20 @@ export default class Layout extends React.Component {
           </span>
         </Link>
 
-        <Link to={this.props.match.url + '/doctorPost'}>
+        <Link to={this.props.match.url + '/doctorPost'} replace>
           <span
-            className={this.props.color_navigation.post_navigation[1] ? 'radio_clicked' : 'radio_normal'}
+            className={this.props.color_navigation.post_navigation[1] ? 'radio_clicked disable_upper_container' : 'radio_normal'}
             onClick={() => {
-              this.props.dispatch(user2.changeNavigationColor('post-nav', [false, true, false]));
+              console.log(this);
+              window.location.href.indexOf('/doctorPost') > -1 ? this.props.dispatch(user2.changeNavigationColor('post-nav', [false, true, false])) : '';
             }}>
             Doctor
           </span>
         </Link>
 
-        <Link to={this.props.match.url + `/pharmaPost`}>
+        <Link to={this.props.match.url + `/pharmaPost`} replace>
           <span
-            className={this.props.color_navigation.post_navigation[2] ? 'radio_clicked' : 'radio_normal'}
+            className={this.props.color_navigation.post_navigation[2] ? 'radio_clicked disable_upper_container' : 'radio_normal'}
             onClick={() => {
               this.props.dispatch(user2.changeNavigationColor('post-nav', [false, false, true]));
             }}>
