@@ -1,6 +1,14 @@
 IF THE CSS BREAKS THAT'S BECAUSE OF EXTRA FORWARD SLASH APPEARING but not only that
 YOU SHOULD MAYBE DELETE HEADER ACCES ORIGIN IN PHP
 
+RELEASE COMMENTS
+-----------------
+- remove localhost get request, show on console.log();
+- see if you need to remove the background a little bit;
+- redux logger on console remove,
+- delete database
+
+
   IMPORTANT
   ---------
   react dynamic routing: https://stackoverflow.com/questions/47245999/how-to-achieve-dynamic-routing-in-react-router-4
