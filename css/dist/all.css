@@ -1332,6 +1332,7 @@ Pharma post
   background-color: #f6f6f6;
   box-shadow: 1px 1px 1px #d2d2d2;
   padding: 6px;
+  margin-bottom: 8px;
 }
 .nav_element:hover {
   cursor: pointer;
