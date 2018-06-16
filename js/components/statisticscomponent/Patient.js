@@ -621,7 +621,7 @@ export default class Statistic extends React.Component {
             id="buttontarget"
             type="button"
             className="btn btn-default"
-            style={{ marginTop: 5 }}
+            style={{ marginTop: 25 }}
             onClick={() => {
               this.getStatsOtherData();
               this.setState({ clicked_other: true });
