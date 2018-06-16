@@ -179,7 +179,7 @@
 .error-message-confirm {
   position: relative;
   top: 25px;
-  height: 30px;
+  height: auto;
   border-radius: 2px;
   background-color: #ffc0cb;
   color: #3c3737;
