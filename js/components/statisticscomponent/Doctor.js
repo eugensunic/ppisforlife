@@ -98,17 +98,17 @@ export default class Doctor extends React.Component {
           <div className="row bottom-offset">
             <div style={{ marginTop: 22 }}>
               <span
-                className={'label label-default inlineblock border_label_span' + (this.state.button1 ? ' highlight_it' : '')}
+                className={'label label-default inlineblock border_label_span' + (this.state.button1 ? ' highlight_it' : ' margin-bottom-8')}
                 onClick={() => this.setState({ button1: true, button2: false, button3: false })}>
                 Dr. comments
               </span>
               <span
-                className={'label label-default inlineblock border_label_span' + (this.state.button2 ? ' highlight_it' : '')}
+                className={'label label-default inlineblock border_label_span' + (this.state.button2 ? ' highlight_it' : ' margin-bottom-8')}
                 onClick={() => this.setState({ button1: false, button2: true, button3: false })}>
                 Dr. thoughts
               </span>
               <span
-                className={'label label-default inlineblock border_label_span' + (this.state.button3 ? ' highlight_it' : '')}
+                className={'label label-default inlineblock border_label_span' + (this.state.button3 ? ' highlight_it' : ' margin-bottom-8')}
                 onClick={() => this.setState({ button1: false, button2: false, button3: true })}>
                 Dr. url
               </span>

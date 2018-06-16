@@ -409,7 +409,7 @@ export default class Statistic extends React.Component {
           </div>
           <div className="row bottom-offset">
             <span
-              className={'label label-default inlineblock border_label_span' + (this.state.button1 ? ' highlight_it' : '')}
+              className={'label label-default inlineblock border_label_span' + (this.state.button1 ? ' highlight_it' : ' margin-bottom-8')}
               onClick={() =>
                 this.setState({
                   button1: true,
@@ -428,7 +428,7 @@ export default class Statistic extends React.Component {
               condition gastro
             </span>
             <span
-              className={'label label-default inlineblock border_label_span' + (this.state.button2 ? ' highlight_it' : '')}
+              className={'label label-default inlineblock border_label_span' + (this.state.button2 ? ' highlight_it' : ' margin-bottom-8')}
               onClick={() =>
                 this.setState({
                   button1: false,
@@ -447,7 +447,7 @@ export default class Statistic extends React.Component {
               condition ppi
             </span>
             <span
-              className={'label label-default inlineblock border_label_span' + (this.state.button3 ? ' highlight_it' : '')}
+              className={'label label-default inlineblock border_label_span' + (this.state.button3 ? ' highlight_it' : ' margin-bottom-8')}
               onClick={() =>
                 this.setState({
                   button1: false,
@@ -466,7 +466,7 @@ export default class Statistic extends React.Component {
               side effects
             </span>
             <span
-              className={'label label-default inlineblock border_label_span' + (this.state.button4 ? ' highlight_it' : '')}
+              className={'label label-default inlineblock border_label_span' + (this.state.button4 ? ' highlight_it' : ' margin-bottom-8')}
               onClick={() =>
                 this.setState({
                   button1: false,
@@ -485,7 +485,7 @@ export default class Statistic extends React.Component {
               generic
             </span>
             <span
-              className={'label label-default inlineblock border_label_span' + (this.state.button5 ? ' highlight_it' : '')}
+              className={'label label-default inlineblock border_label_span' + (this.state.button5 ? ' highlight_it' : ' margin-bottom-8')}
               onClick={() =>
                 this.setState({
                   button1: false,
@@ -504,7 +504,7 @@ export default class Statistic extends React.Component {
               brand
             </span>
             <span
-              className={'label label-default inlineblock border_label_span' + (this.state.button6 ? ' highlight_it' : '')}
+              className={'label label-default inlineblock border_label_span' + (this.state.button6 ? ' highlight_it' : ' margin-bottom-8')}
               onClick={() =>
                 this.setState({
                   button1: false,
@@ -523,7 +523,7 @@ export default class Statistic extends React.Component {
               other drug
             </span>
             <span
-              className={'label label-default inlineblock border_label_span' + (this.state.button7 ? ' highlight_it' : '')}
+              className={'label label-default inlineblock border_label_span' + (this.state.button7 ? ' highlight_it' : ' margin-bottom-8')}
               onClick={() =>
                 this.setState({
                   button1: false,
@@ -542,7 +542,7 @@ export default class Statistic extends React.Component {
               used drugs
             </span>
             <span
-              className={'label label-default inlineblock border_label_span' + (this.state.button8 ? ' highlight_it' : '')}
+              className={'label label-default inlineblock border_label_span' + (this.state.button8 ? ' highlight_it' : ' margin-bottom-8')}
               onClick={() =>
                 this.setState({
                   button1: false,
@@ -561,7 +561,7 @@ export default class Statistic extends React.Component {
               nutrient deficiency
             </span>
             <span
-              className={'label label-default inlineblock border_label_span' + (this.state.button9 ? ' highlight_it' : '')}
+              className={'label label-default inlineblock border_label_span' + (this.state.button9 ? ' highlight_it' : ' margin-bottom-8')}
               onClick={() =>
                 this.setState({
                   button1: false,

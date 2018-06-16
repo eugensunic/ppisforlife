@@ -705,6 +705,9 @@ th {
 .margin-top-negative-10 {
   margin-top: -10px;
 }
+.margin-bottom-8 {
+  margin-bottom: 8px;
+}
 .margin-top-10 {
   margin-top: -10px;
 }
@@ -1875,6 +1878,7 @@ stats
 }
 .highlight_it {
   background-color: #f18e67 !important;
+  margin-bottom: 8px;
 }
 .chart-property {
   width: 100%;
@@ -1932,6 +1936,7 @@ stats
   padding-right: 2px;
   margin-right: 4px;
   display: inline-block;
+  padding: 3px;
 }
 .radio_normal:hover {
   cursor: pointer;
@@ -1945,6 +1950,7 @@ stats
   padding-left: 2px;
   padding-right: 2px;
   display: inline-block;
+  padding: 3px;
 }
 .radio_clicked:hover {
   cursor: pointer;
