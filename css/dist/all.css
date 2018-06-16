@@ -1339,6 +1339,7 @@ Pharma post
 }
 .nav_element:hover {
   cursor: pointer;
+  background-color: #cfd1dacf;
   opacity: 0.9;
 }
 .overview-title {

@@ -5,6 +5,7 @@ import Navbar from '../Navbar.js';
 import Newstats from '../Newstats/Newstats.js';
 import Navfooter from '../Navfooter.js';
 import Social from '../Social.js';
+import { withRouter, Route, Router, Link } from 'react-router-dom';
 
 @connect(store => {
   return {
@@ -114,14 +115,19 @@ export default class Main extends React.Component {
               The vision of this application is to form a platform which will improve the usage of this drugs especially for patients who are on them for a long time. The
               input page is one of the best way to see if these drugs really cause some serious side effects. The input-page app was created after a year of collecting
               posts and thinking carefully what information one needs to give in order to get accurate results, so please{' '}
-              <span
-                className="change_cursor"
-                onClick={() => {
-                  this.props.dispatch({ type: 'input_element', payload: 'input' });
-                }}>
-                {' '}
-                <strong>fill the form here.</strong>
-              </span>
+              <Route
+                render={({ history }) => (
+                  <span
+                    className="change_cursor"
+                    onClick={() => {
+                      history.push('/form');
+                      this.props.dispatch({ type: 'input_element', payload: 'input' });
+                    }}>
+                    {' '}
+                    <strong>fill the form here.</strong>
+                  </span>
+                )}
+              />
             </p>
             <p>
               I’m not a supporter of PPIs and do not work for any drug related company. I have spent an entire year in order to make this work. No one wanted to
