@@ -3,8 +3,7 @@
 RELEASE COMMENTS
 -----------------
 - delete database
-- post-collector typehead in border does not resize on mobile devices
-- had to add some footer
+- add some footer
 
   IMPORTANT
   ---------
