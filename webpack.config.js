@@ -26,14 +26,7 @@ module.exports = {
   devServer: {
     historyApiFallback: true,
     contentBase: './',
-    hot: false,
-    proxy: {
-      '/medsforlife/*': {
-        target: 'http://projectsgono.com',
-        secure: false,
-        changeOrigin: true
-      }
-    }
+    hot: false
   },
   plugins: debug
     ? []

@@ -1,10 +1,10 @@
-IF THE CSS BREAKS THAT'S BECAUSE OF EXTRA FORWARD SLASH APPEARING but not only that
-YOU SHOULD MAYBE DELETE HEADER ACCES ORIGIN IN PHP
+
 
 RELEASE COMMENTS
 -----------------
 - delete database
 - post-collector typehead in border does not resize on mobile devices
+- had to add some footer
 
   IMPORTANT
   ---------
