@@ -10,7 +10,6 @@ RELEASE COMMENTS
   react dynamic routing: https://stackoverflow.com/questions/47245999/how-to-achieve-dynamic-routing-in-react-router-4
   - test everything before proceeding to final page
 
-
   TODO
   ----
    2. document.body.style.pointerEvents='none' immediately after click
