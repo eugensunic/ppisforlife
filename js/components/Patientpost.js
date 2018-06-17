@@ -193,7 +193,13 @@ export default class Patientpost extends React.Component {
       array_rest = this.adjustRowId(this.props.filtercall.rest_array);
       return (
         <div className="">
-          <button style={{ marginTop: 5, backgroundColor: '#f9f9f9' }}>Default</button>
+          <button
+            style={{ marginTop: 5, backgroundColor: '#f9f9f9' }}
+            onClick={() => {
+              location.reload();
+            }}>
+            Default
+          </button>
           <div className="checkbox_holder_about" id="target_div">
             <input
               className="inline"
@@ -260,7 +266,11 @@ export default class Patientpost extends React.Component {
 
       return (
         <div className="">
-          <button style={{ marginTop: 5, backgroundColor: '#f9f9f9' }} onClick={() => {}}>
+          <button
+            style={{ marginTop: 5, backgroundColor: '#f9f9f9' }}
+            onClick={() => {
+              location.reload();
+            }}>
             Default
           </button>
           <div className="checkbox_holder_about" id="target_div">

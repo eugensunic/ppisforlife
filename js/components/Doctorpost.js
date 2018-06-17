@@ -53,7 +53,9 @@ export default class Doctorpost extends React.Component {
       array_universal = user.getIntervalArray(this.props.dr_call.name, this.props.bar_change.begin_doctor, this.props.bar_change.end_doctor); //uvijek 1 manje
       return (
         <div className="">
-          <button style={{ marginTop: 5, backgroundColor: '#f9f9f9' }}>Default</button>
+          <button style={{ marginTop: 5, backgroundColor: '#f9f9f9' }} onClick={() => location.reload()}>
+            Default
+          </button>
           <div className="checkbox_holder_about" id="target_div">
             <input className="inline" type="checkbox" checked={this.state.first_check} onChange={() => this.setState({ first_check: !this.state.first_check })} />
             <span className="margin-left-3">{this.state.first_check ? 'hide About' : 'show About'}</span>
