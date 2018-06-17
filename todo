@@ -3,11 +3,8 @@ YOU SHOULD MAYBE DELETE HEADER ACCES ORIGIN IN PHP
 
 RELEASE COMMENTS
 -----------------
-- remove localhost get request, show on console.log();
 - delete database
 - post-collector typehead in border does not resize on mobile devices
-- fill the form doesn't work on about page
-- put on focus navbar a color so that user on mobile sees that he clicked on it
 
   IMPORTANT
   ---------
