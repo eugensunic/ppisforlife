@@ -9,16 +9,12 @@ module.exports = {
     loaders: [
       {
         test: /\.js$/,
-        exclude: /node_modules(?!\/webpack-dev-server)/,
+        exclude: /node_modules/,
         loader: 'babel-loader',
         query: {
           presets: ['es2015'],
           plugins: ['transform-decorators-legacy']
         }
-      },
-      {
-        test: /\.css$/,
-        loader: 'style!css'
       }
     ]
   },
