@@ -23,25 +23,12 @@ export default class Pharmapost extends React.Component {
     if (this.props.pharma_call.first == undefined) {
       this.props.dispatch(user.asyncAll('/medsforlife/appcall_pharma/get_all_columns_pharmacist.php', 'pharma_call_all'));
     }
-    setTimeout(() => {
-      if (localStorage.getItem('reload')) {
-        alert('Refresh te page or come back later');
-      } else if (!this.state.has_loaded) {
-        localStorage.setItem('reload', 'true');
-        location.reload();
-      }
-    }, 5000);
     this.props.dispatch(user.changeNavigationColor('post-nav', [false, false, true]));
   }
   componentDidMount() {
     this.setState({ has_loaded: true });
   }
-  componentDidUpdate() {
-    // if (this.props.bar_change.clicked_pharma) {
-    //   this.props.bar_change.clicked_pharma = false;
-    //   location.href = '#target_div';
-    // }
-  }
+  componentDidUpdate() {}
   aboutWritting() {
     return (
       <div className="headerbar" style={{ marginBottom: 6 }}>
@@ -62,9 +49,7 @@ export default class Pharmapost extends React.Component {
       array_universal = user.getIntervalArray(this.props.pharma_call.name, this.props.bar_change.begin_pharma, this.props.bar_change.end_pharma); //uvijek 1 manje
       return (
         <div className="">
-          <button style={{ marginTop: 5, backgroundColor: '#f9f9f9' }} onClick={() => location.reload()}>
-            Default
-          </button>
+          <button style={{ marginTop: 5, backgroundColor: '#f9f9f9' }}>Default</button>
           <div className="checkbox_holder_about" id="target_div">
             <input className="inline" type="checkbox" checked={this.state.first_check} onChange={() => this.setState({ first_check: !this.state.first_check })} />
             <span className="margin-left-3">{this.state.first_check ? 'hide About' : 'show About'}</span>

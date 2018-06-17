@@ -39,14 +39,6 @@ export default class Patientpost extends React.Component {
       this.props.dispatch(user.asyncAll('/medsforlife/appcall/get_tag2.php', 'tag2', ''));
       this.props.dispatch(user.asyncAll('/medsforlife/appcall/getheaderpost.php', 'header', ''));
     }
-    setTimeout(() => {
-      if (localStorage.getItem('reload')) {
-        alert('Refresh te page or come back later');
-      } else if (!this.state.has_loaded) {
-        localStorage.setItem('reload', 'true');
-        location.reload();
-      }
-    }, 5000);
     this.props.dispatch(user.changeNavigationColor('post-nav', [true, false, false]));
   }
   componentDidMount() {
@@ -201,6 +193,7 @@ export default class Patientpost extends React.Component {
       array_rest = this.adjustRowId(this.props.filtercall.rest_array);
       return (
         <div className="">
+          <button style={{ marginTop: 5, backgroundColor: '#f9f9f9' }}>Default</button>
           <div className="checkbox_holder_about" id="target_div">
             <input
               className="inline"
@@ -267,7 +260,7 @@ export default class Patientpost extends React.Component {
 
       return (
         <div className="">
-          <button style={{ marginTop: 5, backgroundColor: '#f9f9f9' }} onClick={() => location.reload()}>
+          <button style={{ marginTop: 5, backgroundColor: '#f9f9f9' }} onClick={() => {}}>
             Default
           </button>
           <div className="checkbox_holder_about" id="target_div">

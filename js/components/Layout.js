@@ -49,7 +49,6 @@ export default class Layout extends React.Component {
           <span
             className={this.props.color_navigation.post_navigation[1] ? 'radio_clicked disable_upper_container' : 'radio_normal'}
             onClick={() => {
-              console.log(this);
               window.location.href.indexOf('/doctorPost') > -1 ? this.props.dispatch(user2.changeNavigationColor('post-nav', [false, true, false])) : '';
             }}>
             Doctor

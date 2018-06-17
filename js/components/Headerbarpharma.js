@@ -17,10 +17,6 @@ export default class Headerbarpharma extends React.Component {
     this.props.dispatch(user.asyncAll(url, 'pharma_call_all', args));
   }
 
-  reloadIndexPage() {
-    window.location.reload();
-  }
-
   render() {
     return (
       <div className="headerbar">

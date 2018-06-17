@@ -26,14 +26,6 @@ export default class Doctorpost extends React.Component {
     if (this.props.dr_call.first == undefined) {
       this.props.dispatch(user.asyncAll('/medsforlife/appcall_doctor/get_all_columns_doctor.php', 'doctor_call_all'));
     }
-    setTimeout(() => {
-      if (localStorage.getItem('reload')) {
-        alert('Refresh te page or come back later');
-      } else if (!this.state.has_loaded) {
-        localStorage.setItem('reload', 'true');
-        location.reload();
-      }
-    }, 5000);
     this.props.dispatch(user.changeNavigationColor('post-nav', [false, true, false]));
   }
 
@@ -61,9 +53,7 @@ export default class Doctorpost extends React.Component {
       array_universal = user.getIntervalArray(this.props.dr_call.name, this.props.bar_change.begin_doctor, this.props.bar_change.end_doctor); //uvijek 1 manje
       return (
         <div className="">
-          <button style={{ marginTop: 5, backgroundColor: '#f9f9f9' }} onClick={() => location.reload()}>
-            Default
-          </button>
+          <button style={{ marginTop: 5, backgroundColor: '#f9f9f9' }}>Default</button>
           <div className="checkbox_holder_about" id="target_div">
             <input className="inline" type="checkbox" checked={this.state.first_check} onChange={() => this.setState({ first_check: !this.state.first_check })} />
             <span className="margin-left-3">{this.state.first_check ? 'hide About' : 'show About'}</span>

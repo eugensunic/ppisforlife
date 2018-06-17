@@ -17,10 +17,6 @@ export default class Headerbardoctor extends React.Component {
     this.props.dispatch(user.asyncAll(url, 'doctor_call_all', args));
   }
 
-  reloadIndexPage() {
-    window.location.reload();
-  }
-
   render() {
     return (
       <div className="headerbar">

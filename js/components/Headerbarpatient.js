@@ -21,17 +21,12 @@ export default class Headerbarpatient extends React.Component {
   callFilterRest(url, ...args) {
     this.props.dispatch(user.asyncAll(url, 'rest_rest', args));
   }
-  reloadIndexPage() {
-    //this should be changed
-    window.location.reload();
-  }
+
   render() {
     return (
       <div className="headerbar">
         <img src="../../pics/filter.png" className="filter_icon" />
-
         <p className="post_elementheaderbar">generic</p>
-
         <select
           name="generic_drop"
           className={''}
