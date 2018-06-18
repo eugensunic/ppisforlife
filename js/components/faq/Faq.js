@@ -11,16 +11,16 @@ export default class Faq extends React.Component {
     super(props);
   }
 
-  // callExternalScript(url) {
-  //   const script = document.createElement('script');
-  //   script.src = url;
-  //   script.async = true;
-  //   document.body.appendChild(script);
-  // }
+  callExternalScript(url) {
+    const script = document.createElement('script');
+    script.src = url;
+    script.async = true;
+    document.body.appendChild(script);
+  }
 
-  // componentWillMount() {
-  //   this.callExternalScript('/medsforlife/adding.js');
-  // }
+  componentWillMount() {
+    this.callExternalScript('/medsforlife/adding.js');
+  }
 
   render() {
     return (
