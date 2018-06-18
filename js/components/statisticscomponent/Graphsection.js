@@ -7,7 +7,6 @@ export default class Graph extends React.Component {
     this.state = { width: 800, height: 400, flag: false };
   }
   updateDimensions() {
-    console.log('here');
     if (this.refs.get_it.clientWidth < 774) {
       this.setState({
         width: this.refs.get_it.clientWidth,
