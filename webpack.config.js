@@ -23,6 +23,21 @@ module.exports = {
     filename: 'scripts.min.js'
   },
 
+  devServer: {
+    historyApiFallback: true,
+    contentBase: './',
+    hot: false,
+    proxy: debug
+      ? {
+          '/medsforlife/*': {
+            target: 'http://projectsgono.com',
+            secure: false,
+            changeOrigin: true
+          }
+        }
+      : {}
+  },
+
   plugins: debug
     ? []
     : [

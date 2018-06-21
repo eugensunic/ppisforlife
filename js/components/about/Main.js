@@ -88,8 +88,8 @@ export default class Main extends React.Component {
               deficiency, brands rank from the most prevalent, worse, best etc.
             </p>
             <p>
-              Apart from this, a unique question and answer pages were created in order for patients to inform themselves about the drug and their condition and to try
-              and minimize the side effects, dosage and to improve their quality of life with or without drugs.
+              Apart from this, a unique question and answer pages were created in order for patients to inform themselves about the drug and their condition, find an
+              effective way to lower their side effects and to improve their quality of life with or without drugs.
             </p>
             <p>There is also a valuable page for all patients where they can follow the ongoing research which is being done.</p>
             <p>
