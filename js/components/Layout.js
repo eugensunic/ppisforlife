@@ -35,7 +35,7 @@ export default class Layout extends React.Component {
       <div className="container">
         <Navbar />
 
-        <Link to={this.props.match.url} replace>
+        <Link to={this.props.match.url}>
           <span
             className={this.props.color_navigation.post_navigation[0] ? 'radio_clicked disable_upper_container' : 'radio_normal'}
             onClick={() => {
@@ -45,7 +45,7 @@ export default class Layout extends React.Component {
           </span>
         </Link>
 
-        <Link to={this.props.match.url + '/doctorPost'} replace>
+        <Link to={this.props.match.url + '/doctorPost'}>
           <span
             className={this.props.color_navigation.post_navigation[1] ? 'radio_clicked disable_upper_container' : 'radio_normal'}
             onClick={() => {
@@ -55,7 +55,7 @@ export default class Layout extends React.Component {
           </span>
         </Link>
 
-        <Link to={this.props.match.url + `/pharmaPost`} replace>
+        <Link to={this.props.match.url + `/pharmaPost`}>
           <span
             className={this.props.color_navigation.post_navigation[2] ? 'radio_clicked disable_upper_container' : 'radio_normal'}
             onClick={() => {

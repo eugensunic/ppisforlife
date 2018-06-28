@@ -107,7 +107,7 @@ export default class Statistic extends React.Component {
           </span>
         </h3>
         <div style={{ marginTop: 3 }}>
-          <Link to={this.props.match.url} replace>
+          <Link to={this.props.match.url}>
             <span
               className={this.props.color_navigation.post_navigation[0] ? 'radio_clicked disable_upper_container' : 'radio_normal'}
               onClick={() => {
@@ -117,7 +117,7 @@ export default class Statistic extends React.Component {
             </span>
           </Link>
 
-          <Link to={this.props.match.url + '/doctor'} replace>
+          <Link to={this.props.match.url + '/doctor'}>
             <span
               className={this.props.color_navigation.post_navigation[1] ? 'radio_clicked disable_upper_container' : 'radio_normal'}
               onClick={() => {
@@ -127,7 +127,7 @@ export default class Statistic extends React.Component {
             </span>
           </Link>
 
-          <Link to={this.props.match.url + `/pharma`} replace>
+          <Link to={this.props.match.url + `/pharma`}>
             <span
               className={this.props.color_navigation.post_navigation[2] ? 'radio_clicked disable_upper_container' : 'radio_normal'}
               onClick={() => {
