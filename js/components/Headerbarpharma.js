@@ -4,13 +4,13 @@ import * as user from '../actions/asyncCAll.js';
 
 @connect(store => {
   return {
-    bar_change: store.bar_change
+    bar_change: store.bar_change,
+    criteria_value: store.post
   };
 })
 export default class Headerbarpharma extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { criteria_value: 'default' };
   }
 
   callPharmaAll(url, ...args) {
@@ -29,7 +29,7 @@ export default class Headerbarpharma extends React.Component {
           className="header_border_tag"
           onClick={() => {
             this.callPharmaAll('/medsforlife/appcall_pharma/user_or_pharmacist.php', 1);
-            this.setState({ criteria_value: 'Personal pharmacist opinion' });
+            this.props.dispatch({ type: 'pharma_criteria', payload: 'Personal pharmacist opinion'});
           }}>
           explicit
         </span>
@@ -37,7 +37,7 @@ export default class Headerbarpharma extends React.Component {
           className="header_border_tag"
           onClick={() => {
             this.callPharmaAll('/medsforlife/appcall_pharma/user_or_pharmacist.php', 0);
-            this.setState({ criteria_value: 'Pharmacist opinion expressed by patient' });
+            this.props.dispatch({ type: 'pharma_criteria', payload: 'Pharmacist opinion expressed by patient'});
           }}>
           user associated
         </span>
@@ -50,7 +50,7 @@ export default class Headerbarpharma extends React.Component {
           className="header_border_tag"
           onClick={() => {
             this.callPharmaAll('/medsforlife/appcall_pharma/get_opinion.php', 'good');
-            this.setState({ criteria_value: 'Positive opinion' });
+            this.props.dispatch({ type: 'pharma_criteria', payload: 'Positive opinion'});
           }}>
           good
         </span>
@@ -58,7 +58,7 @@ export default class Headerbarpharma extends React.Component {
           className="header_border_tag"
           onClick={() => {
             this.callPharmaAll('/medsforlife/appcall_pharma/get_opinion.php', 'good(shortterm)');
-            this.setState({ criteria_value: 'Positive opinion(short-term drug usage)' });
+            this.props.dispatch({ type: 'pharma_criteria', payload: 'Positive opinion(short-term drug usage)'});
           }}>
           good (short-term)
         </span>
@@ -66,7 +66,7 @@ export default class Headerbarpharma extends React.Component {
           className="header_border_tag"
           onClick={() => {
             this.callPharmaAll('/medsforlife/appcall_pharma/get_opinion.php', 'good(longterm)');
-            this.setState({ criteria_value: 'Positive opinion(long-term drug usage)' });
+            this.props.dispatch({ type: 'pharma_criteria', payload: 'Positive opinion(long-term drug usage)'});
           }}>
           good (long-term)
         </span>
@@ -74,7 +74,7 @@ export default class Headerbarpharma extends React.Component {
           className="header_border_tag"
           onClick={() => {
             this.callPharmaAll('/medsforlife/appcall_pharma/get_opinion.php', 'notgood');
-            this.setState({ criteria_value: 'Negative opinion' });
+            this.props.dispatch({ type: 'pharma_criteria', payload: 'Negative opinion'});
           }}>
           not good
         </span>
@@ -82,7 +82,7 @@ export default class Headerbarpharma extends React.Component {
           className="header_border_tag"
           onClick={() => {
             this.callPharmaAll('/medsforlife/appcall_pharma/get_opinion.php', 'notgood(longterm)');
-            this.setState({ criteria_value: 'Negative opinion(long-term drug usage)' });
+            this.props.dispatch({ type: 'pharma_criteria', payload: 'Negative opinion(long-term drug usage)'});
           }}>
           not good (long-term)
         </span>
@@ -90,7 +90,7 @@ export default class Headerbarpharma extends React.Component {
           className="header_border_tag"
           onClick={() => {
             this.callPharmaAll('/medsforlife/appcall_pharma/get_opinion.php', 'unknown');
-            this.setState({ criteria_value: 'Unknown opinion' });
+            this.props.dispatch({ type: 'pharma_criteria', payload: 'Unknown opinion'});
           }}>
           unknown
         </span>
@@ -106,7 +106,8 @@ export default class Headerbarpharma extends React.Component {
           onChange={e => {
             let param = e.nativeEvent.target[e.nativeEvent.target.selectedIndex].text.trim();
             this.callPharmaAll('/medsforlife/appcall_pharma/url_name.php', param);
-            this.setState({ criteria_value: param });
+            this.props.dispatch({ type: 'pharma_criteria', payload: param});
+
           }}
           defaultValue="">
           <option value="" style={{ display: 'none' }} defaultValue="selected" label="choose url" />
@@ -128,7 +129,7 @@ export default class Headerbarpharma extends React.Component {
         <span className="number_below_main_header">{'#' + this.props.bar_change.page_num_pharma}</span>
         <div className="center" style={{ marginRight: 46, paddingBottom: 1 }}>
           <span className="inline criteria_heading">Criteria:</span>
-          <span className="inline criteria_value">{this.state.criteria_value}</span>
+          <span className="inline criteria_value">{this.props.criteria_value.pharma_criteria}</span>
         </div>
       </div>
     );
