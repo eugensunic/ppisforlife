@@ -4,6 +4,7 @@ RELEASE COMMENTS
 -----------------
 - delete database
 - add some footer
+- need to fix criteria value with a prop instead of a setstate
 
   IMPORTANT
   ---------
