@@ -22,7 +22,7 @@ export default class Navfooter extends React.Component {
             CC 3.0 BY
           </a>
         </div>
-        © {new Date().getFullYear()} Info page
+        <span className="go-up" onClick={()=> window.scroll(0, 0) }>Go up</span>
       </div>
     );
   }
