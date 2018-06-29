@@ -4,13 +4,14 @@ import * as user from '../actions/asyncCAll.js';
 
 @connect(store => {
   return {
-    bar_change: store.bar_change
+    bar_change: store.bar_change,
+    criteria_value: store.post
   };
 })
 export default class Headerbarpatient extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { criteria_value: 'default' };
+
   }
   callFilterPost(url, ...args) {
     this.props.dispatch(user.asyncAll(url, 'post_post', args));
@@ -35,7 +36,8 @@ export default class Headerbarpatient extends React.Component {
             this.callFilterPost('/medsforlife/appcall/drug_generic_post.php', param);
             this.callFilterData('/medsforlife/appcall/drug_generic_data.php', param);
             this.callFilterRest('/medsforlife/appcall/drug_generic_rest.php', param);
-            this.setState({ criteria_value: param });
+            this.props.dispatch({ type: 'post_criteria', payload: param });
+
           }}
           defaultValue="">
           <option value="" style={{ display: 'none' }} defaultValue="selected" label="choose drug" />
@@ -57,7 +59,7 @@ export default class Headerbarpatient extends React.Component {
             this.callFilterPost('/medsforlife/appcall/drug_brand_post.php', param);
             this.callFilterData('/medsforlife/appcall/drug_brand_data.php', param);
             this.callFilterRest('/medsforlife/appcall/drug_brand_rest.php', param);
-            this.setState({ criteria_value: param });
+            this.props.dispatch({ type: 'post_criteria', payload: param });
           }}
           defaultValue="">
           <option value="" style={{ display: 'none' }} defaultValue="selected" label="choose drug" />
@@ -78,7 +80,7 @@ export default class Headerbarpatient extends React.Component {
             this.callFilterPost('/medsforlife/appcall/drug_dosage_post.php', 1, 20); // 20 included
             this.callFilterData('/medsforlife/appcall/drug_dosage_data.php', 1, 20);
             this.callFilterRest('/medsforlife/appcall/drug_dosage_rest.php', 1, 20);
-            this.setState({ criteria_value: 'low dosage' });
+            this.props.dispatch({ type: 'post_criteria', payload: 'low dosage' });
           }}>
           low
         </span>
@@ -88,7 +90,7 @@ export default class Headerbarpatient extends React.Component {
             this.callFilterPost('/medsforlife/appcall/drug_dosage_post.php', 30, 40); // 30 - 40 included
             this.callFilterData('/medsforlife/appcall/drug_dosage_data.php', 30, 40);
             this.callFilterRest('/medsforlife/appcall/drug_dosage_rest.php', 30, 40); // 45+
-            this.setState({ criteria_value: 'maitenance dosage' });
+            this.props.dispatch({ type: 'post_criteria', payload: 'maitenance dosage' });
           }}>
           maitenance
         </span>
@@ -98,7 +100,7 @@ export default class Headerbarpatient extends React.Component {
             this.callFilterPost('/medsforlife/appcall/drug_dosage_post.php', 45, 300);
             this.callFilterData('/medsforlife/appcall/drug_dosage_data.php', 45, 300);
             this.callFilterRest('/medsforlife/appcall/drug_dosage_rest.php', 45, 300);
-            this.setState({ criteria_value: 'high dosage' });
+            this.props.dispatch({ type: 'post_criteria', payload: 'high dosage' });
           }}>
           high
         </span>
@@ -112,7 +114,8 @@ export default class Headerbarpatient extends React.Component {
             this.callFilterPost('/medsforlife/appcall/drug_daily_post.php', 'yes');
             this.callFilterData('/medsforlife/appcall/drug_daily_data.php', 'yes');
             this.callFilterRest('/medsforlife/appcall/drug_daily_rest.php', 'yes');
-            this.setState({ criteria_value: 'daily usage' });
+            this.props.dispatch({ type: 'post_criteria', payload: 'daily usage' });
+
           }}>
           yes
         </span>
@@ -122,7 +125,8 @@ export default class Headerbarpatient extends React.Component {
             this.callFilterPost('/medsforlife/appcall/drug_daily_post.php', 'no');
             this.callFilterData('/medsforlife/appcall/drug_daily_data.php', 'no');
             this.callFilterRest('/medsforlife/appcall/drug_daily_rest.php', 'no');
-            this.setState({ criteria_value: 'discontinous usage' });
+            this.props.dispatch({ type: 'post_criteria', payload: 'discontinous usage' });
+
           }}>
           no
         </span>
@@ -132,7 +136,8 @@ export default class Headerbarpatient extends React.Component {
             this.callFilterPost('/medsforlife/appcall/drug_daily_post.php', 'fewaweek');
             this.callFilterData('/medsforlife/appcall/drug_daily_data.php', 'fewaweek');
             this.callFilterRest('/medsforlife/appcall/drug_daily_rest.php', 'fewaweek');
-            this.setState({ criteria_value: 'few a week' });
+            this.props.dispatch({ type: 'post_criteria', payload: 'few a week' });
+
           }}>
           few a week
         </span>
@@ -146,7 +151,8 @@ export default class Headerbarpatient extends React.Component {
             this.callFilterPost('/medsforlife/appcall/drug_duration_post.php', 0, 5);
             this.callFilterData('/medsforlife/appcall/drug_duration_data.php', 0, 5);
             this.callFilterRest('/medsforlife/appcall/drug_duration_rest.php', 0, 5);
-            this.setState({ criteria_value: 'duration 0 - 5 years' });
+            this.props.dispatch({ type: 'post_criteria', payload: 'duration 0 - 5 years' });
+
           }}>
           5
         </span>
@@ -156,7 +162,8 @@ export default class Headerbarpatient extends React.Component {
             this.callFilterPost('/medsforlife/appcall/drug_duration_post.php', 6, 10);
             this.callFilterData('/medsforlife/appcall/drug_duration_data.php', 6, 10);
             this.callFilterRest('/medsforlife/appcall/drug_duration_rest.php', 6, 10);
-            this.setState({ criteria_value: 'duration 6 - 10 years' });
+            this.props.dispatch({ type: 'post_criteria', payload: 'duration 6 - 10 years' });
+
           }}>
           10
         </span>
@@ -166,7 +173,8 @@ export default class Headerbarpatient extends React.Component {
             this.callFilterPost('/medsforlife/appcall/drug_duration_post.php', 11, 15);
             this.callFilterData('/medsforlife/appcall/drug_duration_data.php', 11, 15);
             this.callFilterRest('/medsforlife/appcall/drug_duration_rest.php', 11, 15);
-            this.setState({ criteria_value: 'duration 11 - 15 years' });
+            this.props.dispatch({ type: 'post_criteria', payload: 'duration 11 - 15 years' });
+
           }}>
           15
         </span>
@@ -176,7 +184,8 @@ export default class Headerbarpatient extends React.Component {
             this.callFilterPost('/medsforlife/appcall/drug_duration_post.php', 16, 40);
             this.callFilterData('/medsforlife/appcall/drug_duration_data.php', 16, 40);
             this.callFilterRest('/medsforlife/appcall/drug_duration_rest.php', 16, 40);
-            this.setState({ criteria_value: 'duration 15+ years' });
+            this.props.dispatch({ type: 'post_criteria', payload: 'duration 15+ years' });
+
           }}>
           15+
         </span>
@@ -194,7 +203,8 @@ export default class Headerbarpatient extends React.Component {
             this.callFilterPost('/medsforlife/appcall/drug_condition_post.php', param);
             this.callFilterData('/medsforlife/appcall/drug_condition_data.php', param);
             this.callFilterRest('/medsforlife/appcall/drug_condition_rest.php', param);
-            this.setState({ criteria_value: param });
+            this.props.dispatch({ type: 'post_criteria', payload: param });
+
           }}
           defaultValue="">
           <option value="" style={{ display: 'none' }} defaultValue="selected" label="choose condition" />
@@ -218,7 +228,7 @@ export default class Headerbarpatient extends React.Component {
             this.callFilterPost('/medsforlife/appcall/drug_ppicondition_post.php', param);
             this.callFilterData('/medsforlife/appcall/drug_ppicondition_data.php', param);
             this.callFilterRest('/medsforlife/appcall/drug_ppicondition_rest.php', param);
-            this.setState({ criteria_value: param });
+            this.props.dispatch({ type: 'post_criteria', payload: param });
           }}
           defaultValue="">
           <option value="" style={{ display: 'none' }} defaultValue="selected" label="choose ppicondition" />
@@ -240,7 +250,7 @@ export default class Headerbarpatient extends React.Component {
             this.callFilterPost('/medsforlife/appcall/drug_nutrient_post.php', 'Ca');
             this.callFilterData('/medsforlife/appcall/drug_nutrient_data.php', 'Ca');
             this.callFilterRest('/medsforlife/appcall/drug_nutrient_rest.php', 'Ca');
-            this.setState({ criteria_value: 'Calcium deficiency' });
+            this.props.dispatch({ type: 'post_criteria', payload: 'Calcium deficiency' });
           }}>
           Calcium
         </span>
@@ -250,7 +260,8 @@ export default class Headerbarpatient extends React.Component {
             this.callFilterPost('/medsforlife/appcall/drug_nutrient_post.php', 'Mag');
             this.callFilterData('/medsforlife/appcall/drug_nutrient_data.php', 'Mag');
             this.callFilterRest('/medsforlife/appcall/drug_nutrient_rest.php', 'Mag');
-            this.setState({ criteria_value: 'Magnesium deficiency' });
+            this.props.dispatch({ type: 'post_criteria', payload: 'Magnesium deficiency' });
+
           }}>
           Magnesium
         </span>
@@ -260,7 +271,8 @@ export default class Headerbarpatient extends React.Component {
             this.callFilterPost('/medsforlife/appcall/drug_nutrient_post.php', 'Iron');
             this.callFilterData('/medsforlife/appcall/drug_nutrient_data.php', 'Iron');
             this.callFilterRest('/medsforlife/appcall/drug_nutrient_rest.php', 'Iron');
-            this.setState({ criteria_value: 'Iron deficiency' });
+            this.props.dispatch({ type: 'post_criteria', payload: 'Iron deficiency'});
+
           }}>
           Iron
         </span>
@@ -270,7 +282,8 @@ export default class Headerbarpatient extends React.Component {
             this.callFilterPost('/medsforlife/appcall/drug_nutrient_post.php', 'B12');
             this.callFilterData('/medsforlife/appcall/drug_nutrient_data.php', 'B12');
             this.callFilterRest('/medsforlife/appcall/drug_nutrient_rest.php', 'B12');
-            this.setState({ criteria_value: 'Vitamin B12 defficiency' });
+            this.props.dispatch({ type: 'post_criteria', payload: 'Vitamin B12 defficiency' });
+
           }}>
           B12
         </span>
@@ -286,7 +299,8 @@ export default class Headerbarpatient extends React.Component {
             this.callFilterPost('/medsforlife/appcall/drug_gender_post.php', 'M');
             this.callFilterData('/medsforlife/appcall/drug_gender_data.php', 'M');
             this.callFilterRest('/medsforlife/appcall/drug_gender_rest.php', 'M');
-            this.setState({ criteria_value: 'Male' });
+            this.props.dispatch({ type: 'post_criteria', payload: 'Male' });
+
           }}>
           M
         </span>
@@ -296,7 +310,8 @@ export default class Headerbarpatient extends React.Component {
             this.callFilterPost('/medsforlife/appcall/drug_gender_post.php', 'F');
             this.callFilterData('/medsforlife/appcall/drug_gender_data.php', 'F');
             this.callFilterRest('/medsforlife/appcall/drug_gender_rest.php', 'F');
-            this.setState({ criteria_value: 'Female' });
+            this.props.dispatch({ type: 'post_criteria', payload: 'Female' });
+
           }}>
           F
         </span>
@@ -310,7 +325,7 @@ export default class Headerbarpatient extends React.Component {
             this.callFilterPost('/medsforlife/appcall/drug_age_post.php', 1, 25);
             this.callFilterData('/medsforlife/appcall/drug_age_data.php', 1, 25);
             this.callFilterRest('/medsforlife/appcall/drug_age_rest.php', 1, 25);
-            this.setState({ criteria_value: 'Age 1 - 25' });
+            this.props.dispatch({ type: 'post_criteria', payload: 'Age 1 - 25' });
           }}>
           young
         </span>
@@ -320,7 +335,8 @@ export default class Headerbarpatient extends React.Component {
             this.callFilterPost('/medsforlife/appcall/drug_age_post.php', 26, 50);
             this.callFilterData('/medsforlife/appcall/drug_age_data.php', 26, 50);
             this.callFilterRest('/medsforlife/appcall/drug_age_rest.php', 26, 50);
-            this.setState({ criteria_value: 'Age 26 - 50' });
+            this.props.dispatch({ type: 'post_criteria', payload: 'Age 26 - 50' });
+
           }}>
           adult
         </span>
@@ -330,7 +346,8 @@ export default class Headerbarpatient extends React.Component {
             this.callFilterPost('/medsforlife/appcall/drug_age_post.php', 51, 100);
             this.callFilterData('/medsforlife/appcall/drug_age_data.php', 51, 100);
             this.callFilterRest('/medsforlife/appcall/drug_age_rest.php', 51, 100);
-            this.setState({ criteria_value: 'Age 51 - 100' });
+            this.props.dispatch({ type: 'post_criteria', payload: 'Age 51 - 100' });
+
           }}>
           elderly
         </span>
@@ -348,7 +365,7 @@ export default class Headerbarpatient extends React.Component {
             this.callFilterPost('/medsforlife/appcall/drug_sourceurl_post.php', param);
             this.callFilterData('/medsforlife/appcall/drug_sourceurl_data.php', param);
             this.callFilterRest('/medsforlife/appcall/drug_sourceurl_rest.php', param);
-            this.setState({ criteria_value: param });
+            this.props.dispatch({ type: 'post_criteria', payload: param});
           }}
           defaultValue="">
           <option value="" style={{ display: 'none' }} defaultValue="selected" label="choose url" />
@@ -371,7 +388,8 @@ export default class Headerbarpatient extends React.Component {
             this.callFilterPost('/medsforlife/appcall/drug_date_post.php', 2005, 2010);
             this.callFilterData('/medsforlife/appcall/drug_date_data.php', 2005, 2010);
             this.callFilterRest('/medsforlife/appcall/drug_date_rest.php', 2005, 2010);
-            this.setState({ criteria_value: '2005 - 2010' });
+            this.props.dispatch({ type: 'post_criteria', payload: '2005 - 2010' });
+
           }}>
           2005 - 2010
         </span>
@@ -381,7 +399,8 @@ export default class Headerbarpatient extends React.Component {
             this.callFilterPost('/medsforlife/appcall/drug_date_post.php', 2011, 2015);
             this.callFilterData('/medsforlife/appcall/drug_date_data.php', 2011, 2015);
             this.callFilterRest('/medsforlife/appcall/drug_date_rest.php', 2011, 2015);
-            this.setState({ criteria_value: '2011 - 2015' });
+            this.props.dispatch({ type: 'post_criteria', payload: '2011 - 2015' });
+
           }}>
           2011 - 2015
         </span>
@@ -391,7 +410,8 @@ export default class Headerbarpatient extends React.Component {
             this.callFilterPost('/medsforlife/appcall/drug_date_post.php', 2016, 2020);
             this.callFilterData('/medsforlife/appcall/drug_date_data.php', 2016, 2020);
             this.callFilterRest('/medsforlife/appcall/drug_date_rest.php', 2016, 2020);
-            this.setState({ criteria_value: '2016 - 2020' });
+            this.props.dispatch({ type: 'post_criteria', payload:'2016 - 2020'  });
+
           }}>
           2015&#8594;
         </span>
@@ -404,7 +424,8 @@ export default class Headerbarpatient extends React.Component {
             this.callFilterPost('/medsforlife/appcall/drug_opinion_post.php', 1);
             this.callFilterData('/medsforlife/appcall/drug_opinion_data.php', 1);
             this.callFilterRest('/medsforlife/appcall/drug_opinion_rest.php', 1);
-            this.setState({ criteria_value: 'Positive posts' });
+            this.props.dispatch({ type: 'post_criteria', payload: 'Positive posts' });
+
           }}>
           positive
         </span>
@@ -414,7 +435,8 @@ export default class Headerbarpatient extends React.Component {
             this.callFilterPost('/medsforlife/appcall/drug_opinion_post.php', 2);
             this.callFilterData('/medsforlife/appcall/drug_opinion_data.php', 2);
             this.callFilterRest('/medsforlife/appcall/drug_opinion_rest.php', 2);
-            this.setState({ criteria_value: 'Negative posts' });
+            this.props.dispatch({ type: 'post_criteria', payload: 'Negative posts' });
+
           }}>
           negative
         </span>
@@ -424,7 +446,8 @@ export default class Headerbarpatient extends React.Component {
             this.callFilterPost('/medsforlife/appcall/drug_opinion_post.php', 3);
             this.callFilterData('/medsforlife/appcall/drug_opinion_data.php', 3);
             this.callFilterRest('/medsforlife/appcall/drug_opinion_rest.php', 3);
-            this.setState({ criteria_value: 'Interesting posts' });
+            this.props.dispatch({ type: 'post_criteria', payload: 'Interesting posts'});
+
           }}>
           interesting
         </span>
@@ -434,7 +457,8 @@ export default class Headerbarpatient extends React.Component {
             this.callFilterPost('/medsforlife/appcall/drug_opinion_post.php', 4);
             this.callFilterData('/medsforlife/appcall/drug_opinion_data.php', 4);
             this.callFilterRest('/medsforlife/appcall/drug_opinion_rest.php', 4);
-            this.setState({ criteria_value: 'Extreme posts' });
+            this.props.dispatch({ type: 'post_criteria', payload: 'Extreme posts'});
+
           }}>
           extreme
         </span>
@@ -443,7 +467,7 @@ export default class Headerbarpatient extends React.Component {
         <span className="number_below_main_header">{'#' + this.props.bar_change.page_num_patient}</span>
         <div className="center" style={{ marginRight: 46 }}>
           <span className="inline criteria_heading">Criteria:</span>
-          <span className="inline criteria_value">{this.state.criteria_value}</span>
+          <span className="inline criteria_value">{this.props.criteria_value.post_criteria}</span>
         </div>
       </div>
     );

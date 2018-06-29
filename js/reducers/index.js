@@ -35,6 +35,7 @@ import ph from './pharmastats/ph.js';
 import dr_all from './doctor_call_all.js';
 import pharma_all from './pharma_call_all.js';
 import nav from './navbar/nav.js';
+import post from './post.js';
 
 export default combineReducers({
   tag1,
@@ -69,5 +70,6 @@ export default combineReducers({
   pharma_all,
   nav,
   overviewstats,
-  overviewstats_extra
+  overviewstats_extra,
+  post
 });
