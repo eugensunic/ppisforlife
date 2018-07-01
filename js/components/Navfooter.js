@@ -22,7 +22,7 @@ export default class Navfooter extends React.Component {
             CC 3.0 BY
           </a>
         </div>
-        <span className="go-up" onClick={()=> window.scroll(0, 0) }>Go up</span>
+        <span className="go-up" onClick={()=> setTimeout(()=> { window.scrollTo(0, 0);}, 100)}>Go up</span>
       </div>
     );
   }
