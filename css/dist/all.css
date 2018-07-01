@@ -1979,3 +1979,7 @@ th {
   border-radius: 2px;
   cursor: pointer;
 }
+
+.footer-inner-content {
+  margin-right: 50px;
+}

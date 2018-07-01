@@ -8,7 +8,7 @@ export default class Navfooter extends React.Component {
   render() {
     return (
       <div className="footer">
-        <div>
+        <div className="footer-inner-content">
           Icons made by{' '}
           <a href="http://www.freepik.com" title="Freepik">
             Freepik

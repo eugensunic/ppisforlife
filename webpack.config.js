@@ -1,4 +1,4 @@
-var debug = process.env.NODE_ENV !== 'production';
+
 var webpack = require('webpack');
 
 module.exports = {
@@ -21,32 +21,6 @@ module.exports = {
   output: {
     path: __dirname + '/js',
     filename: 'scripts.min.js'
-  },
+  }
 
-  devServer: {
-    historyApiFallback: true,
-    contentBase: './',
-    hot: false,
-    proxy: debug
-      ? {
-          '/medsforlife/*': {
-            target: 'http://projectsgono.com',
-            secure: false,
-            changeOrigin: true
-          }
-        }
-      : {}
-  },
-
-  plugins: debug
-    ? []
-    : [
-        new webpack.optimize.OccurrenceOrderPlugin(),
-        new webpack.optimize.UglifyJsPlugin(),
-        new webpack.DefinePlugin({
-          'process.env': {
-            NODE_ENV: JSON.stringify('production')
-          }
-        })
-      ]
 };
