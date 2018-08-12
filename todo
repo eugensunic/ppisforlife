@@ -1,10 +1,24 @@
 
 
+AFTER REALEASE:
+----------------
+
+- fix years, for example someone enters 147 and selects years you should disable years because that's too much 
+interval should be 50 years
+- add impresum page 
+- assign drug to its generic drug,
+- add if otc or not, think where you should put this assocication
+- fix red mark which appears, basicaly it should check if all of these fields are valid
+
+
+
+
 RELEASE COMMENTS
 -----------------
 - delete database
 - add some footer
-- need to fix criteria value with a prop instead of a setstate
+- need to fix criteria value with a prop instead of a setstatefix
+
 
   IMPORTANT
   ---------
