@@ -407,7 +407,7 @@ export default class Statistic extends React.Component {
               />
             </div>
           </div>
-          <div className="row bottom-offset">
+          <div className="row bottom-offset center">
             <span
               className={'label label-default inlineblock border_label_span' + (this.state.button1 ? ' highlight_it' : ' margin-bottom-8')}
               onClick={() =>

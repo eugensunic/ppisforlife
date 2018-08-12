@@ -95,7 +95,7 @@ export default class Doctor extends React.Component {
                 : user1.getTable(user1.valueToPercentageRest(this.props.dr.name1, this.props.dr.name3), 'URL', 'Amount', conclusion3, 'first_col', 'amount')}
             </div>
           </div>
-          <div className="row bottom-offset">
+          <div className="row bottom-offset center">
             <div style={{ marginTop: 22 }}>
               <span
                 className={'label label-default inlineblock border_label_span' + (this.state.button1 ? ' highlight_it' : ' margin-bottom-8')}

@@ -97,7 +97,7 @@ export default class Graph extends React.Component {
     }
 
     return (
-      <div className="row" ref="get_it">
+      <div className="row center" ref="get_it">
         {this.props.which_one ? (
           this.props.percent_value ? (
             <BarChart
