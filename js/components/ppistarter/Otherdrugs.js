@@ -9,7 +9,7 @@ export default class Otherdrugs extends React.Component {
     return (
       <div className="output_section_starter">
         <h4 className="overwrite_h4">
-          Other drugs <span className="little-font">(drugs which have similar/same side effects to PPIs)</span>
+          Other drugs <span className="little-font">(drugs which may have similar/same side effects to possible but not confirmed PPI side effects)</span>
         </h4>
         <h5 className="black-color">In this section we are trying to see if other popular drugs are related to the problems which PPIs have a connection with</h5>
         <ul>

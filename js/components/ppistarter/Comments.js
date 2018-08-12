@@ -60,7 +60,7 @@ export default class Comments extends React.Component {
             abdominal problems
           </li>
           <li>Quite a few people with stomach and GERD problems haven&#39;t been drinking or smoking before getting the upper abdominal issues</li>
-          <li>Maybe 10-15% (subjectively) trust the big pharma</li>
+          <li>Maybe 10-15% (subjectively) trust pharmaceutical companies</li>
         </ul>
       </div>
     );
