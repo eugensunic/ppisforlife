@@ -11,7 +11,7 @@ export default class Comments extends React.Component {
     return (
       <div className="my_comments_section_starter">
         <h4 className="overwrite_h4">
-          Conclusion of posts, stories, comments, discussion <span className="little-font">(after at least 1000+ of them read)</span>{' '}
+          Eugen Sunic's conclusion on posts, stories, comments, discussions <span className="little-font">(after at least 1000+ of them read)</span>{' '}
         </h4>
         <ul>
           <li>

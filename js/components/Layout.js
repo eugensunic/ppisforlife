@@ -34,40 +34,82 @@ export default class Layout extends React.Component {
     return (
       <div className="container">
         <Navbar />
+        <h3 className="inline" style={{ color: '#585656' }}>
+          Internet comments<span className="little-font">
+            {' '}
+            (Patient.info, Peoples Pharmacy, Daily Mail, The Telegraph, Reddit,
+            CBS, The Sun, Crohn's Disease Forum, Chris Kresser, Barrett's
+            Wessex, The Healing WELL, The New York Times etc.)
+          </span>
+        </h3>
+        <p />
 
         <Link to={this.props.match.url}>
           <span
-            className={this.props.color_navigation.post_navigation[0] ? 'radio_clicked disable_upper_container' : 'radio_normal'}
+            className={
+              this.props.color_navigation.post_navigation[0]
+                ? 'radio_clicked disable_upper_container'
+                : 'radio_normal'
+            }
             onClick={() => {
-              this.props.dispatch(user2.changeNavigationColor('post-nav', [true, false, false]));
-            }}>
+              this.props.dispatch(
+                user2.changeNavigationColor('post-nav', [true, false, false])
+              );
+            }}
+          >
             Patient
           </span>
         </Link>
 
         <Link to={this.props.match.url + '/doctorPost'}>
           <span
-            className={this.props.color_navigation.post_navigation[1] ? 'radio_clicked disable_upper_container' : 'radio_normal'}
+            className={
+              this.props.color_navigation.post_navigation[1]
+                ? 'radio_clicked disable_upper_container'
+                : 'radio_normal'
+            }
             onClick={() => {
-              window.location.href.indexOf('/doctorPost') > -1 ? this.props.dispatch(user2.changeNavigationColor('post-nav', [false, true, false])) : '';
-            }}>
+              window.location.href.indexOf('/doctorPost') > -1
+                ? this.props.dispatch(
+                    user2.changeNavigationColor('post-nav', [
+                      false,
+                      true,
+                      false
+                    ])
+                  )
+                : '';
+            }}
+          >
             Doctor
           </span>
         </Link>
 
         <Link to={this.props.match.url + `/pharmaPost`}>
           <span
-            className={this.props.color_navigation.post_navigation[2] ? 'radio_clicked disable_upper_container' : 'radio_normal'}
+            className={
+              this.props.color_navigation.post_navigation[2]
+                ? 'radio_clicked disable_upper_container'
+                : 'radio_normal'
+            }
             onClick={() => {
-              this.props.dispatch(user2.changeNavigationColor('post-nav', [false, false, true]));
-            }}>
+              this.props.dispatch(
+                user2.changeNavigationColor('post-nav', [false, false, true])
+              );
+            }}
+          >
             Pharma
           </span>
         </Link>
 
         <Route exact path={this.props.match.url} component={Patientpost} />
-        <Route path={this.props.match.url + '/doctorPost'} component={Doctorpost} />
-        <Route path={this.props.match.url + '/pharmaPost'} component={Pharmapost} />
+        <Route
+          path={this.props.match.url + '/doctorPost'}
+          component={Doctorpost}
+        />
+        <Route
+          path={this.props.match.url + '/pharmaPost'}
+          component={Pharmapost}
+        />
 
         <Navfooter />
       </div>

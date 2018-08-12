@@ -9,7 +9,7 @@ export default class Allnatural extends React.Component {
     return (
       <div className="natural_section_starter">
         <h4 className="overwrite_h4">
-          All natural <span className="little-font">(all natural alternatives collected in posts)</span>
+          All natural <span className="little-font">(all natural products collected in posts)</span>
         </h4>
 
         <h5 className="black-color">
@@ -28,7 +28,7 @@ export default class Allnatural extends React.Component {
         </ul>
         <div className="row">
           <h5 className="black-color">
-            <strong>Other alternatives</strong>
+            <strong>Other natural products</strong>
           </h5>
           <div className="col-sm-4">
             <ul>
