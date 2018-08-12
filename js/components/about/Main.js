@@ -107,7 +107,7 @@ export default class Main extends React.Component {
               kidneys which relate these drugs to nephritis, chronic kidney disease and kidney failure.
             </p>
             <p>
-              There isn’t evidence for all the above mentioned, only correlation to them which doesn’t prove that PPIs really cause them. Remember,
+              There is no evidence for all the above mentioned, only correlation to them which doesn’t prove that PPIs really cause them. Remember,
               <strong> correlation&ne;causation</strong>. However, patients should be aware of those researches and check their vital organs from time to time to avoid
               any possible complications.
             </p>
@@ -160,7 +160,7 @@ export default class Main extends React.Component {
           <p>
             <strong>Technologies used for building this app:</strong>
             <br />
-            MySQL, HTML, CSS, Bootstrap, Vanilla JS (JavaScript), jQuery, React Native, React Redux
+            MySQL, HTML, CSS, Bootstrap, Vanilla JS (JavaScript), jQuery, React Redux
           </p>
         </div>
 
