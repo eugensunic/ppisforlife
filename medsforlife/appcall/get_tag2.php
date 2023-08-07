@@ -1,17 +1,14 @@
 <?php
+include '../config.php';
 
 header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Methods: GET, PUT, POST, DELETE, OPTIONS');
 header('Access-Control-Allow-Headers: Content-Type, Content-Range, Content-Disposition, Content-Description');
 
-$servername = "160.153.16.43";
-$username   = "eusunic";
-$password   = "mili7788";
-$dbname     = "ppisforlife";
 $json;
 $contentArray = array();
 
-$conn = new mysqli($servername, $username, $password, $dbname);
+$conn = new mysqli("localhost", "francesco", "mili7788", "ppisforlife");
 $conn->set_charset('utf8');
 
 if ($conn->connect_error) {

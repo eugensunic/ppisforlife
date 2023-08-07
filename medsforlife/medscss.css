@@ -1,0 +1,88 @@
+body {
+}
+label{
+    color: #555;
+    font-size: 15px;
+}
+hr{
+    display: block;
+    height: 5px;
+    border: 0px;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    color:dimgrey;
+    padding: 0;
+}
+h4{
+    font-weight:700;
+}
+#user_value, #date_value, #url_value {
+    font-size: 14px;
+    color: black;
+    font-weight: bold;
+}
+#cage{
+    
+    border: 2px solid #5a5959;
+    background-color: white;
+    padding: 2px;
+    margin-top: 10px;
+    width: 50%;
+    padding-bottom: 5px;
+    border-radius:2px;
+    
+}
+#hasprops{
+
+    width:34px;
+    height:34px;
+}
+.right_checkbox:hover{
+    background-color:darkseagreen;
+    cursor:pointer;
+   
+}
+.right_checkbox{
+    padding:2px;
+    padding-right:4px;
+    padding-left:4px;
+   
+}
+#clearall{
+    float:right;
+    margin-top: 10px;
+}
+
+#checkboxflag_reset{
+     padding:2px;
+    padding-right:4px;
+    padding-left:4px;
+}
+#checkboxflag_reset:hover{
+    opacity:0.7;
+    cursor:pointer;
+}
+#remove_duration_criteria{
+    position: absolute;
+    right: 2px;
+    top: -30px;
+    border: 2px solid #b3abab;
+    border-radius: 2px;
+}
+#remove_duration_criteria:hover{
+   opacity:0.8;
+   cursor:pointer;
+}
+#check_user_valid{
+    display: block;
+    position: relative;
+    left: 175px;
+    top: -7px;
+}
+#show_db_text {
+    
+    display: inline;
+    position: relative;
+    left: 280px;
+    top: -33px;
+}

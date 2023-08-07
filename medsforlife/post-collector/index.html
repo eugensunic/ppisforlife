@@ -1,0 +1,1371 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ppispostcollector</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="medscss.css">
+    <link rel="stylesheet" type="text/css" href="typeahead.css">
+
+    <script src="globalvariables.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>                <!--CORE-->
+    <script src="https://code.jquery.com/ui/1.9.1/jquery-ui.js"></script>                                    <!--ENHANCMENT-->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>              <!--BOOTSTRAP-->
+    <script src="https://twitter.github.io/typeahead.js/releases/latest/typeahead.bundle.js"></script>       <!--TYPEAHEAD-->
+    <script src="deleteclick.js"></script>
+    <script src="checkboxclicked.js"></script>
+
+
+
+    <script>
+
+        var assoc = "";
+        var flagdoc = "";
+        var drtought = "";
+        var urldoc = "";
+        var counter_doc = 0;
+        var counter_doc_pharma = 0;
+        var remove_duration_criteria_flag = true;
+        var doctor_alone_flag = 0;
+        var pharma_alone_flag = 0;
+
+        var pharmatought;
+        var pharmaassoc;
+        var flagpharma;
+        var urlpharma;
+
+        hpylori_checkbox = "unknown";
+        duration_checkbox = "1unknown";
+        daily_checkbox = "unknown";
+        natural_checkbox = [];
+        sex_checkbox = "unknown";
+
+
+        //ALTER TABLE data AUTO_INCREMENT = 1
+        //ALTER TABLE other_drug_data AUTO_INCREMENT = 1
+        //ALTER TABLE post AUTO_INCREMENT = 1
+        //ALTER TABLE post_condition AUTO_INCREMENT = 1
+        //ALTER TABLE post_nutrient AUTO_INCREMENT = 1
+        //ALTER TABLE post_sides AUTO_INCREMENT = 1
+        //ALTER TABLE used_data AUTO_INCREMENT = 1
+        //ALTER TABLE alternative AUTO_INCREMENT = 1
+        //ALTER TABLE post_conditionppi AUTO_INCREMENT = 1
+        //ALTER TABLE doctors AUTO_INCREMENT = 1
+
+
+
+        function bolleanImage() {
+            if ($('#username').val().length == 0 || $('#date').val().length == 0 || $('#url').val().length == 0 || $('#original_post').val().length == 0 || $('#citation_post').val().length == 0) {
+                $("#hasprops").prop("src", "pic/red.png");
+            }
+            else {
+                $("#hasprops").prop("src", "pic/green.png");
+            }
+        }
+        //not working properly
+        function uncheckInRegion(input_array) {
+            if (input_array.length != 0) {
+                for (var i = 0; i < input_array.length; i++) {
+                    if (input_array[i] != current_id) {
+                        alert(input_array[i]);
+                        $("#" + input_array[i]).attr('checked', false);
+                    }
+                    else {
+                         //alert(input_array[i]);
+                    }
+                }
+            }
+        }
+        function clearNaturalOnly() {
+            $('#typeahead_natural').val("");
+            $('#natural_nothelped').attr('checked', false);
+            $('#natural_littlehelped').attr('checked', false);
+            $('#natural_helped').attr('checked', false);
+            $('#natural_unknown').attr('checked', false);
+        }
+        //ima ih 18+3 hpylori=21
+        //uncheck checkboxes + unknown
+        function uncheckAllCheckboxes() {
+           
+            $('#sex_male').attr('checked', false);
+            $('#sex_female').attr('checked', false);
+            $('.doctor_extra_checkbox').attr('checked', false);
+            $('#duration_day').attr('checked', false);
+            $('#duration_week').attr('checked', false);
+            $('#duration_month').attr('checked', false);
+            $('#duration_year').attr('checked', false);
+            $('#duration_notspecified').attr('checked', false);
+
+            $('#daily_yes').attr('checked', false);
+            $('#daily_no').attr('checked', false);
+
+            $('#daily_onandoff').attr('checked', false);
+            $('#daily_fewaweek').attr('checked', false);
+            $('#daily_fewamonth').attr('checked', false);
+            $('#daily_unknown').attr('checked', false);
+
+            $('#natural_nothelped').attr('checked', false);
+            $('#natural_littlehelped').attr('checked', false);
+            $('#natural_helped').attr('checked', false);
+            $('#natural_unknown').attr('checked', false);
+
+
+            $('#hpylori_yes').attr('checked', false);
+            $('#hpylori_no').attr('checked', false);
+            $('#hpylori_unknown').attr('checked', false);
+
+        }
+        function clearAllFunction() {
+            //reset counter
+            remove_duration_criteria_flag = true;
+            $('#remove_duration_criteria').text("duration ON");
+            $('#remove_duration_criteria').css("background-color", "transparent");
+            $("#show_db_text").text("");
+            $("#hasprops").prop("src", "");
+            brand_counter = 0;
+            generic_counter = 0;
+            dosage_counter = 0;
+            duration_counter = 0;
+            $('#age_value').text("");
+            $('#sex_value').text("");
+            $('#user_value').text("");
+            $('#date_value').text("");
+            $('#url_value').text("");
+            clearReviewElements();
+            $('#original_post').val("");
+            $('#citation_post').val("");
+            $('#username').val("");
+            $('#date').val("");
+            $('#url').val("");
+            $("#za_brand").empty();
+            drug_brand_variable = "";
+            $("#za_generic").empty();
+            drug_generic_variable = "";
+            $('#typeahead_age').val("");
+            age = 0;
+            $("#za_condition").empty();
+            condition_variable = [];
+            $("#za_condition_ppi").empty();
+            condition_variable_ppi = [];
+            $("#za_sides").empty();
+            side_effects_variable = [];
+            $("#za_nutrient").empty();
+            nutrient_deficiency = [];
+            $("#za_dosage").empty();
+            dosage_variable = 0;
+            $("#za_duration").empty();
+            duration_treatment = 0;
+            $("#za_other").empty();
+            other_drugs = [];
+            $("#za_used").empty();
+            used_to_take = [];
+            $("#value_natural").empty();
+            $("#za_natural").empty();
+            $("#hasprops").css("visibility","hidden");
+            natural = [];
+            //unknown resets
+
+            hpylori_checkbox = "unknown";
+            duration_checkbox = "1unknown";
+            daily_checkbox = "unknown";
+            natural_checkbox = [];
+            sex_checkbox = "unknown";
+            $("#value_pylori").text("");
+
+            $("#doc_header").empty();
+            $("#pharma_header").empty();
+            $('#pharmabutton').text("Pharma");
+            $('#docbutton').text("Doc");
+
+            assoc = "";
+            flagdoc = "";
+            drtought = "";
+            urldoc = "";
+
+            pharmaassoc = "";
+            flagpharma = "";
+            pharmatought = "";
+            urlpharma = "";
+
+            counter_doc_pharma = 0;
+            pharma_alone_flag = 0;
+
+            counter_doc = 0;
+            doctor_alone_flag = 0;
+
+            flag_duration = 0;
+
+
+            //typeaheads
+            $('.typeahead').typeahead('val', '');
+            $('#typehead_generic').typeahead('val', '');
+            $('#typehead_brand').typeahead('val', '');
+            $('#typehead_sides').typeahead('val', '');
+            $('#typehead_nutrient').typeahead('val', '');
+            $('#typehead_condition').typeahead('val', '');
+            $('#typehead_dosage').typeahead('val', '');
+            $('#typehead_duration').typeahead('val', '');
+            $('#typehead_used').typeahead('val', '');
+            $('#typehead_other').typeahead('val', '');
+            $('#typeahead_condition_ppi').typeahead('val', '');
+            $('#typeahead_natural').val("");
+            $('#typeahead_other').val("");
+
+            //checkbox right make transparent
+            $('#checkboxflag1').css("background-color", "transparent");
+            $('#checkboxflag2').css("background-color", "transparent");
+            $('#checkboxflag3').css("background-color", "transparent");
+            $('#checkboxflag4').css("background-color", "transparent");
+            $('#remove_duration_criteria').css("background-color", "transparent");
+            //doc border
+            $('#doc_header').css("border", "0px solid white");
+            $('#pharma_header').css("border", "0px solid white");
+            $('#url').css("background-color", "white");
+            $('#username').css("background-color", "white");
+            $('#daily_unknown').attr('checked', false);
+           
+            uncheckAllCheckboxes();
+            sex_checkbox = "unknown";
+            review_flag = false;
+
+
+
+        }
+        function mainCriteriaDuration() {
+            if (remove_duration_criteria_flag===false) {
+                //then it will pass
+                return false;
+               
+            }
+            //if true then no pass
+            else if (duration_checkbox== "1unknown" || duration_treatment == 0) {
+                return true;
+            }
+            else {
+                
+                return false;
+            }
+        }
+        function setVariablesToFalse() {
+            first = false;
+            second = false;
+            third = false;
+            fourth = false;
+            fifth = false;
+            sixth = false;
+            seventh = false;
+            eight = false;
+            nine = false;
+            ten = false;
+
+        }
+        function printWithConsoleTheRest(input_array, general_name) {
+            console.log(general_name+": ");
+            for (var i = 0; i < input_array.length; i++) {
+                console.log(input_array[i]);
+            }
+        }
+        function printWithConsoleDataTable() {
+            console.log("temp brand:" + temp_brand);
+            console.log("temp generic:" + temp_generic);
+            console.log("temp duration:" + temp_duration);
+            console.log("globaltime for duration:" + globaltime_data_first);
+
+            console.log("temp dosage:" + temp_dosage);
+            console.log("temp daily:" + temp_daily);
+
+            console.log("temp used:" + temp_used_drugs);
+            console.log("temp duration two:" + temp_duration_two);
+            console.log("globaltime_data_second:" + globaltime_data_second);
+
+            console.log("sql-id:" + (parseInt(databaseid)));
+        }
+        function onPageLoadAjax() {
+
+            var tobereturned = 0;
+            $.ajax({
+                url: 'http://projectsgono.com/medsforlife/getlastidinpost.php',
+                type: 'GET',
+                dataType: "json",
+                success: function (response) {
+                    if (response[0].id != null) {
+                        databaseid = parseInt(response[0].id) + 1;
+                        //alert("value if not null: " + databaseid);
+                    }
+                    else {
+                        databaseid = 1;
+                        //alert("value if null: " + databaseid);
+                    }
+                },
+                error: function (xhr, ajaxOptions, thrownError) {
+                    //alert("failed");
+                }
+            });
+
+        }
+        function arrayWords(input_array) {
+            var newarray = [];
+            for (var i = 0; i < input_array.length; i++) {
+
+                newarray.push(takeIntegerOut(input_array[i]));
+            }
+            return newarray;
+        }
+        function takeIntegerOut(word) {
+
+            if (!isNaN(word[0]) && !isNaN(word[1]) && !isNaN(word[2])) {
+
+                return parseInt(word[0].toString() + word[1].toString() + word[2].toString());
+            }
+            else if (!isNaN(word[0]) && !isNaN(word[1])) {
+
+                return parseInt(word[0].toString() + word[1].toString());
+            }
+            else {
+                return parseInt(word[0]);
+            }
+
+
+        }
+        function removeDigits(word){
+            if (!isNaN(word[0]) && !isNaN(word[1]) && !isNaN(word[2])) {
+                return word.substr(3, word.length);
+            }
+            else if (!isNaN(word[0]) && !isNaN(word[1])) {
+                return word.substr(2, word.length);
+            }
+            else{
+                return word.substr(1,word.length);
+            }
+        }
+        function clearReviewElements() {
+            $('#drug_brand_value').empty();
+            $('#drug_generic_value').empty();
+            $("#value_condition").empty();
+            $("#value_condition_ppi").empty();
+            $("#value_sides").empty();
+            $("#value_nutrient").empty();
+            $('#value_dosage').empty();
+            $('#value_duration').empty();
+            $("#checkbox_one").empty();
+            $('#value_daily').empty();
+            $("#value_other").empty();
+            $("#value_used").empty();
+            $("#checkbox_three").empty();
+            $("#value_used_number").empty();
+            $("#value_natural").empty();
+        }
+        $(document).ready(function () {
+
+            onPageLoadAjax();
+            $("#hasprops").css("visibility","hidden");
+            $("#review").click(function () {
+                 
+                //doc 
+                $("#hasprops").css("visibility","visible");
+                bolleanImage(); //red and green image
+                //doc section
+
+                //check yellow button section has some input inside OK, button
+                if ($("#typeahead_other").val()) {
+                    alert("Click OK for other drugs");
+                }
+                if ($("#typeahead_natural").val()) {
+                    alert("Click OK for natural drugs");
+                }
+
+
+                age = $('#typeahead_age').val(); //iznimka
+                review_flag = true;
+                if (drug_brand_variable.length == 0) { temp_brand = 1; }
+                else { temp_brand = takeIntegerOut(drug_brand_variable); }
+                if (drug_generic_variable.length == 0) { temp_generic = 1; }
+                else { temp_generic = takeIntegerOut(drug_generic_variable); }
+
+                temp_duration = duration_treatment;
+                globaltime_data_first = takeIntegerOut(duration_checkbox);
+
+                if (dosage_variable == null) { temp_dosage = null; }
+                else { temp_dosage = dosage_variable; }
+                temp_age = age;
+
+                if (daily_checkbox.length == 0) { temp_daily = "unknown"; }
+                else if (daily_checkbox == null) { temp_daily = "unknown"; }
+                else { temp_daily = daily_checkbox; }
+
+                if (used_to_take_checkbox == null) { globaltime_data_second = 1; }
+                else if (used_to_take_checkbox.length == 0) { globaltime_data_second = 1; }
+                else { globaltime_data_second = used_to_take_checkbox[0]; }
+
+                if (condition_variable.length == 0) { temp_condition = [1]; }
+                else { temp_condition = arrayWords(condition_variable) };
+
+                if (condition_variable_ppi.length == 0) { temp_condition_ppi = [1]; }
+                else { temp_condition_ppi = arrayWords(condition_variable_ppi) };
+
+                if (side_effects_variable.length == 0) { temp_side = [1]; }
+                else { temp_side = arrayWords(side_effects_variable) };
+
+                if (nutrient_deficiency.length == 0) { temp_nutrient = [1]; }
+                else { temp_nutrient = arrayWords(nutrient_deficiency); }
+
+                if (other_drugs.length == 0) { temp_other = ["unknown"]; }
+                else if (other_drugs == null) { temp_other = ["unknown"]; }
+                else { temp_other = other_drugs.slice(); }
+
+
+                if (used_to_take.length == 0) { temp_used_drugs = [1];}
+                else { temp_used_drugs = arrayWords(used_to_take); }
+
+                if (natural.length == 0) { temp_natural = ['unknown']; }
+                else if (natural == null) { temp_natural = ['unknown']; }
+                else { temp_natural = natural.slice(); } // ovo briem nie dobro, ili ipak je?
+
+                if (natural_checkbox.length == 0) { temp_natural_checkbox = ['unknown']; } //ovo je ok
+                else if (natural_checkbox.length == null) { temp_natural_checkbox = ['unknown']; } //ovo je ok
+                else { temp_natural_checkbox = natural_checkbox.slice(); } // ovo briem nie dobro, ili ipak je?
+
+
+
+                printWithConsoleDataTable();
+
+                printWithConsoleTheRest(temp_condition, "Condition");
+                printWithConsoleTheRest(temp_condition_ppi, "ConditionPPI");
+                printWithConsoleTheRest(temp_side, "Sides");
+                printWithConsoleTheRest(temp_nutrient, "Nutrient");
+                printWithConsoleTheRest(temp_other, "Other drugs");
+                printWithConsoleTheRest(temp_natural, "Natural remedies");
+
+
+                //first remove all the childs !
+                clearReviewElements();
+                //setting meta values from post
+                username = $('#username').val();
+                date = $('#date').val();
+                url = $('#url').val();
+                original_post = $('#original_post').val();
+                citation_post = $('#citation_post').val();
+
+
+
+                $('#user_value').text(username);
+                $('#date_value').text(date);
+                $('#url_value').text(url);
+
+                //populating bold terms
+                $('#drug_brand_value').text(drug_brand_variable);
+                $('#drug_generic_value').text(drug_generic_variable);
+                $('#age_value').text(age+ " years");
+                $('#sex_value').text(sex_checkbox);
+                $('#value_pylori').text(hpylori_checkbox);
+
+                for (var i = 0; i < condition_variable.length; i++) {
+                 $("#value_condition").append("<p style='display:inline;color:#2b46c6;'>" + condition_variable[i] + ",</p>" + " ");
+                }
+                for (var i = 0; i < condition_variable_ppi.length; i++) {
+                    $("#value_condition_ppi").append("<p style='display:inline;color:#2b46c6;'>" + condition_variable_ppi[i] + ",</p>" + " ");
+                }
+                for (var i = 0; i < side_effects_variable.length; i++) {
+                    $("#value_sides").append("<p style='display:inline;color:#ee5b58;font-weight:600;'>" + side_effects_variable[i] + ",</p>" + " ");
+                }
+                for (var i = 0; i < nutrient_deficiency.length; i++) {
+                    $("#value_nutrient").append("<p style='display:inline;color:#2b46c6;'>" + nutrient_deficiency[i] + ",</p>" + " ");
+                }
+                $('#value_dosage').text(dosage_variable);
+                $('#value_duration').text(duration_treatment).css("color", "#ee5b58");
+                $("#checkbox_one").text(duration_checkbox);
+                $('#value_daily').text(daily_checkbox);
+
+
+                for (var i = 0; i < other_drugs.length; i++) {
+                    $("#value_other").append("<p style='display:inline;color:#2b46c6;'>" + other_drugs[i] + ",</p>" + " ");
+                }
+                for (var i = 0; i < used_to_take.length; i++) {
+                    $("#value_used").append("<p style='display:inline;color:#2b46c6;'>" + used_to_take[i] + ",</p>" + " ");
+                }
+                for (var i = 0; i < natural.length; i++) {
+                    //alert(natural[i]);
+                    $("#value_natural").append("<p style='display:inline;color:#2b46c6;'>" + natural[i] + ":</p>" + " ");
+                    $("#value_natural").append("<p style='display:inline;color:#2b46c6;'>" + natural_checkbox[i] + ",</p>" + " ");
+                }
+           
+
+            });
+            $("#submit").click(function () {
+
+
+                
+               
+            });
+            $("#clearall").click(function () {
+                clearAllFunction();
+            });
+            $('#typeahead_brand').on('typeahead:selected', function (obj, obj_value) {
+                if (brand_counter === 0) {
+                    $("#za_brand").append("<p style='display:inline;color:#2b46c6;'>" + obj_value + "</p>" + " ");
+                    drug_brand_variable = obj_value;
+                }
+                else {
+                    alert("You can add the item just once");
+                }
+                brand_counter++;
+
+
+            });
+            $('#typeahead_generic').on('typeahead:selected', function (obj, obj_value) {
+                if (generic_counter === 0) {
+                    $("#za_generic").append("<p style='display:inline;color:#2b46c6;'>" + obj_value + "</p>" + " ");
+                    drug_generic_variable = obj_value;
+                }
+                else {
+                    alert("You can add the item just once");
+                }
+                generic_counter++;
+            });
+
+            $('#typeahead_condition').on('typeahead:selected', function (obj, obj_value) {
+                $("#za_condition").append("<p style='display:inline;color:#2b46c6;'>" + obj_value + ",</p>" + " ");
+                condition_variable.push(obj_value);
+            });
+            $('#typeahead_condition_ppi').on('typeahead:selected', function (obj, obj_value) {
+                $("#za_condition_ppi").append("<p style='display:inline;color:#2b46c6;'>" + obj_value + ",</p>" + " ");
+                condition_variable_ppi.push(obj_value);
+            });
+            $('#typeahead_sides').on('typeahead:selected', function (obj, obj_value) {
+                $("#za_sides").append("<p style='display:inline;color:#2b46c6;'>" + obj_value + "</p>," + " ");
+                side_effects_variable.push(obj_value);
+            });
+            $('#typeahead_nutrient').on('typeahead:selected', function (obj, obj_value) {
+                $("#za_nutrient").append("<p style='display:inline;color:#2b46c6;'>" + obj_value + ",</p>" + " ");
+                nutrient_deficiency.push(obj_value);
+            });
+            $('#typeahead_dosage').on('typeahead:selected', function (obj, obj_value) {
+                if (dosage_counter === 0) {
+                    $("#za_dosage").append("<p style='display:inline;color:#2b46c6;'>" + obj_value + "mg</p>" + " ");
+                    dosage_variable = obj_value;
+                }
+                else {
+                    alert("You can add the item just once");
+                }
+                dosage_counter++;
+
+            });
+            $('#typeahead_duration').on('typeahead:selected', function (obj, obj_value) {
+                if (duration_counter === 0) {
+                    $("#za_duration").append("<p style='display:inline;color:#2b46c6;'>" + obj_value + "</p>" + " ");
+                    duration_treatment = obj_value;
+                    //alert("duration: " + duration_treatment);
+                }
+                else {
+                    alert("You can add the item just once");
+                }
+                duration_counter++;
+
+
+            });
+
+           
+          
+         
+
+         
+            $('#checkboxflag1').click(function () {
+                flag_duration = 1;
+                $(this).css("background-color", "pink");
+                $('#checkboxflag2').css("background-color", "transparent");
+                $('#checkboxflag3').css("background-color", "transparent");
+                $('#checkboxflag4').css("background-color", "transparent");
+            });
+            $('#checkboxflag2').click(function () {
+                flag_duration = 2;
+                $(this).css("background-color", "pink");
+                $('#checkboxflag1').css("background-color", "transparent");
+                $('#checkboxflag3').css("background-color", "transparent");
+                $('#checkboxflag4').css("background-color", "transparent");
+            });
+            $('#checkboxflag3').click(function () {
+                flag_duration = 3;
+                $(this).css("background-color", "pink");
+                $('#checkboxflag1').css("background-color", "transparent");
+                $('#checkboxflag2').css("background-color", "transparent");
+                $('#checkboxflag4').css("background-color", "transparent");
+            });
+            $('#checkboxflag4').click(function () {
+                flag_duration = 4;
+                $(this).css("background-color", "pink");
+                $('#checkboxflag1').css("background-color", "transparent");
+                $('#checkboxflag2').css("background-color", "transparent");
+                $('#checkboxflag3').css("background-color", "transparent");
+            });
+
+            $('#checkboxflag_reset').click(function () {
+                flag_duration = 0;
+                
+                $('#checkboxflag1').css("background-color", "transparent");
+                $('#checkboxflag2').css("background-color", "transparent");
+                $('#checkboxflag3').css("background-color", "transparent");
+                $('#checkboxflag4').css("background-color", "transparent");
+              
+            });
+            $('#remove_duration_criteria').click(function () {
+                //false
+                if (remove_duration_criteria_flag) {
+                    remove_duration_criteria_flag = false;
+                    $(this).text("duration OFF");
+                    $(this).css("background-color", "rgb(220, 135, 135)");
+                  
+                   
+                    
+                }
+                else {
+                    //false
+                    remove_duration_criteria_flag = true;
+                    $(this).text("duration ON");
+                    $(this).css("background-color", "transparent");
+                }
+            });
+            $('#check_user_valid').click(function () {
+ var temp_storage = (($('#url').val().trim().substring($('#url').val().trim().indexOf('/') + 2)).substring(0, ($('#url').val().trim().substring($('#url').val().trim().indexOf('/') + 2).indexOf('/')))).trim();
+
+                console.log(temp_storage);
+                console.log($('#username').val().trim())
+                console.log("user lenght: " + $('#username').val().trim().length);
+                console.log("temp storage: " + temp_storage.length);
+
+                $.ajax({
+                    url: 'http://projectsgono.com/medsforlife/is_user_valid.php',
+                    type: 'POST',
+                    data: { 'url_u':temp_storage, 'username_u': $('#username').val().trim()},
+                    dataType: "json",
+                    success: function (response) {
+                        if (response==null) {
+                            $('#url').css("background-color", "rgb(204, 234, 186)");
+                            $('#username').css("background-color", "rgb(204, 234, 186)");
+                            $('#show_db_text').text("no user in database");
+
+                        }
+                        else {
+                            $('#url').css("background-color", "pink");
+                            $('#username').css("background-color", "pink");
+                            $('#show_db_text').html('<p>user <span style="color:red;">found</span> in database</p>');
+                        }
+                       
+                    },
+                    error: function (xhr, ajaxOptions, thrownError) {
+                        alert("failed user valid, try again");
+                    }
+                });
+            });
+
+
+            $('#other_submit').click(function () {
+                $("#za_other").append("<p style='display:inline;color:#2b46c6;'>" + $("#typeahead_other").val() + ",</p>" + " ");
+                other_drugs.push($("#typeahead_other").val());
+                $("#typeahead_other").val("");
+            });
+
+            $('#typeahead_used').on('typeahead:selected', function (obj, obj_value) {
+           
+                $("#za_used").append("<p style='display:inline;color:#2b46c6;'>" + obj_value + "</p>" + " ");
+                used_to_take.push(obj_value);
+              
+
+            });
+            $('#natural_submit').click(function () {
+                $("#za_natural").append("<p style='display:inline;color:#2b46c6;'>" + $("#typeahead_natural").val() + ":</p>" + " ");
+                natural.push($("#typeahead_natural").val());
+                $("#typeahead_natural").val("");
+
+                if ($('#natural_helped').is(":checked")) {
+                    natural_checkbox.push('helped');
+                }
+                else if ($('#natural_nothelped').is(":checked")) {
+                    natural_checkbox.push('nothelped');
+                }
+                else if ($('#natural_littlehelped').is(":checked")) {
+                    natural_checkbox.push('little');
+                }
+                else {
+                    natural_checkbox.push('unknown');
+                }
+                $("#za_natural").append("<p style='display:inline;color:#2b46c6;'>" + natural_checkbox[(natural_checkbox.length)-1] + ",</p>" + " ");
+                clearNaturalOnly();
+
+
+            });
+
+
+            var substringMatcher = function (strs) {
+                return function findMatches(q, cb) {
+                    var matches, substringRegex;
+
+                    // an array that will be populated with substring matches
+                    matches = [];
+
+                    // regex used to determine if a string contains the substring `q`
+                    substrRegex = new RegExp(q, 'i');
+
+                    // iterate through the pool of strings and for any string that
+                    // contains the substring `q`, add it to the `matches` array
+                    $.each(strs, function (i, str) {
+                        if (substrRegex.test(str)) {
+                            matches.push(str);
+                        }
+                    });
+
+                    cb(matches);
+                };
+            };
+
+
+
+        $('#typeahead_sides').typeahead({
+            hint: true,
+            highlight: true,
+            minLength: 1
+            
+        },
+        {
+            name: 'side_effects',
+            source: substringMatcher(side_effects),
+            limit:15
+        });
+        $('#typeahead_brand').typeahead({
+            hint: true,
+            highlight: true,
+            minLength: 1
+           
+        },
+        {
+            name: 'drug_brand',
+            source: substringMatcher(drug_brand),
+            limit:15
+        });
+        $('#typeahead_generic').typeahead({
+            hint: true,
+            highlight: true,
+            minLength: 1
+        },
+        {
+            name: 'drug_generic',
+            source: substringMatcher(drug_generic),
+            limit: 15
+        });
+        $('#typeahead_nutrient').typeahead({
+            hint: true,
+            highlight: true,
+            minLength: 1
+        },
+        {
+            name: 'nutrient',
+            source: substringMatcher(nutrient),
+            limit: 15
+        });
+        $('#typeahead_condition').typeahead({
+            hint: true,
+            highlight: true,
+            minLength: 1
+        },
+        {
+            name: 'condition',
+            source: substringMatcher(condition),
+            limit: 15
+        });
+        $('#typeahead_condition_ppi').typeahead({
+            hint: true,
+            highlight: true,
+            minLength: 1
+           
+        },
+        {
+            name: 'conditionppi',
+            source: substringMatcher(condition_ppi),
+            limit: 15
+        });
+        $('#typeahead_dosage').typeahead({
+            hint: true,
+            highlight: true,
+            minLength: 1
+            
+        },
+        {
+            name: 'dosage',
+            source: substringMatcher(dosage),
+            limit: 15
+        });
+         $('#typeahead_duration').typeahead({
+            hint: true,
+            highlight: true,
+            minLength: 1
+        },
+        {
+            name: 'duration',
+            source: substringMatcher(duration),
+            limit: 15
+        });
+
+         $('#typeahead_used').typeahead({
+             hint: true,
+             highlight: true,
+             minLength: 1
+         },
+         {
+             name: 'used',
+             source: substringMatcher(used_drugs),
+             limit: 15
+         });
+
+
+
+         $('#expand_button').click(function () {
+             $("#expand_words").append("<h4>NATURAL</h4> dgl, apple cide vinegar, probiotic, aloe vera, gluten free, digestive enzymes, paleo, ginger, papaya, slippery elm, honey, ginger, ginger tea, almonds, magnesium, kefir, diet, hcl, vitamins, acidophilius, l-glutamine, magnesium citrate, persimmon tea, mastic gum, prelief, zinlori, d-limonene, cabbage juice, calcium carbonate, chamomile tea, dairy free, oil, kyo-dolphilu, mint, mint tea, dandelion root, oatmeal, sodium bicarbonate, gentian root, manuka, betaine hcl, herbal enzymes, coconut oil, fennel seeds, calcium tab, melatonin");
+             
+$("#expand_words").append("<h4>OTHER</h4> ranitidine, gaviscon, pepcid, antibiotic, nsaid, calcium carbonate, tums, statin, paracetamol, aspirin, pain meds, calcium carbonate, sucralfate, famotidine, cimetidine, prednisone, blood pressure meds, plavix, laxative, ondasetron, claritine, ad, SSRI, antacid, beta blocker, pepto-bismol, thyroid meds, fosamax, reglan");
+             $(this).prop("disabled", true);
+             $("#expand_button_remove").prop("disabled", false);
+         });
+
+         $('#expand_button_remove').click(function () {
+             $(this).prop("disabled", true);
+             $("#expand_words").empty();
+             $("#expand_button").prop("disabled", false);
+         });
+           $('#docbutton').click(function () {
+               if (counter_doc == 0) {
+                   $('#doc_header').append('<p style="display:inline;">Doc thought:</p>\
+                         <textarea id="doctought_php" style="width:400px;height:100px;"></textarea>\
+                         <p style="display:inline;">User<span style="color:red;"> (assoc)</span>:</p>\
+                         <input id="assoc_php" stlye="display:inline;" type="text" name="firstname">\
+                         <p style="display:inline;">Flag (good, notgood, unknown):</p>\
+                         <input id="flag_php" stlye="display:inline;" type="text" name="firstname">\
+                         <p style="display:inline;">URL:</p>\
+                         <input id="urldoc_php" stlye="display:inline;" type="text" name="firstname">\
+                         <button id="docbuttonsubmit" style="display:inline; " type="button" class="btn btn-success">Submit</button>\
+                         <input class="doctor_extra_checkbox" type="checkbox"> alone');
+                   counter_doc++; //zato da se vise puta ne doda 
+                   $('#doc_header').css("border", "3px solid #8787be");
+                   $('#doc_header').css("border-radius", "3px");
+                   $('#doc_header').css("padding", "5px");
+
+                   $('#docbutton').text("Hide");
+
+                  
+               }
+               else {
+                   $("#doc_header").empty();
+                   $('#doc_header').css("border", "0px solid white");
+                   $('#docbutton').text("Doc");
+                   counter_doc = 0;
+               }
+              
+           });
+           $('#pharmabutton').click(function () {
+               if (counter_doc_pharma == 0) {
+                   $('#pharma_header').append('<p style="display:inline;">Pharma thought:</p>\
+                         <textarea id="pharma_tought_php" style="width:400px;height:100px;"></textarea>\
+                         <p style="display:inline;">User<span style="color:red;"> (assoc)</span>:</p>\
+                         <input id="pharma_assoc_php" stlye="display:inline;" type="text" name="firstname">\
+                         <p style="display:inline;">Flag (good, notgood, unknown):</p>\
+                         <input id="pharma_flag_php" stlye="display:inline;" type="text" name="firstname">\
+                         <p style="display:inline;">URL:</p>\
+                         <input id="pharma_urldoc_php" stlye="display:inline;" type="text" name="firstname">\
+                         <button id="pharmabuttonsubmit" style="display:inline; " type="button" class="btn btn-success">Submit</button>\
+                         <input class="pharma_extra_checkbox" type="checkbox"> alone');
+                   counter_doc_pharma++; //zato da se vise puta ne doda 
+                   $('#pharma_header').css("border", "3px solid green");
+                   $('#pharma_header').css("border-radius", "3px");
+                   $('#pharma_header').css("padding", "5px");
+
+                   $('#pharmabutton').text("Hide");
+
+
+               }
+               else {
+                   $("#pharma_header").empty();
+                   $('#pharma_header').css("border", "0px solid white");
+                   $('#pharmabutton').text("Pharma");
+                   counter_doc_pharma = 0;
+               }
+
+           });
+           $(document).on("change", ".pharma_extra_checkbox", function () {
+               if (!$(this).is(':checked')) {
+                   pharma_alone_flag = 0;
+               }
+               else {
+                   pharma_alone_flag = 1;
+               }
+           });
+           $(document).on("change", ".doctor_extra_checkbox", function () {
+               if (!$(this).is(':checked')) {
+                   doctor_alone_flag = 0;
+               }
+               else {
+                   doctor_alone_flag = 1;
+               }
+           });
+           $(document).on("click", "#pharmabuttonsubmit", function () {
+
+               pharmatought = $("#pharma_tought_php").val();
+               pharmaassoc = $("#pharma_assoc_php").val();
+               flagpharma = $("#pharma_flag_php").val();
+               urlpharma = $("#pharma_urldoc_php").val();
+
+
+               if (pharmaassoc.trim() != "") {
+                   $.ajax({
+                       url: 'http://projectsgono.com/medsforlife/pharmacist.php',
+                       type: 'POST',
+                       data: { 'tought': pharmatought, 'assoc': pharmaassoc, 'flagpharma': flagpharma, 'urlpharma': urlpharma, 'pharmalone': pharma_alone_flag },
+                       success: function (response_twelve) {
+                           if ((response_twelve.toString()).includes('Error')) { alert(response_twelve); }
+                           else {
+                               alert("successfully entered data");
+                               $("#pharma_doctought_php").val('');
+                               $("#pharma_assoc_php").val('');
+                               $("#pharma_flag_php").val('');
+                               $("#pharma_urldoc_php").val('');
+                               counter_doc_pharma = 0;
+                               pharma_alone_flag = 0;
+                               $("#pharma_header").empty();
+                               $('#pharma_header').css("border", "0px solid white");
+                               $('#pharmabutton').text("Pharma");
+                           }
+                           pharmatought = "";
+                           pharmaassoc = "";
+                           flagpharma = "";
+                           urlpharma = "";
+
+
+                       },
+                       error: function (xhr, ajaxOptions, thrownError) {
+                           alert("doctor failed");
+                       }
+                   });
+               }
+               else {
+                   alert("no info provided");
+               }
+
+           });
+           $(document).on("click", "#docbuttonsubmit", function () {
+
+               drtought = $("#doctought_php").val();
+               assoc = $("#assoc_php").val();
+               flagdoc = $("#flag_php").val();
+               urldoc = $("#urldoc_php").val();
+
+
+               if (assoc.trim() != "") {
+                   $.ajax({
+                       url: 'http://projectsgono.com/medsforlife/doctor.php',
+                       type: 'POST',
+                       data: { 'tought': drtought, 'assoc': assoc, 'flagdoc': flagdoc, 'urldoc':urldoc, 'docalone':doctor_alone_flag },
+                       success: function (response_eleven) {
+                           if ((response_eleven.toString()).includes('Error')) { alert(response_eleven); }
+                           else {
+                               alert("successfully entered data");
+                               $("#doctought_php").val('');
+                               $("#assoc_php").val('');
+                               $("#flag_php").val('');
+                               $("#urldoc_php").val('');
+                               counter_doc = 0;
+                               doctor_alone_flag = 0;
+                               $("#doc_header").empty();
+                               $('#doc_header').css("border", "0px solid white");
+                               $('#docbutton').text("Doc");
+                           }
+
+                           assoc = "";
+                           flagdoc = "";
+                           drtought = "";
+                           urldoc = "";
+
+
+                       },
+                       error: function (xhr, ajaxOptions, thrownError) {
+                           alert("doctor failed");
+                       }
+                   });
+               }
+               else {
+                   alert("no info provided");
+               }
+
+           });
+
+
+    });
+    </script>
+
+</head>
+<body style="margin-bottom: 40px;">
+    <img id="image_header" src="pic/medicaments.jpg" style="width:170px;height:55px;" />
+    <button id="docbutton" style="display:inline; " type="button" class="btn btn-default">Doc</button>
+    <button id="pharmabutton" style="display:inline; " type="button" class="btn btn-default">Pharma</button>
+    <!--HEADER BEGIN-->
+    <p style="display:inline;"><span style="font-weight:600">1</span>:really positive;</p>
+    <p style="display:inline;"><span style="font-weight:600">2</span>:really negative;</p>
+    <p style="display:inline;"><span style="font-weight:600">3</span>:interesting;</p>
+    <p style="display:inline;"><span style="font-weight:600">4</span>:extreme;</p>
+    
+    <button id="check_user_valid" type="button" class="btn btn-default">check user</button>
+    <span id="show_db_text" style="display:inline"></span>
+
+
+    <div id="stats-header" style="text-align:center;">
+        <p style="display:inline;">Username:</p>
+        <input id="username" stlye="display:inline;" type="text" name="firstname">
+        <p style="display:inline;">Date<span style="color:red;"> (dd:mm:yyyy)</span>:</p>
+        <input id="date" stlye="display:inline;" type="text" name="firstname">
+        <p style="display:inline;">URL:</p>
+        <input id="url" stlye="display:inline;" type="text" name="firstname">
+        <button id="delete_header" style="display:inline; " type="button" class="btn btn-default">x</button>
+        <!--HEADER END-->
+        <div class="checkbox" style="display:inline;">
+            <!--flagbox is here because of the duration of the previously taken PPI but flag only if there is a length
+                -->
+            <span id="checkboxflag1" class="right_checkbox" style="display:inline; border:1px solid grey;border-radius:2px;">1</span>
+            <span id="checkboxflag2" class="right_checkbox" style="display:inline; border:1px solid grey;border-radius:2px;">2</span>
+            <span id="checkboxflag3" class="right_checkbox" style="display:inline; border:1px solid grey;border-radius:2px;">3</span>
+            <span id="checkboxflag4" class="right_checkbox" style="display:inline; border:1px solid grey;border-radius:2px;">4</span>
+            <span id="checkboxflag_reset" style="display:inline; border:1px solid grey;border-radius:2px;">reset</span>
+           
+        </div>
+
+    </div>
+    <div id="doc_header" style="text-align:center;" class="container">
+    </div>
+    <div id="pharma_header" style="text-align:center;" class="container">
+    </div>
+    <!--BODY BEGIN-->
+    <div class="container" style="border:1px solid black !important;padding-bottom: 10px;">
+        <h4 style="text-align:left;">Original Post</h4>
+
+        <textarea id="original_post" style="width:80%;height:120px;"></textarea>
+
+        <div style="padding:0px !important; border:2px solid dotted;">
+
+            <h4 style="text-align:left;">Citation Post</h4>
+            <textarea id="citation_post" style="width:548px;height:213px;"></textarea>
+            <div style="">
+                <h4 style="text-align:left;">Drug <span style="font-size:medium">(generic)</span></h4>
+                <input id="typeahead_generic" class="typeahead" style="display:inline;" type="text">
+
+                <div id="za_generic" style="display:inline;">
+
+                </div>
+                <button id="delete_generic" style="display:inline;" type="button" class="btn btn-default">x</button>
+            </div>
+
+            <div style="">
+                <h4 style="text-align:left;">Drug <span style="font-size:medium">(brand)</span></h4>
+                <input id="typeahead_brand" class="typeahead" style="display:inline;" type="text">
+
+                <div id="za_brand" style="display:inline;">
+
+                </div>
+                <button id="delete_brand" style="display:inline;" type="button" class="btn btn-default">x</button>
+
+            </div>
+           
+
+            <div style="">
+                <h4 style="text-align:left;">Age</h4>
+                <input id="typeahead_age" style="display:inline;" type="text" name="age">
+                <p style="display:inline;">years</p>
+                <div id="za_age" style="display:inline;">
+
+                </div>
+                <button id="delete_age" style="display:inline;" type="button" class="btn btn-default">x</button>
+                <div class="checkbox" style="display:inline;">
+                    <label><input id="sex_male" type="checkbox" value="">Male;</label>
+                </div>
+                <div class="checkbox" style="display:inline;">
+                    <label><input id="sex_female" type="checkbox" value="">Female;</label>
+                </div>
+            </div>
+            <div id="cage">
+                <div style="">
+                    <h4 style="text-align:left;">Condition <span style="font-size:medium">(cause, a priori)</span></h4>
+                    <input id="typeahead_condition" class="typeahead" type="text">
+
+                    <div id="za_condition" style="display:inline;">
+
+                    </div>
+                    <button id="delete_condition" style="display:inline;" type="button" class="btn btn-default">x</button>
+                </div>
+                <div style="">
+                    <h4 style="text-align:left;">Condition <span style="font-size:medium">(ppi-related)</span></h4>
+                    <input id="typeahead_condition_ppi" class="typeahead" style="width:258px;" type="text">
+
+                    <div id="za_condition_ppi" style="display:inline;">
+
+                    </div>
+                    <button id="delete_condition_ppi" style="display:inline;" type="button" class="btn btn-default">x</button>
+                </div>
+            </div>
+            <div style="">
+                <h4 style="text-align:left;">Side effects</h4>
+                <input id="typeahead_sides" class="typeahead" type="text">
+
+                <div id="za_sides" style="display:inline;">
+
+                </div>
+                <button id="delete_side" style="display:inline;" type="button" class="btn btn-default">x</button>
+            </div>
+            <div style="">
+                <h4 style="text-align:left;">Nutrient deficiency</h4>
+                <input id="typeahead_nutrient" class="typeahead" type="text">
+
+                <div id="za_nutrient" style="display:inline;">
+
+                </div>
+                <button id="delete_nutrient" style="display:inline;" type="button" class="btn btn-default">x</button>
+            </div>
+            <div style="margin-bottom:10px">
+                <h4 style="text-align:left;">Dosage</h4>
+                <input id="typeahead_dosage" class="typeahead" type="text"><h5 style="display:inline;"></h5>
+
+                <div id="za_dosage" style="display:inline;">
+
+                </div>
+                <button id="delete_dosage" style="display:inline;" type="button" class="btn btn-default">x</button>
+            </div>
+            <div style="">
+                <h4 style="color:#ee5b58;">Duration of treatment <span style="color:royalblue; font-size:medium">(from t=0 till now)</span></h4>
+
+                <input id="typeahead_duration" class="typeahead" style="display:inline; " type="text">
+
+                <div id="za_duration" style="display:inline;">
+
+                </div>
+                <div class="checkbox" style="display:inline;">
+                    <label><input id="duration_day" type="checkbox" value="">Day;</label>
+                </div>
+                <div class="checkbox" style="display:inline;">
+                    <label><input id="duration_week" type="checkbox" value="">Week;</label>
+                </div>
+                <div class="checkbox" style="display:inline;">
+                    <label><input id="duration_month" type="checkbox" value="">Month;</label>
+                </div>
+                <div class="checkbox" style="display:inline;">
+                    <label><input id="duration_year" type="checkbox" value="">Year;</label>
+                </div>
+                <div class="checkbox" style="display:inline;">
+                    <label><input id="duration_notspecified" type="checkbox" value="">not specified;</label>
+                </div>
+                <button id="delete_duration" style="display:inline;" type="button" class="btn btn-default">x</button>
+            </div>
+
+            <div style="">
+                <h4 style="text-align:left;">Daily usage</h4>
+
+                <div class="checkbox" style="display:inline;">
+                    <label><input id="daily_yes" type="checkbox" value="">YES</label>
+                </div>
+                <div class="checkbox" style="display:inline;">
+                    <label><input id="daily_no" type="checkbox" value="">NO</label>
+                </div>
+                <div class="checkbox" style="display:inline;">
+                    <label><input id="daily_onandoff" type="checkbox" value="">onoff</label>
+                </div>
+                <div class="checkbox" style="display:inline;">
+                    <label><input id="daily_fewaweek" type="checkbox" value="">fewaweek</label>
+                </div>
+                <div class="checkbox" style="display:inline;">
+                    <label><input id="daily_fewamonth" type="checkbox" value="">fewamonth</label>
+                </div>
+                <div class="checkbox" style="display:inline;">
+                    <label><input id="daily_unknown" type="checkbox" value="">unknown;</label>
+                </div>
+
+
+            </div>
+            <div style="">
+                <h4 style="text-align:left;">Other drugs <span style="font-size:medium">(not PPI's)</span></h4>
+                <input id="typeahead_other" style="display:inline;" type="text">
+
+                <div id="za_other" style="display:inline;">
+
+                </div>
+                <button id="other_submit" style="display:inline;" type="button" class="btn btn-warning">OK</button>
+                <button id="delete_other" style="display:inline;" type="button" class="btn btn-default">x</button>
+
+            </div>
+            <div style="">
+                <h4 style="text-align:left;">Used to take <span style="font-size:medium">(only PPI's)</span></h4>
+                <input id="typeahead_used" class="typeahead" style="width:200px !important;" type="text">
+
+                <div id="za_used" style="display:inline;">
+
+                </div>
+
+                <button id="delete_used" style="display:inline;" type="button" class="btn btn-default">x</button>
+            </div>
+            <hr />
+            <div style="">
+                <h4 style="text-align:left;">Natural remedies</h4>
+
+                <input id="typeahead_natural" style="display:inline;" type="text" name="naturalrem">
+
+                <div id="za_natural" style="display:inline;">
+
+                </div>
+
+
+                <div class="checkbox" style="display:inline;">
+                    <label><input id="natural_helped" type="checkbox" value="">helped;</label>
+                </div>
+                <div class="checkbox" style="display:inline;">
+                    <label><input id="natural_nothelped" type="checkbox" value="">not helped</label>
+                </div>
+                <div class="checkbox" style="display:inline;">
+                    <label><input id="natural_littlehelped" type="checkbox" value="">little helped</label>
+                </div>
+                <div class="checkbox" style="display:inline;">
+                    <label><input id="natural_unknown" type="checkbox" value="">unknown</label>
+                </div>
+                <button id="natural_submit" style="display:inline;" type="button" class="btn btn-warning">OK</button>
+                <button id="delete_natural" style="display:inline;" type="button" class="btn btn-default">x</button>
+            </div>
+            <div style="">
+                <h4 style="text-align:left;">H. Pylori</h4>
+
+                <div class="checkbox" style="display:inline;">
+                    <label><input id="hpylori_yes" type="checkbox" value="">YES</label>
+                </div>
+                <div class="checkbox" style="display:inline;">
+                    <label><input id="hpylori_no" type="checkbox" value="">NO</label>
+                </div>
+                <div class="checkbox" style="display:inline;">
+                    <label><input id="hpylori_unknown" type="checkbox" value="">unknown</label>
+                </div>
+
+            </div>
+            <button id="review" type="button" class="btn btn-primary" style="margin-top:10px;">Review</button>
+
+        </div>
+    </div>
+    <div class="container" style="border:1px solid black !important;padding-bottom: 10px;padding-top:5px;">
+        <h3 style="display:inline">Review</h3>
+        <div style="display:inline;">
+            <p style="display:inline;">Username:</p>
+            <p id="user_value" style="display:inline">Value</p>
+        </div>
+        <div style="display:inline;">
+            <p style="display:inline;">Date:</p>
+            <p id="date_value" style="display:inline">Value</p>
+        </div>
+        <div style="display:inline;">
+            <p style="display:inline;">URL:</p>
+            <p id="url_value" style="display:inline">Value</p>
+        </div>
+        <div id="isflagged" style="display:inline;">
+
+        </div>
+        <img id="hasprops" src="" />
+        <hr />
+        <div>
+            <!--NEW BODY BEGIN----------------------------------------------
+            <!--NEW BODY BEGIN------------------------------------------------>
+            <h4 style="text-align:left;display:inline;">Drug <span style="font-size:medium">(brand)</span>:</h4>
+            <p id="drug_brand_value" style="display:inline"> Value</p>
+        </div>
+        <div>
+            <h4 style="text-align:left;display:inline;">Drug <span style="font-size:medium">(generic)</span>:</h4>
+            <p id="drug_generic_value" style="display:inline"> Value</p>
+        </div>
+        <div>
+            <h4 style="text-align:left;display:inline;">Age:</h4>
+            <p id="age_value" style="display:inline"> Value</p>
+        </div>
+        <div>
+            <h4 style="text-align:left;display:inline;">Sex:</h4>
+            <p id="sex_value" style="display:inline">Value</p>
+        </div>
+
+        <div>
+            <h4 style="text-align:left;display:inline;">Condition <span style="font-size:medium">(cause, a priori)</span>:</h4>
+            <div id="value_condition" style="display:inline;">
+
+            </div>
+        </div>
+        <div>
+            <h4 style="text-align:left;display:inline;">Condition <span style="font-size:medium">(ppi-related-maybe)</span>:</h4>
+            <div id="value_condition_ppi" style="display:inline;">
+
+            </div>
+        </div>
+        <div>
+            <h4 style="text-align:left;display:inline;">Side effects:</h4>
+            <div id="value_sides" style="display:inline;">
+
+            </div>
+        </div>
+        <div>
+            <h4 style="text-align:left;display:inline;">Nutrient deficiency:</h4>
+            <div id="value_nutrient" style="display:inline;">
+
+            </div>
+        </div>
+        <div>
+            <h4 style="text-align:left;display:inline;">Dosage:</h4>
+            <p id="value_dosage" style="display:inline"> Value</p>
+        </div>
+        <div>
+            <h4 style="text-align:left;display:inline;">Duration of treatment:</h4>
+            <div id="value_duration" style="display:inline;">Value</div>
+            <div id="checkbox_one" style="display:inline;"></div>
+
+            <div>
+                <h4 style="text-align:left;display:inline;">Daily usage:</h4>
+                <div id="value_daily" style="display:inline;">
+
+                </div>
+            </div>
+            <div>
+                <h4 style="text-align:left;display:inline;">Other drugs <span style="font-size:medium">(not PPI's)</span>:</h4>
+                <div id="value_other" style="display:inline;"></div>
+
+            </div>
+            <div>
+                <h4 style="text-align:left;display:inline;">Used to take <span style="font-size:medium">(only PPI's)</span>:</h4>
+                <div id="value_used" style="display:inline;"></div>
+                <!--<p id="value_used_number" style="display:inline;"></p>
+                <div id="checkbox_three" style="display:inline;"></div>-->
+            </div>
+            <div>
+                <h4 style="text-align:left;display:inline;">Natural remedies:</h4>
+                <div id="value_natural" style="display:inline;"></div>
+
+
+            </div>
+            <div>
+
+                <h5 style="text-align:left;display:inline;">H-pylori:</h5>
+                <p id="value_pylori" style="display:inline; color:red;"></p>
+
+
+            </div>
+            <div style="position:relative;">
+            <button id="submit" type="button" class="btn btn-success" style="margin-top:10px;">Submit</button>
+            <div id="remove_duration_criteria">duration ON</div>
+            <button id="clearall" type="button" class="btn btn-danger">Clear all</button>
+            </div>
+        </div>
+       
+    </div>
+    <div class="container">
+        <button id="expand_button_remove" type="button" class="bnt btn-default" style="float:right;margin-top:10px;">Remove</button>
+        <button id="expand_button" type="button" class="bnt btn-default" style="float:right;margin-top:10px;">Expand</button>
+        <div id="expand_words">
+             
+        </div>
+    </div>
+   
+    <!--BODY END------------------------------------------------------------------------------------------>
+    <!--BODY END------------------------------------------------------------------------------------------>
+</body>
+</html>
+

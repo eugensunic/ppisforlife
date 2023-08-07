@@ -1,2 +1,0 @@
-[19-Apr-2018 13:45:19 UTC] PHP Warning:  mysqli::mysqli(): (HY000/1130): Host 'ip-160-153-16-43.ip.secureserver.net' is not allowed to connect to this MySQL server in /home/esunic/public_html/medsforlife/appcall/get_tag1.php on line 14
-[19-Apr-2018 13:45:19 UTC] PHP Warning:  mysqli::set_charset(): Couldn't fetch mysqli in /home/esunic/public_html/medsforlife/appcall/get_tag1.php on line 15
