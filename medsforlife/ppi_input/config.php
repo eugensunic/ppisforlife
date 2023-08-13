@@ -1,6 +1,6 @@
 <?php
 $servername = "localhost";
-$username   = "root1";
+$username   = "francesco";
 $password   = "mili7788";
 $dbname     = "ppi_input";
 ?>
