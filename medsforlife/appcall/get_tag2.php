@@ -8,7 +8,7 @@ header('Access-Control-Allow-Headers: Content-Type, Content-Range, Content-Dispo
 $json;
 $contentArray = array();
 
-$conn = new mysqli("localhost", "francesco", "mili7788", "ppisforlife");
+$conn = new mysqli($servername, $username, $password, $dbname);
 $conn->set_charset('utf8');
 
 if ($conn->connect_error) {
